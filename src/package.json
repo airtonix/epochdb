@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "moment": "2.3.x",
+    "underscore": "1.4.x",
+    "typogr": "0.5.x",
+    "wintersmith-browserify": "~0.2.4",
+    "wintersmith-nap": "~0.2.1",
+    "wintersmith-node-sass": "~0.1.0",
+    "wintersmith": "~2.0.9",
+    "wintersmith-data-json": "0.0.5",
+    "nap": "~0.7.15",
+    "jquery.avgrund": "~1.2.0",
+    "jquery-browserify": "~1.8.1",
+    "wintersmith-makerelative": "~1.0.0"
+  },
+  "repository": "none"
+}

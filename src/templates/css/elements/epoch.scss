@@ -1,0 +1,83 @@
+
+.epoch-item-summary{
+	position: relative; 
+
+	.button{
+		.label{
+			margin-right: 0.3em;
+		}
+	}
+
+	.epoch-item-name,
+	.epoch-item-description{
+		color: $epoch-item-name-color;
+		font-size: 0.75rem;
+		font-weight: bold;
+	}
+	.epoch-item-description{
+		color: $epoch-item-description-color;
+	}
+	.epoch-item-id{
+
+	}
+	.epoch-item-count{
+		background:  $epoch-type-bg-color;
+		@include border-radius(3px);
+	}
+	.epoch-type-icon{
+		@include border-left-radius(0);
+		position: absolute;
+		left: 0;
+		max-width: 2em;
+		overflow: hidden;
+		background-color: $epoch-type-bg-color;
+		color: $epoch-type-color;
+	}
+
+	& > .tabs{
+		position: absolute;
+		top: 0.4em;
+		right: 0.4em;
+		margin: 0;
+		padding: 0;
+		dd > a{
+			font-size: 0.8em;
+			padding: 0.5em;
+		}
+		dd:first-child > a{
+			@include border-left-radius(3px);
+		}
+		dd:last-child > a{
+			@include border-right-radius(3px);
+		}
+
+		& + .tabs-content{
+			border-left: 2px solid $tab-border-color;
+			border-right: 2px solid $tab-border-color;
+			margin: 0;
+			padding: 0.5em;
+			& > .content {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+
+	&.type-Kit{ 
+		.epoch-item-name{ color: $shade1; }
+		.epoch-type-icon{ background: $shade1; }
+	}
+	&.type-Component{
+		.epoch-item-name{ color: $shade2; }
+		.epoch-type-icon{ background: $shade2; }
+	}
+	&.type-Tool{
+		.epoch-item-name{ color: $shade3; }
+		.epoch-type-icon{ background: $shade3; }
+	}
+	&.type-Area{
+		.epoch-item-name{ color: $shade4; }
+		.epoch-type-icon{ background: $shade4; }
+	}
+}

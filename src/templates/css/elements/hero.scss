@@ -1,0 +1,6 @@
+.hero{
+	text-align: center;
+	width: 100%;
+	min-height: 22em;
+	@include vertically-align();
+}

@@ -1,0 +1,35 @@
+form{
+	textarea{
+		&.vertical{
+			resize: vertical;
+		}
+	}
+	input[type="text"]{
+		@include box-shadow(none);
+		border: 2px solid $input-border-color;
+	}
+
+	&.simple{
+		textarea, input, button{
+			position: relative;
+			z-index: 1;
+			&:focus {
+				z-index: 2;
+				outline: none;
+				-webkit-appearance: none;
+				outline-color: transparent;
+				outline-style: none;
+				@include box-shadow(0 0 0px 2px tint($input-border-color, 15%) )
+			}
+		}
+	}
+
+	.collapse.rounded{
+		input{
+			@include border-left-radius(3px); 
+		}
+		.postfix{
+			@include border-right-radius(3px); 
+		}
+	}
+}

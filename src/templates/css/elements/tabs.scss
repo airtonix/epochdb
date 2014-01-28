@@ -1,0 +1,28 @@
+.tabs{
+	&.simple-outline{
+		background: none;
+		& > dd{
+			background: none;
+
+			& > a{
+				border: 2px solid $tab-border-color;
+				border-right: none;
+				background: $tab-bg-color;
+				color: $tab-text-color;
+				&:hover{
+					color: $tab-hover-text-color;
+					background: $tab-hover-bg-color;
+				}
+				&.active{
+					color: $tab-active-text-color;
+					background: $tab-hover-bg-color;
+				}
+			}
+
+			&:last-child{
+				border-right: 2px solid $tab-border-color;
+			}
+			
+		}
+	}
+}

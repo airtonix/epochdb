@@ -1,0 +1,23 @@
+{
+  "name": "zenobi.us",
+  "version": "0.0.0",
+  "authors": [
+    "Zenobius Jiricek <airtonix@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "contents/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.0.3",
+    "angular": "~1.2.10",
+    "underscore": "~1.5.2",
+    "underscore.string": "~2.3.3"
+  }
+}

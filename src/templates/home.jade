@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.hero
+		.cell
+			h2: a(href="#{url}") DayzEpoch Crafters DB
+				small Because the zombies are crazy enough
+
+
+	.row(data-ng-controller="SearchController")
+		.large-6.columns.large-centered
+
+			.row
+				form.item-filter.simple
+					.row.collapse.rounded
+						.small-10.columns
+							input(type="text", data-ng-model="query", placeholder="Search Recipes and Items")
+							span.result-count.round(data-ng-show="Collection.length") {{ Collection | filter:query | length }} items
+						.small-2.columns
+							button(type="submit").simple-outline.button.postfix filter
+
+			.row.ng-cloak
+				ul.button-group.vertical.simple-outline.rounded
+					li(data-ng-repeat="item in Collection | filter:query", data-item-summary="item")
+					
+
+
