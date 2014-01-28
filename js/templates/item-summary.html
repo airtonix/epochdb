@@ -1,0 +1,16 @@
+<li data-ng-class="'type-'+thing.type" class="epoch-item-summary" data-ng-translude>
+
+	<a data-ng-click="detailsVisible=!detailsVisible" title="{{thing.id}}" class="button text-left">
+		<span class="label radius epoch-type-icon"></span>
+		<span data-ng-if="thing.count" class="epoch-item-count label">{{ thing.count }}</span>
+		<span class="epoch-item-name">{{ thing.name }}</span>
+	</a>
+
+	<dl class="tabs simple-outline">
+		<dd data-ng-repeat="tab in Panes">
+			<a data-ng-click="togglePane(tab.scope)">{{ tab.name }} <em class="item-detail-tab icon-circle"></em></a>
+		</dd>
+	</dl>
+
+	<div data-ng-show="detailsVisible" class="tabs-content"></div>
+</li>
