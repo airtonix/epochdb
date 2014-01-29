@@ -1,6 +1,6 @@
 angular.module('epochdb.resources.items', [])
 	.factory('ItemResource', ['$http', function ($http){
-			var json = $http.get('/api/data.json').then(function (response){
+			var json = $http.get('#{baseUrl}api/data.json').then(function (response){
 					return response.data;
 				});
 

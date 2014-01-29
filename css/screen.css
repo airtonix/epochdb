@@ -34,31 +34,24 @@ Topbar
 /*
 	Tabs
  */
-/* ==========================================================================
-   Normalize.scss settings
-   ========================================================================== */
-/**
- * Includes legacy browser support IE6/7
- *
- * Set to false if you want to drop support for IE6 and IE7
- */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
-/*
- * Corrects `block` display not defined in IE 8/9.
+/**
+ * Correct `block` display not defined in IE 8/9.
  */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
 /**
- * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * Correct `inline-block` display not defined in IE 8/9.
  */
 audio, canvas, video {
   display: inline-block; }
 
 /**
- * Prevents modern browsers from displaying `audio` without controls.
+ * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
 audio:not([controls]) {
@@ -72,14 +65,16 @@ audio:not([controls]) {
 [hidden], template {
   display: none; }
 
+script {
+  display: none !important; }
+
 /* ==========================================================================
    Base
    ========================================================================== */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
- * 3.Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
- *    `em` units.
+ *    user zoom.
  */
 html {
   font-family: sans-serif;
@@ -107,11 +102,12 @@ a {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-/**
- * Improves readability when focused and also mouse hovered in all browsers.
- */
 a:focus {
   outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
 a:active, a:hover {
   outline: 0; }
 
@@ -119,7 +115,6 @@ a:active, a:hover {
    Typography
    ========================================================================== */
 /**
- * Addresses font sizes and margins set differently in IE 6/7.
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
@@ -154,15 +149,12 @@ hr {
   height: 0; }
 
 /**
- * Addresses styling not present in IE 8/9.
+ * Address styling not present in IE 8/9.
  */
 mark {
   background: yellow;
   color: black; }
 
-/**
- * Addresses margins set differently in IE 6/7.
- */
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
@@ -177,7 +169,7 @@ pre {
   white-space: pre-wrap; }
 
 /**
- *  Set consistent quote types.
+ * Set consistent quote types.
  */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
@@ -207,8 +199,7 @@ sub {
    Embedded content
    ========================================================================== */
 /**
- * 1. Remove border when inside `a` element in IE 8/9.
- * 2. Improves image quality when scaled in IE 7.
+ * Remove border when inside `a` element in IE 8/9.
  */
 img {
   border: 0; }
@@ -242,8 +233,6 @@ fieldset {
 /**
  * 1. Correct `color` not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- * 3. Corrects text not wrapping in Firefox 3.
- * 4. Corrects alignment displayed oddly in IE 6/7.
  */
 legend {
   border: 0;
@@ -255,7 +244,6 @@ legend {
  * 1. Correct font family not being inherited in all browsers.
  * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- * 4. Improves appearance and consistency in all browsers.
  */
 button, input, select, textarea {
   font-family: inherit;
@@ -287,8 +275,6 @@ button, select {
  * 2. Correct inability to style clickable `input` types in iOS.
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
- * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
- *    Known issue: inner spacing remains in IE 6.
  */
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
@@ -303,9 +289,8 @@ button[disabled], html input[disabled] {
   cursor: default; }
 
 /**
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 7/8/9/10.
- *    Known issue: excess padding remains in IE 6.
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
  */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
@@ -4835,91 +4820,6 @@ th.hide-for-touch {
  */
 html, body {
   height: 100%;
-  overflow: auto; }
-
-.avgrund-popin {
-  position: absolute;
-  padding: 10px;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  z-index: 1000;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  transform: scale(0.8); }
-
-.avgrund-overlay {
-  width: 100%;
-  position: relative;
-  top: -1500px;
-  left: 0;
-  z-index: 101;
-  visibility: hidden;
-  opacity: 0; }
-
-body.avgrund-ready, .avgrund-ready .avgrund-popin, .avgrund-ready .avgrund-overlay {
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -webkit-transition: 0.3s all ease-out;
-  -moz-transition: 0.3s all ease-out;
-  -ms-transition: 0.3s all ease-out;
-  -o-transition: 0.3s all ease-out;
-  transition: 0.3s all ease-out; }
-
-.avgrund-popin.stack {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5); }
-
-body.avgrund-active {
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
-  overflow: hidden;
-  /* Optional close button styles */ }
-  body.avgrund-active .avgrund-popin {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1); }
-  body.avgrund-active .avgrund-overlay {
-    visibility: visible;
-    opacity: 0.9;
-    height: 20000px; }
-  body.avgrund-active .avgrund-popin.stack {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1); }
-  body.avgrund-active .avgrund-blur {
-    filter: blur(1px); }
-  body.avgrund-active .avgrund-close {
-    display: block;
-    color: #555555;
-    font-size: 13px;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: absolute;
-    top: 6px;
-    right: 10px; }
-
-html, body {
-  height: 100%;
   min-height: 100%; }
 
 body {
@@ -4930,6 +4830,8 @@ body {
   body form textarea.vertical {
     resize: vertical; }
   body form input[type="text"] {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
     border: 2px solid #005a55; }
   body form.simple textarea, body form.simple input, body form.simple button {
@@ -4941,6 +4843,8 @@ body {
       -webkit-appearance: none;
       outline-color: transparent;
       outline-style: none;
+      -webkit-box-shadow: 0 0 0px 2px #26726e;
+      -moz-box-shadow: 0 0 0px 2px #26726e;
       box-shadow: 0 0 0px 2px #26726e; }
   body form .collapse.rounded input {
     border-top-left-radius: 3px;
@@ -4957,6 +4861,8 @@ body {
     body header nav.top-bar .toggle-topbar.menu-icon {
       -webkit-border-radius: 2px;
       border-radius: 2px;
+      -webkit-box-shadow: 0 1px 0 #2e2f41;
+      -moz-box-shadow: 0 1px 0 #2e2f41;
       box-shadow: 0 1px 0 #2e2f41;
       border: 1px solid #2e2f41;
       padding: 0 1em 0 1em;
@@ -4965,11 +4871,15 @@ body {
         margin-right: 1em; }
     body header nav.top-bar.expanded .toggle-topbar.menu-icon {
       border-color: white;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
       box-shadow: none; }
     body header nav.top-bar.expanded .top-bar-section {
       overflow: auto;
       margin-bottom: 1em;
       border-bottom: 1px solid #cccccc;
+      -webkit-box-shadow: 0 5px 9px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 5px 9px 0px rgba(0, 0, 0, 0.1);
       box-shadow: 0 5px 9px 0px rgba(0, 0, 0, 0.1); }
   body .hero {
     text-align: center;
@@ -5137,13 +5047,13 @@ body {
       color: #333333;
       background: white;
       border: none; }
-      body .avgrund-popin form.contact input::-webkit-input-placeholder, body .avgrund-popin form.contact textarea::-webkit-input-placeholder {
+      body .avgrund-popin form.contact input ::-webkit-input-placeholder, body .avgrund-popin form.contact textarea ::-webkit-input-placeholder {
         color: #333333; }
-      body .avgrund-popin form.contact input:-moz-placeholder, body .avgrund-popin form.contact textarea:-moz-placeholder {
+      body .avgrund-popin form.contact input :-moz-placeholder, body .avgrund-popin form.contact textarea :-moz-placeholder {
         color: #333333; }
-      body .avgrund-popin form.contact input::-moz-placeholder, body .avgrund-popin form.contact textarea::-moz-placeholder {
+      body .avgrund-popin form.contact input ::-moz-placeholder, body .avgrund-popin form.contact textarea ::-moz-placeholder {
         color: #333333; }
-      body .avgrund-popin form.contact input:-ms-input-placeholder, body .avgrund-popin form.contact textarea:-ms-input-placeholder {
+      body .avgrund-popin form.contact input :-ms-input-placeholder, body .avgrund-popin form.contact textarea :-ms-input-placeholder {
         color: #333333; }
     body .avgrund-popin form.contact textarea {
       min-height: 15em;
@@ -5178,13 +5088,13 @@ body#home form.item-filter input[type="text"], body#home form.item-filter [type=
   background: #222222;
   border-color: #005a55;
   color: #00b6ad; }
-  body#home form.item-filter input[type="text"]::-webkit-input-placeholder, body#home form.item-filter [type="submit"]::-webkit-input-placeholder {
+  body#home form.item-filter input[type="text"] ::-webkit-input-placeholder, body#home form.item-filter [type="submit"] ::-webkit-input-placeholder {
     color: #005a55; }
-  body#home form.item-filter input[type="text"]:-moz-placeholder, body#home form.item-filter [type="submit"]:-moz-placeholder {
+  body#home form.item-filter input[type="text"] :-moz-placeholder, body#home form.item-filter [type="submit"] :-moz-placeholder {
     color: #005a55; }
-  body#home form.item-filter input[type="text"]::-moz-placeholder, body#home form.item-filter [type="submit"]::-moz-placeholder {
+  body#home form.item-filter input[type="text"] ::-moz-placeholder, body#home form.item-filter [type="submit"] ::-moz-placeholder {
     color: #005a55; }
-  body#home form.item-filter input[type="text"]:-ms-input-placeholder, body#home form.item-filter [type="submit"]:-ms-input-placeholder {
+  body#home form.item-filter input[type="text"] :-ms-input-placeholder, body#home form.item-filter [type="submit"] :-ms-input-placeholder {
     color: #005a55; }
 body#home form.item-filter .result-count {
   position: absolute;

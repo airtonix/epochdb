@@ -11,7 +11,10 @@
     "nap": "~0.7.15",
     "jquery.avgrund": "~1.2.0",
     "jquery-browserify": "~1.8.1",
-    "wintersmith-makerelative": "~1.0.0"
+    "wintersmith-makerelative": "~1.0.0",
+    "grunt-cli": "~0.1.13",
+    "grunt-wintersmith": "0.0.2",
+    "grunt": "~0.4.2"
   },
   "repository": "none"
 }

@@ -1,0 +1,42 @@
+{
+  "ignore": [
+    "*/test",
+    "*/test/*",
+    "**/test/",
+    "**/test/*"
+  ],
+  "locals": {
+    "baseUrl": "/",
+    "url": "http://nova.zenobi.us:8080/",
+    "name": "Survivors Masonry DB",
+    "owner": "Zenobius Jiricek",
+    "description": "Search for items, parts and so forth."
+  },
+
+  "plugins": [
+    "wintersmith-browserify",
+    "wintersmith-node-sass",
+    "wintersmith-data-json"
+  ],
+
+  "require": {
+    "_": "underscore",
+    "moment": "moment",
+    "typogr": "typogr"
+  },
+
+  "jade": {
+    "pretty": true
+  },
+
+  "node-sass": {
+    "includePaths": [
+    ],
+    "minify": false
+  },
+
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  }
+}
