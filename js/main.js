@@ -14,19 +14,39 @@ angular.module('epochdb.controllers.search', [
 
 
 },{}],2:[function(require,module,exports){
+angular.module('epochdb.directives.assets', [])
+	.factory('AssetManager', [function (){
+			var service = {
+				urls: {
+					template: null,
+					static: null,
+					api: null
+				},
+				template: function(path){ return service.urls.template+path },
+				static: function(path){ return service.urls.static+path },
+				api: function(path){ return service.urls.api+path }
+			};
+			service.urls = angular.extend(service.urls, window.assetUrls);
+			return service;
+		}])
+
+	.run(['$rootScope', 'AssetManager', function ($rootScope, AssetManager){
+			$rootScope.assets = AssetManager;
+		}])
+},{}],3:[function(require,module,exports){
 
 angular.module("epochdb.directives.items", [
 		'epochdb.resources.items'
 	])
 
-	.directive('itemSummary', ['$parse', function($parse){
+	.directive('itemSummary', ['$parse', 'AssetManager', function($parse, AssetManager){
 		return {
 			restrict: 'EAC',
 			scope: {
 				thing: "=itemSummary"
 			},
 			replace: true,
-			templateUrl: "/js/templates/item-summary.html",
+			templateUrl: AssetManager.template("item-summary.html"),
 			controller: function($scope, $element, $attrs, $transclude) {
 				this.Item = $scope.item;
 				var itemRelatedCollectionNames = [
@@ -95,7 +115,7 @@ angular.module("epochdb.directives.items", [
 	}])
 
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 angular.module('epochdb.filters.string', [])
 
 	.filter("lower", function(){
@@ -110,7 +130,7 @@ angular.module('epochdb.filters.string', [])
 			return value;
 		}
 	})
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 // Import all the dependancies
 require('../vendor/angular/angular');
 require('../vendor/angular-route/angular-route');
@@ -121,6 +141,7 @@ require('../vendor/underscore/underscore');
 require('./resources/items');
 require('./controllers/search');
 require('./directives/items');
+require('./directives/assets');
 require('./filters/string');
 
 angular.module("epochdb", [
@@ -129,6 +150,7 @@ angular.module("epochdb", [
 		'epochdb.resources.items',
 		'epochdb.controllers.search',
 		'epochdb.directives.items',
+		'epochdb.directives.assets',
 		'epochdb.filters.string'
 	])
 	.config(['$routeProvider', '$locationProvider',
@@ -143,7 +165,7 @@ angular.module("epochdb", [
 		}])
 
 
-},{"../vendor/angular-resource/angular-resource":6,"../vendor/angular-route/angular-route":7,"../vendor/angular/angular":8,"../vendor/underscore/underscore":9,"./controllers/search":1,"./directives/items":2,"./filters/string":3,"./resources/items":5}],5:[function(require,module,exports){
+},{"../vendor/angular-resource/angular-resource":7,"../vendor/angular-route/angular-route":8,"../vendor/angular/angular":9,"../vendor/underscore/underscore":10,"./controllers/search":1,"./directives/assets":2,"./directives/items":3,"./filters/string":4,"./resources/items":6}],6:[function(require,module,exports){
 angular.module('epochdb.resources.items', [])
 	.factory('ItemResource', ['$http', function ($http){
 			var json = $http.get('./api/data.json').then(function (response){
@@ -202,7 +224,7 @@ angular.module('epochdb.resources.items', [])
 
 	}]);
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.2.10
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -798,7 +820,7 @@ angular.module('ngResource', ['ng']).
 
 })(window, window.angular);
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /**
  * @license AngularJS v1.2.10
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -1720,7 +1742,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.2.10
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -22315,7 +22337,7 @@ var styleDirective = valueFn({
 })(window, document);
 
 !angular.$$csp() && angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}</style>');
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 //     Underscore.js 1.5.2
 //     http://underscorejs.org
 //     (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -23593,5 +23615,5 @@ var styleDirective = valueFn({
 
 }).call(this);
 
-},{}]},{},[4])
+},{}]},{},[5])
 ;

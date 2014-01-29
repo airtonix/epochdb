@@ -3,14 +3,14 @@ angular.module("epochdb.directives.items", [
 		'epochdb.resources.items'
 	])
 
-	.directive('itemSummary', ['$parse', function($parse){
+	.directive('itemSummary', ['$parse', 'AssetManager', function($parse, AssetManager){
 		return {
 			restrict: 'EAC',
 			scope: {
 				thing: "=itemSummary"
 			},
 			replace: true,
-			templateUrl: "/js/templates/item-summary.html",
+			templateUrl: AssetManager.template("item-summary.html"),
 			controller: function($scope, $element, $attrs, $transclude) {
 				this.Item = $scope.item;
 				var itemRelatedCollectionNames = [

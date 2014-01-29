@@ -8,6 +8,7 @@ require('../vendor/underscore/underscore');
 require('./resources/items');
 require('./controllers/search');
 require('./directives/items');
+require('./directives/assets');
 require('./filters/string');
 
 angular.module("epochdb", [
@@ -16,6 +17,7 @@ angular.module("epochdb", [
 		'epochdb.resources.items',
 		'epochdb.controllers.search',
 		'epochdb.directives.items',
+		'epochdb.directives.assets',
 		'epochdb.filters.string'
 	])
 	.config(['$routeProvider', '$locationProvider',

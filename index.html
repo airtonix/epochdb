@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width">
     <title>Survivors Masonry DB
     </title>
-    <link rel="stylesheet" media="print" href="http://airtonix.github.com/epochdb/css/print.css">
-    <link rel="stylesheet" media="screen, projector" href="http://airtonix.github.com/epochdb/css/screen.css">
-    <script type="text/javascript" src="http://airtonix.github.com/epochdb/vendor/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" media="print" href="/epochdb/css/print.css">
+    <link rel="stylesheet" media="screen, projector" href="/epochdb/css/screen.css">
+    <script type="text/javascript" src="/epochdb/vendor/modernizr/modernizr.js"></script>
+    <script>
+      window.assetUrls = {
+       static: "/epochdb/",
+       api: "/epochdb/api/",
+       template: "/epochdb/js/templates/"
+      }
+      
+    </script>
   </head>
   <body id="home">
     <header class="header">
@@ -21,7 +29,7 @@
         </ul>
         <section class="top-bar-section">
           <ul class="right">
-            <li><a href="/about/">About</a></li>
+            <li><a href="#!/about/">About</a></li>
           </ul>
         </section>
       </nav>
