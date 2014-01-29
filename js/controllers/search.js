@@ -1,17 +1,21 @@
-;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-angular.module('epochdb.controllers.search', [
-		'epochdb.resources.items'
-	])
+require(['angular'], function(angular){
 
-	.controller('SearchController', [
-		'$scope',
-		'ItemResource',
+	angular.module('epochdb.controllers.search', [
+			'epochdb.resources.items'
+		])
+
+		.controller('SearchController', [
+			'$scope',
+			'ItemResource',
 			function($scope, ItemResource){
 				ItemResource.query().then(function(data){
+					$scope.Query = '';
 					$scope.Collection = data;
+					$scope.Tags = _.uniq( _.flatten(_.pluck(data, 'tags')));
+
+					$scope.$on('item-query', function(scope, query){
+						$scope.Query = query;
+					})
 				});
 			}])
-
-
-},{}]},{},[1])
-;
+});

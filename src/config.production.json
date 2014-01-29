@@ -10,12 +10,14 @@
     "baseUrl": "/epochdb/",
     "url": "http://airtonix.github.com/epochdb/",
     "name": "Survivors Masonry DB",
-    "owner": "Zenobius Jiricek",
+    "owner": {
+      "name": "Zenobius Jiricek",
+      "homepage": "http://zenobi.us/" 
+    },
     "description": "Search for items, parts and so forth."
   },
 
   "plugins": [
-    "wintersmith-browserify",
     "wintersmith-node-sass",
     "wintersmith-data-json"
   ],

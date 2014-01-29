@@ -1,0 +1,28 @@
+
+<div data-ng-controller="SearchController" class="row">
+  <div class="large-6 columns large-centered">
+    <div class="row">
+      <form class="item-filter simple">
+        <div class="row collapse rounded">
+          <div class="small-10 columns">
+            <input type="text" data-ng-model="Query" placeholder="Search Recipes and Items"/><span data-ng-show="Collection.length" class="result-count round">{{ Collection | filter:Query | length }} items</span>
+          </div>
+          <div class="small-2 columns">
+            <button type="submit" class="simple-outline button postfix">filter</button>
+          </div>
+        </div>
+        <div class="row">
+          <dl class="sub-nav tag-filter">
+            <dt>filter by</dt>
+            <dd data-ng-repeat="tag in Tags"><a data-ng-click="$parent.Query=tag">{{ tag }}</a></dd>
+          </dl>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <ul class="button-group vertical simple-outline rounded">
+        <li data-ng-repeat="item in Collection | filter:Query" data-item-summary="item"></li>
+      </ul>
+    </div>
+  </div>
+</div>

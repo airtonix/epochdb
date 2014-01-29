@@ -41,39 +41,21 @@
             <h2><a href="http://airtonix.github.com/epochdb/">DayzEpoch Crafters DB<small>Because the zombies are crazy enough</small></a></h2>
           </div>
         </div>
-        <div data-ng-controller="SearchController" class="row">
-          <div class="large-6 columns large-centered">
-            <div class="row">
-              <form class="item-filter simple">
-                <div class="row collapse rounded">
-                  <div class="small-10 columns">
-                    <input type="text" data-ng-model="query" placeholder="Search Recipes and Items"><span data-ng-show="Collection.length" class="result-count round">{{ Collection | filter:query | length }} items</span>
-                  </div>
-                  <div class="small-2 columns">
-                    <button type="submit" class="simple-outline button postfix">filter</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="row ng-cloak">
-              <ul class="button-group vertical simple-outline rounded">
-                <li data-ng-repeat="item in Collection | filter:query" data-item-summary="item"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div data-ui-view class="row ng-cloak"></div>
       </div>
     </article>
     <footer id="site-footer">
       <div class="row">
-        <section class="copy"><p>This app Created by Zenobius Jiricek,  2014</p>
+        <section class="copy"><p>This app Created by <a href="http://zenobi.us/">Zenobius Jiricek</a>, 2014.
+This app is licensed under the <a href="https://github.com/airtonix/epochdb/blob/gh-pages/LICENSE">BSD 3 Clause</a>, <a href="http://github.com/airtonix/epochdb/">Source code is on github</a></p>
+<p>Built with <a href="http://wintersmith.io">Wintersmith</a>, <a href="http://jade-lang.com">Jade</a>, <a href="http://gruntjs.com">GruntJs</a>, <a href="http://foundation.zurb.com">Foundation Zurb</a>, <a href="http://bourbon.io">Bourbon</a>, <a href="http://angularjs.org/">AngularJs</a>, <a href="http://underscorejs.org">Underscore</a>, <a href="http://epeli.github.io/underscore.string/‎">Underscore.String</a>, <a href="http://modernizr.com/">Modernizr</a> and <a href="https://sublimetext.com/">SublimetText3</a>.</p>
 <p>DAYZ is a registered trademark of <a href="href=&quot;www.bistudio.com/‎&quot;">Bohemia Interactive a.s</a>.
-This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.
-DayZ Epoch is licensed under <a href="href=&quot;http://www.bistudio.com/licenses/dayz-mod-license-share-alike&quot;">DayZ Mod License Share Alike</a>.</p>
+This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.</p>
+<p>DayZ Epoch is licensed under <a href="href=&quot;http://www.bistudio.com/licenses/dayz-mod-license-share-alike&quot;">DayZ Mod License Share Alike</a>.</p>
 
         </section>
       </div>
     </footer>
-    <script src="/epochdb/js/main.js"></script>
+    <script data-main="/epochdb/js/main" src="/epochdb/vendor/requirejs/require.js"></script>
   </body>
 </html>

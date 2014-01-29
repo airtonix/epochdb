@@ -1,0 +1,14 @@
+li.epoch-item-summary(data-ng-class="'type-'+Thing.type", data-ng-translude)
+
+	a.button.text-left(data-ng-click="Visible=!Visible", title="{{Thing.id}}")
+		span.label.radius.epoch-type-icon
+		span.epoch-item-count.label(data-ng-if="Thing.count") {{ Thing.count }}
+		span.epoch-item-name {{ Thing.name }}
+
+	dl.tabs.simple-outline
+		dd(data-ng-repeat="tab in Tabs")
+			a(data-ng-click="tab.toggle()") {{ tab.name }}
+				em.item-detail-tab.icon-circle
+
+	.tabs-content(data-ng-show="Visible")
+		.content(data-ng-repeat="pane in Panes", data-item-summary-pane="{{pane}}", data-collection="{{ pane.data }}")

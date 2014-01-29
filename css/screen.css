@@ -5023,6 +5023,9 @@ body {
     body .epoch-item-summary.type-Area .epoch-type-icon {
       background: #8f2041; }
   body #content {
+    height: 100%;
+    width: 100%;
+    display: table;
     padding-top: 3em; }
   body #site-footer {
     display: block;
@@ -5070,20 +5073,15 @@ body {
       margin: 0 auto; }
 
 body#home .hero {
-  position: relative; }
+  min-height: inherit;
+  margin-bottom: 1em; }
   body#home .hero h2 {
-    position: absolute;
-    bottom: 50%;
-    margin: 0 auto;
-    width: 100%;
     display: block; }
     body#home .hero h2 a {
       color: white; }
     body#home .hero h2 small {
       display: block;
       line-height: 1; }
-  body#home .hero .button-group li a.button {
-    font-weight: bold !important; }
 body#home form.item-filter input[type="text"], body#home form.item-filter [type="submit"] {
   background: #222222;
   border-color: #005a55;

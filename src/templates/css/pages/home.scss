@@ -1,11 +1,13 @@
 body#home{
 	.hero{
-		position: relative;
+		// position: relative;
+		min-height: inherit;
+		margin-bottom: 1em;
 		h2{
-			position: absolute;
-			bottom: 50%;
-			margin: 0 auto;
-			width: 100%;
+		// 	position: absolute;
+		// 	bottom: 50%;
+		// 	margin: 0 auto;
+		// 	width: 100%;
 			display: block;
 			a{
 				color: white;
@@ -15,11 +17,12 @@ body#home{
 				line-height: 1;
 			}
 		}
-		.button-group li a.button{
-			font-weight: bold !important;
-		}
+		// .button-group li a.button{
+		// 	font-weight: bold !important;
+		// }
 
 	}
+
 	form.item-filter{
 
 		input[type="text"], [type="submit"]{
