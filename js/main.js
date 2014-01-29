@@ -14,7 +14,6 @@ angular.module('epochdb.controllers.search', [
 
 
 },{}],2:[function(require,module,exports){
-_ = require('../../vendor/underscore/underscore');
 
 angular.module("epochdb.directives.items", [
 		'epochdb.resources.items'
@@ -96,7 +95,7 @@ angular.module("epochdb.directives.items", [
 	}])
 
 
-},{"../../vendor/underscore/underscore":9}],3:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 angular.module('epochdb.filters.string', [])
 
 	.filter("lower", function(){
@@ -113,12 +112,12 @@ angular.module('epochdb.filters.string', [])
 	})
 },{}],4:[function(require,module,exports){
 // Import all the dependancies
-// require('../vendor/jquery/jquery');
-	// _.str = require('../vendor/underscore.string/lib/underscore.string');
 require('../vendor/angular/angular');
 require('../vendor/angular-route/angular-route');
 require('../vendor/angular-resource/angular-resource');
+require('../vendor/underscore/underscore');
 
+// import the application
 require('./resources/items');
 require('./controllers/search');
 require('./directives/items');
@@ -144,10 +143,10 @@ angular.module("epochdb", [
 		}])
 
 
-},{"../vendor/angular-resource/angular-resource":6,"../vendor/angular-route/angular-route":7,"../vendor/angular/angular":8,"./controllers/search":1,"./directives/items":2,"./filters/string":3,"./resources/items":5}],5:[function(require,module,exports){
+},{"../vendor/angular-resource/angular-resource":6,"../vendor/angular-route/angular-route":7,"../vendor/angular/angular":8,"../vendor/underscore/underscore":9,"./controllers/search":1,"./directives/items":2,"./filters/string":3,"./resources/items":5}],5:[function(require,module,exports){
 angular.module('epochdb.resources.items', [])
 	.factory('ItemResource', ['$http', function ($http){
-			var json = $http.get('/api/data.json').then(function (response){
+			var json = $http.get('./api/data.json').then(function (response){
 					return response.data;
 				});
 

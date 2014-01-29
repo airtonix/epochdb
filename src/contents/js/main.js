@@ -1,10 +1,10 @@
 // Import all the dependancies
-// require('../vendor/jquery/jquery');
-	// _.str = require('../vendor/underscore.string/lib/underscore.string');
 require('../vendor/angular/angular');
 require('../vendor/angular-route/angular-route');
 require('../vendor/angular-resource/angular-resource');
+require('../vendor/underscore/underscore');
 
+// import the application
 require('./resources/items');
 require('./controllers/search');
 require('./directives/items');

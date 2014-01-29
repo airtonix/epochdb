@@ -1,4 +1,3 @@
-_ = require('../../vendor/underscore/underscore');
 
 angular.module("epochdb.directives.items", [
 		'epochdb.resources.items'
