@@ -13,7 +13,6 @@ require(['angular', 'underscore'], function(angular, _){
 					};
 
 				this.template = function(path){
-					console.log(path)
 					return urls.template+path }
 				this.static = function(path){ return urls.static+path }
 				this.api = function(path){ return urls.api+path }
@@ -27,8 +26,5 @@ require(['angular', 'underscore'], function(angular, _){
 				this.$get = [function(){ return service; }]
 			})
 
-		.run(['$rootScope', 'AssetManager', function ($rootScope, AssetManager){
-				$rootScope.assets = AssetManager;
-			}])
 
 });

@@ -9,12 +9,12 @@
   "locals": {
     "baseUrl": "/epochdb/",
     "url": "http://airtonix.github.com/epochdb/",
-    "name": "Survivors Masonry DB",
+    "name": "EpochDB",
     "owner": {
       "name": "Zenobius Jiricek",
       "homepage": "http://zenobi.us/" 
     },
-    "description": "Search for items, parts and so forth."
+    "description": "dayz epoch item database"
   },
 
   "plugins": [

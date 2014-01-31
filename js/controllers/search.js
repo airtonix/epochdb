@@ -1,21 +1,25 @@
-require(['angular'], function(angular){
+require(['angular'], function (angular){
 
 	angular.module('epochdb.controllers.search', [
+			'ui.router',
 			'epochdb.resources.items'
 		])
 
 		.controller('SearchController', [
 			'$scope',
+			'$state',
+			'$stateParams',
 			'ItemResource',
-			function($scope, ItemResource){
-				ItemResource.query().then(function(data){
-					$scope.Query = '';
-					$scope.Collection = data;
-					$scope.Tags = _.uniq( _.flatten(_.pluck(data, 'tags')));
-
-					$scope.$on('item-query', function(scope, query){
-						$scope.Query = query;
-					})
+			function ($scope, $state, $stateParams, ItemResource){
+				var query = $stateParams;
+				
+				ItemResource.valueList('type').then(function (data){
+					$scope.Filters = data;
 				});
+
+				$scope.$watch('Query', function (value){
+					$scope.$emit('item-query', value)
+				})				
+
 			}])
 });

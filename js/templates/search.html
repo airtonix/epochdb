@@ -1,0 +1,17 @@
+
+<div id="item-filter" data-ng-controller="SearchController" class="large-6 columns large-centered">
+  <form data-ng-submit="search()" class="simple">
+    <div class="row rounded">
+      <div class="small-12 columns">
+        <input type="text" data-ng-model="Query" placeholder="Search Recipes and Items" data-result-count="{{ Collection | filter:Query | length }}" class="search"/>
+        <button type="submit">go</button>
+        <button data-ng-if="Query.length" data-ng-click="$parent.Query=''" class="simple-outline button postfix clear"><i class="icon-erase icon-2x"></i></button>
+      </div>
+      <div class="small-12 columns">
+        <dl class="sub-nav right">
+          <dd data-ng-repeat="filter in Filters"><a data-ng-click="$parent.Query=filter">{{ filter }}</a></dd>
+        </dl>
+      </div>
+    </div>
+  </form>
+</div>

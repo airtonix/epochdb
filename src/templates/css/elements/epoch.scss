@@ -1,6 +1,12 @@
-
 .epoch-item-summary{
 	position: relative; 
+ 	@include transition (width, 2.0s, ease-in-out);
+ 	margin-left: 0;
+ 	width: 100%;
+
+	.icon-areas{ @include icon($icon-map); }
+	.icon-tools{ @include icon($icon-wrench); }
+	.icon-components{ @include icon($icon-building); }
 
 	.button{
 		.label{
@@ -79,5 +85,15 @@
 	&.type-Area{
 		.epoch-item-name{ color: $shade4; }
 		.epoch-type-icon{ background: $shade4; }
+	}
+
+	&.active{
+		position: relative;
+		margin-left: -5%;
+		margin-top: -5%;
+		width: 110% !important;
+		border-bottom: 2px solid $tab-border-color;
+		background:  $tab-border-color;
+		margin-bottom: -2px;
 	}
 }

@@ -1,4 +1,4 @@
 ---
 title: home
-template: home.jade
+template: layout.jade
 ---

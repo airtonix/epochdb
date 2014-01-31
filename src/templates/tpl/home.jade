@@ -1,0 +1,9 @@
+.hero(data-ng-controller="HomeController")
+	.cell
+		.columns
+			h2: a(href="#{url}")= locals.name
+				small= locals.description
+
+		ng-include(src="assets.template('search.html')").row
+		ng-include(src="assets.template('list.html')").row
+		

@@ -6,7 +6,6 @@ require(['angular'], function(angular){
 
 		.directive('queryFilter', [function(){
 			return {
-				// controller: function($scope, $element, $attrs, $transclude) {},
 				restrict: 'A',
 				link: function($scope, iElm, iAttrs, controller) {
 					iElm.bind('mouseup touchend', function(event){
@@ -46,9 +45,15 @@ require(['angular'], function(angular){
 					$scope.Visible = false;
 					$scope.Panes = [];
 					$scope.Tabs = [];
+
 					$scope.$watch("Visible", function(value){
+						// $scope.$parent.Visible = value;
 						if(!value) $scope.$broadcast('close-panes')
 					})
+
+					// $element.bind("mouseup touchend", function(event){
+					// 	$scope.$emit("item-toggled", )
+					// })
 
 					angular.forEach(itemRelatedCollectionNames, function(value, key){
 						if(!$scope.Thing.hasOwnProperty(key)) return;
@@ -83,7 +88,6 @@ require(['angular'], function(angular){
 					$scope.Visible = false;
 					controller.addTab(pane, $scope)
 					$scope.$watch("Visible", function(value){
-						console.log("toggled", value)
 					})
 					$scope.$on("close-panes", function(){
 						$scope.Visible = false;

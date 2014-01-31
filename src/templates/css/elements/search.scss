@@ -1,0 +1,96 @@
+#item-filter{
+	form{
+		position: relative;
+		input[type='search'], input.search{
+			background: $input-bg-color;
+			border-size: 2px;
+			border-color: $input-border-color;
+			color: $input-text-color;
+			text-align: center;
+
+			position: relative;
+			margin: 0;
+
+			@include placeholder {
+				color: $input-placeholder-color;
+			}
+
+			&:before{
+				// content: attr(data-result-count) " items";
+				content:" items";
+
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 1em;
+				height: 1.6em;
+				margin-top: -0.8em;
+				padding: 0.3em; 
+
+				z-index: 100;
+				font-size: 0.8em;
+				font-weight: normal;
+				color: $input-text-color;
+				background: $input-placeholder-color;
+				@include border-radius(3px);
+			}
+
+		}
+		[type="submit"]{
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			font-size: 1px;
+			position: absolute;
+			top: 0.5em;
+			left: 50%;
+			padding: 0;
+			border: none;
+			background: none;
+			z-index: 0;
+		}
+		button.clear{
+			position: absolute;
+			right: 1em;
+			top: 0;
+			width: 5em;
+			color: $input-text-color;
+			background: none;
+			border: none;
+			z-index: 100;
+
+			[class*="icon-"]{
+				float: right;
+				padding-right: 0.4em;
+			}
+			&:focus{
+				border: none;
+				@include box-shadow(none);
+			}
+		}
+
+		.sub-nav{
+			margin: 0;
+			line-height: 1;
+			dd {
+				line-height: 1;
+				padding: 0;
+				margin: 0.2em;
+				a {
+					display: block;
+					padding: 0.4em;
+					margin: 0em;
+					@include border-radius(3px);
+					@include button-style-simple($border: $input-border-color, 
+												 $border-hover: $input-text-color,
+												 $text: $input-text-color,
+												 $text-hover: $input-border-color,
+												 $bg:  $input-border-color,
+												 $bg-hover: $input-text-color);
+
+				}
+			}
+		}
+	}
+
+}

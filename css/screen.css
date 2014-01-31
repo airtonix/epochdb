@@ -2,10 +2,197 @@
 	Project Font Imports
 	css/fonts.scss
  */
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,300);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?23511898');
+  src: url('../fonts/fontello.eot?23511898#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?23511898') format('woff'), url('../fonts/fontello.ttf?23511898') format('truetype'), url('../fonts/fontello.svg?23511898#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-2x {
+  font-size: 2em; }
+
+.icon-erase:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+.icon-erase:before {
+  content: "\e805"; }
+
+.icon-cog:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+.icon-cog:before {
+  content: "\e807"; }
+
+.icon-map:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+.icon-map:before {
+  content: "\e803"; }
+
+.icon-wrench:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+.icon-wrench:before {
+  content: "\e800"; }
+
+.icon-building:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+.icon-building:before {
+  content: "\e804"; }
+
+.icon-beaker:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+.icon-beaker:before {
+  content: "\e802"; }
+
 /*
 	Project Variables
 	css/config.scss
@@ -3873,7 +4060,7 @@ meta.foundation-mq-topbar {
         line-height: 33px;
         padding: 0;
         padding-right: 25px;
-        color: #2e2f41;
+        color: #63668c;
         position: relative; }
         .top-bar .toggle-topbar.menu-icon a::after {
           content: "";
@@ -3883,18 +4070,18 @@ meta.foundation-mq-topbar {
           width: 16px;
           top: 0;
           height: 0;
-          -webkit-box-shadow: 0 10px 0 1px #2e2f41, 0 16px 0 1px #2e2f41, 0 22px 0 1px #2e2f41;
-          box-shadow: 0 10px 0 1px #2e2f41, 0 16px 0 1px #2e2f41, 0 22px 0 1px #2e2f41; }
+          -webkit-box-shadow: 0 10px 0 1px #63668c, 0 16px 0 1px #63668c, 0 22px 0 1px #63668c;
+          box-shadow: 0 10px 0 1px #63668c, 0 16px 0 1px #63668c, 0 22px 0 1px #63668c; }
   .top-bar.expanded {
     height: auto;
     background: transparent; }
     .top-bar.expanded .title-area {
       background: #262732; }
     .top-bar.expanded .toggle-topbar a {
-      color: #2e2f41; }
+      color: #63668c; }
       .top-bar.expanded .toggle-topbar a span {
-        -webkit-box-shadow: 0 10px 0 1px #2e2f41, 0 16px 0 1px #2e2f41, 0 22px 0 1px #2e2f41;
-        box-shadow: 0 10px 0 1px #2e2f41, 0 16px 0 1px #2e2f41, 0 22px 0 1px #2e2f41; }
+        -webkit-box-shadow: 0 10px 0 1px #63668c, 0 16px 0 1px #63668c, 0 22px 0 1px #63668c;
+        box-shadow: 0 10px 0 1px #63668c, 0 16px 0 1px #63668c, 0 22px 0 1px #63668c; }
 
 .top-bar-section {
   left: 0;
@@ -4451,7 +4638,7 @@ a.menu-icon {
   display: block;
   line-height: 2.0625rem;
   padding: 0;
-  color: #2e2f41;
+  color: #63668c;
   position: relative; }
   a.menu-icon span {
     position: absolute;
@@ -4829,58 +5016,64 @@ body {
   background-color: #262732; }
   body form textarea.vertical {
     resize: vertical; }
-  body form input[type="text"] {
+  body form input[type="search"], body form input[type="text"] {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
     border: 2px solid #005a55; }
-  body form.simple textarea, body form.simple input, body form.simple button {
+  body form.simple textarea, body form.simple input[type="search"], body form.simple input[type="text"], body form.simple button {
     position: relative;
     z-index: 1; }
-    body form.simple textarea:focus, body form.simple input:focus, body form.simple button:focus {
+    body form.simple textarea:focus, body form.simple input[type="search"]:focus, body form.simple input[type="text"]:focus, body form.simple button:focus {
       z-index: 2;
       outline: none;
+      background: none;
+      border-color: none;
       -webkit-appearance: none;
       outline-color: transparent;
       outline-style: none;
       -webkit-box-shadow: 0 0 0px 2px #26726e;
       -moz-box-shadow: 0 0 0px 2px #26726e;
       box-shadow: 0 0 0px 2px #26726e; }
-  body form .collapse.rounded input {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px; }
-  body form .collapse.rounded .postfix {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px; }
+  body form .rounded input {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
+  body form .rounded.collapse input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  body form .rounded.collapse .postfix {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
   body .text-centered {
     text-align: center; }
-  body header nav.top-bar {
+  body header {
     position: absolute;
-    width: 100%;
-    border-bottom: 1px solid #2e2f41; }
-    body header nav.top-bar .toggle-topbar.menu-icon {
-      -webkit-border-radius: 2px;
-      border-radius: 2px;
-      -webkit-box-shadow: 0 1px 0 #2e2f41;
-      -moz-box-shadow: 0 1px 0 #2e2f41;
-      box-shadow: 0 1px 0 #2e2f41;
-      border: 1px solid #2e2f41;
-      padding: 0 1em 0 1em;
-      text-align: left; }
-      body header nav.top-bar .toggle-topbar.menu-icon:after {
-        margin-right: 1em; }
-    body header nav.top-bar.expanded .toggle-topbar.menu-icon {
-      border-color: white;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none; }
-    body header nav.top-bar.expanded .top-bar-section {
-      overflow: auto;
-      margin-bottom: 1em;
-      border-bottom: 1px solid #cccccc;
-      -webkit-box-shadow: 0 5px 9px 0px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: 0 5px 9px 0px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 5px 9px 0px rgba(0, 0, 0, 0.1); }
+    width: 100%; }
+    body header nav.top-bar {
+      width: 100%;
+      z-index: 100;
+      margin-bottom: 0em;
+      border-bottom: 2px solid #2e2f41; }
+      body header nav.top-bar .top-bar-section ul {
+        margin-top: -2px; }
+        body header nav.top-bar .top-bar-section ul .divider {
+          border-right-color: #2e2f41; }
+      body header nav.top-bar .toggle-topbar.menu-icon {
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        padding: 0 1em 0 1em;
+        text-align: left; }
+        body header nav.top-bar .toggle-topbar.menu-icon:after {
+          margin-right: 1em; }
+      body header nav.top-bar.expanded .toggle-topbar.menu-icon {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none; }
+      body header nav.top-bar.expanded .top-bar-section {
+        overflow: auto; }
+        body header nav.top-bar.expanded .top-bar-section .divider {
+          border-top-color: #2e2f41; }
   body .hero {
     text-align: center;
     width: 100%;
@@ -4894,14 +5087,17 @@ body {
     display: inline-block; }
     body ul.button-group.simple-outline li a.button {
       background: none;
-      border: 2px solid #2e2f41;
-      color: #cccccc;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #2e2f41;
+      color: #63668c;
       text-transform: uppercase;
       font-size: 10px;
       border-right: none; }
       body ul.button-group.simple-outline li a.button:hover {
+        border-color: #2e2f41;
         background: #2e2f41;
-        color: #eeeeee; }
+        color: #333333; }
     body ul.button-group.simple-outline li:last-child a.button {
       border-right: 2px solid #2e2f41; }
     body ul.button-group.simple-outline.rounded li:first-child a.button {
@@ -4924,13 +5120,16 @@ body {
           border-bottom: 2px solid #2e2f41; }
   body .button.simple-outline, body button.simple-outline {
     background: none;
-    border: 2px solid #2e2f41;
-    color: #cccccc;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #2e2f41;
+    color: #63668c;
     text-transform: uppercase;
     font-size: 10px; }
     body .button.simple-outline:hover, body button.simple-outline:hover {
+      border-color: #2e2f41;
       background: #2e2f41;
-      color: #eeeeee; }
+      color: #333333; }
   body .button.button-block, body button.button-block {
     width: 100%;
     display: block; }
@@ -4960,7 +5159,87 @@ body {
       body .tabs.simple-outline > dd:last-child {
         border-right: 2px solid #2e2f41; }
   body .epoch-item-summary {
-    position: relative; }
+    position: relative;
+    -webkit-transition: width, 2s, ease-in-out;
+    -moz-transition: width, 2s, ease-in-out;
+    transition: width, 2s, ease-in-out;
+    margin-left: 0;
+    width: 100%; }
+    body .epoch-item-summary .icon-areas:before {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+    body .epoch-item-summary .icon-areas:before {
+      content: "\e803"; }
+    body .epoch-item-summary .icon-tools:before {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+    body .epoch-item-summary .icon-tools:before {
+      content: "\e800"; }
+    body .epoch-item-summary .icon-components:before {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+    body .epoch-item-summary .icon-components:before {
+      content: "\e804"; }
     body .epoch-item-summary .button .label {
       margin-right: 0.3em; }
     body .epoch-item-summary .epoch-item-name, body .epoch-item-summary .epoch-item-description {
@@ -5022,11 +5301,108 @@ body {
       color: #8f2041; }
     body .epoch-item-summary.type-Area .epoch-type-icon {
       background: #8f2041; }
+    body .epoch-item-summary.active {
+      position: relative;
+      margin-left: -5%;
+      margin-top: -5%;
+      width: 110% !important;
+      border-bottom: 2px solid #2e2f41;
+      background: #2e2f41;
+      margin-bottom: -2px; }
+  body #item-filter form {
+    position: relative; }
+    body #item-filter form input[type='search'], body #item-filter form input.search {
+      background: #222222;
+      border-size: 2px;
+      border-color: #005a55;
+      color: #00b6ad;
+      text-align: center;
+      position: relative;
+      margin: 0; }
+      body #item-filter form input[type='search']::-webkit-input-placeholder, body #item-filter form input.search::-webkit-input-placeholder {
+        color: #005a55; }
+      body #item-filter form input[type='search']:-moz-placeholder, body #item-filter form input.search:-moz-placeholder {
+        color: #005a55; }
+      body #item-filter form input[type='search']::-moz-placeholder, body #item-filter form input.search::-moz-placeholder {
+        color: #005a55; }
+      body #item-filter form input[type='search']:-ms-input-placeholder, body #item-filter form input.search:-ms-input-placeholder {
+        color: #005a55; }
+      body #item-filter form input[type='search']:before, body #item-filter form input.search:before {
+        content: " items";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 1em;
+        height: 1.6em;
+        margin-top: -0.8em;
+        padding: 0.3em;
+        z-index: 100;
+        font-size: 0.8em;
+        font-weight: normal;
+        color: #00b6ad;
+        background: #005a55;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px; }
+    body #item-filter form [type="submit"] {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      font-size: 1px;
+      position: absolute;
+      top: 0.5em;
+      left: 50%;
+      padding: 0;
+      border: none;
+      background: none;
+      z-index: 0; }
+    body #item-filter form button.clear {
+      position: absolute;
+      right: 1em;
+      top: 0;
+      width: 5em;
+      color: #00b6ad;
+      background: none;
+      border: none;
+      z-index: 100; }
+      body #item-filter form button.clear [class*="icon-"] {
+        float: right;
+        padding-right: 0.4em; }
+      body #item-filter form button.clear:focus {
+        border: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none; }
+    body #item-filter form .sub-nav {
+      margin: 0;
+      line-height: 1; }
+      body #item-filter form .sub-nav dd {
+        line-height: 1;
+        padding: 0;
+        margin: 0.2em; }
+        body #item-filter form .sub-nav dd a {
+          display: block;
+          padding: 0.4em;
+          margin: 0em;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          background: #005a55;
+          border-width: 2px;
+          border-style: solid;
+          border-color: #005a55;
+          color: #00b6ad;
+          text-transform: uppercase;
+          font-size: 10px; }
+          body #item-filter form .sub-nav dd a:hover {
+            border-color: #00b6ad;
+            background: #00b6ad;
+            color: #005a55; }
   body #content {
     height: 100%;
     width: 100%;
     display: table;
-    padding-top: 3em; }
+    padding-top: 4em; }
   body #site-footer {
     display: block;
     clear: both;
@@ -5050,13 +5426,13 @@ body {
       color: #333333;
       background: white;
       border: none; }
-      body .avgrund-popin form.contact input ::-webkit-input-placeholder, body .avgrund-popin form.contact textarea ::-webkit-input-placeholder {
+      body .avgrund-popin form.contact input::-webkit-input-placeholder, body .avgrund-popin form.contact textarea::-webkit-input-placeholder {
         color: #333333; }
-      body .avgrund-popin form.contact input :-moz-placeholder, body .avgrund-popin form.contact textarea :-moz-placeholder {
+      body .avgrund-popin form.contact input:-moz-placeholder, body .avgrund-popin form.contact textarea:-moz-placeholder {
         color: #333333; }
-      body .avgrund-popin form.contact input ::-moz-placeholder, body .avgrund-popin form.contact textarea ::-moz-placeholder {
+      body .avgrund-popin form.contact input::-moz-placeholder, body .avgrund-popin form.contact textarea::-moz-placeholder {
         color: #333333; }
-      body .avgrund-popin form.contact input :-ms-input-placeholder, body .avgrund-popin form.contact textarea :-ms-input-placeholder {
+      body .avgrund-popin form.contact input:-ms-input-placeholder, body .avgrund-popin form.contact textarea:-ms-input-placeholder {
         color: #333333; }
     body .avgrund-popin form.contact textarea {
       min-height: 15em;
@@ -5072,36 +5448,18 @@ body {
       color: #333333;
       margin: 0 auto; }
 
-body#home .hero {
-  min-height: inherit;
-  margin-bottom: 1em; }
-  body#home .hero h2 {
+body[id^="app"] .hero {
+  margin-bottom: 1em;
+  display: inherit;
+  height: 100%; }
+  body[id^="app"] .hero h2 {
     display: block; }
-    body#home .hero h2 a {
+    body[id^="app"] .hero h2 a {
       color: white; }
-    body#home .hero h2 small {
+    body[id^="app"] .hero h2 small {
       display: block;
       line-height: 1; }
-body#home form.item-filter input[type="text"], body#home form.item-filter [type="submit"] {
-  background: #222222;
-  border-color: #005a55;
-  color: #00b6ad; }
-  body#home form.item-filter input[type="text"] ::-webkit-input-placeholder, body#home form.item-filter [type="submit"] ::-webkit-input-placeholder {
-    color: #005a55; }
-  body#home form.item-filter input[type="text"] :-moz-placeholder, body#home form.item-filter [type="submit"] :-moz-placeholder {
-    color: #005a55; }
-  body#home form.item-filter input[type="text"] ::-moz-placeholder, body#home form.item-filter [type="submit"] ::-moz-placeholder {
-    color: #005a55; }
-  body#home form.item-filter input[type="text"] :-ms-input-placeholder, body#home form.item-filter [type="submit"] :-ms-input-placeholder {
-    color: #005a55; }
-body#home form.item-filter .result-count {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  z-index: 10;
-  font-size: 0.8em;
-  font-weight: normal;
-  color: #005a55; }
-body#home form.item-filter [type="submit"] {
-  background: #005a55;
-  color: #00b6ad; }
+
+body#app-items .hero {
+  height: 1em;
+  min-height: inherit; }

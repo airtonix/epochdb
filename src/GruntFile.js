@@ -15,11 +15,20 @@ module.exports = function(grunt) {
           config: './config.development.json'
         }
       }
-    } 
+    },
+    clean: {
+      dev:{
+        src:[
+          "../*",
+          "!../src",
+          ]
+      }
+    }
   });
 
   // Load NPM Task
   grunt.loadNpmTasks('grunt-wintersmith');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('dev', ['wintersmith:preview']);
   grunt.registerTask('build', ['wintersmith:production']);

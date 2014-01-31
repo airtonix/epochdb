@@ -5,15 +5,16 @@
     "**/test/",
     "**/test/*"
   ],
+  "port": 8000,
   "locals": {
     "baseUrl": "/",
-    "url": "http://nova.zenobi.us:8080/",
-    "name": "Survivors Masonry DB",
+    "url": "http://nova.zenobi.us:8000/",
+    "name": "EpochDB",
     "owner": {
       "name": "Zenobius Jiricek",
       "homepage": "http://zenobi.us/" 
     },
-    "description": "Search for items, parts and so forth."
+    "description": "dayz epoch item database"
   },
 
   "plugins": [

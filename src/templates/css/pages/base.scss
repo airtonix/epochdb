@@ -23,7 +23,7 @@ body {
 		width: 100%;
 		display: table;
 		// margin-bottom: -(rem-calc(250)) ;
-		padding-top: 3em;
+		padding-top: 4em;
 	}
 
 	#site-footer {
@@ -83,3 +83,28 @@ body {
 
 }
 
+body[id^="app"]{
+	.hero{
+		margin-bottom: 1em;
+		display: inherit;
+		height: 100%;
+
+		h2{
+			display: block;
+			a{
+				color: white;
+			}
+			small{
+				display: block;
+				line-height: 1;
+			}
+		}
+	}	
+}
+
+body#app-items{
+	.hero{
+		height: 1em;
+		min-height: inherit;
+	}
+}

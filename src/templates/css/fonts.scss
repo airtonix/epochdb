@@ -3,7 +3,78 @@
 	css/fonts.scss
  */
 
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,300);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?23511898');
+  src: url('../fonts/fontello.eot?23511898#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?23511898') format('woff'),
+       url('../fonts/fontello.ttf?23511898') format('truetype'),
+       url('../fonts/fontello.svg?23511898#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+$icon-erase: '\e805';
+$icon-map: '\e803';
+$icon-cog: '\e807';
+$icon-wrench: '\e800';
+$icon-building: '\e804';
+$icon-beaker: '\e802';
+
+@mixin fontello(){
+	&:before {
+		font-family: "fontello";
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+
+		display: inline-block;
+		text-decoration: inherit;
+		width: 1em;
+		margin-right: .2em;
+		text-align: center;
+		/* opacity: .8; */
+
+		/* For safety - reset parent styles, that can break glyph codes*/
+		font-variant: normal;
+		text-transform: none;
+		 
+		/* fix buttons height, for twitter bootstrap */
+		line-height: 1em;
+
+		/* Animation center compensation - margins should be symmetric */
+		/* remove if not needed */
+		margin-left: .2em;
+
+		/* you can be more comfortable with increased icons size */
+		/* font-size: 120%; */
+
+		/* Uncomment for 3D effect */
+		/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+	}
+}
+
+@mixin icon($icon){
+	@include fontello();
+	&:before { content: "#{$icon}"; }
+}
+
+[class^="icon-"], [class*=" icon-"]{
+	@include fontello();
+}
+
+.icon-2x{
+	font-size: 2em;
+}
+
+.icon-erase					{ @include icon($icon-erase); }
+.icon-cog					{ @include icon($icon-cog); }
+.icon-map					{ @include icon($icon-map); }
+.icon-wrench				{ @include icon($icon-wrench); }
+.icon-building				{ @include icon($icon-building); }
+.icon-beaker				{ @include icon($icon-beaker); }

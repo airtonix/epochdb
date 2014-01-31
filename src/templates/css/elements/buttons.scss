@@ -1,12 +1,15 @@
-@mixin button-style-simple($color){
-	background: none;
-	border: 2px solid $color;
-	color: #ccc;
+@mixin button-style-simple($border: $button-border-color, $border-hover: $button-border-color, $text: $button-text-color, $text-hover: #333, $bg: none, $bg-hover: $button-hover-color ){
+	background: $bg;
+	border-width: 2px;
+	border-style: solid;
+	border-color: $border;
+	color: $text;
 	text-transform: uppercase;
 	font-size: 10px;
 	&:hover{
-		background: $button-hover-color;
-		color: #eee;
+		border-color: $border-hover;
+		background: $bg-hover;
+		color: $text-hover;
 	}
 }
 

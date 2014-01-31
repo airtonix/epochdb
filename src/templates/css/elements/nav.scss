@@ -1,30 +1,43 @@
-header nav.top-bar{
+header{
 	position: absolute;
 	width: 100%;
-	border-bottom: 1px solid $topbar-menu-border-color;
+	
+	nav.top-bar{
+		width: 100%;
+		z-index: 100;
+		margin-bottom: 0em;
+		border-bottom: 2px solid $topbar-menu-border-color;
+		// @include box-shadow(0 5px 5px rgba(black, 0.2));
 
-	.toggle-topbar.menu-icon{
-		@include radius(2px);
-		@include box-shadow(0 1px 0 $topbar-menu-border-color);
-		border: 1px solid $topbar-menu-border-color;
-		padding:0 1em 0 1em;
-		text-align: left;
-		&:after{
-			margin-right: 1em;
+
+		.top-bar-section ul{
+			margin-top: -2px;
+			.divider{
+				border-right-color: $topbar-menu-border-color;
+			}
 		}
-	}
 
-	&.expanded{
 		.toggle-topbar.menu-icon{
-			border-color:white;
-			@include box-shadow(none);
+			@include radius(2px);
+			padding:0 1em 0 1em;
+			text-align: left;
+			&:after{
+				margin-right: 1em;
+			}
 		}
 
-		.top-bar-section{
-			overflow: auto;
-			margin-bottom: 1em;
-			border-bottom: 1px solid #ccc;
-			@include box-shadow(0 5px 9px 0px rgba(black, 0.1))
+		&.expanded{
+			.toggle-topbar.menu-icon{
+				@include box-shadow(none);
+			}
+
+			.top-bar-section{
+				overflow: auto;
+				.divider{
+					border-top-color: $topbar-menu-border-color;
+				}
+
+			}
 		}
 	}
 }

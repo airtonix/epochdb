@@ -1,60 +1,53 @@
-require(['angular'], function(angular){
+require(['angular', 'underscore'], function (angular, _){
+
+
+var Class = function(){ 
+
+	var klass = function(){
+		this.init.apply(this, arguments); 
+	};
+
+	klass.prototype.init = function(){};
+
+	// Shortcut to access prototype 
+	klass.fn = klass.prototype;
+
+	// Shortcut to access class 
+	klass.fn.parent = klass;
+}
 
 	angular.module('epochdb.resources.items', [])
 		.factory('ItemResource', ['$http', function ($http){
-				var json = $http.get('./api/data.json').then(function (response){
-						return response.data;
-					});
-
-				var Item = function(data) {
-						if (data) angular.copy(data, this);
-					};
-
-				/*
-					Factory methods
-				 */
-				
-				// The query function returns an promise that resolves to
-				// an array of Items, one for each in the JSON.
-				Item.query = function(attr, value) {
-					return json.then(function(data) {
-						var operator = null;
-						var attribute = "id";
-
-						if(attr){
-							bits = attr.indexOf("__")>0?attr.split("__"):[attr];
-							attribute = bits[0];
-							if(bits.length>1) operator = bits[1];
-						}
-
-						return data.map(function(item) {
-							if(!operator && item[attribute] == value){
-								
-							}else if(operator == "startswith" ){
-
-							}
-							return new Item(item);
-							});
-						});
-
-					};
-
-				// The get function returns a promise that resolves to a
-				// specific item, found by ID. We find it by looping
-				// over all of them and checking to see if the IDs match.
-				Item.get = function(id) {
-					return json.then(function(data) {
-							var result = null;
-							angular.forEach(data, function(item) {
-								if (item.id == id) result = new Item(item);
-							});
-							return result;
+			var json = $http.get('./api/data.json').then(function (response){
+							return response.data;
 						})
-					};
 
-			// Finally, the factory itself returns the entire contructor
-			return Item;
+			var Model = function (data) {
+				if(data) _.extend(this, data);
+			}
 
-		}]);
+			Model.filter = function (query){
+				return json.then(function(data){
+					if(!query) return data;
+					return _.where(data, query)
+				})
+			}
+			Model.get = function (id){
+				return json.then(function(data){
+					return _.findWhere(json, { 'id': id })
+				})
+			}
 
+			Model.valueList = function (key){
+				return json.then(function (data) {
+						return _.uniq(
+									_.compact(
+										_.flatten(
+											_.pluck(data, key))))
+					})
+			}
+
+			return Model;
+
+		}])
 });

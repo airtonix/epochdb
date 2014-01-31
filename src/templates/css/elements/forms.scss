@@ -4,18 +4,24 @@ form{
 			resize: vertical;
 		}
 	}
+	input[type="search"],
 	input[type="text"]{
 		@include box-shadow(none);
 		border: 2px solid $input-border-color;
 	}
 
 	&.simple{
-		textarea, input, button{
+		textarea,
+		input[type="search"],
+		input[type="text"],
+		button{
 			position: relative;
 			z-index: 1;
 			&:focus {
 				z-index: 2;
 				outline: none;
+				background: none;
+				border-color: none;
 				-webkit-appearance: none;
 				outline-color: transparent;
 				outline-style: none;
@@ -24,12 +30,18 @@ form{
 		}
 	}
 
-	.collapse.rounded{
+	.rounded{
 		input{
-			@include border-left-radius(3px); 
+			@include border-radius(3px); 
 		}
-		.postfix{
-			@include border-right-radius(3px); 
+		&.collapse{
+			input{
+				@include border-right-radius(0); 
+			}
+			.postfix{
+				@include border-left-radius(0); 
+			}
+			
 		}
 	}
 }

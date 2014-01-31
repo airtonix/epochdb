@@ -2,6 +2,7 @@
 	"id": 1,
 	"name": "Crowbar",
 	"slug": "ItemCrowbar",
+	"type": "Tool",
 	"tags": ["Tool"],
 	"description": "",
 	"requiredFor": [
@@ -33,6 +34,7 @@
 	"id": 2,
 	"name": "Toolbox",
 	"slug": "ItemToolbox",
+	"type": "Tool",
 	"tags": ["Tool"],
 	"description": "",
 	"requiredFor": [
@@ -63,6 +65,7 @@
 	"id": 3,
 	"name": "Sledgehammer",
 	"slug": "ItemSledgehammer",
+	"type": "Tool",
 	"tags": ["Tool"],
 	"description": "",
 	"requiredFor": [
@@ -72,6 +75,7 @@
 	"id": 4,
 	"name": "Workbench",
 	"slug": "ItemWorkbench",
+	"type": "Area",
 	"tags": ["Tool"],
 	"description": "",
 	"requiredComponents": {
@@ -107,6 +111,7 @@
 	"id": 5,
 	"name": "ETool",
 	"slug": "ItemETool",
+	"type": "Tool",
 	"tags": ["Tool"],
 	"description": ""
 },
@@ -114,6 +119,7 @@
 	"id": 6,
 	"name": "Matches",
 	"slug": "ItemMatches",
+	"type": "Tool",
 	"tags": ["Tool"],
 	"description": ""
 },
@@ -121,6 +127,7 @@
 	"id": 7,
 	"name": "Knife",
 	"slug": "ItemKnife",
+	"type": "Tool",
 	"tags": ["Tool"],
 	"description": ""
 },
@@ -128,6 +135,7 @@
 	"id": 8,
 	"name": "Fireplace",
 	"slug": "Fire",
+	"type": "Area",
 	"tags": ["Tool", "Area"],
 	"description": ""
 },
@@ -143,8 +151,9 @@
 	"id": 100,
 	"name": "Small Wooden Wall (1/3 height)",
 	"slug": "ItemWoodWallThird",
+	"type": "Component",
+	"tags": ["Building"],
 	"description": "",
-	"tags": ["Component", "Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -162,7 +171,8 @@
 	"name": "Small Wooden Wall",
 	"description": "",
 	"slug": "ItemWoodWall",
-	"tags": ["Component", "Building"],
+	"type": "Component",
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -179,7 +189,8 @@
 	"name": "Large Wooden Wall",
 	"slug": "ItemWoodWallLg",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"type": "Component",
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -198,7 +209,8 @@
 	"name": "Small Wooden Wall with Door",
 	"slug": "ItemWoodWallDoor",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"type": "Component",
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -212,10 +224,11 @@
 },
 {
 	"id": 104,
-	"name": "Large Wooden Wall with Door",
+	"name": "Large Wooden Doorway",
 	"slug": "ItemWoodWallDoorLg",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"type": "Component",
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -229,10 +242,11 @@
 },
 {
 	"id": 105,
-	"name": "Small Wooden Wall with Locked Door",
+	"name": "Small Wooden Doorway Locked",
 	"slug": "ItemWoodWallWithDoorLocked",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"type": "Component",
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -247,10 +261,10 @@
 },
 {
 	"id": 106,
-	"name": "Large Wooden Wall with Locked Door",
+	"name": "Large Wooden Doorway Locked",
 	"slug": "ItemWoodWallWithDoorLgLocked",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -265,10 +279,10 @@
 },
 {
 	"id": 107,
-	"name": "Small Woodend Wall with Window",
+	"name": "Window in Small Wooden Wall",
 	"slug": "ItemWoodWallWindow",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -283,10 +297,10 @@
 },
 {
 	"id": 108,
-	"name": "Large Wooden Wall with Window",
+	"name": "Window in Large Wooden Wall",
 	"slug": "ItemWoodWallWindowLg",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -301,10 +315,10 @@
 },
 {
 	"id": 109,
-	"name": "Small Wooden Wall with Garage Door",
+	"name": "Small Wooden Garage Doorway",
 	"slug": "ItemWoodWallGarageDoor",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -318,10 +332,10 @@
 },
 {
 	"id": 110,
-	"name": "Small Wooden Wall with Lockable Garage Door",
+	"name": "Small Wooden Garage Door (locked)",
 	"slug": "ItemWoodWallGarageDoorLocked",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -341,7 +355,7 @@
 	"name": "1/4 Wooden Floor",
 	"slug": "ItemWoodFloorQuarter",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -359,7 +373,7 @@
 	"name": "1/2 Wooden Floor",
 	"slug": "ItemWoodFloorHalf",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -376,7 +390,7 @@
 	"name": "Full Wooden Floor",
 	"slug": "ItemWoodFloor",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -393,7 +407,7 @@
 	"name": "Metal Floor",
 	"slug": "MetalFloor",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -415,7 +429,7 @@
 	"name": "1/2 Cinder Wall",
 	"slug": "CinderWallHalf",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -430,10 +444,10 @@
 },
 {
 	"id": 116,
-	"name": "Full Cinder Wall",
+	"name": "Cinder Wall",
 	"slug": "CinderWall",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -449,10 +463,10 @@
 },
 {
 	"id": 117,
-	"name": "Full Cinder Wall with Garage Doorway",
+	"name": "Cinder Garage Doorway",
 	"slug": "CinderWallGarageDoorway",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -468,10 +482,10 @@
 },
 {
 	"id": 118,
-	"name": "Full Cinder Wall with Locked Garage Door",
+	"name": "Cinder Garage Door (Locked)",
 	"slug": "CinderWallGarageDoorLocked",
 	"description": "",
-	"tags": ["Component", "Building", "Upgrade"],
+	"tags": ["Building", "Upgrade"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -492,7 +506,7 @@
 	"name": "Wooden Ladder",
 	"slug": "ItemWoodLadder",
 	"description": "",
-	"tags": ["Component", "Building"],
+	"tags": ["Building"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -510,8 +524,8 @@
 	"name": "Wooden Stairs",
 	"slug": "ItemWoodStairs",
 	"description": "",
-	"tags": ["Component", "Building"],
-	"from": ["Crafted"],
+	"tags": ["Building"],
+	"source": ["Crafting"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -525,11 +539,11 @@
 },
 {
 	"id": 121,
-	"name": "Wooden Stairs with Support",
+	"name": "Wooden Stairs (Supported)",
 	"slug": "ItemWoodStairsSupport",
 	"description": "",
-	"tags": ["Component", "Building"],
-	"from": ["Crafted"],
+	"tags": ["Building"],
+	"source": ["Crafting"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -547,8 +561,8 @@
 	"name": "Metal Pole",
 	"slug": "ItemPole",
 	"description": "",
-	"tags": ["Component"],
-	"from": ["Looted", "Crafted"],
+	"tags": [],
+	"source": ["Looted", "Crafting"],
 	"requiredToCraftNear": {
 		"api/8": "3m"
 	},
@@ -565,71 +579,73 @@
 	"id": 300,
 	"slug": "PartScrapMetal",
 	"name": "Scrap Metal",
-	"tags": ["Component"],
-	"from": ["looted", "purchased"]
+	"tags": [],
+	"source": ["looted", "purchased"]
 },
 {
 	"id": 301,
 	"name": "Tank Trap",
-	"tags": ["Component"],
-	"from": ["looted", "purchased"],
+	"tags": [],
+	"source": ["looted", "purchased"],
 	"slug": "PartTankTrap"
 },
 {
 	"id": 302,
 	"slug": "PartWire",
 	"name": "Wire",
-	"from": ["looted", "purchased"],
-	"tags": ["Component"]
+	"type": "Raw",
+	"tags": [],
+	"source": ["looted", "purchased"]
 },
 {
 	"id": 303,
 	"name": "Wood Pile",
-	"tags": ["Component"],
-	"from": ["looted"],
+	"type": "Raw",
+	"tags": [],
+	"source": ["Harvested"],
 	"slug": "PartWoodPile"
 },
 {
 	"id": 304,
-	"name": "Toiletpaper",
-	"tags": ["Component"],
-	"from": ["looted"],
+	"name": "Toilet paper",
+	"tags": [],
+	"source": ["looted"],
 	"slug": "ItemTrashToiletpaper"
 },
 {
 	"id": 305,
 	"name": "Light Bulb",
-	"tags": ["Component"],
-	"from": ["looted"],
+	"tags": [],
+	"source": ["looted"],
 	"slug": "ItemLightBulb"
 },
 {
 	"id": 306,
 	"name": "Combination Lock",
-	"tags": ["Component"],
-	"from": ["looted"],
+	"tags": [],
+	"source": ["looted"],
 	"slug": "ItemComboLock"
 },
 {
 	"id": 307,
 	"slug": "PartGlass",
 	"name": "Car Glass Pane",
-	"tags": ["Component"],
-	"from": ["looted"]
+	"tags": [],
+	"source": ["looted"]
 },
 {
 	"id": 308,
 	"slug": "CinderBlocks",
 	"name": "Cinder Blocks",
-	"tags": ["Component"],
-	"from": ["looted", "purchased"]
+	"tags": [],
+	"source": ["looted", "purchased"]
 },
 {
 	"id": 309,
 	"slug": "MortarBucket",
 	"name": "Mortar Bucket",
-	"tags": ["Component"],
-	"from": ["looted", "purchased"]
+	"tags": [],
+	"source": ["looted", "purchased"]
 },
 
 {
@@ -637,7 +653,7 @@
 	"name": "Burlap",
 	"slug": "ItemBurlap",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -654,7 +670,7 @@
 	"name": "Canvas",
 	"slug": "ItemCanvas",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -671,7 +687,7 @@
 	"name": "Corrugated Fence",
 	"slug": "ItemCorrugated",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/8": "3m"
 	},
@@ -690,7 +706,7 @@
 	"name": "Wood Lumber",
 	"slug": "PartWoodLumber",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/8": "3m"
 	},
@@ -707,7 +723,7 @@
 	"name": "Wood Lumber Pack",
 	"slug": "PartWoodLumberPack",
 	"description": "three pieces of wood lumber. Used to save inventory space.",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": null,
 	"requiredTools":  {
 		"api/2": 1,
@@ -722,7 +738,7 @@
 	"name": "Plywood",
 	"slug": "PartWoodPlywood",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/8": "3m"
 	},
@@ -738,7 +754,7 @@
 	"name": "Sandbag",
 	"slug": "ItemSandbag",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/9": "3m"
 	},
@@ -755,7 +771,7 @@
 	"name": "Large Sandbag",
 	"slug": "ItemSandbagLarge",
 	"description": "",
-	"tags": ["Component"],
+	"tags": [],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},
@@ -828,7 +844,7 @@
 	"name": "Storage Crate",
 	"slug": "bulk_empty",
 	"description": "",
-	"tags": ["Component", "Storage"],
+	"tags": ["Storage"],
 	"requiredToCraftNear": {
 		"api/4": "3m"
 	},

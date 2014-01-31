@@ -1,74 +1,89 @@
 require.config({
-    paths: {
-        'angular': '../vendor/angular/angular',
+	paths: {
+		'angular': '../vendor/angular/angular',
 		'angular-route': '../vendor/angular-route/angular-route',
 		'angular-resource': '../vendor/angular-resource/angular-resource',
-		'angular-ui-router': '../vendor/angular-ui-router/angular-ui-router',
-		'underscore': '../vendor/underscore/underscore'
-    },
-    shim : {
-    	'underscore': { exports: '_' },
-    	'angular': { exports: 'angular' },
-    	'angular-route': { deps: ['angular', ]},
-    	'angular-resource': { deps: ['angular', ]},
-    	'angular-ui-router': { deps: ['angular', ]}
-    }
+		'angular-ui-router': '../vendor/angular-ui-router/release/angular-ui-router.min',
+		'underscore': '../vendor/underscore/underscore',
+			'underscore.string': '../vendor/underscore.string/dist/underscore.string.min',
+
+		'epochdb': 'app',
+		'epochdb-directives': 'directives',
+			'epochdb-directives-assets': 'directives/assets',
+			'epochdb-directives-items': 'directives/items',
+			'epochdb-directives-foundation': 'directives/foundation',
+
+		'epochdb-controllers': 'controllers',
+			'epochdb-controllers-home': 'controllers/home',
+			'epochdb-controllers-search': 'controllers/search',
+			'epochdb-controllers-list': 'controllers/list',
+			'epochdb-controllers-detail': 'controllers/detail',
+
+		'epochdb-filters': 'filters',
+			'epochdb-filters-string': 'filters/string',
+
+		'epochdb-resources': 'resources',
+			'epochdb-resources-items': 'resources/items'
+
+
+	},
+
+	shim : {
+		'underscore': {
+			exports: '_',
+			deps: ['underscore.string'],
+			init: function(UnderscoreString) {
+				_.mixin(UnderscoreString);
+			}
+		},
+		'angular': { exports: 'angular' },
+		'angular-resource': { deps: ['angular']},
+		'angular-ui-router': { deps: ['angular']},
+
+
+		/* Crazy Dependancy Graph */
+		'epochdb': { deps: [
+				'angular',
+				'underscore',
+				'angular-ui-router',
+				'angular-resource',
+
+				'epochdb-resources',
+				'epochdb-controllers',
+				'epochdb-directives',
+				'epochdb-filters'
+			]},
+		'epochdb-resources': { deps: [
+				'epochdb-resources-items'
+			]},
+		'epochdb-resources-items': { deps: [
+				'angular-resource'
+			]},
+		'epochdb-controllers': { deps: [
+				'epochdb-controllers-home',
+				'epochdb-controllers-search',
+				'epochdb-controllers-list',
+				'epochdb-controllers-detail'
+			]},
+		'epochdb-directives': { deps: [
+				'epochdb-directives-items',
+				'epochdb-directives-assets',
+				'epochdb-directives-foundation'
+			]},
+		'epochdb-filters': { deps: [
+				'epochdb-filters-string'
+			]}
+
+	}
   });
 
+
 require([
+		'underscore',
 		'angular',
-		'angular-route',
 		'angular-resource',
 		'angular-ui-router',
-		'underscore',
 
-		'./resources/items',
-		'./controllers/search',
-		'./directives/items',
-		'./directives/assets',
-		'./filters/string'
-	], function(angular) {
+		'epochdb'
 
-		angular.module("epochdb", [
-				'ui.router',
-				'ngResource',
-				'epochdb.resources.items',
-				'epochdb.controllers.search',
-				'epochdb.directives.items',
-				'epochdb.directives.assets',
-				'epochdb.filters.string'
-			])
-			.constant('Assets', (function($window){
-				var service = {
-					paths: _.extend({
-							template: null,
-							static: null,
-							api: null
-						}, $window.assetUrls),
-					template: function(path){ return service.paths.template+path },
-					static: function(path){ return service.paths.static+path },
-					api: function(path){ return service.paths.api+path }
-				}
-				console.log(service)
-				return service;
-			})(window))
-
-			.config(['$stateProvider',
-					 '$urlRouterProvider',
-					 'Assets',
-					function ($stateProvider, $urlRouterProvider, Assets) {
-						$urlRouterProvider.otherwise('/');
-						$stateProvider
-							.state('list', {
-								'url':'',
-								'templateUrl': Assets.template('list.html'),
-								'controller': 'SearchController'
-							})
-							.state('item-detail',{
-								'url': '/item/:slug',
-								'templateUrl': Assets.template('detail.html'),
-								'controller': 'ItemDetailController'
-							})
-				}])
-
-});
+	]);

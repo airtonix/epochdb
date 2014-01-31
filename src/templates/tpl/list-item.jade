@@ -1,4 +1,4 @@
-li.epoch-item-summary(data-ng-class="'type-'+Thing.type", data-ng-translude)
+li.epoch-item-summary(data-ng-class="['type-'+Thing.type, Visible?'active':'']", data-ng-translude)
 
 	a.button.text-left(data-ng-click="Visible=!Visible", title="{{Thing.id}}")
 		span.label.radius.epoch-type-icon
@@ -7,8 +7,8 @@ li.epoch-item-summary(data-ng-class="'type-'+Thing.type", data-ng-translude)
 
 	dl.tabs.simple-outline
 		dd(data-ng-repeat="tab in Tabs")
-			a(data-ng-click="tab.toggle()") {{ tab.name }}
-				em.item-detail-tab.icon-circle
+			a(title="{{ tab.name }}", data-ng-click="tab.toggle()")
+				em.item-detail-tab(data-ng-class="['icon-{{ tab.name }}']")
 
 	.tabs-content(data-ng-show="Visible")
 		.content(data-ng-repeat="pane in Panes", data-item-summary-pane="{{pane}}", data-collection="{{ pane.data }}")

@@ -1,0 +1,14 @@
+.large-6.columns.large-centered#item-filter(data-ng-controller="SearchController")
+	form.simple(data-ng-submit="search()")
+		.row.rounded
+			.small-12.columns
+				input(class="search", type="text", data-ng-model="Query", placeholder="Search Recipes and Items", data-result-count="{{ Collection | filter:Query | length }}")
+				button(type="submit") go
+				button.simple-outline.button.postfix.clear(data-ng-if="Query.length", data-ng-click="$parent.Query=''")
+					i.icon-erase.icon-2x
+
+			.small-12.columns
+				dl.sub-nav.right
+					dd(data-ng-repeat="filter in Filters")
+						a(data-ng-click="$parent.Query=filter") {{ filter }}
+
