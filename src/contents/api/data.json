@@ -665,6 +665,7 @@
 {
 	"id": 304,
 	"name": "Toilet paper",
+	"type": "Raw",
 	"tags": ["Component"],
 	"source": ["Looted"],
 	"slug": "ItemTrashToiletpaper"
@@ -672,6 +673,7 @@
 {
 	"id": 305,
 	"name": "Light Bulb",
+	"type": "Raw",
 	"tags": ["Component"],
 	"source": ["looted"],
 	"slug": "ItemLightBulb"
@@ -679,6 +681,7 @@
 {
 	"id": 306,
 	"name": "Combination Lock",
+	"type": "Raw",
 	"tags": ["Component"],
 	"source": ["Looted"],
 	"slug": "ItemComboLock"

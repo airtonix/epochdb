@@ -9,6 +9,9 @@
 
 			.small-12.columns
 				dl.sub-nav.right
+					dt filter by
 					dd(data-ng-repeat="filter in Filters", data-ng-class="'type-'+filter.toString().toLowerCase()")
-						a(data-ng-click="$parent.Query=filter") {{ filter }}
+						a(data-ng-click="$parent.Query=filter")
+							em(data-ng-class="'icon-'+filter.toLowerCase()")
+							span {{ filter }}
 

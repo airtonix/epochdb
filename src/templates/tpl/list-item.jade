@@ -2,6 +2,7 @@ li.epoch-item-summary(data-ng-class="['type-'+Thing.type.toLowerCase(), Visible?
 
 	a.button.text-left(data-ng-click="Visible=!Visible", title="{{Thing.id}}")
 		span.label.radius.epoch-type-icon
+			em(data-ng-class="'icon-'+Thing.type.toLowerCase()")
 		span.epoch-item-count.label(data-ng-if="Thing.count") {{ Thing.count }}
 		span.epoch-item-name {{ Thing.name }}
 

@@ -9,7 +9,8 @@
       </div>
       <div class="small-12 columns">
         <dl class="sub-nav right">
-          <dd data-ng-repeat="filter in Filters" data-ng-class="'type-'+filter.toString().toLowerCase()"><a data-ng-click="$parent.Query=filter">{{ filter }}</a></dd>
+          <dt>filter by</dt>
+          <dd data-ng-repeat="filter in Filters" data-ng-class="'type-'+filter.toString().toLowerCase()"><a data-ng-click="$parent.Query=filter"><em data-ng-class="'icon-'+filter.toLowerCase()"></em><span>{{ filter }}</span></a></dd>
         </dl>
       </div>
     </div>

@@ -5,8 +5,8 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @font-face {
   font-family: 'fontello';
-  src: url('../fonts/fontello.eot?23511898');
-  src: url('../fonts/fontello.eot?23511898#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?23511898') format('woff'), url('../fonts/fontello.ttf?23511898') format('truetype'), url('../fonts/fontello.svg?23511898#fontello') format('svg');
+  src: url('../fonts/fontello.eot?29359605');
+  src: url('../fonts/fontello.eot?29359605#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?29359605') format('woff'), url('../fonts/fontello.ttf?29359605') format('truetype'), url('../fonts/fontello.svg?29359605#fontello') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -38,160 +38,7 @@
   font-size: 2em; }
 
 .icon-erase:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-.icon-erase:before {
   content: "\e805"; }
-
-.icon-cog:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-.icon-cog:before {
-  content: "\e807"; }
-
-.icon-map:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-.icon-map:before {
-  content: "\e803"; }
-
-.icon-wrench:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-.icon-wrench:before {
-  content: "\e800"; }
-
-.icon-building:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-.icon-building:before {
-  content: "\e804"; }
-
-.icon-beaker:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: 0.2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-.icon-beaker:before {
-  content: "\e802"; }
 
 /*
 	Project Variables
@@ -562,7 +409,7 @@ html, body {
 
 body {
   background: #262732;
-  color: white;
+  color: rgba(153, 153, 153, 0.3);
   padding: 0;
   margin: 0;
   font-family: "Monsterrat", Arial, sans-serif;
@@ -4447,7 +4294,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: white;
+  color: rgba(153, 153, 153, 0.3);
   border-bottom: 1px dotted #dddddd;
   cursor: help; }
 
@@ -5185,8 +5032,9 @@ body {
       left: 0;
       max-width: 2em;
       overflow: hidden;
-      background-color: #2e2f41;
-      color: #63668c; }
+      background: none;
+      color: #63668c;
+      padding: 0.4em; }
     body .epoch-item-summary > .tabs {
       position: absolute;
       top: 0.4em;
@@ -5210,97 +5058,14 @@ body {
         body .epoch-item-summary > .tabs + .tabs-content > .content {
           display: block;
           width: 100%; }
-    body .epoch-item-summary .icon-areas:before {
-      font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak: none;
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      margin-right: 0.2em;
-      text-align: center;
-      /* opacity: .8; */
-      /* For safety - reset parent styles, that can break glyph codes*/
-      font-variant: normal;
-      text-transform: none;
-      /* fix buttons height, for twitter bootstrap */
-      line-height: 1em;
-      /* Animation center compensation - margins should be symmetric */
-      /* remove if not needed */
-      margin-left: 0.2em;
-      /* you can be more comfortable with increased icons size */
-      /* font-size: 120%; */
-      /* Uncomment for 3D effect */
-      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-    body .epoch-item-summary .icon-areas:before {
-      content: "\e803"; }
-    body .epoch-item-summary .icon-tools:before {
-      font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak: none;
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      margin-right: 0.2em;
-      text-align: center;
-      /* opacity: .8; */
-      /* For safety - reset parent styles, that can break glyph codes*/
-      font-variant: normal;
-      text-transform: none;
-      /* fix buttons height, for twitter bootstrap */
-      line-height: 1em;
-      /* Animation center compensation - margins should be symmetric */
-      /* remove if not needed */
-      margin-left: 0.2em;
-      /* you can be more comfortable with increased icons size */
-      /* font-size: 120%; */
-      /* Uncomment for 3D effect */
-      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-    body .epoch-item-summary .icon-tools:before {
-      content: "\e800"; }
-    body .epoch-item-summary .icon-components:before {
-      font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak: none;
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      margin-right: 0.2em;
-      text-align: center;
-      /* opacity: .8; */
-      /* For safety - reset parent styles, that can break glyph codes*/
-      font-variant: normal;
-      text-transform: none;
-      /* fix buttons height, for twitter bootstrap */
-      line-height: 1em;
-      /* Animation center compensation - margins should be symmetric */
-      /* remove if not needed */
-      margin-left: 0.2em;
-      /* you can be more comfortable with increased icons size */
-      /* font-size: 120%; */
-      /* Uncomment for 3D effect */
-      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-    body .epoch-item-summary .icon-components:before {
-      content: "\e804"; }
-    body .epoch-item-summary.type-kit .epoch-item-name {
+    body .epoch-item-summary.type-kit .epoch-item-name, body .epoch-item-summary.type-kit .epoch-type-icon {
       color: #ffdb77; }
-    body .epoch-item-summary.type-kit .epoch-type-icon {
-      background: #ffdb77; }
-    body .epoch-item-summary.type-component .epoch-item-name {
+    body .epoch-item-summary.type-component .epoch-item-name, body .epoch-item-summary.type-component .epoch-type-icon {
       color: #ff905e; }
-    body .epoch-item-summary.type-component .epoch-type-icon {
-      background: #ff905e; }
-    body .epoch-item-summary.type-tool .epoch-item-name {
+    body .epoch-item-summary.type-tool .epoch-item-name, body .epoch-item-summary.type-tool .epoch-type-icon {
       color: #dc554f; }
-    body .epoch-item-summary.type-tool .epoch-type-icon {
-      background: #dc554f; }
-    body .epoch-item-summary.type-area .epoch-item-name {
+    body .epoch-item-summary.type-area .epoch-item-name, body .epoch-item-summary.type-area .epoch-type-icon {
       color: #8f2041; }
-    body .epoch-item-summary.type-area .epoch-type-icon {
-      background: #8f2041; }
     body .epoch-item-summary.active {
       position: relative;
       margin-left: -5%;
@@ -5309,6 +5074,26 @@ body {
       border-bottom: 2px solid #2e2f41;
       background: #2e2f41;
       margin-bottom: -2px; }
+  body .icon-area:before, body .icon-areas:before {
+    content: "\e80a"; }
+  body .icon-tool:before, body .icon-tools:before {
+    content: "\e806"; }
+  body .icon-component:before, body .icon-components:before {
+    content: "\e802"; }
+  body .icon-kit:before {
+    content: "\e810"; }
+  body .icon-raw:before {
+    content: "\e801"; }
+  body .icon-drink:before {
+    content: "\e812"; }
+  body .icon-food:before {
+    content: "\e813"; }
+  body .icon-crafted:before {
+    content: "\e807"; }
+  body .icon-weapon:before {
+    content: "\e809"; }
+  body .icon-upgrade:before {
+    content: "\e800"; }
   body #item-filter {
     margin-bottom: 1em; }
     body #item-filter form {
@@ -5377,7 +5162,16 @@ body {
           box-shadow: none; }
       body #item-filter form .sub-nav {
         margin: 0;
-        line-height: 1; }
+        line-height: 1;
+        overflow: visible;
+        margin-left: 5em; }
+        body #item-filter form .sub-nav dt {
+          margin-left: -6em;
+          margin-top: 0.3em;
+          color: #005a55;
+          font-size: 0.8em;
+          text-transform: uppercase;
+          font-weight: bold; }
         body #item-filter form .sub-nav dd {
           line-height: 1;
           padding: 0;
@@ -5388,22 +5182,9 @@ body {
             margin: 0em;
             -webkit-border-radius: 3px;
             -moz-border-radius: 3px;
-            border-radius: 3px; }
-          body #item-filter form .sub-nav dd.type-kit a {
-            color: #ffdb77;
-            background: #66572f; }
-          body #item-filter form .sub-nav dd.type-component a {
-            color: #ff905e;
-            background: #663925; }
-          body #item-filter form .sub-nav dd.type-tool a {
-            color: #dc554f;
-            background: #58221f; }
-          body #item-filter form .sub-nav dd.type-area a {
-            color: #8f2041;
-            background: #390c1a; }
-          body #item-filter form .sub-nav dd.type-raw a {
-            color: #63668c;
-            background: #313346; }
+            border-radius: 3px;
+            border: 2px solid #005a55;
+            color: #00b6ad; }
   body #content {
     height: 100%;
     width: 100%;

@@ -32,8 +32,9 @@
 		left: 0;
 		max-width: 2em;
 		overflow: hidden;
-		background-color: $epoch-type-bg-color;
+		background: none;
 		color: $epoch-type-color;
+		padding: 0.4em;
 	}
 
 	& > .tabs{
@@ -66,26 +67,20 @@
 	}
 
 
-	.icon-areas{ @include icon($icon-map); }
-	.icon-tools{ @include icon($icon-wrench); }
-	.icon-components{ @include icon($icon-building); }
-
-
 	&.type-kit{ 
-		.epoch-item-name{ color: $shade1; }
-		.epoch-type-icon{ background: $shade1; }
+		.epoch-item-name, .epoch-type-icon{ color: $shade1; }
 	}
 	&.type-component{
-		.epoch-item-name{ color: $shade2; }
-		.epoch-type-icon{ background: $shade2; }
+		.epoch-item-name, .epoch-type-icon{ color: $shade2; }
 	}
 	&.type-tool{
-		.epoch-item-name{ color: $shade3; }
-		.epoch-type-icon{ background: $shade3; }
+		.epoch-item-name, .epoch-type-icon{ color: $shade3; }
 	}
 	&.type-area{
-		.epoch-item-name{ color: $shade4; }
-		.epoch-type-icon{ background: $shade4; }
+		.epoch-item-name, .epoch-type-icon{ color: $shade4; }
+	}
+	&.type-raw{
+		// .epoch-item-name, .epoch-type-icon{ color: $shade5; }
 	}
 
 	&.active{
@@ -98,3 +93,16 @@
 		margin-bottom: -2px;
 	}
 }
+
+
+
+.icon-area, .icon-areas				{ @include icon($icon-address); }
+.icon-tool, .icon-tools				{ @include icon($icon-wrench); }
+.icon-component, .icon-components	{ @include icon($icon-beaker); }
+.icon-kit							{ @include icon($icon-gift);}
+.icon-raw							{ @include icon($icon-leaf);}
+.icon-drink							{ @include icon($icon-beer);}
+.icon-food							{ @include icon($icon-food);}
+.icon-crafted						{ @include icon($icon-cog);}
+.icon-weapon						{ @include icon($icon-videocam);}
+.icon-upgrade						{ @include icon($icon-arrow-up);}

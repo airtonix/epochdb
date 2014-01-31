@@ -73,6 +73,16 @@
 		.sub-nav{
 			margin: 0;
 			line-height: 1;
+			overflow: visible;
+			margin-left: 5em;
+			dt{
+				margin-left: -6em;
+				margin-top: 0.3em;
+				color: $input-border-color;
+				font-size: 0.8em;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
 			dd {
 				line-height: 1;
 				padding: 0;
@@ -82,28 +92,8 @@
 					padding: 0.4em;
 					margin: 0em;
 					@include border-radius(3px);
-
-				}
-
-				&.type-kit a{
-					color: $shade1;
-					background: shade($shade1, 60%);
-				}
-				&.type-component a{
-					color: $shade2;
-					background: shade($shade2, 60%);
-				}
-				&.type-tool a{ 
-					color: $shade3;
-					background: shade($shade3, 60%);
-				}
-				&.type-area a{
-					color: $shade4;
-					background: shade($shade4, 60%);
-				}
-				&.type-raw a{
-					color: $button-text-color;
-					background: shade($button-text-color, 50%);
+					border: 2px solid $input-border-color;
+					color: $input-text-color;
 				}
 
 			}

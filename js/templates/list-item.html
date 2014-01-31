@@ -1,5 +1,5 @@
 
-<li data-ng-class="['type-'+Thing.type.toLowerCase(), Visible?'active':'']" data-ng-translude="data-ng-translude" class="epoch-item-summary"><a data-ng-click="Visible=!Visible" title="{{Thing.id}}" class="button text-left"><span class="label radius epoch-type-icon"></span><span data-ng-if="Thing.count" class="epoch-item-count label">{{ Thing.count }}</span><span class="epoch-item-name">{{ Thing.name }}</span></a>
+<li data-ng-class="['type-'+Thing.type.toLowerCase(), Visible?'active':'']" data-ng-translude="data-ng-translude" class="epoch-item-summary"><a data-ng-click="Visible=!Visible" title="{{Thing.id}}" class="button text-left"><span class="label radius epoch-type-icon"><em data-ng-class="'icon-'+Thing.type.toLowerCase()"></em></span><span data-ng-if="Thing.count" class="epoch-item-count label">{{ Thing.count }}</span><span class="epoch-item-name">{{ Thing.name }}</span></a>
   <dl class="tabs simple-outline">
     <dd data-ng-repeat="tab in Tabs"><a title="{{ tab.name }}" data-ng-click="tab.toggle()"><em data-ng-class="['icon-{{ tab.name }}']" class="item-detail-tab"></em></a></dd>
   </dl>

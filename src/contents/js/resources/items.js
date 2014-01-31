@@ -29,7 +29,7 @@ var Class = function(){
 			Model.filter = function (query){
 				return json.then(function(data){
 					if(!query) return data;
-					return _.filter(data, query)
+					return _.sortBy(_.filter(data, query), 'type');
 				})
 			}
 			Model.get = function (id){
@@ -40,11 +40,10 @@ var Class = function(){
 
 			Model.valueList = function (key){
 				return json.then(function (data) {
-					var plucked = _.pluck(data, key)
+					var plucked = _.pluck(_.sortBy(data, 'name'), key)
 					var flattened = _.flatten(plucked)
 					var compacted = _.compact(flattened)
-					console.log(flattened)
-						return _.unique(compacted)
+						return _.unique(compacted);
 					})
 			}
 
