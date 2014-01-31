@@ -1,4 +1,4 @@
-require(['angular', 'underscore'], function (angular, _){
+require(['angular', 'lodash'], function (angular, _){
 
 
 var Class = function(){ 
@@ -29,21 +29,22 @@ var Class = function(){
 			Model.filter = function (query){
 				return json.then(function(data){
 					if(!query) return data;
-					return _.where(data, query)
+					return _.filter(data, query)
 				})
 			}
 			Model.get = function (id){
 				return json.then(function(data){
-					return _.findWhere(json, { 'id': id })
+					return _.find(json, { 'id': id })
 				})
 			}
 
 			Model.valueList = function (key){
 				return json.then(function (data) {
-						return _.uniq(
-									_.compact(
-										_.flatten(
-											_.pluck(data, key))))
+					var plucked = _.pluck(data, key)
+					var flattened = _.flatten(plucked)
+					var compacted = _.compact(flattened)
+					console.log(flattened)
+						return _.unique(compacted)
 					})
 			}
 

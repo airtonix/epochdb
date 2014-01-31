@@ -9,6 +9,6 @@
 
 			.small-12.columns
 				dl.sub-nav.right
-					dd(data-ng-repeat="filter in Filters")
+					dd(data-ng-repeat="filter in Filters", data-ng-class="'type-'+filter.toString().toLowerCase()")
 						a(data-ng-click="$parent.Query=filter") {{ filter }}
 

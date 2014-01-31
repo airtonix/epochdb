@@ -1,4 +1,4 @@
-require(['angular', 'underscore'], function(angular, _){
+require(['angular', 'lodash'], function(angular, _){
 
 	angular.module('epochdb.directives.assets', [])
 		.provider('AssetManager', function (){

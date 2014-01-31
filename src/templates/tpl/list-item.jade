@@ -1,4 +1,4 @@
-li.epoch-item-summary(data-ng-class="['type-'+Thing.type, Visible?'active':'']", data-ng-translude)
+li.epoch-item-summary(data-ng-class="['type-'+Thing.type.toLowerCase(), Visible?'active':'']", data-ng-translude)
 
 	a.button.text-left(data-ng-click="Visible=!Visible", title="{{Thing.id}}")
 		span.label.radius.epoch-type-icon

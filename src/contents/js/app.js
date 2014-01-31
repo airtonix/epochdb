@@ -1,12 +1,11 @@
 require([
- 		'underscore',
+ 		'lodash',
 		'angular',
 	],
 	function (_, angular){
 
 		angular.module("epochdb", [
 				'ui.router',
-				'ngResource',
 				'epochdb.resources',
 				'epochdb.controllers',
 				'epochdb.directives',

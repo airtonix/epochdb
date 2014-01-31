@@ -4,10 +4,6 @@
  	margin-left: 0;
  	width: 100%;
 
-	.icon-areas{ @include icon($icon-map); }
-	.icon-tools{ @include icon($icon-wrench); }
-	.icon-components{ @include icon($icon-building); }
-
 	.button{
 		.label{
 			margin-right: 0.3em;
@@ -70,19 +66,24 @@
 	}
 
 
-	&.type-Kit{ 
+	.icon-areas{ @include icon($icon-map); }
+	.icon-tools{ @include icon($icon-wrench); }
+	.icon-components{ @include icon($icon-building); }
+
+
+	&.type-kit{ 
 		.epoch-item-name{ color: $shade1; }
 		.epoch-type-icon{ background: $shade1; }
 	}
-	&.type-Component{
+	&.type-component{
 		.epoch-item-name{ color: $shade2; }
 		.epoch-type-icon{ background: $shade2; }
 	}
-	&.type-Tool{
+	&.type-tool{
 		.epoch-item-name{ color: $shade3; }
 		.epoch-type-icon{ background: $shade3; }
 	}
-	&.type-Area{
+	&.type-area{
 		.epoch-item-name{ color: $shade4; }
 		.epoch-type-icon{ background: $shade4; }
 	}

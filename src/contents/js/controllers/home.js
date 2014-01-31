@@ -9,15 +9,13 @@ require(['angular'], function (angular){
 				$scope.Query = '';
 				$scope.Collection = [];
 
+				ItemResource.filter().then(function (data){
+					$scope.Collection = data;
+				});	
+
 
 				$scope.$on('item-query', function (scope, query){
-					console.log("home.controller.watch.query", query)
 					$scope.Query = query;
-
-					ItemResource.filter().then(function (data){
-						$scope.Collection = data;
-					});	
-
 				});
 
 

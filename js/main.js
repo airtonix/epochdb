@@ -1,11 +1,8 @@
 require.config({
 	paths: {
-		'angular': '../vendor/angular/angular',
-		'angular-route': '../vendor/angular-route/angular-route',
-		'angular-resource': '../vendor/angular-resource/angular-resource',
+		'angular': '../vendor/angular/angular.min',
 		'angular-ui-router': '../vendor/angular-ui-router/release/angular-ui-router.min',
-		'underscore': '../vendor/underscore/underscore',
-			'underscore.string': '../vendor/underscore.string/dist/underscore.string.min',
+		'lodash': '../vendor/lodash/dist/lodash.underscore.min',
 
 		'epochdb': 'app',
 		'epochdb-directives': 'directives',
@@ -29,24 +26,14 @@ require.config({
 	},
 
 	shim : {
-		'underscore': {
-			exports: '_',
-			deps: ['underscore.string'],
-			init: function(UnderscoreString) {
-				_.mixin(UnderscoreString);
-			}
-		},
 		'angular': { exports: 'angular' },
-		'angular-resource': { deps: ['angular']},
 		'angular-ui-router': { deps: ['angular']},
-
 
 		/* Crazy Dependancy Graph */
 		'epochdb': { deps: [
+				'lodash',
 				'angular',
-				'underscore',
 				'angular-ui-router',
-				'angular-resource',
 
 				'epochdb-resources',
 				'epochdb-controllers',
@@ -55,9 +42,6 @@ require.config({
 			]},
 		'epochdb-resources': { deps: [
 				'epochdb-resources-items'
-			]},
-		'epochdb-resources-items': { deps: [
-				'angular-resource'
 			]},
 		'epochdb-controllers': { deps: [
 				'epochdb-controllers-home',
@@ -79,9 +63,8 @@ require.config({
 
 
 require([
-		'underscore',
+		'lodash',
 		'angular',
-		'angular-resource',
 		'angular-ui-router',
 
 		'epochdb'
