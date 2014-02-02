@@ -6,6 +6,7 @@
     "**/test/*"
   ],
   "port": 8000,
+  
   "locals": {
     "baseUrl": "/",
     "url": "http://nova.zenobi.us:8000/",
@@ -18,6 +19,7 @@
   },
 
   "plugins": [
+    "wintersmith-jade",
     "wintersmith-node-sass",
     "wintersmith-data-json"
   ],
@@ -29,7 +31,8 @@
   },
 
   "jade": {
-    "pretty": true
+    "pretty": true,
+    "template": "tpl.jade"
   },
 
   "node-sass": {

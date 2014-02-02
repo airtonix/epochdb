@@ -10,12 +10,10 @@ require(['angular'], function (angular){
 			'$location',
 			'ItemResource',
 			function ($scope, $location, ItemResource){
-				// var query = $location.search();
+				var query = $location.search();
 				// $scope.Collection = [];
-				// $scope.$on('item-query', function (scope, query){
-				// 	$scope.Query = query;
-				// })
-
-
+				$scope.$on('item-query', function (scope, query){
+					$scope.Query = query;
+				})
 			}])
 });

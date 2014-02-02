@@ -10,6 +10,7 @@ require(['angular'], function (angular){
 			'$stateParams',
 			'ItemResource',
 			function ($scope, $stateParams, ItemResource){
+				console.log("item detail", $stateParams)
 				ItemResource.get({id: $stateParams.id }).then(function (data){
 					$scope.Item = data;
 				});

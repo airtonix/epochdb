@@ -9,6 +9,7 @@ require.config({
 			'epochdb-directives-assets': 'directives/assets',
 			'epochdb-directives-items': 'directives/items',
 			'epochdb-directives-foundation': 'directives/foundation',
+			'epochdb-directives-wintersmith': 'directives/wintersmith',
 
 		'epochdb-controllers': 'controllers',
 			'epochdb-controllers-home': 'controllers/home',
@@ -52,7 +53,8 @@ require.config({
 		'epochdb-directives': { deps: [
 				'epochdb-directives-items',
 				'epochdb-directives-assets',
-				'epochdb-directives-foundation'
+				'epochdb-directives-foundation',
+				'epochdb-directives-wintersmith'
 			]},
 		'epochdb-filters': { deps: [
 				'epochdb-filters-string'

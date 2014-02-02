@@ -11,5 +11,8 @@
     "grunt-cli": "~0.1.13",
     "grunt-wintersmith": "0.0.2",
     "grunt-contrib-clean": "~0.5.0"
+  },
+  "dependencies": {
+    "wintersmith-jade": "~0.1.0"
   }
 }

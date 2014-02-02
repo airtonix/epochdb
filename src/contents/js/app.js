@@ -11,6 +11,7 @@ require([
 				'epochdb.directives',
 				'epochdb.filters'
 			])
+
 			.constant('Assets', (function ($window){
 					var service = {
 						paths: _.extend({
@@ -39,8 +40,12 @@ require([
 								templateUrl: Assets.template('home.html')
 							})
 							.state('app.items',{
-								url: '/items',
+								url: 'items?query',
 								templateUrl : Assets.template('list.html')
+							})
+							.state('app.detail',{
+								url: 'item/:id',
+								templateUrl : Assets.template('detail.html')
 							})
 
 				}])

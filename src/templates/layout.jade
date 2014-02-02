@@ -1,6 +1,17 @@
 doctype html
-block vars
-	- var bodyclass = null;
+- var cache = [];
+- localsJSON = JSON.stringify(page.__env.config.locals, function(key, value) {
+-     if (typeof value === 'object' && value !== null) {
+-     if (cache.indexOf(value) !== -1) {
+-       // Circular reference found, discard key
+-       return;
+-     }
+-     // Store value in our collection
+-     cache.push(value);
+-   }
+-   return value;
+- });
+- cache = null; // Enable garbage collection
 
 html(lang='en')
 	head
@@ -9,9 +20,8 @@ html(lang='en')
 			meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
 			meta(name='viewport', content='width=device-width')
 			meta(rel="description", content="#{locals.description}", data-meta-description)
-			title
-				block title
-					= locals.name
+			meta(rel="x-wintersmith", data-wintersmith-context=localsJSON)
+			title= locals.name
 			link(rel='stylesheet', media="print", href=locals.baseUrl+'css/print.css')
 			link(rel='stylesheet', media="screen, projector", href=locals.baseUrl+'css/screen.css')
 

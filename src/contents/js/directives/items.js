@@ -4,8 +4,38 @@ require(['angular'], function(angular){
 			'epochdb.resources.items'
 		])
 
+		.directive('searchForm', [
+				'ItemResource',
+				'AssetManager',
+				'$state',
+				function(ItemResource, AssetManager, $state){
+					// Runs during compile
+					return {
+						// scope: {}, // {} = isolate, true = child, false/undefined = no change
+						restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
+						replace: true,
+						templateUrl: AssetManager.template('partial/search.html'),
+						controller: function($scope, $element, $attrs, $transclude) {
+							var behaviour = $attrs.changeBehaviour?$attrs.changeBehaviour:'submit'
+
+							ItemResource.valueList('type').then(function (data){
+								$scope.Filters = data;
+							});
+
+							$scope.$watch('Query', function (value){
+								$scope.$emit('item-query', value)
+
+								if(value && value.length!==0 && behaviour == 'submit'){
+									$state.go('app.items', {query: value})
+								}
+							})						
+						}
+					};
+				}])
+
 		.directive('queryFilter', [function(){
 			return {
+				require: '^search',
 				restrict: 'A',
 				link: function($scope, iElm, iAttrs, controller) {
 					iElm.bind('mouseup touchend', function(event){
