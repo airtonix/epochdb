@@ -9,8 +9,11 @@ good UX
 * Make sure you have NodeJs, Git installed
 * I recommend adding this `~/.bashrc` snippet: [https://gist.github.com/airtonix/8835110](https://gist.github.com/airtonix/8835110)
 * clone/fork the repository
-* in the repo directory: `npm install`
-* `$ grunt dev`
+* install dependancies:
+  * `npm install`
+  * `bower install`
+* Run the preview server `$ grunt`
+* start playing with the code.
 
 ## Building
 
