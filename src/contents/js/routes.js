@@ -38,9 +38,11 @@ require(['angular'], function(angular){
 									controller: "ItemDetailController"
 								})
 							.segment('page', {
-									templateUrl : function(stateParams){
-										return Assets.template('pages/'+stateParams.slug+'.html')
-									}
+									templateUrl: Assets.template("page.html"),
+									dependencies: ['slug', ],
+									controller: ["$scope", "$routeParams", function ($scope, $routeParams){
+										$scope.PageUrl = Assets.template("pages/"+$routeParams.slug+".html");
+									}]
 								});
 
 						$routeProvider.otherwise({redirectTo: '/'}); 

@@ -15,8 +15,8 @@ require(['angular'], function (angular){
 
 				$scope.Assets = Assets;
 
-				$scope.$on('$routeChangeSuccess', function(event, args) {
-					var route = args.$route || args.$$route; 
+				$scope.$on('$routeChangeSuccess', function(event, $toRoute, $fromRoute) {
+					var route = $toRoute.$route || $toRoute.$$route; 
 					if(route && route.segment) {
 						$scope.route = route;
 					}

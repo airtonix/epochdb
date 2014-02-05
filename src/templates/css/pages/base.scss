@@ -22,10 +22,9 @@ body {
 	#content{
 		height: 100%;
 		min-height: 30em;
-		margin-bottom: -(rem-calc(250-$topbar-height));
+		margin-bottom: -(rem-calc(260-$topbar-height));
 		width: 100%;
 		display: table;
-		// margin-bottom: -(rem-calc(250)) ;
 		padding-top: 4em;
 
 	}
@@ -36,16 +35,22 @@ body {
 		min-height: rem-calc(250-$topbar-height);
 		color: tint($body-bg, 15%);
 		text-align: center;
-		// margin-top: 1em;
-		padding-top: 1em;
 
-		hr{
+		&:before{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+
 			border: none;
-			border-top: 1px solid $horizontal-rule-color;
+			border-top: 1px solid $ocean-blue;
 		}
 
-		section.copy p{
-			font-size: 0.6em;
+		section.copy{
+			margin-top: 1em;
+			p{
+				font-size: 0.6em;
+			}
 		}
 	}
 

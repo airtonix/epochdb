@@ -186,14 +186,13 @@ angular.module( 'route-segment', [] )
                 
                 // When a route changes, all interested parties should be notified about new segment chain
                 $rootScope.$on('$routeChangeSuccess', function(event, args) {
-
                     var route = args.$route || args.$$route; 
                     if(route && route.segment) {
 
                         var segmentName = route.segment;
                         var segmentNameChain = segmentName.split(".");
                         var updates = [];
-                        
+
                         for(var i=0; i < segmentNameChain.length; i++) {
                             
                             var newSegment = getSegmentInChain( i, segmentNameChain );
@@ -229,7 +228,6 @@ angular.module( 'route-segment', [] )
                         }
 
                         curSegmentPromise.then(function() {
-
                             // Removing redundant segment in case if new segment chain is shorter than old one
                             if($routeSegment.chain.length > segmentNameChain.length) {
                                 var oldLength = $routeSegment.chain.length;
@@ -442,7 +440,8 @@ angular.module( 'view-segment', [ 'route-segment' ] )
 
                         // Watching for the specified route segment and updating contents
                         $scope.$on('routeSegmentChange', function(event, args) {
-                            if(args.index == viewSegmentIndex && currentSegment != args.segment)
+                            var isSameSegment = currentSegment != args.segment;
+                            if(args.index == viewSegmentIndex && isSameSegment)
                                 update(args.segment);
                         });
 
