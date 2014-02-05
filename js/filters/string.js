@@ -16,7 +16,7 @@ require(['angular' ], function (angular){
 		})
 		.filter("slugify", function (){
 			return function (value){
-				return value.replace(".", "-")
+				return value?value.replace(".", "-"):""
 			}
 		})
 });

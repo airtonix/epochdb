@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta rel="description" content="dayz epoch item database" data-meta-description>
-    <title>EpochDB
-    </title>
+    <meta rel="x-wintersmith" data-wintersmith-context="{&quot;baseUrl&quot;:&quot;/epochdb/&quot;,&quot;url&quot;:&quot;http://airtonix.github.com/epochdb/&quot;,&quot;name&quot;:&quot;EpochDB&quot;,&quot;owner&quot;:{&quot;name&quot;:&quot;Zenobius Jiricek&quot;,&quot;homepage&quot;:&quot;http://zenobi.us/&quot;},&quot;description&quot;:&quot;dayz epoch item database&quot;}">
+    <title>EpochDB</title>
     <link rel="stylesheet" media="print" href="/epochdb/css/print.css">
     <link rel="stylesheet" media="screen, projector" href="/epochdb/css/screen.css">
     <script type="text/javascript" src="/epochdb/vendor/modernizr/modernizr.js"></script>
@@ -19,35 +19,19 @@
       
     </script>
   </head>
-  <body id="{{$state.current.name|slugify}}">
-    <header class="header">
-      <nav data-topbar data-ng-class="{'expanded': open}" class="top-bar hide-for-print">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="http://airtonix.github.com/epochdb/" title="dayz epoch item database">EpochDB</a></h1>
-          </li>
-          <li data-ng-click="open=!open" class="toggle-topbar menu-icon"><a>Menu</a></li>
-        </ul>
-        <section class="top-bar-section">
-          <ul class="right">
-            <li><a ui-sref="app.items">Items</a></li>
-            <li class="divider"></li>
-            <li><a href="#/about">About</a></li>
-            <li><a href="#/credit">Credit</a></li>
-          </ul>
-        </section>
-      </nav>
-    </header>
-    <article id="content" data-ui-view class="ng-cloak"></article>
+  <body id="{{route.segment|slugify}}" data-ng-controller="AppController">
+    <site-header class="header"></site-header>
+    <article id="content" app-view-segment="0"></article>
+    <div id="loading" data-ng-show="Loader.show" class="alert">Loading...</div>
     <footer id="site-footer">
       <div class="row">
         <section class="copy"><p>This app Created by <a href="http://zenobi.us/">Zenobius Jiricek</a>, 2014.
 This app is licensed under the <a href="https://github.com/airtonix/epochdb/blob/gh-pages/LICENSE">BSD 3 Clause</a>, <a href="http://github.com/airtonix/epochdb/">Source code is on github</a></p>
-<p>Built with <a href="http://wintersmith.io">Wintersmith</a>, <a href="http://jade-lang.com">Jade</a>, <a href="http://gruntjs.com">GruntJs</a>, <a href="http://foundation.zurb.com">Foundation Zurb</a>, <a href="http://bourbon.io">Bourbon</a>, <a href="http://angularjs.org/">AngularJs</a>, <a href="http://requirejs.org">requirejs</a>, <a href="http://underscorejs.org">lodash</a>, <a href="http://modernizr.com/">Modernizr</a> and <a href="https://sublimetext.com/">SublimetText3</a>.</p>
-<p>DAYZ is a registered trademark of <a href="href=&quot;www.bistudio.com/‎&quot;">Bohemia Interactive a.s</a>.
-This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.</p>
-<p>DayZ Epoch is licensed under <a href="href=&quot;http://www.bistudio.com/licenses/dayz-mod-license-share-alike&quot;">DayZ Mod License Share Alike</a>.</p>
 
+          <ul class="button-group simple-outline">
+            <li><a ng-href="#/about" class="button">About</a></li>
+            <li><a ng-href="#/credits" class="button">Credits</a></li>
+          </ul>
         </section>
       </div>
     </footer>

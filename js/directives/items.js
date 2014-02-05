@@ -4,8 +4,49 @@ require(['angular'], function(angular){
 			'epochdb.resources.items'
 		])
 
+		.directive('searchForm', [
+				'$location',
+				'ItemResource',
+				'AssetManager',
+				function($location, ItemResource, AssetManager){
+					// Runs during compile
+					return {
+						// scope: {}, // {} = isolate, true = child, false/undefined = no change
+						restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
+						replace: true,
+						templateUrl: AssetManager.template('partial/search.html'),
+						controller: function($scope, $element, $attrs, $transclude) {
+							var behaviour = $attrs.changeBehaviour?$attrs.changeBehaviour:'submit'
+
+							ItemResource.valueList('type').then(function (data){
+								$scope.Filters = data;
+							});
+
+							$scope.$watch('Query', function (value){
+								if(behaviour == "autocomplete"){
+									$scope.$emit('item-query', value)
+								}else{
+									if(value && value.length > 0) $scope.$emit('item-query', value);
+								}
+							})						
+
+							$scope.search = function(value){
+								$location.path("/items/"+value.toLowerCase())
+							}
+
+							$scope.$on('item-query', function(event, data){
+								if(behaviour == "submit"){
+									$scope.search(data)
+								}
+							})
+
+						}
+					};
+				}])
+
 		.directive('queryFilter', [function(){
 			return {
+				require: '^search',
 				restrict: 'A',
 				link: function($scope, iElm, iAttrs, controller) {
 					iElm.bind('mouseup touchend', function(event){
@@ -14,54 +55,78 @@ require(['angular'], function(angular){
 				}
 			};
 		}])
+
+		.directive('itemList', [
+				'ItemResource',
+				'AssetManager',
+				"$location",
+				function(ItemResource, AssetManager, $location){
+					return {
+						restrict: 'E',
+						replace: true,
+						templateUrl: AssetManager.template('partial/list.html'),
+						link: function($scope, iElm, iAttrs, controller) {
+							$scope.$watch('Query', function (value){
+								// $location.search = $stateParams;
+								ItemResource.filter().then(function(data){
+									$scope.Collection = data;
+								})
+							})
+							
+						}
+					};
+				}])
 		
-		.directive('itemSummary', ['$parse', 'AssetManager', function($parse, AssetManager){
-			return {
-				restrict: 'EAC',
-				scope: {
-					Thing: "=itemSummary"
-				},
-				replace: true,
-				templateUrl: AssetManager.template("list-item.html"),
-				controller: function($scope, $element, $attrs, $transclude) {
-					var self = this;
-					var itemRelatedCollectionNames = {
-							'requiredTools': 'tools',
-							'requiredComponents': 'components',
-							'requiredToCraftNear': 'areas',
-							'requiredBy': 'used by',
+		.directive('itemSummary', [
+				'$parse',
+				'AssetManager',
+			function($parse, AssetManager){
+				return {
+					restrict: 'EAC',
+					scope: {
+						Thing: "=itemSummary"
+					},
+					replace: true,
+					templateUrl: AssetManager.template("list-item.html"),
+					controller: function($scope, $element, $attrs, $transclude) {
+						var self = this;
+						var itemRelatedCollectionNames = {
+								'requiredTools': 'tools',
+								'requiredComponents': 'components',
+								'requiredToCraftNear': 'areas',
+								'requiredBy': 'used by',
+							}
+
+						self.addTab = function (data, scope){
+							$scope.Tabs.push({ 
+								name: data.name,
+								toggle: function(){
+									scope.Visible = !scope.Visible
+									$scope.Visible = scope.Visible
+								}
+							})
 						}
 
-					self.addTab = function (data, scope){
-						$scope.Tabs.push({ 
-							name: data.name,
-							toggle: function(){
-								scope.Visible = !scope.Visible
-								$scope.Visible = scope.Visible
-							}
+						$scope.Visible = false;
+						$scope.Panes = [];
+						$scope.Tabs = [];
+
+						$scope.$watch("Visible", function(value){
+							// $scope.$parent.Visible = value;
+							if(!value) $scope.$broadcast('close-panes')
+						})
+
+						// $element.bind("mouseup touchend", function(event){
+						// 	$scope.$emit("item-toggled", )
+						// })
+
+						angular.forEach(itemRelatedCollectionNames, function(value, key){
+							if(!$scope.Thing.hasOwnProperty(key)) return;
+							$scope.Panes.push({ name: value, slug: key, data: $scope.Thing[key] })
 						})
 					}
-
-					$scope.Visible = false;
-					$scope.Panes = [];
-					$scope.Tabs = [];
-
-					$scope.$watch("Visible", function(value){
-						// $scope.$parent.Visible = value;
-						if(!value) $scope.$broadcast('close-panes')
-					})
-
-					// $element.bind("mouseup touchend", function(event){
-					// 	$scope.$emit("item-toggled", )
-					// })
-
-					angular.forEach(itemRelatedCollectionNames, function(value, key){
-						if(!$scope.Thing.hasOwnProperty(key)) return;
-						$scope.Panes.push({ name: value, slug: key, data: $scope.Thing[key] })
-					})
-				}
-			};
-		}])
+				};
+			}])
 
 		.directive('itemSummaryTab', ["$parse", function($parse){
 			return {

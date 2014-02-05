@@ -409,7 +409,7 @@ html, body {
 
 body {
   background: #262732;
-  color: rgba(153, 153, 153, 0.3);
+  color: #63668c;
   padding: 0;
   margin: 0;
   font-family: "Monsterrat", Arial, sans-serif;
@@ -4179,14 +4179,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Monsterrat", Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: #222222;
+  color: #00b6ad;
   text-rendering: optimizeLegibility;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   line-height: 1.4; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-size: 60%;
-    color: #6f6f6f;
+    font-size: 45%;
+    color: #2afff4;
     line-height: 0; }
 
 h1 {
@@ -4209,7 +4209,7 @@ h6 {
 
 .subheader {
   line-height: 1.4;
-  color: #6f6f6f;
+  color: #2afff4;
   font-weight: 300;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
@@ -4231,13 +4231,13 @@ strong, b {
   line-height: inherit; }
 
 small {
-  font-size: 60%;
+  font-size: 45%;
   line-height: inherit; }
 
 code {
   font-family: Consolas, 'Liberation Mono', Courier, monospace;
   font-weight: bold;
-  color: #bd240d; }
+  color: #848f97; }
 
 /* Lists */
 ul, ol, dl {
@@ -4294,7 +4294,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: rgba(153, 153, 153, 0.3);
+  color: #63668c;
   border-bottom: 1px dotted #dddddd;
   cursor: help; }
 
@@ -4309,15 +4309,15 @@ blockquote {
   blockquote cite {
     display: block;
     font-size: 0.8125rem;
-    color: #555555; }
+    color: #02fff2; }
     blockquote cite:before {
       content: "\2014 \0020"; }
     blockquote cite a, blockquote cite a:visited {
-      color: #555555; }
+      color: #02fff2; }
 
 blockquote, blockquote p {
   line-height: 1.6;
-  color: #6f6f6f; }
+  color: #2afff4; }
 
 /* Microformats */
 .vcard {
@@ -4933,18 +4933,18 @@ body {
     clear: both;
     display: inline-block; }
     body ul.button-group.simple-outline li a.button {
-      background: none;
-      border-width: 2px;
-      border-style: solid;
-      border-color: #2e2f41;
-      color: #63668c;
       text-transform: uppercase;
       font-size: 10px;
+      color: #63668c;
+      background: none;
+      border-color: #2e2f41;
+      border-width: 2px;
+      border-style: solid;
       border-right: none; }
       body ul.button-group.simple-outline li a.button:hover {
         border-color: #2e2f41;
-        background: #2e2f41;
-        color: #333333; }
+        background: rgba(99, 102, 140, 0.2);
+        color: #63668c; }
     body ul.button-group.simple-outline li:last-child a.button {
       border-right: 2px solid #2e2f41; }
     body ul.button-group.simple-outline.rounded li:first-child a.button {
@@ -4966,28 +4966,22 @@ body {
         body ul.button-group.vertical li:last-child a.button {
           border-bottom: 2px solid #2e2f41; }
   body .button.simple-outline, body button.simple-outline {
-    background: none;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #2e2f41;
-    color: #63668c;
     text-transform: uppercase;
-    font-size: 10px; }
+    font-size: 10px;
+    color: #63668c;
+    background: none;
+    border-color: #2e2f41;
+    border-width: 2px;
+    border-style: solid; }
     body .button.simple-outline:hover, body button.simple-outline:hover {
       border-color: #2e2f41;
-      background: #2e2f41;
-      color: #333333; }
+      background: rgba(99, 102, 140, 0.2);
+      color: #63668c; }
   body .button.button-block, body button.button-block {
     width: 100%;
     display: block; }
   body .button.postfix, body button.postfix {
     border-left: none; }
-  body h1 small.block, body h2 small.block, body h3 small.block, body h4 small.block, body h5 small.block {
-    display: block;
-    line-height: 1; }
-  body h1 small small.block, body h2 small small.block, body h3 small small.block, body h4 small small.block, body h5 small small.block {
-    display: block;
-    line-height: 1; }
   body .tabs.simple-outline {
     background: none; }
     body .tabs.simple-outline > dd {
@@ -5185,8 +5179,30 @@ body {
             border-radius: 3px;
             border: 2px solid #005a55;
             color: #00b6ad; }
+  body [app-view-segment] .ng-enter {
+    transition: opacity 1s;
+    opacity: 0; }
+  body [app-view-segment] .ng-enter-active {
+    opacity: 1; }
+  body [app-view-segment] .ng-leave {
+    display: none; }
+  body #loading {
+    position: absolute;
+    z-index: 1040;
+    top: 50%;
+    left: 50%;
+    width: remCalc(200);
+    height: remCalc(200);
+    margin-top: -remCalc(100);
+    margin-left: -remCalc(100); }
+  body h1 small.block, body h2 small.block, body h3 small.block, body h4 small.block, body h5 small.block {
+    display: block;
+    line-height: 1;
+    text-transform: uppercase; }
   body #content {
     height: 100%;
+    min-height: 30em;
+    margin-bottom: -13.4375rem;
     width: 100%;
     display: table;
     padding-top: 4em; }
@@ -5195,10 +5211,18 @@ body {
     clear: both;
     min-height: 12.8125rem;
     color: #464750;
-    text-align: center;
-    margin-top: 4em; }
-    body #site-footer section.copy p {
-      font-size: 0.6em; }
+    text-align: center; }
+    body #site-footer:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      border: none;
+      border-top: 1px solid #2e2f41; }
+    body #site-footer section.copy {
+      margin-top: 1em; }
+      body #site-footer section.copy p {
+        font-size: 0.6em; }
   body .avgrund-overlay {
     background: white; }
   body .avgrund-popin {
@@ -5209,6 +5233,10 @@ body {
       color: white; }
     body .avgrund-popin h1 small, body .avgrund-popin h2 small, body .avgrund-popin h3 small, body .avgrund-popin h4 small, body .avgrund-popin h5 small {
       color: white; }
+      body .avgrund-popin h1 small.block, body .avgrund-popin h2 small.block, body .avgrund-popin h3 small.block, body .avgrund-popin h4 small.block, body .avgrund-popin h5 small.block {
+        display: block;
+        line-height: 1;
+        text-transform: uppercase; }
     body .avgrund-popin form.contact input, body .avgrund-popin form.contact textarea {
       color: #333333;
       background: white;
@@ -5231,22 +5259,18 @@ body {
       width: 90%;
       border: none;
       background: white;
-      border: 2px solid #00ccff;
+      border: 2px solid #2e2f41;
       color: #333333;
       margin: 0 auto; }
 
-body[id^="app"] .hero {
+body#splash .hero, body#home .hero {
   margin-bottom: 1em;
   display: inherit;
   height: 100%; }
-  body[id^="app"] .hero h2 {
+  body#splash .hero h2, body#home .hero h2 {
     display: block; }
-    body[id^="app"] .hero h2 a {
+    body#splash .hero h2 a, body#home .hero h2 a {
       color: white; }
-    body[id^="app"] .hero h2 small {
+    body#splash .hero h2 small, body#home .hero h2 small {
       display: block;
       line-height: 1; }
-
-body#app-items .hero {
-  height: 1em;
-  min-height: inherit; }
