@@ -3,9 +3,8 @@ require(['angular'], function (angular){
 	angular.module('epochdb.controllers.home', [])
 		.controller("HomeController", [
 			'$scope',
-			'$state',
 			'ItemResource',
-			function ($scope, $state, ItemResource){
+			function ($scope, ItemResource){
 				$scope.Query = '';
 				$scope.Collection = [];
 

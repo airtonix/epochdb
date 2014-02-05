@@ -1,11 +1,19 @@
-@mixin button-style-simple($border: $button-border-color, $border-hover: $button-border-color, $text: $button-text-color, $text-hover: #333, $bg: none, $bg-hover: $button-hover-color ){
-	background: $bg;
-	border-width: 2px;
-	border-style: solid;
-	border-color: $border;
-	color: $text;
+@mixin button-style-simple($border: $button-border-color,
+						   $border-hover: $button-border-hover-color,
+						   $text: $button-text-color,
+						   $text-hover: $button-text-hover-color,
+						   $bg: $button-bg-color,
+						   $bg-hover: $button-bg-hover-color){
+
 	text-transform: uppercase;
 	font-size: 10px;
+	color: $text;
+	background: $bg;
+	border-color: $border;
+	border-width: 2px;
+	border-style: solid;
+	
+
 	&:hover{
 		border-color: $border-hover;
 		background: $bg-hover;
@@ -62,16 +70,6 @@ ul.button-group{
 			}
 		}
 	}
-
-	// &.text-left{
-	// 	text-align: left;
-	// }
-	// &.text-centered{
-	// 	text-align: center;
-	// }
-	// &.text-right{
-	// 	text-align: right;
-	// }
 
 }
 

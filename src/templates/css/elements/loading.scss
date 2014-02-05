@@ -1,0 +1,11 @@
+#loading {
+    position: absolute;
+    z-index: 1040;
+    top: 50%;
+    left: 50%;
+    
+    width: remCalc(200);
+    height: remCalc(200);
+    margin-top: -remCalc(100);
+    margin-left: -remCalc(100);
+}

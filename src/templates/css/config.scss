@@ -85,10 +85,61 @@ $fg-max-columns: 12;          // Total Columns For Main Container
 	Body
  */
 $body-bg: $deep-ocean-blue;
-$body-font-color: rgba(#999, 0.3);
+$body-font-color: $bright-ocean-blue;
 $body-font-family: "Monsterrat", Arial, sans-serif;
 $body-font-weight: normal;
 $body-font-style: normal;
+
+$header-font-family: $body-font-family;
+$header-font-weight: 300;
+$header-font-style: normal;
+$header-font-color: $turquoise-blue;
+$header-line-height: 1.4;
+$header-top-margin: .2rem;
+$header-bottom-margin: .5rem;
+$header-text-rendering: optimizeLegibility;
+
+$horizontal-rule-color: tint($deep-ocean-blue, 15%);
+
+// We use these to control header font sizes
+// $h1-font-size: rem-calc(44);
+// $h2-font-size: rem-calc(37);
+// $h3-font-size: rem-calc(27);
+// $h4-font-size: rem-calc(23);
+// $h5-font-size: rem-calc(18);
+// $h6-font-size: 1rem;
+
+// These control how subheaders are styled.
+$subheader-line-height: 1.4;
+$subheader-font-color: scale-color($header-font-color, $lightness: 35%);
+// $subheader-font-weight: 300;
+// $subheader-top-margin: .2rem;
+// $subheader-bottom-margin: .5rem;
+
+// A general <small> styling
+$small-font-size: 45%;
+$small-font-color: scale-color($header-font-color, $lightness: 35%);
+
+// We use these to style paragraphs
+// $paragraph-font-family: inherit;
+// $paragraph-font-weight: normal;
+// $paragraph-font-size: 1rem;
+// $paragraph-line-height: 1.6;
+// $paragraph-margin-bottom: rem-calc(20);
+// $paragraph-aside-font-size: rem-calc(14);
+// $paragraph-aside-line-height: 1.35;
+// $paragraph-aside-font-style: italic;
+// $paragraph-text-rendering: optimizeLegibility;
+
+// We use these to style <code> tags
+$code-color: scale-color($silver, $lightness: -27%);
+$code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
+// $code-font-weight: bold;
+
+// We use these to style anchors
+// $anchor-text-decoration: none;
+// $anchor-font-color: $primary-color;
+// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 
 
@@ -127,8 +178,11 @@ $topbar-menu-icon-color-toggled: $bright-ocean-blue;
  */
 
 $button-text-color: $bright-ocean-blue;
+$button-text-hover-color: $bright-ocean-blue;
 $button-border-color: $ocean-blue;
-$button-hover-color: $ocean-blue;
+$button-border-hover-color: $ocean-blue;
+$button-bg-color: none;
+$button-bg-hover-color: rgba($bright-ocean-blue, 0.2);
 
 
 /*

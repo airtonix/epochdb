@@ -1,17 +1,23 @@
 require.config({
 	paths: {
 		'angular': '../vendor/angular/angular.min',
-		'angular-ui-router': '../vendor/angular-ui-router/release/angular-ui-router.min',
-		'lodash': '../vendor/lodash/dist/lodash.underscore.min',
+			'angular-route': '../vendor/angular-route/angular-route',
+			'angular-animate': '../vendor/angular-animate/angular-animate',
+			'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment',
+		'lodash': '../vendor/lodash/dist/lodash.underscore',
 
 		'epochdb': 'app',
+		'epochdb-routes': 'routes',
+		'epochdb-config': 'config',
 		'epochdb-directives': 'directives',
 			'epochdb-directives-assets': 'directives/assets',
 			'epochdb-directives-items': 'directives/items',
+			'epochdb-directives-site': 'directives/site',
 			'epochdb-directives-foundation': 'directives/foundation',
 			'epochdb-directives-wintersmith': 'directives/wintersmith',
 
 		'epochdb-controllers': 'controllers',
+			'epochdb-controllers-app': 'controllers/app',
 			'epochdb-controllers-home': 'controllers/home',
 			'epochdb-controllers-search': 'controllers/search',
 			'epochdb-controllers-list': 'controllers/list',
@@ -28,14 +34,22 @@ require.config({
 
 	shim : {
 		'angular': { exports: 'angular' },
-		'angular-ui-router': { deps: ['angular']},
-
+		'angular-animate': { deps: ['angular'] },
+		'angular-route': { deps: ['angular'] },
+		'angular-route-segment': { deps: [
+				'angular',
+				'angular-route'
+				]},
 		/* Crazy Dependancy Graph */
 		'epochdb': { deps: [
 				'lodash',
 				'angular',
-				'angular-ui-router',
+				'angular-route',
+				'angular-route-segment',
+				'angular-animate',
 
+				'epochdb-config',
+				'epochdb-routes',
 				'epochdb-resources',
 				'epochdb-controllers',
 				'epochdb-directives',
@@ -45,6 +59,7 @@ require.config({
 				'epochdb-resources-items'
 			]},
 		'epochdb-controllers': { deps: [
+				'epochdb-controllers-app',
 				'epochdb-controllers-home',
 				'epochdb-controllers-search',
 				'epochdb-controllers-list',
@@ -53,6 +68,7 @@ require.config({
 		'epochdb-directives': { deps: [
 				'epochdb-directives-items',
 				'epochdb-directives-assets',
+				'epochdb-directives-site',
 				'epochdb-directives-foundation',
 				'epochdb-directives-wintersmith'
 			]},
@@ -67,8 +83,5 @@ require.config({
 require([
 		'lodash',
 		'angular',
-		'angular-ui-router',
-
 		'epochdb'
-
 	]);

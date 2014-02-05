@@ -1,17 +1,18 @@
 @mixin headings {
 	h1,h2,h3,h4,h5	{@content}
 	h1,h2,h3,h4,h5	{
-		small{@content}
-	}
-}
+		small{
+			&.block{
+				display: block;
+				line-height: 1;
+				text-transform: uppercase;
+				
+			}
 
-@include headings{
-	small{
-		&.block{
-			display: block;
-			line-height: 1;
+			@content
 		}
 	}
 }
+
 
 

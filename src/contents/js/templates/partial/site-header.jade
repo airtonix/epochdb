@@ -1,0 +1,16 @@
+header
+	nav.top-bar.hide-for-print(data-topbar, data-ng-class="{'expanded': open}")
+		ul.title-area
+			li.name
+				h1: a(href="{{ WinterSmith.url }}", title="{{ WinterSmith.description }}") {{ WinterSmith.name }}
+			li.toggle-topbar.menu-icon(data-ng-click="open=!open"): a Menu
+
+		section.top-bar-section
+			ul.right
+				li(data-ng-class="{active: $routeSegment.startsWith('item-list')}")
+					a(ng-href='#/items') Items
+				li.divider
+				li
+					a(ng-href='#/about') About
+				li
+					a(ng-href='#/credit') Credit
