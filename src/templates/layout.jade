@@ -22,9 +22,12 @@ html(lang='en')
 			meta(rel="description", content="#{locals.description}", data-meta-description)
 			meta(rel="x-wintersmith", data-wintersmith-context=localsJSON)
 			title= locals.name
+			// build:css css/print.css
 			link(rel='stylesheet', media="print", href=locals.baseUrl+'css/print.css')
+			// build:css css/screen.css
 			link(rel='stylesheet', media="screen, projector", href=locals.baseUrl+'css/screen.css')
 
+		// build:js js/vendor/modernizr.js 
 		script(type='text/javascript', src=locals.baseUrl+'vendor/modernizr/modernizr.js')
 		script.
 			window.assetUrls = {
@@ -53,4 +56,5 @@ html(lang='en')
 							li: a.button(ng-href="#/about") About
 							li: a.button(ng-href="#/credits") Credits
 
+		// build:js js/application.js 
 		script(data-main=locals.baseUrl+"js/main", src=locals.baseUrl+'vendor/requirejs/require.js')

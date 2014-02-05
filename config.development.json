@@ -1,0 +1,49 @@
+{
+  "port": 8000,
+  "contents": "./src/contents/",
+  "templates": "./src/templates",
+
+  "ignore": [
+    "*/test",
+    "*/test/*",
+    "**/test/",
+    "**/test/*"
+  ],
+  
+  "locals": {
+    "baseUrl": "/",
+    "url": "http://nova.zenobi.us:8000/",
+    "name": "EpochDB",
+    "owner": {
+      "name": "Zenobius Jiricek",
+      "homepage": "http://zenobi.us/" 
+    },
+    "description": "dayz epoch item database"
+  },
+
+  "plugins": [
+    "wintersmith-jade",
+    "wintersmith-node-sass",
+    "wintersmith-data-json"
+  ],
+
+  "require": {
+    "_": "underscore",
+    "moment": "moment",
+    "typogr": "typogr"
+  },
+
+  "jade": {
+    "pretty": true
+  },
+
+  "node-sass": {
+    "includePaths": [],
+    "minify": false
+  },
+
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  }
+}
