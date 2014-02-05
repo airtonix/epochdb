@@ -161,8 +161,17 @@ module.exports = function(grunt) {
 		}
 	});
 
-	// Load NPM Task
-	grunt.registerTask('dev', ['wintersmith:preview']);
+
+	/*
+		Development Server
+	 */
+	grunt.registerTask('default', [
+		'wintersmith:preview'
+	]);
+
+	/*
+		Build Project
+	 */
 	grunt.registerTask('build', [
 		'clean:all',
 		'wintersmith:production',
