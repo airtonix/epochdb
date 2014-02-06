@@ -48,36 +48,4 @@ require(['angular'], function(angular){
 						$routeProvider.otherwise({redirectTo: '/'}); 
 				}])
 
-
-
-			// .config(['$stateProvider',
-			// 		 '$urlRouterProvider',
-			// 		 'Assets',
-			// 		function ($stateProvider, $urlRouterProvider, Assets) {
-			// 			$urlRouterProvider.otherwise('/');
-
-			// 			$stateProvider
-			// 				.state('splash', {
-			// 					url:'/',
-			// 					template: "<div data-ui-view></div>"
-			// 				})
-			// 				.state('splash.home', {
-			// 					url:'',
-			// 					templateUrl: Assets.template('home.html')
-			// 				})
-			// 				.state('item-list',{
-			// 					url: '/items/{query:[\w-]+}',
-			// 					templateUrl : Assets.template('list.html')
-			// 				})
-			// 				.state('item-detail',{
-			// 					url: '/item/{id:[\d]+}',
-			// 					templateUrl : Assets.template('detail.html')
-			// 				})
-			// 				.state('page',{
-			// 					url: '/{slug:[\w]+}',
-			// 					templateUrl : function(stateParams){
-			// 						return Assets.template('pages/'+stateParams.slug+'.html')
-			// 					}
-			// 				})
-			// 	}])
 })	

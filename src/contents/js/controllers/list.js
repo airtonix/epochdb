@@ -1,15 +1,15 @@
 require(['angular'], function (angular){
 
 	angular.module('epochdb.controllers.list', [
-			'epochdb.resources.items'
+			'epochdb.resources.craftables'
 		])
 
 		.controller('ItemListController', [
 			'$scope',
 			'$location',
 			'$routeParams',
-			'ItemResource',
-			function ($scope, $location, $routeParams, ItemResource){
+			'CraftableResource',
+			function ($scope, $location, $routeParams, CraftableResource){
 				var query = $location.search();
 				console.log($location, $routeParams)
 				// $scope.Collection = [];

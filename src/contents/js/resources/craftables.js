@@ -16,9 +16,9 @@ var Class = function(){
 	klass.fn.parent = klass;
 }
 
-	angular.module('epochdb.resources.items', [])
-		.factory('ItemResource', ['$http', function ($http){
-			var json = $http.get('./api/data.json').then(function (response){
+	angular.module('epochdb.resources.craftables', [])
+		.factory('CraftableResource', ['$http', function ($http){
+			var json = $http.get('./api/recipes/data.json').then(function (response){
 							return response.data;
 						})
 

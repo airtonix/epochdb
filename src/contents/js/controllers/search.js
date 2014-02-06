@@ -1,15 +1,15 @@
 require(['angular'], function (angular){
 
 	angular.module('epochdb.controllers.search', [
-			'epochdb.resources.items'
+			'epochdb.resources.craftables'
 		])
 
 		.controller('SearchController', [
 			'$scope',
-			'ItemResource',
-			function ($scope, ItemResource){
+			'CraftableResource',
+			function ($scope, CraftableResource){
 				
-				ItemResource.valueList('type').then(function (data){
+				CraftableResource.valueList('type').then(function (data){
 					$scope.Filters = data;
 				});
 

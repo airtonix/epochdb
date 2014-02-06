@@ -1,27 +1,28 @@
 {
-  "name": "EpochDb",
+  "name": "epochdb",
   "version": "0.0.4",
+  "homepage": "https://github.com/airtonix/epochdb",
   "authors": [
     "Zenobius Jiricek <airtonix@gmail.com>"
   ],
-  "license": "MIT",
+  "description": "Reference database for Dayz Epoch",
+  "license": "3 Clause, BSD",
   "private": true,
-
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "./src/contents/vendor",
-    "**/test",
-    "**/tests"
+    "src/contents/vendor",
+    "test",
+    "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.10",
-    "modernizr": "~2.7.1",
-    "requirejs": "~2.1.10",
-    "lodash": "~2.4.1",
-    "angular-route": "~1.2.10",
+    "almond": "~0.2.9",
+    "angular-animate": "~1.2.10",
     "angular-route-segment": "~1.2.0",
-    "angular-animate": "~1.2.10"
+    "angular-route": "~1.2.10",
+    "lodash": "~2.4.1",
+    "modernizr": "~2.7.1",
+    "requirejs": "~2.1.10"
   }
 }

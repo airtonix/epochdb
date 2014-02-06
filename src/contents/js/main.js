@@ -11,7 +11,9 @@ require.config({
 		'epochdb-config': 'config',
 		'epochdb-directives': 'directives',
 			'epochdb-directives-assets': 'directives/assets',
-			'epochdb-directives-items': 'directives/items',
+			'epochdb-directives-search': 'directives/search',
+			'epochdb-directives-lists': 'directives/lists',
+			'epochdb-directives-tabs': 'directives/tabs',
 			'epochdb-directives-site': 'directives/site',
 			'epochdb-directives-foundation': 'directives/foundation',
 			'epochdb-directives-wintersmith': 'directives/wintersmith',
@@ -27,7 +29,7 @@ require.config({
 			'epochdb-filters-string': 'filters/string',
 
 		'epochdb-resources': 'resources',
-			'epochdb-resources-items': 'resources/items'
+			'epochdb-resources-craftables': 'resources/craftables'
 
 
 	},
@@ -56,7 +58,7 @@ require.config({
 				'epochdb-filters'
 			]},
 		'epochdb-resources': { deps: [
-				'epochdb-resources-items'
+				'epochdb-resources-craftables'
 			]},
 		'epochdb-controllers': { deps: [
 				'epochdb-controllers-app',
@@ -66,7 +68,9 @@ require.config({
 				'epochdb-controllers-detail'
 			]},
 		'epochdb-directives': { deps: [
-				'epochdb-directives-items',
+				'epochdb-directives-search',
+				'epochdb-directives-lists',
+				'epochdb-directives-tabs',
 				'epochdb-directives-assets',
 				'epochdb-directives-site',
 				'epochdb-directives-foundation',

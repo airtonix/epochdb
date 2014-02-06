@@ -1,12 +1,12 @@
 require(['angular'], function (angular){
 
 	angular.module('epochdb.controllers.detail', [
-			'epochdb.resources.items'
+			'epochdb.resources.craftables'
 		])
 
 		.controller('ItemDetailController', [
 			'$scope',
-			'ItemResource',
-			function ($scope, ItemResource){
+			'CraftableResource',
+			function ($scope, CraftableResource){
 			}])
 });

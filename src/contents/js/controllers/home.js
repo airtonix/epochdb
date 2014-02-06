@@ -1,14 +1,16 @@
 require(['angular'], function (angular){
 
-	angular.module('epochdb.controllers.home', [])
+	angular.module('epochdb.controllers.home', [
+			'epochdb.resources.craftables'
+		])
 		.controller("HomeController", [
 			'$scope',
-			'ItemResource',
-			function ($scope, ItemResource){
+			'CraftableResource',
+			function ($scope, CraftableResource){
 				$scope.Query = '';
 				$scope.Collection = [];
 
-				ItemResource.filter().then(function (data){
+				CraftableResource.filter().then(function (data){
 					$scope.Collection = data;
 				});	
 
