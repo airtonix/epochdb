@@ -1,8 +1,10 @@
-
 # Dayz Epoch Database
 
-A mobile website (that also works on desktop), whose focus is on
-good UX
+This is the development branch of [EpochDB](http://airtonix.github.io/epochdb/), a web-application that provides no nonsense item reference for Dayz Epoch players.
+
+## Contributing
+
+checkout the [guidlines on contributing](http://airtonix.github.io/epochdb/#/contributing) before charging ahead. If in doubt [leave a ticket](https://github.com/airtonix/epochdb/issues) and we'll clear it up.
 
 ## Local Development
 
@@ -19,25 +21,31 @@ good UX
 
 * `$ grunt build`
 
+## Testing before Deployment
+
+* `$ grunt test`
+
 ## Deploying
 
 * `$ grunt deploy`
 
 ## Created with
 
-* [wintersmith](https://github.com/jnordberg/wintersmith)
-* Wintersmith Jade
-* Wintersmith Json
-* Wintersmith Sass
 * NodeJs
-* Grunt
-* Bower
+	* [wintersmith](https://github.com/jnordberg/wintersmith)
+		* Wintersmith Jade
+		* Wintersmith Json
+		* Wintersmith Sass
+	* Grunt
+	* Bower
+
 * AngularJs
-* Angular Route Segment
-* Angular Animate
+	* Angular Route Segment
+	* Angular Animate
+
 * RequireJs
 * Modernizr
 * Lodash
 * Sass
-* Zurb Foundation
-* Bourbon
+	* Zurb Foundation
+	* Bourbon
