@@ -6,6 +6,8 @@ This is the development branch of [EpochDB](http://airtonix.github.io/epochdb/),
 
 checkout the [guidlines on contributing](http://airtonix.github.io/epochdb/#/contributing) before charging ahead. If in doubt [leave a ticket](https://github.com/airtonix/epochdb/issues) and we'll clear it up.
 
+Main development occurs on the `develop` branch, pull requests submitted to any other branch will be rejected.
+
 ## Local Development
 
 * Make sure you have NodeJs, Git installed
