@@ -28,7 +28,7 @@ require(['angular'], function(angular){
 								}else{
 									if(value && value.length > 0) $scope.$emit('item-query', value);
 								}
-							})						
+							})
 
 							$scope.search = function(value){
 								$location.path("/items/"+value.toLowerCase())

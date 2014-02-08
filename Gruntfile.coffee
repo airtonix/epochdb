@@ -143,13 +143,16 @@ module.exports = (grunt) ->
       options:
         files: ['package.json', 'bower.json'],
         updateConfigs: ['pkg', 'bower'],
-        commit: false,
-        createTag: false,
-        push: false
+        commit: true,
+        createTag: true,
+        push: true
+        pushTo: 'develop'
 
     "gh-pages":
       options:
         base: 'dist'
+        message: "Release <%= pkg.version %>"
+        tag: "<%= pkg.version %>"
       src: ['**']
 
   grunt.registerTask "default", ["wintersmith:preview"]
@@ -158,6 +161,7 @@ module.exports = (grunt) ->
     'clean:all'
     'wintersmith:test'
     'compile'
+    'bump:build'
     'connect:dist'
   ]
 
@@ -177,5 +181,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask "deploy", [
     'build',
-    'gh-pages'
+    'bump:minor'
+    'gh-pages',
+    'clean'
   ]
