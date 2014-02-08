@@ -8648,7 +8648,7 @@ var Class = function(){
 
 	angular.module('epochdb.resources.craftables', [])
 		.factory('CraftableResource', ['$http', function ($http){
-			var json = $http.get('./api/recipes/data.faef808f.json').then(function (response){
+			var json = $http.get('./api/recipes/data.c04eec2b.json').then(function (response){
 							return response.data;
 						})
 
@@ -8867,7 +8867,7 @@ require(['angular'], function(angular){
 								}else{
 									if(value && value.length > 0) $scope.$emit('item-query', value);
 								}
-							})						
+							})
 
 							$scope.search = function(value){
 								$location.path("/items/"+value.toLowerCase())
@@ -8889,7 +8889,7 @@ require(['angular'], function(angular){
 
 define("epochdb-directives-search", function(){});
 
-require(['angular'], function(angular){
+require(['lodash', 'angular'], function(_, angular){
 
 	angular.module("epochdb.directives.lists", [
 			'epochdb.resources.craftables'
@@ -8904,51 +8904,41 @@ require(['angular'], function(angular){
 					return {
 						restrict: 'E',
 						replace: true,
-						templateUrl: AssetManager.template('partial/list.c08e9dd7.html'),
+						templateUrl: AssetManager.template('partial/list.3fdfbc86.html'),
 						link: function($scope, iElm, iAttrs, controller) {
 							$scope.$watch('Query', function (value){
-								// $location.search = $stateParams;
 								CraftableResource.filter().then(function(data){
 									$scope.Collection = data;
 								})
 							})
-							
 						}
 					};
 				}])
-		
+
 		.directive('itemSummary', [
 				'$parse',
 				'AssetManager',
 			function($parse, AssetManager){
+
 				return {
-					restrict: 'EAC',
+					restrict: 'A',
 					scope: {
 						Thing: "=itemSummary"
 					},
 					replace: true,
-					templateUrl: AssetManager.template("list-item.6bcdb60d.html"),
+					templateUrl: AssetManager.template("partial/list-item.6bcdb60d.html"),
 					controller: function($scope, $element, $attrs, $transclude) {
 						var self = this;
-						$scope.PanesSchema = {
-								'requiredTools': 'tools',
-								'requiredComponents': 'components',
-								'requiredToCraftNear': 'areas',
-								'requiredBy': 'used by',
-							}
-
-						angular.forEach($scope.PanesSchema, function(value, key){
-							if(!$scope.Thing.hasOwnProperty(key)) return;
+						$scope.Panes = [];
+						_.forEach($scope.Thing.depends, function(value, key){
 							$scope.Panes.push({
-								name: value,
-								slug: key,
-								data: $scope.Thing[key]
+								name: key,
+								data: $scope.Thing.depends[key]
 							})
 						})
 					}
 				};
 			}])
-
 
 });
 
@@ -9065,7 +9055,7 @@ require(['angular'], function (angular){
 			// Runs during compile
 			return {
 				restrict: 'E',
-				templateUrl: AssetManager.template('partial/site-header.baa7c970.html'),
+				templateUrl: AssetManager.template('partial/site-header.e59f0853.html'),
 				replace: true,
 				link: function($scope, iElm, iAttrs, controller) {}
 			};
