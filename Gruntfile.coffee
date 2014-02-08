@@ -8,15 +8,6 @@ module.exports = (grunt) ->
     dist: "dist"
     src: "./"
 
-  @releaseBranchConfig =
-    releaseBranch: 'gh-pages'
-    remoteRepository: 'origin'
-    distDir: 'dist'
-    commitMessage: 'RELEASE <%= pkg.version %>'
-    commit: true
-    push: true
-    blacklist: ['.git']
-
   grunt.initConfig
 
     pkg: grunt.file.readJSON 'package.json'
@@ -32,11 +23,7 @@ module.exports = (grunt) ->
 
       dist:
         options:
-          base: '<%= paths.dist %>'
-
-      build:
-        options:
-          base: '<%= paths.build %>'
+          base: '.'
 
     wintersmith:
       production:
@@ -44,70 +31,33 @@ module.exports = (grunt) ->
           action: "build"
           config: './config.production.json'
 
+      test:
+        options:
+          action: "build"
+          config: './config.test.json'
+
       preview:
         options:
           action: "preview"
           config: './config.development.json'
 
-    jade:
+
+    copy:
       build:
-        options:
-          data:
-            debug: false
-
         files: [
-          expand: true
-          cwd: "<%= paths.build %>/js/templates/"
-          src: "**/*.jade"
-          dest: "<%= paths.build %>/js/templates/"
-          ext: ".html"
-        ]
-
-    filerev:
-      options:
-        encoding: 'utf8',
-        algorithm: 'md5',
-        length: 8
-
-      production:
-        files: [
-          expand: true
+          expand: true,
           cwd: '<%= paths.build %>'
+          dest: '<%= paths.dist %>/'
           src: [
-            'js/application.js',
-            'img/**/*.{jpg,jpeg,gif,png,webp}',
-            'css/**/*.css',
-            'fonts/**/*.{ttf,otf,woff,svg}',
+            'index.html',
+            'js/templates/**/*.html',
             'api/**/*.json',
-            'js/templates/**/*.html'
+            'img/**/*.{jpg,jpeg,gif,png,webp}',
+            'fonts/**/*.{ttf,eot,otf,woff,svg}',
+            'css/**/*.css',
+            '!**/vendor/**/*.*'
           ]
-          dest: '<%= paths.dist %>'
         ]
-
-    userev:
-      options:
-        hash: /(\.[a-f0-9]{8})\.[a-z]+$/
-
-      assets:
-        src: [
-          '<%= paths.build %>js/application.js',
-          '<%= paths.build %>js/templates/**/*.html'
-          # '<%= paths.build %>img/**/*.{jpg,jpeg,gif,png,webp}',
-          '<%= paths.build %>css/**/*.css',
-          # '<%= paths.build %>fonts/**/*.{ttf,otf,woff,svg}',
-          '<%= paths.build %>api/**/*.json',
-          '!<%= paths.build %>**/*.map.css',
-          '!<%= paths.build %>**/*.map.js'
-        ]
-        # options:
-        #   patterns:
-        #     'Linking versioned source maps': /sourceMappingURL=([a-z0-9.]*\.map)/
-
-      index:
-        src: '<%= paths.build %>/index.html'
-        options:
-          patterns:
-            'Css': /(css\/[\w\d-]*\.css)/
 
     requirejs:
       compile:
@@ -116,23 +66,61 @@ module.exports = (grunt) ->
           almond: true
           optimize: "none"
           mainConfigFile: "<%= paths.build %>/js/main.js"
-          include: 'main.js',
-          name: '../vendor/almond/almond'
-          out: "<%= paths.build %>/js/application.js"
+          name: 'main'
+          out: "<%= paths.dist %>/js/application.js"
           replaceRequireScript: [
-            files: ['<%= paths.build %>/index.html']
-            module: 'epochdb/js/main',
-            modulePath: '<%= paths.build %>/js/application'
+            files: ['<%= paths.dist %>/index.html']
+            module: 'js/main',
+            modulePath: './js/application'
           ]
 
-    copy:
-      build:
+    filerev:
+      options:
+        encoding: 'utf8',
+        algorithm: 'md5',
+        length: 8
+        copy: false
+
+      production:
         files: [
-          expand: true,
-          cwd: '<%= paths.build %>'
-          dest: '<%= paths.dist %>/'
-          src: ['index.html','**/api/**/*.json','!**/vendor/**/*.html']
+          expand: true
+          cwd: '<%= paths.dist %>'
+          dest: '<%= paths.dist %>'
+          src: [
+            'js/application.js'
+            'img/**/*.{jpg,jpeg,gif,png,webp}',
+            'css/**/*.css',
+            'fonts/**/*.{ttf,eot,otf,woff,svg}',
+            'api/**/*.json',
+            'js/templates/**/*.html'
+          ]
         ]
+
+    userev:
+      options:
+        hash: /([a-f0-9]{8})\.[a-z]+$/
+
+      tpl:
+        src: '<%= paths.dist %>/js/*.js',
+        options:
+          patterns:
+            'partials': /template\([\"\']([\w\d\-\/]*\.html)[\"\']\)/
+            'json': /api\/([\w\d\-\/]*\.json)/
+
+      styles:
+        src: '<%= paths.dist %>/css/*.css',
+        options:
+          patterns:
+            'Img': /(img\/[\w\d-]*\.png|jpg|jpeg|gif)/
+            'Font': /(fonts\/[\w\d-]*\.(eot|ttf|otf|woff|svg))/
+
+      index:
+        src: '<%= paths.dist %>/index.html'
+        options:
+          patterns:
+            'Css': /(css\/[\w\d-]*\.css)/
+            'Js': /(js\/[\w\d-]*\.js)/
+
 
     clean:
       all:
@@ -151,9 +139,6 @@ module.exports = (grunt) ->
       dist:
         src: ["<%= paths.dist %>"]
 
-    releaseBranchPre: @releaseBranchConfig
-    releaseBranch: @releaseBranchConfig
-
     bump:
       options:
         files: ['package.json', 'bower.json'],
@@ -162,31 +147,35 @@ module.exports = (grunt) ->
         createTag: false,
         push: false
 
-
-    githubPages:
-      production:
-        options:
-          commitMessage: 'push'
-        src: '_site'
+    "gh-pages":
+      options:
+        base: 'dist'
+      src: ['**']
 
   grunt.registerTask "default", ["wintersmith:preview"]
 
   grunt.registerTask "test", [
-    "build",
-    "connect:dist"
+    'clean:all'
+    'wintersmith:test'
+    'compile'
+    'connect:dist'
+  ]
+
+  grunt.registerTask "compile", [
+    'copy'
+    'requirejs'
+    'filerev'
+    'userev'
   ]
 
   grunt.registerTask 'build', [
-    'clean:all',
-    'wintersmith:production',
-    'copy',
-    'requirejs',
-    'filerev',
-    'userev:assets',
-    'userev:index'
+    'clean:all'
+    'wintersmith:production'
+    'compile'
+    'clean:build'
   ]
 
   grunt.registerTask "deploy", [
-    "build",
-    "clean",
+    'build',
+    'gh-pages'
   ]

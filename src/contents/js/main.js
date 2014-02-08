@@ -7,29 +7,29 @@ require.config({
 		'lodash': '../vendor/lodash/dist/lodash.underscore',
 
 		'epochdb': 'app',
-		'epochdb-routes': 'routes',
-		'epochdb-config': 'config',
-		'epochdb-directives': 'directives',
-			'epochdb-directives-assets': 'directives/assets',
-			'epochdb-directives-search': 'directives/search',
-			'epochdb-directives-lists': 'directives/lists',
-			'epochdb-directives-tabs': 'directives/tabs',
-			'epochdb-directives-site': 'directives/site',
-			'epochdb-directives-foundation': 'directives/foundation',
-			'epochdb-directives-wintersmith': 'directives/wintersmith',
+			'epochdb-routes': 'routes',
+			'epochdb-config': 'config',
+			'epochdb-directives': 'directives',
+				'epochdb-directives-assets': 'directives/assets',
+				'epochdb-directives-search': 'directives/search',
+				'epochdb-directives-lists': 'directives/lists',
+				'epochdb-directives-tabs': 'directives/tabs',
+				'epochdb-directives-site': 'directives/site',
+				'epochdb-directives-foundation': 'directives/foundation',
+				'epochdb-directives-wintersmith': 'directives/wintersmith',
 
-		'epochdb-controllers': 'controllers',
-			'epochdb-controllers-app': 'controllers/app',
-			'epochdb-controllers-home': 'controllers/home',
-			'epochdb-controllers-search': 'controllers/search',
-			'epochdb-controllers-list': 'controllers/list',
-			'epochdb-controllers-detail': 'controllers/detail',
+			'epochdb-controllers': 'controllers',
+				'epochdb-controllers-app': 'controllers/app',
+				'epochdb-controllers-home': 'controllers/home',
+				'epochdb-controllers-search': 'controllers/search',
+				'epochdb-controllers-list': 'controllers/list',
+				'epochdb-controllers-detail': 'controllers/detail',
 
-		'epochdb-filters': 'filters',
-			'epochdb-filters-string': 'filters/string',
+			'epochdb-filters': 'filters',
+				'epochdb-filters-string': 'filters/string',
 
-		'epochdb-resources': 'resources',
-			'epochdb-resources-craftables': 'resources/craftables'
+			'epochdb-resources': 'resources',
+				'epochdb-resources-craftables': 'resources/craftables'
 
 
 	},
@@ -80,12 +80,9 @@ require.config({
 				'epochdb-filters-string'
 			]}
 
-	}
+	},
+
+	urlArgs: "bust=" +  (new Date()).getTime(),
+	deps: ['epochdb', ]
+
   });
-
-
-require([
-		'lodash',
-		'angular',
-		'epochdb'
-	]);

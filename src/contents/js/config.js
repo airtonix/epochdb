@@ -16,4 +16,4 @@ require(['angular'], function(angular){
 					return service;
 				})(window))
 
-})	
+})

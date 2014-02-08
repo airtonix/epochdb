@@ -10,7 +10,6 @@ header
 				li(data-ng-class="{active: $routeSegment.startsWith('item-list')}")
 					a(ng-href='#/items') Items
 				li.divider
-				li
-					a(ng-href='#/about') About
-				li
-					a(ng-href='#/credit') Credit
+				li: a(ng-href='#/about') About
+				li: a(ng-href='#/contribute') Contribute
+				li: a(ng-href='#/credit') Credit

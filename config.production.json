@@ -2,7 +2,7 @@
   "output": "./build",
   "contents": "./src/contents/",
   "templates": "./src/templates",
-  
+
   "ignore": [
     "*/test",
     "*/test/*",
@@ -16,7 +16,7 @@
     "name": "EpochDB",
     "owner": {
       "name": "Zenobius Jiricek",
-      "homepage": "http://zenobi.us/" 
+      "homepage": "http://zenobi.us/"
     },
     "description": "dayz epoch item database"
   },
