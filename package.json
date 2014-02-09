@@ -1,6 +1,6 @@
 {
   "name": "EpochDB",
-  "version": "1.0.0",
+  "version": "1.0.0-1",
   "repository": "none",
   "devDependencies": {
     "moment": "2.3.x",
@@ -21,6 +21,7 @@
     "wintersmith-jade": "git+https://github.com/airtonix/wintersmith-jade.git",
     "grunt-filerev": "git+https://github.com/airtonix/grunt-filerev.git",
     "grunt-userev": "git+https://github.com/airtonix/grunt-userev.git",
+    "grunt-filerev-assets": "git+https://github.com/airtonix/grunt-filerev-assets.git",
     "grunt-gh-pages": "~0.9.0",
     "grunt-bump": "0.0.13"
   },
