@@ -1,7 +1,7 @@
-li.epoch-item-summary(data-ng-class="['type-'+Thing.type.toLowerCase(), Visible?'active':'']", data-ng-translude)
+li.epoch-item-summary(data-ng-class="['type-'+item.type.toLowerCase(), isVisible?'active':'']", data-ng-click="isVisible=!isVisible")
 
-	a.button.text-left(data-ui-sref="app.detail({ id: Thing.id })", title="{{Thing.id}}")
+	a.button.text-left(title="{{ item.id }}")
 		span.label.radius.epoch-type-icon
-			em(data-ng-class="'icon-'+Thing.type.toLowerCase()")
-		span.epoch-item-count.label(data-ng-if="Thing.count") {{ Thing.count }}
-		span.epoch-item-name {{ Thing.name }}
+			em(data-ng-class="'icon-' + item.type.toLowerCase()")
+		span.epoch-item-count.label(data-ng-if="item.count") {{ item.count }}
+		span.epoch-item-name(data-ng-bind="item.name")
