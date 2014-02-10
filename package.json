@@ -1,6 +1,6 @@
 {
   "name": "EpochDB",
-  "version": "1.0.0-2",
+  "version": "1.1.0-0",
   "repository": "none",
   "devDependencies": {
     "moment": "2.3.x",
@@ -23,7 +23,8 @@
     "grunt-userev": "git+https://github.com/airtonix/grunt-userev.git",
     "grunt-filerev-assets": "git+https://github.com/airtonix/grunt-filerev-assets.git",
     "grunt-gh-pages": "~0.9.0",
-    "grunt-bump": "0.0.13"
+    "grunt-bump": "0.0.13",
+    "grunt-html2js": "~0.2.4"
   },
   "dependencies": {}
 }
