@@ -5,6 +5,7 @@ require([
 	function (_, angular){
 
 		angular.module("epochdb", [
+				'epochdb.templates',
 				'epochdb.resources',
 				'epochdb.controllers',
 				'epochdb.directives',

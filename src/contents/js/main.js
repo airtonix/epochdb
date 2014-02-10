@@ -1,14 +1,15 @@
 require.config({
 	paths: {
 		'angular': '../vendor/angular/angular.min',
-			'angular-route': '../vendor/angular-route/angular-route',
-			'angular-animate': '../vendor/angular-animate/angular-animate',
-			'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment',
-		'lodash': '../vendor/lodash/dist/lodash.underscore',
+			'angular-route': '../vendor/angular-route/angular-route.min',
+			'angular-animate': '../vendor/angular-animate/angular-animate.min',
+			'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min',
+		'lodash': '../vendor/lodash/dist/lodash.underscore.min',
 
 		'epochdb': 'app',
 			'epochdb-routes': 'routes',
 			'epochdb-config': 'config',
+			'epochdb-templates': 'templates',
 			'epochdb-directives': 'directives',
 				'epochdb-directives-assets': 'directives/assets',
 				'epochdb-directives-search': 'directives/search',
@@ -50,6 +51,7 @@ require.config({
 				'angular-route-segment',
 				'angular-animate',
 
+				'epochdb-templates',
 				'epochdb-config',
 				'epochdb-routes',
 				'epochdb-resources',

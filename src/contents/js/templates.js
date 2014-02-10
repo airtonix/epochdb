@@ -1,0 +1,1 @@
+require(['angular'], function(angular){ angular.module('epochdb.templates', []); });

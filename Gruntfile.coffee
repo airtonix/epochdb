@@ -50,7 +50,6 @@ module.exports = (grunt) ->
           dest: '<%= paths.dist %>/'
           src: [
             'index.html',
-            'js/templates/**/*.html',
             'api/**/*.json',
             'img/**/*.{jpg,jpeg,gif,png,webp}',
             'fonts/**/*.{ttf,eot,otf,woff,svg}',
@@ -59,20 +58,49 @@ module.exports = (grunt) ->
           ]
         ]
 
-    requirejs:
-      compile:
+    html2js:
+      options:
+        module: "epochdb.templates"
+        indentString: ''
+        htmlmin:
+          collapseWhitespace: true
+
+      dist:
         options:
-          wrap: true
-          almond: true
+          base: "<%= paths.build %>/"
+          rename: (name) ->
+            '/epochdb/' + name
+        src: ['<%= paths.build %>/js/templates/**/*.html']
+        dest: '<%= paths.build %>/js/templates.js'
+
+      test:
+        options:
+          base: "<%= paths.build %>/"
+          rename: (name) ->
+            '/dist/' + name
+        src: ['<%= paths.build %>/js/templates/**/*.html']
+        dest: '<%= paths.build %>/js/templates.js'
+
+    requirejs:
+      options:
+        wrap: true
+        almond: true
+        mainConfigFile: "<%= paths.build %>/js/main.js"
+        name: 'main'
+        out: "<%= paths.dist %>/js/application.js"
+        replaceRequireScript: [
+          files: ['<%= paths.dist %>/index.html']
+          module: 'js/main',
+          modulePath: './js/application'
+        ]
+
+      test:
+        options:
           optimize: "none"
-          mainConfigFile: "<%= paths.build %>/js/main.js"
-          name: 'main'
-          out: "<%= paths.dist %>/js/application.js"
-          replaceRequireScript: [
-            files: ['<%= paths.dist %>/index.html']
-            module: 'js/main',
-            modulePath: './js/application'
-          ]
+
+      dist:
+        options:
+          optimize: "uglify"
 
     filerev:
       options:
@@ -91,8 +119,7 @@ module.exports = (grunt) ->
             'img/**/*.{jpg,jpeg,gif,png,webp}',
             'css/**/*.css',
             'fonts/**/*.{ttf,eot,otf,woff,svg}',
-            'api/**/*.json',
-            'js/templates/**/*.html'
+            'api/**/*.json'
           ]
         ]
 
@@ -100,18 +127,17 @@ module.exports = (grunt) ->
       options:
         hash: /([a-f0-9]{8})\.[a-z]+$/
 
-      tpl:
+      application:
         src: '<%= paths.dist %>/js/*.js',
         options:
           patterns:
-            'partials': /template\([\"\']([\w\d\-\/]*\.html)[\"\']\)/
-            'json': /api\/([\w\d\-\/]*\.json)/
+            'Data': /(api\/.*\/[\w\d-]*\.json)/
 
       styles:
         src: '<%= paths.dist %>/css/*.css',
         options:
           patterns:
-            'Img': /(img\/[\w\d-]*\.png|jpg|jpeg|gif)/
+            'Img': /(img\/[\w\d-]*\.(png|jpg|jpeg|gif))/
             'Font': /(fonts\/[\w\d-]*\.(eot|ttf|otf|woff|svg))/
 
       index:
@@ -146,7 +172,7 @@ module.exports = (grunt) ->
         commit: true,
         createTag: true,
         push: true
-        pushTo: 'develop'
+        pushTo: 'origin develop'
 
     "gh-pages":
       options:
@@ -155,27 +181,42 @@ module.exports = (grunt) ->
         tag: "<%= pkg.version %>"
       src: ['**']
 
+
+    filerev_assets:
+      dist:
+        options:
+          prettyPrint: 8
+          dest: "<%= paths.dist %>/js/templates/map.json"
+          patterns: [
+            [ /dist\\/g, "" ]
+            [ /\\/g, "/" ]
+          ]
+    # "
+
   grunt.registerTask "default", ["wintersmith:preview"]
 
   grunt.registerTask "test", [
     'clean:all'
     'wintersmith:test'
-    'compile'
-    'bump:build'
-    'connect:dist'
-  ]
 
-  grunt.registerTask "compile", [
     'copy'
-    'requirejs'
+    'html2js:test'
+    'requirejs:test'
     'filerev'
     'userev'
+    'connect:dist'
   ]
 
   grunt.registerTask 'build', [
     'clean:all'
     'wintersmith:production'
-    'compile'
+
+    'copy'
+    'html2js:dist'
+    'requirejs:test'
+    'filerev'
+    # 'filerev_assets'
+    'userev'
     'clean:build'
   ]
 
