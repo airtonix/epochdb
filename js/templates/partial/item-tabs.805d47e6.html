@@ -1,7 +1,0 @@
-
-<dl class="tabs simple-outline">
-  <dd data-ng-repeat="tab in Tabs"><a title="{{ tab.name }}" data-ng-click="tab.toggle()"><em data-ng-class="['icon-{{ tab.name }}']" class="item-detail-tab"></em></a></dd>
-</dl>
-<div data-ng-show="Visible" class="tabs-content">
-  <div data-ng-repeat="pane in Panes" data-item-summary-pane="{{pane}}" data-collection="{{ pane.data }}" class="content"></div>
-</div>
