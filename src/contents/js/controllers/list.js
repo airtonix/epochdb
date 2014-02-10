@@ -11,8 +11,6 @@ require(['angular'], function (angular){
 			'CraftableResource',
 			function ($scope, $location, $routeParams, CraftableResource){
 				var query = $location.search();
-				console.log($location, $routeParams)
-				// $scope.Collection = [];
 				$scope.Query = $routeParams.query;
 				$scope.$on('item-query', function (scope, query){
 					$scope.Query = query;

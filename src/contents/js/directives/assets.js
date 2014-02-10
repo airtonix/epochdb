@@ -1,30 +1,32 @@
 require(['angular', 'lodash'], function(angular, _){
 
 	angular.module('epochdb.directives.assets', [])
-		.provider('AssetManager', function (){
-				var urls = _.extend({
-						template: null,
-						static: null,
-						api: null
-					}, window.assetUrls);
+		.provider('Assets', [
+			function (){
+				var self = this;
+					self.paths = _.extend({
+							template: null,
+							static: null,
+							api: null
+						}, window.assetUrls);
 
-				this.setPath = function (name, path){
-						urls[name] = path;
+				self.setPath = function (name, path){
+						self.paths[name] = path;
 					};
 
-				this.template = function(path){
-					return urls.template+path }
-				this.static = function(path){ return urls.static+path }
-				this.api = function(path){ return urls.api+path }
+				self.template = function(path){
+					return self.paths.template+path }
+				self.static = function(path){ return self.paths.static+path }
+				self.api = function(path){ return self.paths.api+path }
 
 				var service = {
-						template: this.template,
-						static: this.static,
-						api: this.api
+						template: self.template,
+						static: self.static,
+						api: self.api
 					};
 
-				this.$get = [function(){ return service; }]
-			})
+				self.$get = [function(){ return service; }]
+			}])
 
 
 });

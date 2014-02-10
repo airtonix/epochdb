@@ -1,6 +1,6 @@
 require.config({
 	paths: {
-		'angular': '../vendor/angular/angular.min',
+		'angular': '../vendor/angular/angular',
 			'angular-route': '../vendor/angular-route/angular-route.min',
 			'angular-animate': '../vendor/angular-animate/angular-animate.min',
 			'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min',

@@ -1,6 +1,10 @@
 .hero{
 	text-align: center;
 	width: 100%;
-	min-height: 22em;
+	min-height: $hero-height;
 	@include vertically-align();
+
+	&.half-height{
+		min-height: $hero-height/2;
+	}
 }

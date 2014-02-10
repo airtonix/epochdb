@@ -1,0 +1,5 @@
+		tabs.row.epoch-item-summary(data-ng-if="Item.depends.length", data-collection="Item.depends")
+			dl.tabs
+				tab-button(data-ng-repeat='tab in Tabs') {{ tab.name }}
+			ul.tabs-content
+				tab-page(data-ng-repeat='pane in Panes', data-pane-data='pane')

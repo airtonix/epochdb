@@ -1,6 +1,5 @@
 .epoch-item-summary{
 	position: relative;
- 	@include transition (width, 2.0s, ease-in-out);
  	margin-left: 0;
  	width: 100%;
 
@@ -45,28 +44,30 @@
 		color: $epoch-item-name-color;
 	}
 
-	& > .tabs{
-		position: absolute;
-		top: 0.4em;
-		right: 0.4em;
+	.tabs{
 		margin: 0;
 		padding: 0;
-		dd > a{
+		@include simple-button-group();
+		dd > a {
 			font-size: 0.8em;
-			padding: 0.5em;
+			padding: 1em;
+			margin: 0em;
 		}
-		dd:first-child > a{
+		dd:first-child > a {
 			@include border-left-radius(3px);
 		}
-		dd:last-child > a{
+		dd:last-child > a {
 			@include border-right-radius(3px);
 		}
 
-		& + .tabs-content{
-			border-left: 2px solid $tab-border-color;
-			border-right: 2px solid $tab-border-color;
+		&.attached{
+			display: inline;
+		}
+
+		& + .tabs-content {
 			margin: 0;
 			padding: 0.5em;
+			border-top: 1px solid $button-border-color;
 			& > .content {
 				display: block;
 				width: 100%;
@@ -91,18 +92,36 @@
 		// .epoch-item-name, .epoch-type-icon{ color: $shade5; }
 	}
 
-	&.active{
-		position: relative;
-		margin-left: -5%;
-		margin-top: -5%;
-		width: 110% !important;
-		border-bottom: 2px solid $tab-border-color;
-		background:  $tab-border-color;
-		margin-bottom: -2px;
-	}
 }
 
+&#item-detail{
+	#content{
 
+		.item-header{
+			padding-bottom: 1em;
+			border-bottom: 1px solid $button-border-color;
+			.item-title{
+				.item-type{
+					font-weight: bold;
+					clear: both;
+				}
+				.item-tag{
+					display: inline-block;
+					margin-left: 0.3em;
+					font-size: 0.8rem;
+					color: shade($subheader-font-color, 25%);
+					&:before{
+						padding: 0 1.5em 0.5em 0;
+					}
+				}
+			}
+		}
+
+		.epoch-requirements{
+			width: 100%;
+		}
+	}
+}
 
 .icon-area, .icon-areas				{ @include icon($icon-address); }
 .icon-tool, .icon-tools				{ @include icon($icon-wrench); }

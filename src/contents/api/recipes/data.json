@@ -233,7 +233,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -253,7 +253,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -273,7 +273,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -294,7 +294,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -315,7 +315,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -336,7 +336,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -357,7 +357,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -377,7 +377,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -398,7 +398,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -419,7 +419,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -439,7 +439,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -459,7 +459,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -485,7 +485,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -506,7 +506,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -528,7 +528,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -550,7 +550,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -593,7 +593,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -613,7 +613,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -634,7 +634,7 @@
 			"areas": {
 				"api/8": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -724,7 +724,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/7": 1
 			},
@@ -744,7 +744,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/7": 1
 			},
@@ -764,7 +764,7 @@
 			"areas": {
 				"api/8": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -786,7 +786,7 @@
 			"areas": {
 				"api/8": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/7": 1
 			},
@@ -804,7 +804,7 @@
 		"source": ["Looted", "Crafting", "Purchased"],
 		"depends": {
 			"areas": null,
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/7": 1
 			},
@@ -824,7 +824,7 @@
 			"areas": {
 				"api/8": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1
 			},
 			"components": {
@@ -843,7 +843,7 @@
 			"areas": {
 				"api/9": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/5": 1,
 				"api/2": 1
 			},
@@ -863,7 +863,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/5": 1,
 				"api/2": 1
 			},
@@ -885,7 +885,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/5": 1,
 				"api/7": 1
 			},
@@ -906,7 +906,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/5": 1,
 				"api/7": 1
 			},
@@ -927,7 +927,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/5": 1,
 				"api/7": 1
 			},
@@ -948,7 +948,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1
 			},
 			"components": {
@@ -968,7 +968,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -991,7 +991,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1
 			},
 			"components": {
@@ -1012,7 +1012,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/7": 1
 			},
@@ -1033,7 +1033,7 @@
 			"areas": {
 				"api/4": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/5": 1
 			},
@@ -1056,7 +1056,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/7": 1
 			},
@@ -1078,7 +1078,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -1100,7 +1100,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -1124,7 +1124,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -1147,7 +1147,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},
@@ -1170,7 +1170,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/5": 1
 			},
@@ -1192,7 +1192,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/5": 1
 			},
@@ -1212,7 +1212,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/5": 1
 			},
@@ -1232,7 +1232,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/5": 1
 			},
@@ -1254,7 +1254,7 @@
 			"areas": {
 				"api/512": "3m"
 			},
-			"requiredTools": {
+			"tools": {
 				"api/2": 1,
 				"api/1": 1
 			},

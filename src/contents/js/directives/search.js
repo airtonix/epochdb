@@ -7,14 +7,14 @@ require(['angular'], function(angular){
 		.directive('searchForm', [
 				'$location',
 				'CraftableResource',
-				'AssetManager',
-				function($location, CraftableResource, AssetManager){
+				'Assets',
+				function($location, CraftableResource, Assets){
 					// Runs during compile
 					return {
 						// scope: {}, // {} = isolate, true = child, false/undefined = no change
 						restrict: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
 						replace: true,
-						templateUrl: AssetManager.template('partial/search.html'),
+						templateUrl: Assets.template('partial/search.html'),
 						controller: function($scope, $element, $attrs, $transclude) {
 							var behaviour = $attrs.changeBehaviour?$attrs.changeBehaviour:'submit'
 

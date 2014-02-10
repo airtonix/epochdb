@@ -111,14 +111,14 @@ $horizontal-rule-color: tint($deep-ocean-blue, 15%);
 
 // These control how subheaders are styled.
 $subheader-line-height: 1.4;
-$subheader-font-color: scale-color($header-font-color, $lightness: 35%);
+$subheader-font-color: scale-color($header-font-color, $lightness: -25%);
 // $subheader-font-weight: 300;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
 $small-font-size: 45%;
-$small-font-color: scale-color($header-font-color, $lightness: 35%);
+$small-font-color: scale-color($header-font-color, $lightness: -25%);
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
@@ -142,6 +142,11 @@ $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 
+/*
+Hero
+ */
+
+$hero-height: rem-calc(200);
 
 /*
 	Epoch Item

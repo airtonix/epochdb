@@ -12,7 +12,6 @@
 	border-color: $border;
 	border-width: 2px;
 	border-style: solid;
-	
 
 	&:hover{
 		border-color: $border-hover;
@@ -21,34 +20,40 @@
 	}
 }
 
-ul.button-group{
+@mixin simple-button-group(){
+	li, dd, dt{
+		a.button{
+			@include button-style-simple($button-border-color);
+			border-right: none;
+		}
+
+		&:last-child{
+			a.button{
+				border-right: 2px solid $button-border-color;
+			}
+		}
+
+	}
+
+	&.rounded {
+		li, dd, dt{
+			&:first-child a.button{
+				@include border-top-radius(3px)
+			}
+			&:last-child a.button{
+				@include border-bottom-radius(3px)
+			}
+		}
+	}
+}
+
+@mixin allround-button-group(){
 	clear:both;
 	display: inline-block;
 
 
 	&.simple-outline{
-		li{
-			a.button{
-				@include button-style-simple($button-border-color);
-				border-right: none;
-			}
-
-			&:last-child{
-				a.button{
-					border-right: 2px solid $button-border-color;
-				}
-			}
-
-		}
-
-		&.rounded{
-			li:first-child a.button{
-				@include border-top-radius(3px)
-			}
-			li:last-child a.button{
-				@include border-bottom-radius(3px)
-			}
-		}
+		@include simple-button-group();
 	}
 
 	&.vertical{
@@ -70,8 +75,16 @@ ul.button-group{
 			}
 		}
 	}
-
 }
+
+ul.button-group {
+	@include allround-button-group();
+}
+
+dl.tabs {
+	@include allround-button-group();
+}
+
 
 .button, button{
 	&.simple-outline{

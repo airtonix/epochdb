@@ -1,18 +1,18 @@
 require(['angular', 'lodash'], function (angular, _){
 
 
-var Class = function(){ 
+var Class = function(){
 
 	var klass = function(){
-		this.init.apply(this, arguments); 
+		this.init.apply(this, arguments);
 	};
 
 	klass.prototype.init = function(){};
 
-	// Shortcut to access prototype 
+	// Shortcut to access prototype
 	klass.fn = klass.prototype;
 
-	// Shortcut to access class 
+	// Shortcut to access class
 	klass.fn.parent = klass;
 }
 
@@ -34,7 +34,8 @@ var Class = function(){
 			}
 			Model.get = function (id){
 				return json.then(function(data){
-					return _.find(json, { 'id': id })
+					var result = _.find(data, function(item){ return item.id == id })
+					return result
 				})
 			}
 

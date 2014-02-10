@@ -9,11 +9,12 @@ require(['angular'], function(angular){
 
 			.config(['$routeSegmentProvider',
 					 '$routeProvider',
-					 'Assets',
-					function ($routeSegmentProvider, $routeProvider, Assets) {
-						var templateHome = Assets.template('home.html'),
-							templateList = Assets.template('list.html'),
-							templateDetail = Assets.template('detail.html');
+					 'AssetsProvider',
+					function ($routeSegmentProvider, $routeProvider, AssetsProvider) {
+						var templateHome = AssetsProvider.template('home.html'),
+							templateList = AssetsProvider.template('list.html'),
+							templateDetail = AssetsProvider.template('detail.html'),
+							templateLoading = AssetsProvider.template('partial/loading.html');
 
 						$routeSegmentProvider.options.autoLoadTemplates = true;
 						$routeSegmentProvider.options.strictMode = true;
@@ -24,10 +25,7 @@ require(['angular'], function(angular){
 							.when('/item/:id', 'item-detail')
 							.when('/:slug', 'page')
 							.segment('home', {
-									templateUrl: templateHome,
-									controller: function ($scope){
-										$scope.Test = true;
-									}
+									templateUrl: templateHome
 								})
 							.segment('item-list', {
 									templateUrl: templateList,
@@ -35,17 +33,20 @@ require(['angular'], function(angular){
 								})
 							.segment('item-detail', {
 									templateUrl: templateDetail,
-									controller: "ItemDetailController"
+									controller: "ItemDetailController",
+									untilResolved: {
+										templateUrl: templateLoading
+									}
 								})
 							.segment('page', {
-									templateUrl: Assets.template("page.html"),
+									templateUrl: AssetsProvider.template("page.html"),
 									dependencies: ['slug', ],
 									controller: ["$scope", "$routeParams", function ($scope, $routeParams){
-										$scope.PageUrl = Assets.template("pages/"+$routeParams.slug+".html");
+										$scope.PageUrl = AssetsProvider.template("pages/"+$routeParams.slug+".html");
 									}]
 								});
 
 						$routeProvider.otherwise({redirectTo: '/'}); 
 				}])
 
-})	
+})
