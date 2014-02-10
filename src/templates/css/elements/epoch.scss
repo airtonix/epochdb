@@ -1,10 +1,11 @@
 .epoch-item-summary{
-	position: relative; 
+	position: relative;
  	@include transition (width, 2.0s, ease-in-out);
  	margin-left: 0;
  	width: 100%;
 
 	.button{
+	 	padding-right: 1em;
 		.label{
 			margin-right: 0.3em;
 		}
@@ -37,6 +38,13 @@
 		padding: 0.4em;
 	}
 
+	.epoch-open-icon{
+		color: shade($epoch-item-name-color, 50%);
+	}
+	.button:hover .epoch-open-icon{
+		color: $epoch-item-name-color;
+	}
+
 	& > .tabs{
 		position: absolute;
 		top: 0.4em;
@@ -67,7 +75,7 @@
 	}
 
 
-	&.type-kit{ 
+	&.type-kit{
 		.epoch-item-name, .epoch-type-icon{ color: $shade1; }
 	}
 	&.type-component{
@@ -105,4 +113,4 @@
 .icon-food							{ @include icon($icon-food);}
 .icon-crafted						{ @include icon($icon-cog);}
 .icon-weapon						{ @include icon($icon-videocam);}
-.icon-upgrade						{ @include icon($icon-arrow-up);}
+.icon-upgrade						{ @include icon($icon-up-outline);}

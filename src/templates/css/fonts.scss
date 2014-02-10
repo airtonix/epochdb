@@ -19,25 +19,37 @@
 }
 
 
-$icon-arrow-up: '\e800';
-$icon-leaf: '\e801';
-$icon-beaker: '\e802';
-$icon-erase: '\e805';
-$icon-wrench: '\e806';
-$icon-cog: '\e807';
-$icon-tree: '\e808';
-$icon-videocam: '\e809';
-$icon-gift: '\e810';
-$icon-flask: '\e811';
-$icon-beer: '\e812';
-$icon-food: '\e813';
-$icon-shop: '\e814';
-$icon-address: '\e80a';
-$icon-box: '\e80b';
-$icon-building: '\e80c';
-$icon-map: '\e80d';
-$icon-compass: '\e80e';
-$icon-clock: '\e80f';
+
+
+$icon-address:'\e80a';
+$icon-beaker:'\e802';
+$icon-beer:'\e812';
+$icon-box:'\e80b';
+$icon-clock:'\e80f';
+$icon-cog:'\e807';
+$icon-compass:'\e80e';
+$icon-database:'\e817';
+$icon-erase:'\e805';
+$icon-flask:'\e811';
+$icon-food:'\e813';
+$icon-gift:'\e810';
+$icon-home:'\e80c';
+$icon-leaf:'\e801';
+$icon-left-open-outline:'\e816';
+$icon-left-open:'\e815';
+$icon-link-outline:'\e81b';
+$icon-link:'\e81c';
+$icon-map:'\e80d';
+$icon-pencil:'\e818';
+$icon-right-open-outline:'\e803';
+$icon-right-open:'\e804';
+$icon-shop:'\e814';
+$icon-tag:'\e81a';
+$icon-tree:'\e808';
+$icon-up-outline:'\e800';
+$icon-videocam:'\e809';
+$icon-wrench:'\e806';
+
 
 
 @mixin fontello(){
@@ -57,7 +69,7 @@ $icon-clock: '\e80f';
 		/* For safety - reset parent styles, that can break glyph codes*/
 		font-variant: normal;
 		text-transform: none;
-		 
+
 		/* fix buttons height, for twitter bootstrap */
 		line-height: 1em;
 
@@ -85,6 +97,31 @@ $icon-clock: '\e80f';
 	font-size: 2em;
 }
 
-.icon-erase{
-	@include icon($icon-erase);
-}
+.icon-address{ @include icon($icon-address); }
+.icon-beaker{ @include icon($icon-beaker); }
+.icon-beer{ @include icon($icon-beer); }
+.icon-box{ @include icon($icon-box); }
+.icon-clock{ @include icon($icon-clock); }
+.icon-cog{ @include icon($icon-cog); }
+.icon-compass{ @include icon($icon-compass); }
+.icon-database{ @include icon($icon-database); }
+.icon-erase{ @include icon($icon-erase); }
+.icon-flask{ @include icon($icon-flask); }
+.icon-food{ @include icon($icon-food); }
+.icon-gift{ @include icon($icon-gift); }
+.icon-home{ @include icon($icon-home); }
+.icon-leaf{ @include icon($icon-leaf); }
+.icon-left-open-outline{ @include icon($icon-left-open-outline); }
+.icon-left-open{ @include icon($icon-left-open); }
+.icon-link-outline{ @include icon($icon-link-outline); }
+.icon-link{ @include icon($icon-link); }
+.icon-map{ @include icon($icon-map); }
+.icon-pencil{ @include icon($icon-pencil); }
+.icon-right-open-outline{ @include icon($icon-right-open-outline); }
+.icon-right-open{ @include icon($icon-right-open); }
+.icon-shop{ @include icon($icon-shop); }
+.icon-tag{ @include icon($icon-tag); }
+.icon-tree{ @include icon($icon-tree); }
+.icon-up-outline{ @include icon($icon-up-outline); }
+.icon-videocam{ @include icon($icon-videocam); }
+.icon-wrench{ @include icon($icon-wrench); }

@@ -22,7 +22,7 @@ body {
 	#content{
 		height: 100%;
 		min-height: 30em;
-		margin-bottom: -(rem-calc(260-$topbar-height));
+		padding-bottom: (rem-calc(($footer-height - $topbar-height) + $topbar-height));
 		width: 100%;
 		display: table;
 		padding-top: 4em;
@@ -32,7 +32,8 @@ body {
 	#site-footer {
 		display: block;
 		clear: both;
-		min-height: rem-calc(250-$topbar-height);
+		margin-top: -(rem-calc($footer-height - $topbar-height));
+		min-height: rem-calc($footer-height - $topbar-height);
 		color: tint($body-bg, 15%);
 		text-align: center;
 
