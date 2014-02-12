@@ -10,11 +10,12 @@
 		}
 	}
 
-	.epoch-item-name,
-	.epoch-item-description{
+	.epoch-item-name{
 		color: $epoch-item-name-color;
 		font-size: 0.75rem;
 		font-weight: bold;
+		line-height: 1;
+		vertical-align: super;
 	}
 	.epoch-item-description{
 		color: $epoch-item-description-color;
@@ -119,7 +120,8 @@
 
 				.item-tag{
 					display: inline-block;
-					margin-left: 0.3em;
+					margin-right: 0.3em;
+					margin-top: 0.3em;
 					font-size: 0.8rem;
 					color: shade($subheader-font-color, 25%);
 					&:before{
@@ -138,7 +140,7 @@
 				@include border-top-radius(3px);
 				display: inline-block;
 				width: auto;
-				padding: 0.3em 0.6em;
+				padding: 0.3em 0.8em 0.3em 0.6em;
 				margin:0;
 				font-size: 1rem;
 				&:before{

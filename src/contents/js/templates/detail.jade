@@ -2,7 +2,7 @@
 	.cell
 		.large-6.columns.large-centered.item-title
 			.row
-				span(data-ng-class="['type-icon','icon-'+DetailedItem.type.toLowerCase()]")
+				span(data-ng-class="['type-icon','icon-'+DetailedItem.type.toLowerCase()]", title="Type: {{ DetailedItem.type }}")
 				h4 {{ DetailedItem.name }}
 					small.block
 						span.item-type {{ DetailedItem.type }}
