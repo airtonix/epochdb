@@ -1,6 +1,7 @@
 require([
  		'lodash',
-		'angular'
+		'angular',
+		'underscore-query'
 	],
 	function (_, angular){
 

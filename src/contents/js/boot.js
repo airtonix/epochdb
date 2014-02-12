@@ -5,6 +5,7 @@ require.config({
 			'angular-animate': '../vendor/angular-animate/angular-animate.min',
 			'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min',
 		'lodash': '../vendor/lodash/dist/lodash.underscore.min',
+		'underscore-query': '../vendor/underscore-query/underscore-query',
 
 		'epochdb': 'app',
 			'epochdb-routes': 'routes',
@@ -36,6 +37,8 @@ require.config({
 	},
 
 	shim : {
+		'lodash': { exports: '_' },
+		'underscore-query': { deps: [ 'lodash'] },
 		'angular': { exports: 'angular' },
 		'angular-animate': { deps: ['angular'] },
 		'angular-route': { deps: ['angular'] },

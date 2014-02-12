@@ -18,7 +18,7 @@ require(['angular'], function(angular){
 						controller: function($scope, $element, $attrs, $transclude) {
 							var behaviour = $attrs.changeBehaviour?$attrs.changeBehaviour:'submit'
 
-							CraftableResource.valueList('type').then(function (data){
+							CraftableResource.objects.valueList('type').then(function (data){
 								$scope.Filters = data;
 							});
 

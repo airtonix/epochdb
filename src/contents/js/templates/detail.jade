@@ -2,17 +2,21 @@
 	.cell
 		.large-6.columns.large-centered.item-title
 			.row
-				h4 {{ Item.name }}
+				span(data-ng-class="['type-icon','icon-'+DetailedItem.type.toLowerCase()]")
+				h4 {{ DetailedItem.name }}
 					small.block
-						span.item-type {{ Item.type }}
-				span.item-tag.icon-tag(data-ng-repeat="tag in Item.tags") {{ tag }}
+						span.item-type {{ DetailedItem.type }}
+					small.block.tags
+						span.item-tag.icon-tag(data-ng-repeat="tag in DetailedItem.tags") {{ tag }}
 
 .large-6.large-centered.columns
 	.row
-		.epoch-item-description {{ Item.description }}
-		h4 Requires the following...
-		.epoch-requirements(data-ng-repeat="(key, data) in Item.depends")
-			h5 {{ key }}
-			ul.button-group.simple-outline.vertical
-				recipe(data-ng-repeat="(key, value) in data", data-ref="key", data-value="value")
+		.epoch-item-description {{ DetailedItem.description }}
+
+	.row(data-ng-if="DetailedItem.hasDependancies()")
+		h4 Requires
+		.epoch-requirements(data-ng-repeat="(key, data) in DetailedItem.depends")
+			h5.group-label(data-ng-class="['icon-'+key]") {{ key }}
+			ul.item-list.button-group.simple-outline.vertical
+				recipe(data-ng-repeat="(ref, count) in data", data-item-ref="ref", data-item-count="count")
 

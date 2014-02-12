@@ -18,34 +18,45 @@ var Class = function(){
 
 	angular.module('epochdb.resources.craftables', [])
 		.factory('CraftableResource', ['$http', function ($http){
-			var json = $http.get('./api/recipes/data.json').then(function (response){
-							return response.data;
-						})
-
 			var Model = function (data) {
 				if(data) _.extend(this, data);
 			}
-
-			Model.filter = function (query){
-				return json.then(function(data){
-					if(!query) return data;
-					return _.sortBy(_.filter(data, query), 'type');
+			Model.objects = $http.get('./api/recipe/data.json').then(function (response){
+							return response.data;
+						})
+			Model.objects.filter = function (query){
+				return Model.objects.then(function(data){
+					if(_.isString(query)){ return data; }
+					else if(_.isObject(query)){ return _.query(data, query); }
+					else{
+						return data
+					}
 				})
 			}
-			Model.get = function (id){
-				return json.then(function(data){
+			Model.objects.get = function (id){
+				return Model.objects.then(function(data){
 					var result = _.find(data, function(item){ return item.id == id })
 					return result
 				})
 			}
 
-			Model.valueList = function (key){
-				return json.then(function (data) {
+			Model.objects.valueList = function (key){
+				return Model.objects.then(function (data) {
 					var plucked = _.pluck(_.sortBy(data, 'name'), key)
 					var flattened = _.flatten(plucked)
 					var compacted = _.compact(flattened)
 						return _.unique(compacted);
 					})
+			}
+
+			Model.prototype.hasDependancies = function(){
+				if (_.has(this, "depends")){ return _.keys(this.depends).length > 0;}
+				return false
+			}
+
+			Model.prototype.hasDependants = function(){
+				if (_.has(this, "usedBy")){ return _.keys(this.usedby).length > 0;}
+				return false
 			}
 
 			return Model;

@@ -1,3 +1,2 @@
-.large-6.columns.large-centered
-	ul.button-group.vertical.simple-outline.rounded
-		li(data-ng-repeat="item in Collection|filter:Query", data-item-summary="item")
+ul.button-group.vertical.simple-outline.rounded
+	recipe(data-ng-repeat="item in Collection|filter:Query", data-item="item")

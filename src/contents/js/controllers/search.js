@@ -8,14 +8,14 @@ require(['angular'], function (angular){
 			'$scope',
 			'CraftableResource',
 			function ($scope, CraftableResource){
-				
-				CraftableResource.valueList('type').then(function (data){
+
+				CraftableResource.objects.valueList('type').then(function (data){
 					$scope.Filters = data;
 				});
 
 				$scope.$watch('Query', function (value){
 					$scope.$emit('item-query', value)
-				})				
+				})
 
 			}])
 });

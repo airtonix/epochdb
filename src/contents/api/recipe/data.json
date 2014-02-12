@@ -6,28 +6,28 @@
 		"tags": ["Tool"],
 		"description": "",
 		"requiredFor": [
-			"api/100",
-			"api/101",
-			"api/102",
-			"api/103",
-			"api/104",
-			"api/105",
-			"api/106",
-			"api/107",
-			"api/108",
-			"api/109",
-			"api/110",
-			"api/111",
-			"api/112",
-			"api/113",
-			"api/114",
-			"api/115",
-			"api/116",
-			"api/117",
-			"api/118",
-			"api/119",
-			"api/120",
-			"api/121"
+			"api/recipe/100",
+			"api/recipe/101",
+			"api/recipe/102",
+			"api/recipe/103",
+			"api/recipe/104",
+			"api/recipe/105",
+			"api/recipe/106",
+			"api/recipe/107",
+			"api/recipe/108",
+			"api/recipe/109",
+			"api/recipe/110",
+			"api/recipe/111",
+			"api/recipe/112",
+			"api/recipe/113",
+			"api/recipe/114",
+			"api/recipe/115",
+			"api/recipe/116",
+			"api/recipe/117",
+			"api/recipe/118",
+			"api/recipe/119",
+			"api/recipe/120",
+			"api/recipe/121"
 		]
 	}, {
 		"id": 2,
@@ -37,28 +37,28 @@
 		"tags": ["Tool"],
 		"description": "",
 		"requiredFor": [
-			"api/100",
-			"api/101",
-			"api/102",
-			"api/103",
-			"api/104",
-			"api/105",
-			"api/106",
-			"api/107",
-			"api/108",
-			"api/109",
-			"api/110",
-			"api/111",
-			"api/112",
-			"api/113",
-			"api/114",
-			"api/115",
-			"api/116",
-			"api/117",
-			"api/118",
-			"api/119",
-			"api/120",
-			"api/121"
+			"api/recipe/100",
+			"api/recipe/101",
+			"api/recipe/102",
+			"api/recipe/103",
+			"api/recipe/104",
+			"api/recipe/105",
+			"api/recipe/106",
+			"api/recipe/107",
+			"api/recipe/108",
+			"api/recipe/109",
+			"api/recipe/110",
+			"api/recipe/111",
+			"api/recipe/112",
+			"api/recipe/113",
+			"api/recipe/114",
+			"api/recipe/115",
+			"api/recipe/116",
+			"api/recipe/117",
+			"api/recipe/118",
+			"api/recipe/119",
+			"api/recipe/120",
+			"api/recipe/121"
 		]
 	}, {
 		"id": 3,
@@ -69,7 +69,7 @@
 		"tags": ["Tool", "Weapon"],
 		"description": "Mainly used for breaking into bases, smashes a wall down",
 		"requiredFor": [
-			"api/119"
+			"api/recipe/119"
 		]
 	}, {
 		"id": 4,
@@ -81,33 +81,33 @@
 		"description": "One of the three optional crafting stations required for most recipes.",
 		"depends": {
 			"components": {
-				"api/505": 1,
-				"api/504": 2
+				"api/recipe/505": 1,
+				"api/recipe/504": 2
 			}
 		},
 		"requiredFor": [
-			"api/100",
-			"api/101",
-			"api/102",
-			"api/103",
-			"api/104",
-			"api/105",
-			"api/106",
-			"api/107",
-			"api/108",
-			"api/109",
-			"api/110",
-			"api/111",
-			"api/112",
-			"api/113",
-			"api/114",
-			"api/115",
-			"api/116",
-			"api/117",
-			"api/118",
-			"api/119",
-			"api/120",
-			"api/121"
+			"api/recipe/100",
+			"api/recipe/101",
+			"api/recipe/102",
+			"api/recipe/103",
+			"api/recipe/104",
+			"api/recipe/105",
+			"api/recipe/106",
+			"api/recipe/107",
+			"api/recipe/108",
+			"api/recipe/109",
+			"api/recipe/110",
+			"api/recipe/111",
+			"api/recipe/112",
+			"api/recipe/113",
+			"api/recipe/114",
+			"api/recipe/115",
+			"api/recipe/116",
+			"api/recipe/117",
+			"api/recipe/118",
+			"api/recipe/119",
+			"api/recipe/120",
+			"api/recipe/121"
 		]
 	}, {
 		"id": 5,
@@ -126,7 +126,7 @@
 		"source": ["Looted", "Purchased"],
 		"tags": ["Tool"],
 		"requiredFor": {
-			"api/8": 1
+			"api/recipe/8": 1
 		},
 		"description": "Used to create a fireplace"
 	}, {
@@ -171,15 +171,15 @@
 		"description": "",
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/505": 3,
-				"api/504": 3
+				"api/recipe/505": 3,
+				"api/recipe/504": 3
 			}
 		}
 	}, {
@@ -191,14 +191,14 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/100": 3
+				"api/recipe/100": 3
 			}
 		}
 	}, {
@@ -210,16 +210,16 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/101": 1,
-				"api/505": 1,
-				"api/504": 1
+				"api/recipe/101": 1,
+				"api/recipe/505": 1,
+				"api/recipe/504": 1
 			}
 		}
 	}, {
@@ -231,14 +231,14 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/101": 1
+				"api/recipe/101": 1
 			}
 		}
 	}, {
@@ -251,14 +251,14 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/102": 1
+				"api/recipe/102": 1
 			}
 		}
 	}, {
@@ -271,15 +271,15 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/103": 1,
-				"api/306": 1
+				"api/recipe/103": 1,
+				"api/recipe/306": 1
 			}
 		}
 	}, {
@@ -292,15 +292,15 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/104": 1,
-				"api/306": 1
+				"api/recipe/104": 1,
+				"api/recipe/306": 1
 			}
 		}
 	}, {
@@ -313,15 +313,15 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/101": 1,
-				"api/307": 1
+				"api/recipe/101": 1,
+				"api/recipe/307": 1
 			}
 		}
 	}, {
@@ -334,15 +334,15 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/102": 1,
-				"api/307": 1
+				"api/recipe/102": 1,
+				"api/recipe/307": 1
 			}
 		}
 	}, {
@@ -355,14 +355,14 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/102": 1
+				"api/recipe/102": 1
 			}
 		}
 	}, {
@@ -375,15 +375,15 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/109": 1,
-				"api/306": 1
+				"api/recipe/109": 1,
+				"api/recipe/306": 1
 			}
 		}
 	}, {
@@ -396,15 +396,15 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/505": 3,
-				"api/504": 3
+				"api/recipe/505": 3,
+				"api/recipe/504": 3
 			}
 		}
 	}, {
@@ -417,14 +417,14 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/111": 2
+				"api/recipe/111": 2
 			}
 		}
 	}, {
@@ -437,14 +437,14 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/112": 2
+				"api/recipe/112": 2
 			}
 		}
 	}, {
@@ -457,17 +457,17 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/300": 1,
-				"api/503": 2,
-				"api/500": 4,
-				"api/301": 2
+				"api/recipe/300": 1,
+				"api/recipe/503": 2,
+				"api/recipe/500": 4,
+				"api/recipe/301": 2
 			}
 		}
 	},
@@ -483,15 +483,15 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/308": 3,
-				"api/309": 1
+				"api/recipe/308": 3,
+				"api/recipe/309": 1
 			}
 		}
 	}, {
@@ -504,16 +504,16 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
 				"CinderWallHalf": 1,
-				"api/308": 4,
-				"api/309": 1
+				"api/recipe/308": 4,
+				"api/recipe/309": 1
 			}
 		}
 	}, {
@@ -526,16 +526,16 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/308": 3,
-				"api/309": 1,
-				"api/301": 1
+				"api/recipe/308": 3,
+				"api/recipe/309": 1,
+				"api/recipe/301": 1
 			}
 		}
 	}, {
@@ -548,16 +548,16 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/117": 1,
-				"api/301": 3,
-				"api/306": 3
+				"api/recipe/117": 1,
+				"api/recipe/301": 3,
+				"api/recipe/306": 3
 			}
 		}
 	}, {
@@ -570,15 +570,15 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1,
-				"api/3": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1,
+				"api/recipe/3": 1
 			},
 			"components": {
-				"api/504": 8
+				"api/recipe/504": 8
 			}
 		}
 	}, {
@@ -591,14 +591,14 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/504": 8
+				"api/recipe/504": 8
 			}
 		}
 	}, {
@@ -611,15 +611,15 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
 				"ItemWoodStairs": 1,
-				"api/504": 2
+				"api/recipe/504": 2
 			}
 		}
 	}, {
@@ -632,14 +632,14 @@
 		"source": ["Looted", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/8": "3m"
+				"api/recipe/8": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/300": 3
+				"api/recipe/300": 3
 			}
 		}
 	}, {
@@ -722,14 +722,14 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/7": 1
+				"api/recipe/2": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/502": 2
+				"api/recipe/502": 2
 			}
 		}
 	}, {
@@ -742,14 +742,14 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/7": 1
+				"api/recipe/2": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/502": 2
+				"api/recipe/502": 2
 			}
 		}
 	}, {
@@ -762,16 +762,16 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/8": "3m"
+				"api/recipe/8": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/500": 2,
-				"api/301": 2,
-				"api/504": 2
+				"api/recipe/500": 2,
+				"api/recipe/301": 2,
+				"api/recipe/504": 2
 			}
 		}
 	}, {
@@ -784,14 +784,14 @@
 		"source": ["Crafting", "Looted"],
 		"depends": {
 			"areas": {
-				"api/8": "3m"
+				"api/recipe/8": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/7": 1
+				"api/recipe/2": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/303": 2
+				"api/recipe/303": 2
 			}
 		}
 	}, {
@@ -805,11 +805,11 @@
 		"depends": {
 			"areas": null,
 			"tools": {
-				"api/2": 1,
-				"api/7": 1
+				"api/recipe/2": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/303": 2
+				"api/recipe/303": 2
 			}
 		}
 	}, {
@@ -822,13 +822,13 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/8": "3m"
+				"api/recipe/8": "3m"
 			},
 			"tools": {
-				"api/2": 1
+				"api/recipe/2": 1
 			},
 			"components": {
-				"api/504": 2
+				"api/recipe/504": 2
 			}
 		}
 	}, {
@@ -841,14 +841,14 @@
 		"source": ["Crafting", "Looted"],
 		"depends": {
 			"areas": {
-				"api/9": "3m"
+				"api/recipe/9": "3m"
 			},
 			"tools": {
-				"api/5": 1,
-				"api/2": 1
+				"api/recipe/5": 1,
+				"api/recipe/2": 1
 			},
 			"components": {
-				"api/501": 2
+				"api/recipe/501": 2
 			}
 		}
 	}, {
@@ -861,16 +861,16 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/5": 1,
-				"api/2": 1
+				"api/recipe/5": 1,
+				"api/recipe/2": 1
 			},
 			"components": {
-				"api/506": 3,
-				"api/302": 1,
-				"api/301": 1
+				"api/recipe/506": 3,
+				"api/recipe/302": 1,
+				"api/recipe/301": 1
 			}
 		}
 	}, {
@@ -883,15 +883,15 @@
 		"source": ["Purchased", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/5": 1,
-				"api/7": 1
+				"api/recipe/5": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/502": 2,
-				"api/500": 2
+				"api/recipe/502": 2,
+				"api/recipe/500": 2
 			}
 		}
 	}, {
@@ -904,15 +904,15 @@
 		"source": ["Purchased", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/5": 1,
-				"api/7": 1
+				"api/recipe/5": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/502": 3,
-				"api/500": 3
+				"api/recipe/502": 3,
+				"api/recipe/500": 3
 			}
 		}
 	}, {
@@ -925,15 +925,15 @@
 		"source": ["Purchased", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/5": 1,
-				"api/7": 1
+				"api/recipe/5": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/502": 3,
-				"api/500": 3
+				"api/recipe/502": 3,
+				"api/recipe/500": 3
 			}
 		}
 	}, {
@@ -946,14 +946,14 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1
+				"api/recipe/2": 1
 			},
 			"components": {
-				"api/504": 4,
-				"api/300": 1
+				"api/recipe/504": 4,
+				"api/recipe/300": 1
 			}
 		}
 	}, {
@@ -966,17 +966,17 @@
 		"tags": ["Kit", "Building", "Area", "Storage"],
 		"requires": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/503": 2,
-				"api/505": 4,
-				"api/504": 4
+				"api/recipe/511": 1,
+				"api/recipe/503": 2,
+				"api/recipe/505": 4,
+				"api/recipe/504": 4
 			}
 		}
 	}, {
@@ -989,15 +989,15 @@
 		"tags": ["Kit", "Building", "Area", "Storage"],
 		"depends": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1
+				"api/recipe/2": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/505": 4,
-				"api/504": 4
+				"api/recipe/511": 1,
+				"api/recipe/505": 4,
+				"api/recipe/504": 4
 			}
 		}
 	}, {
@@ -1010,15 +1010,15 @@
 		"source": ["Crafting"],
 		"requires": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/7": 1
+				"api/recipe/2": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/303": 6
+				"api/recipe/511": 1,
+				"api/recipe/303": 6
 			}
 		}
 	}, {
@@ -1031,17 +1031,17 @@
 		"source": ["Crafting"],
 		"requires": {
 			"areas": {
-				"api/4": "3m"
+				"api/recipe/4": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/5": 1
+				"api/recipe/2": 1,
+				"api/recipe/5": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/506": 4,
-				"api/505": 2,
-				"api/504": 4
+				"api/recipe/511": 1,
+				"api/recipe/506": 4,
+				"api/recipe/505": 2,
+				"api/recipe/504": 4
 			}
 		}
 	}, {
@@ -1054,16 +1054,16 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/7": 1
+				"api/recipe/2": 1,
+				"api/recipe/7": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/502": 1,
-				"api/504": 4
+				"api/recipe/511": 1,
+				"api/recipe/502": 1,
+				"api/recipe/504": 4
 			}
 		}
 	}, {
@@ -1076,16 +1076,16 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/500": 3,
-				"api/301": 1
+				"api/recipe/511": 1,
+				"api/recipe/500": 3,
+				"api/recipe/301": 1
 			}
 		}
 	}, {
@@ -1098,18 +1098,18 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/503": 1,
-				"api/505": 1,
-				"api/504": 1,
-				"api/304": 1
+				"api/recipe/511": 1,
+				"api/recipe/503": 1,
+				"api/recipe/505": 1,
+				"api/recipe/504": 1,
+				"api/recipe/304": 1
 			}
 		}
 	}, {
@@ -1122,17 +1122,17 @@
 		"tags": ["Storage"],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/503": 4,
-				"api/505": 2,
-				"api/504": 2
+				"api/recipe/511": 1,
+				"api/recipe/503": 4,
+				"api/recipe/505": 2,
+				"api/recipe/504": 2
 			}
 		}
 	}, {
@@ -1145,17 +1145,17 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/305": 1,
-				"api/300": 1,
-				"api/504": 6
+				"api/recipe/511": 1,
+				"api/recipe/305": 1,
+				"api/recipe/300": 1,
+				"api/recipe/504": 6
 			}
 		}
 	}, {
@@ -1168,16 +1168,16 @@
 		"tags": ["Component"],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/5": 1
+				"api/recipe/2": 1,
+				"api/recipe/5": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/508": 4,
-				"api/500": 4
+				"api/recipe/511": 1,
+				"api/recipe/508": 4,
+				"api/recipe/500": 4
 			}
 		}
 	}, {
@@ -1190,14 +1190,14 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/5": 1
+				"api/recipe/2": 1,
+				"api/recipe/5": 1
 			},
 			"components": {
-				"api/521": 3
+				"api/recipe/521": 3
 			}
 		}
 	}, {
@@ -1210,14 +1210,14 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/5": 1
+				"api/recipe/2": 1,
+				"api/recipe/5": 1
 			},
 			"components": {
-				"api/521": 3
+				"api/recipe/521": 3
 			}
 		}
 	}, {
@@ -1230,16 +1230,16 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/5": 1
+				"api/recipe/2": 1,
+				"api/recipe/5": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/504": 8,
-				"api/303": 2
+				"api/recipe/511": 1,
+				"api/recipe/504": 8,
+				"api/recipe/303": 2
 			}
 		}
 	}, {
@@ -1252,16 +1252,16 @@
 		"tags": ["Component"],
 		"depends": {
 			"areas": {
-				"api/512": "3m"
+				"api/recipe/512": "3m"
 			},
 			"tools": {
-				"api/2": 1,
-				"api/1": 1
+				"api/recipe/2": 1,
+				"api/recipe/1": 1
 			},
 			"components": {
-				"api/511": 1,
-				"api/500": 4,
-				"api/301": 4
+				"api/recipe/511": 1,
+				"api/recipe/500": 4,
+				"api/recipe/301": 4
 			}
 		}
 	}

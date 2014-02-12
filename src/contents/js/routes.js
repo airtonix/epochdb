@@ -34,6 +34,7 @@ require(['angular'], function(angular){
 							.segment('item-detail', {
 									templateUrl: templateDetail,
 									controller: "ItemDetailController",
+									dependencies: ['id', ],
 									untilResolved: {
 										templateUrl: templateLoading
 									}

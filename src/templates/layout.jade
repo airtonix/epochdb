@@ -1,6 +1,7 @@
 doctype html
-- var cache = [];
-- localsJSON = JSON.stringify(page.__env.config.locals, function(key, value) {
+
+- var cache = []
+- var localsJSON = JSON.stringify(page.__env.config.locals, function(key, value) {
 -     if (typeof value === 'object' && value !== null) {
 -     if (cache.indexOf(value) !== -1) {
 -       // Circular reference found, discard key
@@ -47,8 +48,8 @@ html(lang='en')
 
 						ul.button-group.simple-outline
 							li: a.button(ng-href="#/about") About
-							li: a.button(ng-href="#/credits") Credits
-							li: a.button(ng-href="https://github.com/airtonix/epochdb/") Source
-							li: a.button(ng-href="https://github.com/airtonix/epochdb/issues") Bugs
+							li: a.button(ng-href="#/credit") Credits
+							li: a.button(ng-href="#") Source
+							li: a.button(ng-href="#") Bugs
 
-		script(data-main="./js/main", src='./vendor/requirejs/require.js')
+		script(data-main="./js/boot", src='./vendor/requirejs/require.js')

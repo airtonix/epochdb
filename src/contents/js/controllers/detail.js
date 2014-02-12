@@ -9,10 +9,10 @@ require(['angular', 'lodash'], function (angular, _){
 			'$routeParams',
 			'CraftableResource',
 			function ($scope, $routeParams, CraftableResource){
-				$scope.Item = null;
+				$scope.DetailedItem = null;
 
-				CraftableResource.get($routeParams.id).then(function(data){
-					$scope.Item = data;
+				CraftableResource.objects.get($routeParams.id).then(function(data){
+					$scope.DetailedItem = new CraftableResource(data);
 				});
 
 			}])

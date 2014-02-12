@@ -10,9 +10,9 @@ require(['angular'], function (angular){
 				$scope.Query = '';
 				$scope.Collection = [];
 
-				CraftableResource.filter().then(function (data){
+				CraftableResource.objects.filter().then(function (data){
 					$scope.Collection = data;
-				});	
+				});
 
 
 				$scope.$on('item-query', function (scope, query){

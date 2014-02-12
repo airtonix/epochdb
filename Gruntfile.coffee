@@ -85,12 +85,12 @@ module.exports = (grunt) ->
       options:
         wrap: true
         almond: true
-        mainConfigFile: "<%= paths.build %>/js/main.js"
-        name: 'main'
+        mainConfigFile: "<%= paths.build %>/js/boot.js"
+        name: 'boot'
         out: "<%= paths.dist %>/js/application.js"
         replaceRequireScript: [
           files: ['<%= paths.dist %>/index.html']
-          module: 'js/main',
+          module: 'js/boot',
           modulePath: './js/application'
         ]
 

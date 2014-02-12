@@ -6,7 +6,7 @@ require(["angular"], function(angular){
 				restrict: "A",
 				link: function($scope, iElm, iAttrs, controller) {
 					var locals = $parse(iAttrs.wintersmithContext)();
-					$rootScope.WinterSmith = locals;					
+					$rootScope.WinterSmith = locals;
 				}
 			};
 		}]);

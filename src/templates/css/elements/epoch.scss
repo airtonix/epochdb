@@ -4,7 +4,7 @@
  	width: 100%;
 
 	.button{
-	 	padding-right: 1em;
+	 	padding:1.5em;
 		.label{
 			margin-right: 0.3em;
 		}
@@ -28,8 +28,6 @@
 	}
 	.epoch-type-icon{
 		@include border-left-radius(0);
-		position: absolute;
-		left: 0;
 		max-width: 2em;
 		overflow: hidden;
 		background: none;
@@ -101,10 +99,24 @@
 			padding-bottom: 1em;
 			border-bottom: 1px solid $button-border-color;
 			.item-title{
+
+				.type-icon{
+					float: left;
+					font-size: 2em;
+					padding: 0.2em 0.2em 0 0;
+				}
+				h4{
+					float: left;
+					small{
+						line-height: 1.4;
+					}
+				}
+
 				.item-type{
 					font-weight: bold;
 					clear: both;
 				}
+
 				.item-tag{
 					display: inline-block;
 					margin-left: 0.3em;
@@ -119,6 +131,24 @@
 
 		.epoch-requirements{
 			width: 100%;
+			margin-bottom: 1em;
+			.group-label{
+				background: $button-border-color;
+				color: $button-text-color;
+				@include border-top-radius(3px);
+				display: inline-block;
+				width: auto;
+				padding: 0.3em 0.6em;
+				margin:0;
+				font-size: 1rem;
+				&:before{
+					padding-right: 1.4em;
+				}
+			}
+		}
+
+		.epoch-item-description{
+			padding: 1em;
 		}
 	}
 }
