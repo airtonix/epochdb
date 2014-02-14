@@ -27,6 +27,14 @@ body {
 		display: table;
 		padding-top: 4em;
 
+		dl{
+			dt{
+				color: $definition-list-header-color;
+				& + dd{
+					padding-left: 1em;
+				}
+			}
+		}
 	}
 
 	#site-footer {

@@ -3,7 +3,6 @@ require(['angular'], function (angular){
 	angular.module('epochdb.directives.site', [])
 
 		.directive('siteHeader', ['Assets', function(Assets){
-			// Runs during compile
 			return {
 				restrict: 'E',
 				templateUrl: Assets.template('partial/site-header.html'),
@@ -12,11 +11,12 @@ require(['angular'], function (angular){
 			};
 		}])
 
-
-		.directive('containsToc', [function(){
-			// Runs during compile
+		.directive('containsToc', ['Assets', function(Assets){
 			return {
 				restrict: 'A',
+				transclude: true,
+				replace: true,
+				templateUrl: Assets.template('partial/table-of-contents.html'),
 				controller: function($scope, $element, $attrs, $transclude) {
 					$scope.Table = []
 					this.addEntry = function(id, element){

@@ -1,0 +1,7 @@
+div.contains-table-of-contents
+	.row(data-ng-transclude)
+
+	ul(data-sticky).table-of-contents.side-nav
+		li(data-ng-repeat="item in Table")
+			a(data-scroll-to="{{item.id}}") {{item.label}}
+				em.icon-right-open.right

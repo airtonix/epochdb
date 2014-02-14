@@ -1,0 +1,20 @@
+.contains-table-of-contents{
+	position: relative;
+
+	[data-sticky]{
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: -10em;
+		text-align: right;
+
+		&.stuck{
+			position: fixed;
+			top: 2em;
+		}
+	}
+}
+
+@media ($small){
+
+}

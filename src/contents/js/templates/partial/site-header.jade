@@ -7,9 +7,8 @@ header
 
 		section.top-bar-section
 			ul.right
-				li(data-ng-class="{active: $routeSegment.startsWith('item-list')}")
-					a(ng-href='#/items') Items
+				li(data-topbar-link, data-url="items", data-label="Items")
 				li.divider
-				li: a(ng-href='#/about') About
-				li: a(ng-href='#/contribute') Contribute
-				li: a(ng-href='#/credit') Credit
+				li(data-topbar-link, data-url="about", data-label="About")
+				li(data-topbar-link, data-url="contribute", data-label="Contribute")
+				li(data-topbar-link, data-url="credit", data-label="Credit")
