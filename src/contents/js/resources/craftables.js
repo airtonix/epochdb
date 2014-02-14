@@ -49,12 +49,19 @@ var Class = function(){
 					})
 			}
 
-			Model.prototype.hasDependancies = function(){
-				if (_.has(this, "depends")){ return _.keys(this.depends).length > 0;}
-				return false
+			Model.prototype.typeSlug = function(type){
+				return this.type.toLowerCase();
 			}
 
-			Model.prototype.hasDependants = function(){
+
+			Model.prototype.requires = function(type){
+				if (_.has(this, "depends")){
+					if(!type) return this.depends;
+					return this.depends[type];
+				}
+			}
+
+			Model.prototype.usedby = function(){
 				if (_.has(this, "usedBy")){ return _.keys(this.usedby).length > 0;}
 				return false
 			}

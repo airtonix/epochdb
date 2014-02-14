@@ -22,12 +22,14 @@
   },
 
   "plugins": [
+    "./src/plugins/package.coffee",
     "wintersmith-jade",
     "wintersmith-node-sass",
     "wintersmith-data-json"
   ],
 
   "require": {
+    "fs": "fs",
     "_": "underscore",
     "moment": "moment",
     "typogr": "typogr"

@@ -2,18 +2,18 @@
 	.cell
 		.large-6.columns.large-centered.item-title
 			.row
-				span(data-ng-class="['type-icon','icon-'+DetailedItem.type.toLowerCase()]", title="Type: {{ DetailedItem.type }}")
+				span(data-ng-class="['type-icon','icon-'+DetailedItem.typeSlug()]", title="Type: {{ DetailedItem.type }}")
 				h4 {{ DetailedItem.name }}
 					small.block
 						span.item-type {{ DetailedItem.type }}
-					small.block.tags
+					small.block.tags(data-ng-if="DetailedItem.tags.length")
 						span.item-tag.icon-tag(data-ng-repeat="tag in DetailedItem.tags") {{ tag }}
 
 .large-6.large-centered.columns
 	.row
 		.epoch-item-description {{ DetailedItem.description }}
 
-	.row(data-ng-if="DetailedItem.hasDependancies()")
+	.row(data-ng-if="DetailedItem.depends")
 		h4 Requires
 		.epoch-requirements(data-ng-repeat="(key, data) in DetailedItem.depends")
 			h5.group-label(data-ng-class="['icon-'+key]") {{ key }}

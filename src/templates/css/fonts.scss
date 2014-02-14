@@ -21,35 +21,36 @@
 
 
 
-$icon-address:'\e80a';
-$icon-beaker:'\e802';
-$icon-beer:'\e812';
-$icon-box:'\e80b';
-$icon-clock:'\e80f';
-$icon-cog:'\e807';
-$icon-compass:'\e80e';
-$icon-database:'\e817';
+
 $icon-erase:'\e805';
-$icon-flask:'\e811';
-$icon-food:'\e813';
-$icon-gift:'\e810';
+$icon-shop:'\e814';
 $icon-home:'\e80c';
-$icon-leaf:'\e801';
-$icon-left-open-outline:'\e816';
-$icon-left-open:'\e815';
 $icon-link-outline:'\e81b';
 $icon-link:'\e81c';
-$icon-map:'\e80d';
+$icon-tag:'\e81a';
 $icon-pencil:'\e818';
+$icon-address:'\e80a';
+$icon-map:'\e80d';
+$icon-compass:'\e80e';
+$icon-box:'\e80b';
+$icon-wrench:'\e806';
+$icon-clock:'\e80f';
+$icon-left-open-outline:'\e816';
+$icon-videocam:'\e809';
 $icon-right-open-outline:'\e803';
 $icon-right-open:'\e804';
-$icon-shop:'\e814';
-$icon-tag:'\e81a';
-$icon-tree:'\e808';
 $icon-up-outline:'\e800';
-$icon-videocam:'\e809';
-$icon-wrench:'\e806';
-
+$icon-leaf:'\e801';
+$icon-gift:'\e810';
+$icon-database:'\e817';
+$icon-flow-split:'\e819';
+$icon-flask:'\e811';
+$icon-beer:'\e812';
+$icon-tree:'\e808';
+$icon-cog:'\e807';
+$icon-beaker:'\e802';
+$icon-food:'\e813';
+$icon-left-open:'\e815';
 
 
 @mixin fontello(){
@@ -125,3 +126,4 @@ $icon-wrench:'\e806';
 .icon-up-outline{ @include icon($icon-up-outline); }
 .icon-videocam{ @include icon($icon-videocam); }
 .icon-wrench{ @include icon($icon-wrench); }
+.icon-flow-split{ @include icon($icon-flow-split); }

@@ -5,9 +5,9 @@
 
 .row
 
-	.columns.large-6.large-centered
+	.columns.large-6.large-centered(data-contains-toc)
 
-		h4(id="intro", data-toc) Intro
+		h4(id="intro", data-toc-entry) Intro
 
 		p.
 			So I was out there on Green Mountain one day, about to start the whole creative process of
@@ -19,7 +19,7 @@
 		p.
 			So I said, "that's it" and started gathering as much data as I could find.
 
-		h4(id="the-plan", data-toc) The Plan
+		h4(id="the-plan", data-toc-entry) The Plan
 
 		p I had this plan :
 			ul
@@ -40,7 +40,31 @@
 					boring task.
 				li Finally, my deployment strategy is a `git add --all && git commit -am "changelog message" && git push`
 
-		h4(id="roadmap", data-toc) Roadmap?
+		h4(id="roadmap", data-toc-entry) Roadmap?
 
 		p Yes, I have an idea for where I want to take this. I'll publish it here soon.
 
+		h4(id="technical-details", data-toc-entry) Technical Details
+
+		dl
+			dt Version
+			dd {{ WinterSmith.npm.version }}
+			dt Development Environment
+			dd Nodejs, SublimeText 3
+			dt Tools
+			dd Npm, Bower, Grunt, Sass
+			dt Npm Packages
+			dd: ul
+					li(data-ng-repeat="(package,version) in WinterSmith.pkg.npm.devDependencies")
+						b {{ package }} 
+						i {{ version }}
+			dt Bower Packages
+			dd: ul
+					li(data-ng-repeat="(package,version) in WinterSmith.pkg.bower.dependencies")
+						b {{ package }} 
+						i {{ version }}
+
+
+		.table-of-contents(data-toc-menu)
+			li(data-ng-repeat="(link, label) in Table")
+				a(href="{{link}}") {{ label }}

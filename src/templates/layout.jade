@@ -1,5 +1,4 @@
 doctype html
-
 - var cache = []
 - var localsJSON = JSON.stringify(page.__env.config.locals, function(key, value) {
 -     if (typeof value === 'object' && value !== null) {
@@ -34,7 +33,6 @@ html(lang='en')
 			}
 
 	body(id="{{route.segment|slugify}}", data-ng-controller="AppController")
-
 		site-header.header
 		article#content(app-view-segment="0")
 		.alert#loading(data-ng-show="Loader.show") Loading...
@@ -42,14 +40,15 @@ html(lang='en')
 			div.row
 				block footer
 					section.copy
+
 						:markdown
-							This app Created by [#{ locals.owner.name }](#{locals.owner.homepage}), #{ new Date().getFullYear() }.
+							This app (v#{ locals.pkg.npm.version }) Created by [#{ locals.owner.name }](#{locals.owner.homepage}), #{ new Date().getFullYear() }.
 							This app is licensed under the [BSD 3 Clause](https://github.com/airtonix/epochdb/blob/gh-pages/LICENSE), [Source code is on github](http://github.com/airtonix/epochdb/)
 
 						ul.button-group.simple-outline
-							li: a.button(ng-href="#/about") About
-							li: a.button(ng-href="#/credit") Credits
-							li: a.button(ng-href="#") Source
-							li: a.button(ng-href="#") Bugs
+							li: a.button.small(ng-href="#/about") About
+							li: a.button.small(ng-href="#/credit") Credits
+							li: a.button.small(ng-href="#{locals.pkg.npm.homepage}") Source
+							li: a.button.small(ng-href="#{locals.pkg.npm.bugs.url}") Bugs
 
 		script(data-main="./js/boot", src='./vendor/requirejs/require.js')

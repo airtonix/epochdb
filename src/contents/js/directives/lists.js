@@ -3,6 +3,22 @@ require(['lodash', 'angular'], function( _, angular){
 	angular.module("epochdb.directives.lists", [
 			'epochdb.resources.craftables'
 		])
+		.directive('iconBubble', [
+				'Assets',
+				function(Assets){
+					return {
+						restrict: "E",
+						replace: true,
+						scope: {
+							"Value": "=value",
+							"Icon": "=icon"
+						},
+						templateUrl: Assets.template("partial/icon-bubble.html"),
+						controller: function($scope, $element, $attrs, $transclude){
+							// , data-value="_.keys(ItemSummary.requires('components')).length", title="Item is built using {{ value }} components"
+						}
+					}
+				}])
 
 		.directive('recipe', [
 				"$location",
@@ -32,7 +48,7 @@ require(['lodash', 'angular'], function( _, angular){
 									CraftableResource.objects
 										.get(id)
 										.then(function(data){
-											$scope.ItemSummary = data;
+											$scope.ItemSummary = new CraftableResource(data);
 										});
 								}
 							}]

@@ -16,12 +16,13 @@
     "name": "EpochDB",
     "owner": {
       "name": "Zenobius Jiricek",
-      "homepage": "http://zenobi.us/" 
+      "homepage": "http://zenobi.us/"
     },
     "description": "dayz epoch item database"
   },
 
   "plugins": [
+    "./src/plugins/package.coffee",
     "wintersmith-jade",
     "wintersmith-node-sass",
     "wintersmith-data-json"
