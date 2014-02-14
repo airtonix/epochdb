@@ -511,7 +511,7 @@
 				"api/recipe/1": 1
 			},
 			"components": {
-				"CinderWallHalf": 1,
+				"api/recipe/115": 1,
 				"api/recipe/308": 4,
 				"api/recipe/309": 1
 			}
@@ -618,7 +618,7 @@
 				"api/recipe/1": 1
 			},
 			"components": {
-				"ItemWoodStairs": 1,
+				"api/recipe/120": 1,
 				"api/recipe/504": 2
 			}
 		}
