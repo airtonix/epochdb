@@ -21295,11 +21295,11 @@ e(c,"-add"),d)},beforeRemoveClass:function(a,c,d){var f=L(a,e(c,"-remove"),funct
 ;
 define("angular-animate", ["angular"], function(){});
 
-angular.module('epochdb.templates', ['/epochdb/js/templates/detail.html', '/epochdb/js/templates/home.html', '/epochdb/js/templates/list.html', '/epochdb/js/templates/page.html', '/epochdb/js/templates/pages/about.html', '/epochdb/js/templates/pages/contribute.html', '/epochdb/js/templates/pages/credit.html', '/epochdb/js/templates/partial/item-tabs.html', '/epochdb/js/templates/partial/list-item.html', '/epochdb/js/templates/partial/list.html', '/epochdb/js/templates/partial/loading.html', '/epochdb/js/templates/partial/search.html', '/epochdb/js/templates/partial/site-header.html']);
+angular.module('epochdb.templates', ['/epochdb/js/templates/detail.html', '/epochdb/js/templates/home.html', '/epochdb/js/templates/list.html', '/epochdb/js/templates/page.html', '/epochdb/js/templates/pages/about.html', '/epochdb/js/templates/pages/contribute.html', '/epochdb/js/templates/pages/credit.html', '/epochdb/js/templates/partial/icon-bubble.html', '/epochdb/js/templates/partial/item-tabs.html', '/epochdb/js/templates/partial/list-item.html', '/epochdb/js/templates/partial/list.html', '/epochdb/js/templates/partial/loading.html', '/epochdb/js/templates/partial/search.html', '/epochdb/js/templates/partial/site-header.html', '/epochdb/js/templates/partial/table-of-contents.html']);
 
 angular.module("/epochdb/js/templates/detail.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/detail.html",
-"<div class=\"hero half-height text-left item-header\"><div class=\"cell\"><div class=\"large-6 columns large-centered item-title\"><div class=\"row\"><h4>{{ Item.name }}<small class=\"block\"><span class=\"item-type\">{{ Item.type }}</span></small></h4><span data-ng-repeat=\"tag in Item.tags\" class=\"item-tag icon-tag\">{{ tag }}</span></div></div></div></div><div class=\"large-6 large-centered columns\"><div class=\"row\"><div class=\"epoch-item-description\">{{ Item.description }}</div><h4>Requires the following...</h4><div data-ng-repeat=\"(key, data) in Item.depends\" class=\"epoch-requirements\"><h5>{{ key }}</h5><ul class=\"button-group simple-outline vertical\"><recipe data-ng-repeat=\"(key, value) in data\" data-ref=\"key\" data-value=\"value\"></recipe></ul></div></div></div>");
+"<div class=\"hero half-height text-left item-header\"><div class=\"cell\"><div class=\"large-6 columns large-centered item-title\"><div class=\"row\"><span data-ng-class=\"['type-icon','icon-'+DetailedItem.typeSlug()]\" title=\"Type: {{ DetailedItem.type }}\"></span><h4>{{ DetailedItem.name }}<small class=\"block\"><span class=\"item-type\">{{ DetailedItem.type }}</span></small><small data-ng-if=\"DetailedItem.tags.length\" class=\"block tags\"><span data-ng-repeat=\"tag in DetailedItem.tags\" class=\"item-tag icon-tag\">{{ tag }}</span></small></h4></div></div></div></div><div class=\"large-6 large-centered columns\"><div class=\"row\"><div class=\"epoch-item-description\">{{ DetailedItem.description }}</div></div><div data-ng-if=\"DetailedItem.depends\" class=\"row\"><h4>Requires</h4><div data-ng-repeat=\"(key, data) in DetailedItem.depends\" class=\"epoch-requirements\"><h5 data-ng-class=\"['icon-'+key]\" class=\"group-label\">{{ key }}</h5><ul class=\"item-list button-group simple-outline vertical\"><recipe data-ng-repeat=\"(ref, count) in data\" data-item-ref=\"ref\" data-item-count=\"count\"></recipe></ul></div></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/home.html", []).run(["$templateCache", function($templateCache) {
@@ -21309,7 +21309,7 @@ $templateCache.put("/epochdb/js/templates/home.html",
 
 angular.module("/epochdb/js/templates/list.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/list.html",
-"<div class=\"row\"><search-form></search-form></div><div class=\"row\"><item-list></item-list></div>");
+"<div class=\"row\"><search-form></search-form></div><div class=\"row\"><div class=\"large-6 large-centered columns\"><item-list></item-list></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/page.html", []).run(["$templateCache", function($templateCache) {
@@ -21319,17 +21319,22 @@ $templateCache.put("/epochdb/js/templates/page.html",
 
 angular.module("/epochdb/js/templates/pages/about.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/pages/about.html",
-"<div class=\"hero\"><div class=\"cell\"><h2 class=\"page-title\">About<small class=\"block\">Why and How</small></h2></div></div><div class=\"row\"><div class=\"columns large-6 large-centered\"><h4 id=\"intro\" data-toc=\"data-toc\">Intro</h4><p>So I was out there on Green Mountain one day, about to start the whole creative process of base-building. I needed some reference matieral to remind myself what was required to build all the various parts (because why memorise something when you can look it up right?).</p><p>However one this day. dayzepoch.com was down for backup.</p><p>So I said, \"that's it\" and started gathering as much data as I could find.</p><h4 id=\"the-plan\" data-toc=\"data-toc\">The Plan</h4><p>I had this plan :<ul><li>Host the site from github pages (becuase I love git)</li><li>Use AngularJS as the clientside framework, avoid Jquery</li><li>Because github only allows static websites, and angular doesn't have a yaml consumer yet, I'd have to store all the data as JSON. No problem.</li><li>Develop the application locally using Wintersmith, a static website generator that consumes folder tree of markdown/json/yaml files and lets you use what ever templating language you want (I went with Jade, because I like the time saving data structure of yaml)</li><li>I would use Sass and Foundation. But because I was staying as far away from Ruby as I could manage (wintersmith is a nodejs tool), I would use Bourbon instead of Compass.</li><li>I'd make use of Grunt, Npm and Bower because manually finding and downloading stuff is such a boring task.</li><li>Finally, my deployment strategy is a `git add --all && git commit -am \"changelog message\" && git push`</li></ul></p><h4 id=\"roadmap\" data-toc=\"data-toc\">Roadmap?</h4><p>Yes, I have an idea for where I want to take this. I'll publish it here soon.</p><h4 id=\"difficulties\" data-toc=\"data-toc\">Difficulties</h4><ul><li>Contributing will be different. You'll need a Github account (which is free)</li><li>No server side logic, which is a blessing in disguise. All the critical features requiring server side tools are already provided by Github.</li></ul><h4 id=\"contributing\" data-toc=\"data-toc\">Contributing</h4><p>If you want to contribute then there are two ways, both require at least a Github account.</p><p>All contritbutions will be credited :)</p><h5 id=\"non-technical\" data-toc-parent=\"data-toc-parent\">Non-Technical</h5><p>Once you have your github account, you can just head over the issues page and make a ticket describing your contribution.</p><h5 id=\"technical\" data-toc-parent=\"data-toc-parent\">Technical</h5><p>If you're familiar with how github works, then feel free to fork, edit and make a pull request.</p></div></div>");
+"<div class=\"hero\"><div class=\"cell\"><h2 class=\"page-title\">About<small class=\"block\">Why and How</small></h2></div></div><div class=\"row\"><div data-contains-toc=\"data-contains-toc\" class=\"columns large-6 large-centered\"><h4 id=\"intro\" data-toc-entry=\"data-toc-entry\">Intro</h4><p>So I was out there on Green Mountain one day, about to start the whole creative process of base-building. I needed some reference matieral to remind myself what was required to build all the various parts (because why memorise something when you can look it up right?).</p><p>However one this day. dayzepoch.com was down for backup.</p><p>So I said, \"that's it\" and started gathering as much data as I could find.</p><h4 id=\"the-plan\" data-toc-entry=\"data-toc-entry\">The Plan</h4><p>I had this plan :<ul><li>Host the site from github pages (becuase I love git)</li><li>Use AngularJS as the clientside framework, avoid Jquery</li><li>Because github only allows static websites, and angular doesn't have a yaml consumer yet, I'd have to store all the data as JSON. No problem.</li><li>Develop the application locally using Wintersmith, a static website generator that consumes folder tree of markdown/json/yaml files and lets you use what ever templating language you want (I went with Jade, because I like the time saving data structure of yaml)</li><li>I would use Sass and Foundation. But because I was staying as far away from Ruby as I could manage (wintersmith is a nodejs tool), I would use Bourbon instead of Compass.</li><li>I'd make use of Grunt, Npm and Bower because manually finding and downloading stuff is such a boring task.</li><li>Finally, my deployment strategy is a `git add --all && git commit -am \"changelog message\" && git push`</li></ul></p><h4 id=\"roadmap\" data-toc-entry=\"data-toc-entry\">Roadmap?</h4><p>Yes, I have an idea for where I want to take this. I'll publish it here soon.</p><h4 id=\"technical-details\" data-toc-entry=\"data-toc-entry\">Technical Details</h4><dl><dt>Version</dt><dd>{{ WinterSmith.npm.version }}</dd><dt>Development Environment</dt><dd>Nodejs, SublimeText 3</dd><dt>Tools</dt><dd>Npm, Bower, Grunt, Sass</dd><dt>Npm Packages</dt><dd><ul><li data-ng-repeat=\"(package,version) in WinterSmith.pkg.npm.devDependencies\"><b>{{ package }}</b><i>{{ version }}</i></li></ul></dd><dt>Bower Packages</dt><dd><ul><li data-ng-repeat=\"(package,version) in WinterSmith.pkg.bower.dependencies\"><b>{{ package }}</b><i>{{ version }}</i></li></ul></dd></dl></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/pages/contribute.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/pages/contribute.html",
-"<div class=\"hero\"><div class=\"cell\"><h2 class=\"page-title\">Contributing<small class=\"block\">So you'd like to help out?</small></h2></div></div><div class=\"row\"><div class=\"columns large-6 large-centered\"><p>Sure thing. I'm always happy to accept help, however let's keep it tidy yeah?</p><p>Check out the sections below to see where your efforts can best be applied.</p><h3 id=\"things-to-do\" data-toc=\"data-toc\">Things to do...</h3><h4 id=\"codebase\" data-toc=\"data-toc\">Application Codebase</h4><dl><dt>Angular MVC</dt><dd><ul><li>AngularJs UnitTests</li><li>TravisCI Integration</li></ul></dd><dt>UX</dt><dd><ul><li>wireframe &amp; storyboard interaction flow for item-list -&gt; item-detail</li></ul></dd></dl><h4 id=\"database\" data-toc=\"data-toc\">Database</h4><dl><dt>Data Sources</dt><dd><ul><li>Explore methods and sources for harvesting more accurate information, automate it if possible.</li></ul></dd><dt>Recipes</dt><dd><ul><li>Double check these match mainline Epoch values.</li><li>Generate quality consistant screenshots for each item.</li></ul></dd></dl><h3 id=\"how-to-contribute\" data-toc=\"data-toc\">How to contribute</h3><p>Mostly you'll need a [github account](https://github.com/join), which is free.</p><h4 id=\"code-contributions\" data-toc=\"data-toc\">Pull Requests</h4><p>I'll be placing priority on these types of contributions</p><ol><li>Clone the repo</li><li>Make changes, Limit changes to one feature/fix per pull request or it will be rejected.</li><li>Submit a (pull request)[http://www.youtube.com/watch?v=YTbRzhQju4c]</li></ol><h4 id=\"issues\" data-toc=\"data-toc\">Issues</h4><ol><li>Head over to the issue tracker</li><li>Write a brief description</li><li>explain concisely the contribution</li><li>submit it!</li></ol></div></div>");
+"<div class=\"hero\"><div class=\"cell\"><h2 class=\"page-title\">Contributing<small class=\"block\">So you'd like to help out?</small></h2></div></div><div class=\"row\"><div data-contains-toc=\"data-contains-toc\" class=\"columns large-6 large-centered\"><p>Sure thing. I'm always happy to accept help, however let's keep it tidy yeah?</p><p>Check out the sections below to see where your efforts can best be applied.</p><h4 id=\"how-to-contribute\" data-toc-entry=\"data-toc-entry\">How to contribute</h4><ol><li>Head over to the <a href=\"{{ WinterSmith.pkg.npm.bugs.url }}\">Issue Tracker</a> and pick out an open ticket.</li><li>Clone the repo, get it up and running on your local machine</li><li>Deal with the ticket and in your final commit message include something like: `Fixes #234`, where 234 is the issue id.</li><li>push it to your repo</li><li>make a pull request from your repo to the develop branch of this repo.</li></ol><p>Mostly you'll need a <a href=\"https://github.com/join\">github account</a>, which is free.</p><h5 id=\"code-contributions\" data-toc-entry=\"data-toc-entry\">Pull Requests</h5><p>I'll be placing priority on these types of contributions</p><ol><li>Clone the repo</li><li>Make changes, Limit changes to one feature/fix per pull request or it will be rejected.</li><li>Submit a <a href=\"http://www.youtube.com/watch?v=YTbRzhQju4c\">pull request</a></li></ol><h5 id=\"issues\" data-toc-entry=\"data-toc-entry\">Issues</h5><ol><li>Head over to the <a href=\"{{ WinterSmith.pkg.npm.bugs.url }}\">issue tracker</a></li><li>Write a brief description</li><li>explain concisely the contribution</li><li>submit it!</li></ol></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/pages/credit.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/pages/credit.html",
-"<div class=\"row\"><div class=\"columns large-6 large-centered\"><p>Built with :</p><ul><li><a href=\"https://sublimetext.com/\">Sublimet Text 3</a></li><li><p><a href=\"http://nodejs.org/\">NodeJs</a></p><ul><li><a href=\"http://jade-lang.com/\">Jade</a></li><li><a href=\"https://github.com/jnordberg/wintersmith/\">wintersmith</a></li><li><a href=\"http://github.com/smebberson/wintersmith-jade/\">Wintersmith Jade</a></li><li><a href=\"http://bitbucket.org/rvboris/wintersmith-data-json/\">Wintersmith Data Json</a></li><li><a href=\"http://github.com/imothee/wintersmith-sass/\">Wintersmith Sass</a></li><li><a href=\"http://gruntjs.com/\">GruntJs</a></li><li><a href=\"http://bower.io/\">Bower</a></li></ul></li><li><p><a href=\"http://angularjs.org/\">AngularJs</a></p><ul><li><a href=\"http://github.com/artch/angular-route-segment/\">Angular Route Segment</a></li><li><a href=\"http://github.com/angular/bower-angular-animate/\">Angular Animate</a></li></ul></li><li><p><a href=\"http://requirejs.org/\">RequireJs</a></p></li><li><a href=\"http://github.com/jrburke/almond/\">Almond</a></li><li><a href=\"http://underscorejs.org/\">lodash</a></li><li><a href=\"http://sass-lang.com/\">Sass</a><ul><li><a href=\"http://foundation.zurb.com/\">Foundation Zurb</a></li><li><a href=\"http://bourbon.io/\">Bourbon</a></li></ul></li></ul><p><a href=\"dayzepoch.com/\">DAYZ</a> is a registered trademark of <a href=\"http://www.bistudio.com/\">Bohemia Interactive a.s</a>. This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.</p><p><a href=\"http://dayzepoch.com/\">DayZ Epoch</a> is licensed under <a href=\"http://www.bistudio.com/licenses/dayz-mod-license-share-alike/\">DayZ Mod License Share Alike</a>.</p></div></div>");
+"<div class=\"row\"><div class=\"columns large-6 large-centered\"><img src=\"{{Assets.static('img/dayz-logo.png')}}\"><p><a href=\"dayzepoch.com/\">DAYZ</a> is a registered trademark of <a href=\"http://www.bistudio.com/\">Bohemia Interactive a.s</a>. This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.</p><img src=\"{{Assets.static('img/epoch-logo.png')}}\"><p><a href=\"http://dayzepoch.com/\">DayZ Epoch</a> is licensed under <a href=\"http://www.bistudio.com/licenses/dayz-mod-license-share-alike/\">DayZ Mod License Share Alike</a>.</p></div></div>");
+}]);
+
+angular.module("/epochdb/js/templates/partial/icon-bubble.html", []).run(["$templateCache", function($templateCache) {
+$templateCache.put("/epochdb/js/templates/partial/icon-bubble.html",
+"<span data-ng-class=\"['icon-'+ Icon]\" class=\"icon-2x\"><em>{{ Value }}</em></span>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/item-tabs.html", []).run(["$templateCache", function($templateCache) {
@@ -21339,12 +21344,12 @@ $templateCache.put("/epochdb/js/templates/partial/item-tabs.html",
 
 angular.module("/epochdb/js/templates/partial/list-item.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/list-item.html",
-"<li data-ng-class=\"['type-'+item.type.toLowerCase(), isVisible?'active':'']\" data-ng-click=\"isVisible=!isVisible\" class=\"epoch-item-summary\"><a title=\"{{ item.id }}\" data-ng-href=\"#/item/{{item.id}}\" class=\"button text-left\"><span class=\"label radius epoch-type-icon\"><em data-ng-class=\"'icon-' + item.type.toLowerCase()\"></em></span><span data-ng-bind=\"item.name\" class=\"epoch-item-name\"></span><span data-ng-if=\"!Count\" class=\"epoch-open-icon icon-right-open-outline icon-2x right\"></span><span data-ng-if=\"Count\" class=\"epoch-item-count label right\">{{ Count }}</span></a></li>");
+"<li data-ng-class=\"['type-'+ItemSummary.type.toLowerCase()]\" class=\"epoch-item-summary\"><a title=\"{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}\" data-ng-href=\"#/item/{{ ItemSummary.id }}\" class=\"button text-left\"><span class=\"label radius epoch-type-icon\"><em data-ng-class=\"'icon-' + ItemSummary.type.toLowerCase()\"></em></span><span data-ng-if=\"ItemCount\" class=\"epoch-item-count label left\">{{ ItemCount }}</span><span data-ng-bind=\"ItemSummary.name\" class=\"epoch-item-name\"></span><span data-ng-if=\"!ItemCount\" class=\"icon-right-open-outline icon-2x right\"></span></a></li>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/list.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/list.html",
-"<div class=\"large-6 columns large-centered\"><ul class=\"button-group vertical simple-outline rounded\"><li data-ng-repeat=\"item in Collection|filter:Query\" data-item-summary=\"item\"></li></ul></div>");
+"<ul class=\"button-group vertical simple-outline rounded\"><recipe data-ng-repeat=\"item in Collection|filter:Query\" data-item=\"item\"></recipe></ul>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/loading.html", []).run(["$templateCache", function($templateCache) {
@@ -21359,7 +21364,12 @@ $templateCache.put("/epochdb/js/templates/partial/search.html",
 
 angular.module("/epochdb/js/templates/partial/site-header.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/site-header.html",
-"<header><nav data-topbar=\"data-topbar\" data-ng-class=\"{'expanded': open}\" class=\"top-bar hide-for-print\"><ul class=\"title-area\"><li class=\"name\"><h1><a href=\"{{ WinterSmith.url }}\" title=\"{{ WinterSmith.description }}\">{{ WinterSmith.name }}</a></h1></li><li data-ng-click=\"open=!open\" class=\"toggle-topbar menu-icon\"><a>Menu</a></li></ul><section class=\"top-bar-section\"><ul class=\"right\"><li data-ng-class=\"{active: $routeSegment.startsWith('item-list')}\"><a ng-href=\"#/items\">Items</a></li><li class=\"divider\"></li><li><a ng-href=\"#/about\">About</a></li><li><a ng-href=\"#/contribute\">Contribute</a></li><li><a ng-href=\"#/credit\">Credit</a></li></ul></section></nav></header>");
+"<header><nav data-topbar=\"data-topbar\" data-ng-class=\"{'expanded': open}\" class=\"top-bar hide-for-print\"><ul class=\"title-area\"><li class=\"name\"><h1><a href=\"{{ WinterSmith.url }}\" title=\"{{ WinterSmith.description }}\">{{ WinterSmith.name }}</a></h1></li><li data-ng-click=\"open=!open\" class=\"toggle-topbar menu-icon\"><a>Menu</a></li></ul><section class=\"top-bar-section\"><ul class=\"right\"><li data-topbar-link=\"data-topbar-link\" data-url=\"items\" data-label=\"Items\"></li><li class=\"divider\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"about\" data-label=\"About\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"contribute\" data-label=\"Contribute\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"credit\" data-label=\"Credit\"></li></ul></section></nav></header>");
+}]);
+
+angular.module("/epochdb/js/templates/partial/table-of-contents.html", []).run(["$templateCache", function($templateCache) {
+$templateCache.put("/epochdb/js/templates/partial/table-of-contents.html",
+"<div class=\"contains-table-of-contents\"><div data-ng-transclude=\"data-ng-transclude\" class=\"row\"></div><ul data-sticky=\"data-sticky\" class=\"table-of-contents side-nav\"><li data-ng-repeat=\"item in Table\"><a data-scroll-to=\"{{item.id}}\">{{item.label}}<em class=\"icon-right-open right\"></em></a></li></ul></div>");
 }]);
 
 define("epochdb-templates", function(){});
@@ -21410,7 +21420,7 @@ require(['angular'], function(angular){
 							.when('/items', 'item-list')
 							.when('/items/:query', 'item-list')
 							.when('/item/:id', 'item-detail')
-							.when('/:slug', 'page')
+							.when('/:slug', 'page', {reloadOnSearch: false})
 							.segment('home', {
 									templateUrl: templateHome
 								})
@@ -21421,6 +21431,7 @@ require(['angular'], function(angular){
 							.segment('item-detail', {
 									templateUrl: templateDetail,
 									controller: "ItemDetailController",
+									dependencies: ['id', ],
 									untilResolved: {
 										templateUrl: templateLoading
 									}
@@ -21459,34 +21470,52 @@ var Class = function(){
 
 	angular.module('epochdb.resources.craftables', [])
 		.factory('CraftableResource', ['$http', function ($http){
-			var json = $http.get('./api/recipes/data.eb29f3a7.json').then(function (response){
-							return response.data;
-						})
-
 			var Model = function (data) {
 				if(data) _.extend(this, data);
 			}
-
-			Model.filter = function (query){
-				return json.then(function(data){
-					if(!query) return data;
-					return _.sortBy(_.filter(data, query), 'type');
+			Model.objects = $http.get('./api/recipe/data.847f22a1.json').then(function (response){
+							return response.data;
+						})
+			Model.objects.filter = function (query){
+				return Model.objects.then(function(data){
+					if(_.isString(query)){ return data; }
+					else if(_.isObject(query)){ return _.query(data, query); }
+					else{
+						return data
+					}
 				})
 			}
-			Model.get = function (id){
-				return json.then(function(data){
+			Model.objects.get = function (id){
+				return Model.objects.then(function(data){
 					var result = _.find(data, function(item){ return item.id == id })
 					return result
 				})
 			}
 
-			Model.valueList = function (key){
-				return json.then(function (data) {
+			Model.objects.valueList = function (key){
+				return Model.objects.then(function (data) {
 					var plucked = _.pluck(_.sortBy(data, 'name'), key)
 					var flattened = _.flatten(plucked)
 					var compacted = _.compact(flattened)
 						return _.unique(compacted);
 					})
+			}
+
+			Model.prototype.typeSlug = function(type){
+				return this.type.toLowerCase();
+			}
+
+
+			Model.prototype.requires = function(type){
+				if (_.has(this, "depends")){
+					if(!type) return this.depends;
+					return this.depends[type];
+				}
+			}
+
+			Model.prototype.usedby = function(){
+				if (_.has(this, "usedBy")){ return _.keys(this.usedby).length > 0;}
+				return false
 			}
 
 			return Model;
@@ -21553,9 +21582,9 @@ require(['angular'], function (angular){
 				$scope.Query = '';
 				$scope.Collection = [];
 
-				CraftableResource.filter().then(function (data){
+				CraftableResource.objects.filter().then(function (data){
 					$scope.Collection = data;
-				});	
+				});
 
 
 				$scope.$on('item-query', function (scope, query){
@@ -21578,14 +21607,14 @@ require(['angular'], function (angular){
 			'$scope',
 			'CraftableResource',
 			function ($scope, CraftableResource){
-				
-				CraftableResource.valueList('type').then(function (data){
+
+				CraftableResource.objects.valueList('type').then(function (data){
 					$scope.Filters = data;
 				});
 
 				$scope.$watch('Query', function (value){
 					$scope.$emit('item-query', value)
-				})				
+				})
 
 			}])
 });
@@ -21625,10 +21654,10 @@ require(['angular', 'lodash'], function (angular, _){
 			'$routeParams',
 			'CraftableResource',
 			function ($scope, $routeParams, CraftableResource){
-				$scope.Item = null;
+				$scope.DetailedItem = null;
 
-				CraftableResource.get($routeParams.id).then(function(data){
-					$scope.Item = data;
+				CraftableResource.objects.get($routeParams.id).then(function(data){
+					$scope.DetailedItem = new CraftableResource(data);
 				});
 
 			}])
@@ -21674,7 +21703,7 @@ require(['angular'], function(angular){
 						controller: function($scope, $element, $attrs, $transclude) {
 							var behaviour = $attrs.changeBehaviour?$attrs.changeBehaviour:'submit'
 
-							CraftableResource.valueList('type').then(function (data){
+							CraftableResource.objects.valueList('type').then(function (data){
 								$scope.Filters = data;
 							});
 
@@ -21711,6 +21740,22 @@ require(['lodash', 'angular'], function( _, angular){
 	angular.module("epochdb.directives.lists", [
 			'epochdb.resources.craftables'
 		])
+		.directive('iconBubble', [
+				'Assets',
+				function(Assets){
+					return {
+						restrict: "E",
+						replace: true,
+						scope: {
+							"Value": "=value",
+							"Icon": "=icon"
+						},
+						templateUrl: Assets.template("partial/icon-bubble.html"),
+						controller: function($scope, $element, $attrs, $transclude){
+							// , data-value="_.keys(ItemSummary.requires('components')).length", title="Item is built using {{ value }} components"
+						}
+					}
+				}])
 
 		.directive('recipe', [
 				"$location",
@@ -21721,19 +21766,28 @@ require(['lodash', 'angular'], function( _, angular){
 						restrict: "E",
 						replace: true,
 						scope: {
-							"Id": "=ref",
-							"Count": "=value"
+							"Item": "=item",
+							"ItemRef": "=itemRef",
+							"ItemCount": "=itemCount"
 						},
 						templateUrl: Assets.template('partial/list-item.html'),
 						controller: ["$scope", "$element", "$attrs", "$transclude",
 							function ($scope, $element, $attrs, $transclude){
-								$scope.Item = null;
-								var id = $scope.Id.replace("api/","");
-								console.log(id)
-								CraftableResource.get(id)
-									.then(function(data){
-										$scope.item = data;
-									});
+								if($scope.Item){
+									$scope.ItemSummary = $scope.Item;
+								}
+								else if($scope.ItemRef && _.isString($scope.ItemRef)){
+									// in future we need to pull this apart with a pattern
+									// so we can take one param and determin if it's an id
+									// for a recipe, a trader, a location and so forth.
+									// Right now, we only deal with recipes.
+									var id = $scope.ItemRef.replace("api/recipe/","");
+									CraftableResource.objects
+										.get(id)
+										.then(function(data){
+											$scope.ItemSummary = new CraftableResource(data);
+										});
+								}
 							}]
 					}
 				}])
@@ -21745,30 +21799,17 @@ require(['lodash', 'angular'], function( _, angular){
 				function($location, Assets, CraftableResource){
 					return {
 						restrict: 'AE',
-						replace: true,
 						templateUrl: Assets.template('partial/list.html'),
+						replace: true,
 						link: function($scope, iElm, iAttrs, controller) {
-							$scope.$watch('Query', function (value){
-								CraftableResource.filter().then(function(data){
+							$scope.$watch('Query', function (query){
+								CraftableResource.objects.filter(query).then(function(data){
 									$scope.Collection = data;
 								})
 							})
 						}
 					};
 				}])
-
-		.directive('itemSummary', [
-				'$parse',
-				'Assets',
-			function($parse, Assets){
-
-				return {
-					restrict: 'A',
-					replace: true,
-					scope: true,
-					templateUrl: Assets.template("partial/list-item.html")
-				};
-			}])
 
 });
 define("epochdb-directives-lists", function(){});
@@ -21905,19 +21946,160 @@ require(['angular'], function (angular){
 	angular.module('epochdb.directives.site', [])
 
 		.directive('siteHeader', ['Assets', function(Assets){
-			// Runs during compile
 			return {
 				restrict: 'E',
 				templateUrl: Assets.template('partial/site-header.html'),
 				replace: true,
 				link: function($scope, iElm, iAttrs, controller) {}
 			};
-		}]);
+		}])
 
+		.directive('containsToc', ['Assets', function(Assets){
+			return {
+				restrict: 'A',
+				transclude: true,
+				replace: true,
+				templateUrl: Assets.template('partial/table-of-contents.html'),
+				controller: function($scope, $element, $attrs, $transclude) {
+					$scope.Table = []
+					this.addEntry = function(id, element){
+						$scope.Table.push({
+							"id": id,
+							"label": element[0].innerText
+						})
+
+					}
+				},
+			};
+		}])
+
+		.directive('tocEntry', [function(){
+			return {
+				require: '^containsToc',
+				restrict: 'A',
+				link: function($scope, iElm, iAttrs, controller) {
+					controller.addEntry(iAttrs.id, iElm)
+				}
+			};
+		}])
+
+		.directive("sticky", function($window) {
+			return {
+				link: function(scope, element, attrs) {
+					var $win = angular.element($window);
+					if (scope._stickyElements === undefined) {
+						scope._stickyElements = [];
+
+						$win.bind("scroll", function(e) {
+							var pos = $window.pageYOffset;
+							for (var i = 0; i < scope._stickyElements.length; i++) {
+
+								var item = scope._stickyElements[i];
+
+								if (!item.isStuck && pos > item.start) {
+									item.element.addClass("stuck");
+									item.isStuck = true;
+
+									if (item.placeholder) {
+										item.placeholder = angular.element("<div></div>")
+											.css({
+												height: item.element.outerHeight() + "px"
+											})
+											.insertBefore(item.element);
+									}
+								} else if (item.isStuck && pos < item.start) {
+									item.element.removeClass("stuck");
+									item.isStuck = false;
+
+									if (item.placeholder) {
+										item.placeholder.remove();
+										item.placeholder = true;
+									}
+								}
+							}
+						});
+
+						var getOffset = function(element){
+							return element.getBoundingClientRect()
+						}
+
+						var recheckPositions = function() {
+							for (var i = 0; i < scope._stickyElements.length; i++) {
+								var item = scope._stickyElements[i];
+								if (!item.isStuck) {
+									item.start = getOffset(item.element[0]).top;
+								} else if (item.placeholder) {
+									item.start = getOffset(item.placeholder[0]).top;
+								}
+							}
+
+						};
+
+						$win.bind("load", recheckPositions);
+						$win.bind("resize", recheckPositions);
+					}
+
+					var item = {
+						element: element,
+						isStuck: false,
+						placeholder: attrs.usePlaceholder !== undefined,
+						start: getOffset(element[0]).top
+					};
+
+					scope._stickyElements.push(item);
+
+				}
+			};
+		})
+
+		.directive("scrollTo", [
+			"$window",
+			"$location",
+			function ($window, $location) {
+				return {
+					restrict: "AC",
+					compile: function() {
+
+						var document = $window.document;
+
+						function scrollInto(idOrName, callback) { //find element with the give id of name and scroll to the first element it finds
+							if (!idOrName)
+								$window.scrollTo(0, 0);
+							//check if an element can be found with id attribute
+							var el = document.getElementById(idOrName);
+							if (!el) { //check if an element can be found with name attribute if there is no such id
+								el = document.getElementsByName(idOrName);
+
+								if (el && el.length)
+									el = el[0];
+								else
+									el = null;
+							}
+
+							if (el) //if an element is found, scroll to the element
+								callback(el)
+							callback(false)
+							//otherwise, ignore
+						}
+
+						return function(scope, element, attr) {
+							element.bind("click", function(event) {
+								scrollInto(attr.scrollTo, function(target){
+									if(!target) return;
+									target.scrollIntoView();
+									$window.location = "#"+$location.path() + "#" + attr.scrollTo
+									$location.path($location.path()).hash("#"+attr.scrollTo)
+								});
+							});
+						};
+					}
+				};
+			}
+		]);
 });
 define("epochdb-directives-site", function(){});
 
-require(['angular'], function (angular){
+require(['angular', 'lodash'], function (angular, _){
 
 	angular.module('foundation', [])
 		.directive('topbar', [function (){
@@ -21925,9 +22107,26 @@ require(['angular'], function (angular){
 					restrict: 'A',
 					controller: function ($scope, $element, $attrs, $transclude) {
 						$scope.open = false;
-						// this.toggle = function (){
-						// 	$scope.Expanded = !$scope.Expanded;
-						// }
+					}
+				};
+			}])
+
+		.directive('topbarLink', ["$route", "$routeSegment",
+			function ($route, $routeSegment){
+				return {
+					requires: '^topbar',
+					restrict: 'A',
+					replace: true,
+					scope: {
+						"url": "=url",
+						"label": "=label"
+					},
+					template: "<li class='{{ active }}'><a href='#/{{ url }}'>{{ label }}</a></li>",
+					link: function (scope, element, attrs) {
+						// scope.active = $routeSegment.startsWith(scope.route);
+						scope.url = attrs.route || attrs.url;
+						scope.label = attrs.label;
+						element.bind('click', function(){ scope.open = false; });
 					}
 				};
 			}])
@@ -21939,7 +22138,6 @@ require(['angular'], function (angular){
 					link: function ($scope, iElm, iAttrs, controller) {
 						iElm.bind("mouseup touchend", function (event){
 							$scope.open = !$scope.open;
-							// controller.toggle()
 						});
 					}
 				};
@@ -21956,12 +22154,102 @@ require(["angular"], function(angular){
 				restrict: "A",
 				link: function($scope, iElm, iAttrs, controller) {
 					var locals = $parse(iAttrs.wintersmithContext)();
-					$rootScope.WinterSmith = locals;					
+					$rootScope.WinterSmith = locals;
 				}
 			};
 		}]);
 });
 define("epochdb-directives-wintersmith", function(){});
+
+require(["angular"], function(angular){
+  angular.module("scrollspy", [])
+    .directive('scrollSpy', function($window) {
+      return {
+        restrict: 'A',
+        controller: function($scope) {
+          $scope.spies = [];
+          $scope.test = 0;
+          setTimeout(function() {
+            console.log('$scope.test changed');
+            $scope.test = 8
+          }, 1000)
+          this.addSpy = function(spyObj) {
+            console.log('scroll added');
+            $scope.spies.push(spyObj);
+          };
+        },
+        link: function(scope, elem, attrs) {
+          var spyElems = [];
+          console.log(scope);
+          scope.$watch('spies', function(spies) {
+            console.log('$watch', spies);
+            for (var _i = 0; _i < spies.length; _i++) {
+              var spy = spies[_i];
+              if (spyElems[spy.id] == null) {
+                spyElems[spy.id] = (elem.find('#' + spy.id));
+              }
+            }
+          }, true);
+
+          $($window).scroll(function() {
+            console.log(spyElems);
+            var highlightSpy, pos, spy, _i, _len, _ref;
+            highlightSpy = null;
+            _ref = scope.spies;
+
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              spy = _ref[_i];
+              spy.out();
+              console.log('spy', spy);
+              spyElems[spy.id] = spyElems[spy.id].length === 0 ? elem.find('#' + spy.id) : spyElems[spy.id];
+              if (spyElems[spy.id].length !== 0) {
+                if ((pos = spyElems[spy.id].offset().top) - $window.scrollY <= 0) {
+                  spy.pos = pos;
+                  if (highlightSpy == null) {
+                    highlightSpy = spy;
+                  }
+                  if (highlightSpy.pos < spy.pos) {
+                    highlightSpy = spy;
+                  }
+                }
+              }
+            }
+            return highlightSpy != null ? highlightSpy["in"]() : void 0;
+          });
+        }
+      };
+    })
+
+    .directive('spy', function($location) {
+      return {
+        restrict: "A",
+        require: "^scrollSpy",
+        link: function(scope, elem, attrs, scrollSpy) {
+          console.log("scrollSpy,", scrollSpy);
+          if (attrs.spyClass == null) {
+            attrs.spyClass = "active";
+          }
+          elem.click(function() {
+            scope.$apply(function() {
+              $location.hash(attrs.spy);
+            });
+          });
+          scrollSpy.addSpy({
+            id: attrs.spy,
+            in : function() {
+              elem.addClass(attrs.spyClass);
+            },
+            out: function() {
+              elem.removeClass(attrs.spyClass);
+            }
+          });
+        }
+      };
+    })
+
+})
+;
+define("epochdb-directives-scrollspy", function(){});
 
 require([
 	'angular',
@@ -21971,7 +22259,8 @@ require([
 	'epochdb-directives-tabs',
 	'epochdb-directives-site',
 	'epochdb-directives-foundation',
-	'epochdb-directives-wintersmith'
+	'epochdb-directives-wintersmith',
+	'epochdb-directives-scrollspy'
 	], function(angular){
 		angular.module('epochdb.directives', [
 				'epochdb.directives.assets',
@@ -21980,7 +22269,8 @@ require([
 				'epochdb.directives.tabs',
 				'epochdb.directives.site',
 				'foundation',
-				'wintersmith'
+				'wintersmith',
+				'scrollspy'
 			])
 	});
 define("epochdb-directives", ["epochdb-directives-search","epochdb-directives-lists","epochdb-directives-tabs","epochdb-directives-assets","epochdb-directives-site","epochdb-directives-foundation","epochdb-directives-wintersmith"], function(){});
@@ -22019,9 +22309,616 @@ require([
 	});
 define("epochdb-filters", ["epochdb-filters-string"], function(){});
 
+/*
+Underscore Query - A lightweight query API for JavaScript collections
+(c)2012 - Dave Tonge
+May be freely distributed according to MIT license.
+
+This is small library that provides a query api for JavaScript arrays similar to *mongo db*.
+The aim of the project is to provide a simple, well tested, way of filtering data in JavaScript.
+*/
+
+
+(function() {
+  var QueryBuilder, addToQuery, buildQuery, createUtils, expose, findOne, key, makeTest, parseGetter, parseParamType, parseQuery, parseSubQuery, performQuery, performQuerySingle, root, runQuery, single, testModelAttribute, testQueryValue, utils, _i, _len, _ref,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
+    __hasProp = {}.hasOwnProperty;
+
+  root = this;
+
+  /* UTILS*/
+
+
+  utils = {};
+
+  createUtils = function(_) {
+    var key, _i, _len, _ref;
+    _ref = ["every", "some", "filter", "detect", "reject", "reduce", "intersection", "isEqual", "keys", "isArray", "result", "groupBy", "map", "each"];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      key = _ref[_i];
+      utils[key] = _[key];
+      if (!utils[key]) {
+        throw new Error("Please ensure that you first initialize      underscore-query with either lodash or underscore");
+      }
+    }
+  };
+
+  utils.getType = function(obj) {
+    var type;
+    type = Object.prototype.toString.call(obj).substr(8);
+    return type.substr(0, type.length - 1);
+  };
+
+  utils.makeObj = function(key, val) {
+    var o;
+    (o = {})[key] = val;
+    return o;
+  };
+
+  utils.reverseString = function(str) {
+    return str.toLowerCase().split("").reverse().join("");
+  };
+
+  utils.compoundKeys = ["$and", "$not", "$or", "$nor"];
+
+  utils.makeGetter = function(keys) {
+    keys = keys.split(".");
+    return function(obj) {
+      var key, out, _i, _len;
+      out = obj;
+      for (_i = 0, _len = keys.length; _i < _len; _i++) {
+        key = keys[_i];
+        if (out) {
+          out = utils.result(out, key);
+        }
+      }
+      return out;
+    };
+  };
+
+  parseParamType = function(query) {
+    var key, o, paramType, queryParam, type, value;
+    key = utils.keys(query)[0];
+    queryParam = query[key];
+    o = {
+      key: key
+    };
+    if (key.indexOf(".") !== -1) {
+      o.getter = utils.makeGetter(key);
+    }
+    paramType = utils.getType(queryParam);
+    switch (paramType) {
+      case "RegExp":
+      case "Date":
+        o.type = "$" + (paramType.toLowerCase());
+        o.value = queryParam;
+        break;
+      case "Object":
+        if (__indexOf.call(utils.compoundKeys, key) >= 0) {
+          o.type = key;
+          o.value = parseSubQuery(queryParam);
+          o.key = null;
+        } else {
+          for (type in queryParam) {
+            if (!__hasProp.call(queryParam, type)) continue;
+            value = queryParam[type];
+            if (testQueryValue(type, value)) {
+              o.type = type;
+              switch (type) {
+                case "$elemMatch":
+                  o.value = single(parseQuery(value));
+                  break;
+                case "$endsWith":
+                  o.value = utils.reverseString(value);
+                  break;
+                case "$likeI":
+                case "$startsWith":
+                  o.value = value.toLowerCase();
+                  break;
+                case "$computed":
+                  o = parseParamType(utils.makeObj(key, value));
+                  o.getter = utils.makeGetter(key);
+                  break;
+                default:
+                  o.value = value;
+              }
+            } else {
+              throw new Error("Query value (" + value + ") doesn't match query type: (" + type + ")");
+            }
+          }
+        }
+        break;
+      default:
+        o.type = "$equal";
+        o.value = queryParam;
+    }
+    if ((o.type === "$equal") && (paramType === "Object" || paramType === "Array")) {
+      o.type = "$deepEqual";
+    }
+    return o;
+  };
+
+  parseSubQuery = function(rawQuery) {
+    var key, query, queryArray, val, _i, _len, _results;
+    if (utils.isArray(rawQuery)) {
+      queryArray = rawQuery;
+    } else {
+      queryArray = (function() {
+        var _results;
+        _results = [];
+        for (key in rawQuery) {
+          if (!__hasProp.call(rawQuery, key)) continue;
+          val = rawQuery[key];
+          _results.push(utils.makeObj(key, val));
+        }
+        return _results;
+      })();
+    }
+    _results = [];
+    for (_i = 0, _len = queryArray.length; _i < _len; _i++) {
+      query = queryArray[_i];
+      _results.push(parseParamType(query));
+    }
+    return _results;
+  };
+
+  testQueryValue = function(queryType, value) {
+    var valueType;
+    valueType = utils.getType(value);
+    switch (queryType) {
+      case "$in":
+      case "$nin":
+      case "$all":
+      case "$any":
+        return valueType === "Array";
+      case "$size":
+        return valueType === "Number";
+      case "$regex":
+      case "$regexp":
+        return valueType === "RegExp";
+      case "$like":
+      case "$likeI":
+        return valueType === "String";
+      case "$between":
+      case "$mod":
+        return (valueType === "Array") && (value.length === 2);
+      case "$cb":
+        return valueType === "Function";
+      default:
+        return true;
+    }
+  };
+
+  testModelAttribute = function(queryType, value) {
+    var valueType;
+    valueType = utils.getType(value);
+    switch (queryType) {
+      case "$like":
+      case "$likeI":
+      case "$regex":
+      case "$startsWith":
+      case "$endsWith":
+        return valueType === "String";
+      case "$contains":
+      case "$all":
+      case "$any":
+      case "$elemMatch":
+        return valueType === "Array";
+      case "$size":
+        return valueType === "String" || valueType === "Array";
+      case "$in":
+      case "$nin":
+        return value != null;
+      default:
+        return true;
+    }
+  };
+
+  performQuery = function(type, value, attr, model, getter) {
+    switch (type) {
+      case "$equal":
+        if (utils.isArray(attr)) {
+          return __indexOf.call(attr, value) >= 0;
+        } else {
+          return attr === value;
+        }
+        break;
+      case "$deepEqual":
+        return utils.isEqual(attr, value);
+      case "$contains":
+        return __indexOf.call(attr, value) >= 0;
+      case "$ne":
+        return attr !== value;
+      case "$lt":
+        return attr < value;
+      case "$gt":
+        return attr > value;
+      case "$lte":
+        return attr <= value;
+      case "$gte":
+        return attr >= value;
+      case "$between":
+        return (value[0] < attr && attr < value[1]);
+      case "$betweene":
+        return (value[0] <= attr && attr <= value[1]);
+      case "$in":
+        return __indexOf.call(value, attr) >= 0;
+      case "$nin":
+        return __indexOf.call(value, attr) < 0;
+      case "$all":
+        return utils.every(value, function(item) {
+          return __indexOf.call(attr, item) >= 0;
+        });
+      case "$any":
+        return utils.some(attr, function(item) {
+          return __indexOf.call(value, item) >= 0;
+        });
+      case "$size":
+        return attr.length === value;
+      case "$exists":
+      case "$has":
+        return (attr != null) === value;
+      case "$like":
+        return attr.indexOf(value) !== -1;
+      case "$likeI":
+        return attr.toLowerCase().indexOf(value) !== -1;
+      case "$startsWith":
+        return attr.toLowerCase().indexOf(value) === 0;
+      case "$endsWith":
+        return utils.reverseString(attr).indexOf(value) === 0;
+      case "$type":
+        return typeof attr === value;
+      case "$regex":
+      case "$regexp":
+        return value.test(attr);
+      case "$cb":
+        return value.call(model, attr);
+      case "$mod":
+        return (attr % value[0]) === value[1];
+      case "$elemMatch":
+        return runQuery(attr, value, null, true);
+      case "$and":
+      case "$or":
+      case "$nor":
+      case "$not":
+        return performQuerySingle(type, value, getter, model);
+      default:
+        return false;
+    }
+  };
+
+  single = function(queries, getter) {
+    var method;
+    if (utils.getType(getter) === "String") {
+      method = getter;
+      getter = function(obj, key) {
+        return obj[method](key);
+      };
+    }
+    return function(model) {
+      var queryObj, _i, _len;
+      for (_i = 0, _len = queries.length; _i < _len; _i++) {
+        queryObj = queries[_i];
+        if (!performQuerySingle(queryObj.type, queryObj.parsedQuery, getter, model)) {
+          return false;
+        }
+      }
+      return true;
+    };
+  };
+
+  performQuerySingle = function(type, query, getter, model) {
+    var attr, passes, q, test, _i, _len;
+    passes = 0;
+    for (_i = 0, _len = query.length; _i < _len; _i++) {
+      q = query[_i];
+      if (q.getter) {
+        attr = q.getter(model, q.key);
+      } else if (getter) {
+        attr = getter(model, q.key);
+      } else {
+        attr = model[q.key];
+      }
+      test = testModelAttribute(q.type, attr);
+      if (test) {
+        test = performQuery(q.type, q.value, attr, model, getter);
+      }
+      if (test) {
+        passes++;
+      }
+      switch (type) {
+        case "$and":
+          if (!test) {
+            return false;
+          }
+          break;
+        case "$not":
+          if (test) {
+            return false;
+          }
+          break;
+        case "$or":
+          if (test) {
+            return true;
+          }
+          break;
+        case "$nor":
+          if (test) {
+            return false;
+          }
+          break;
+        default:
+          throw new Error("Invalid compound method");
+          throw new Error("Invalid compound method");
+      }
+    }
+    if (type === "$not") {
+      return passes === 0;
+    } else {
+      return type !== "$or";
+    }
+  };
+
+  parseQuery = function(query) {
+    var compoundQuery, key, queryKeys, type, val;
+    queryKeys = utils.keys(query);
+    if (!queryKeys.length) {
+      return [];
+    }
+    compoundQuery = utils.intersection(utils.compoundKeys, queryKeys);
+    if (compoundQuery.length === 0) {
+      return [
+        {
+          type: "$and",
+          parsedQuery: parseSubQuery(query)
+        }
+      ];
+    } else {
+      if (compoundQuery.length !== queryKeys.length) {
+        if (__indexOf.call(compoundQuery, "$and") < 0) {
+          query.$and = {};
+          compoundQuery.unshift("$and");
+        }
+        for (key in query) {
+          if (!__hasProp.call(query, key)) continue;
+          val = query[key];
+          if (!(__indexOf.call(utils.compoundKeys, key) < 0)) {
+            continue;
+          }
+          query.$and[key] = val;
+          delete query[key];
+        }
+      }
+      return (function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = compoundQuery.length; _i < _len; _i++) {
+          type = compoundQuery[_i];
+          _results.push({
+            type: type,
+            parsedQuery: parseSubQuery(query[type])
+          });
+        }
+        return _results;
+      })();
+    }
+  };
+
+  parseGetter = function(getter) {
+    var method;
+    if (utils.getType(getter) === "String") {
+      method = getter;
+      getter = function(obj, key) {
+        return obj[method](key);
+      };
+    }
+    return getter;
+  };
+
+  QueryBuilder = (function() {
+    function QueryBuilder(items, _getter) {
+      this.items = items;
+      this._getter = _getter;
+      this.theQuery = {};
+    }
+
+    QueryBuilder.prototype.indexQueries = function() {
+      var index, key, queries, query, type, _ref;
+      _ref = this.theQuery;
+      for (type in _ref) {
+        if (!__hasProp.call(_ref, type)) continue;
+        queries = _ref[type];
+        index = 0;
+        while (index < queries.length) {
+          query = queries[index];
+          key = utils.keys(query)[0];
+          if ((key in this.indexes) && (type === "$and") && (utils.getType(query[key]) === "String")) {
+            this._indexQueries[key] = query[key];
+            queries.splice(index, 1);
+          } else {
+            index++;
+          }
+        }
+        if (!queries.length) {
+          delete this.theQuery[type];
+        }
+      }
+      return this._indexQueries;
+    };
+
+    QueryBuilder.prototype.getIndexedItems = function(items) {
+      var indexQueries, key, val, _ref, _ref1;
+      indexQueries = this.indexQueries();
+      for (key in indexQueries) {
+        if (!__hasProp.call(indexQueries, key)) continue;
+        val = indexQueries[key];
+        if (this.indexKeys.length > 1) {
+          items = utils.intersection(items, (_ref = this.indexes[key][val]) != null ? _ref : []);
+        } else {
+          items = (_ref1 = this.indexes[key][val]) != null ? _ref1 : [];
+        }
+      }
+      return items;
+    };
+
+    QueryBuilder.prototype.all = function(items, first) {
+      if (items) {
+        this.items = items;
+      }
+      if (this.indexes) {
+        items = this.getIndexedItems(this.items);
+      } else {
+        items = this.items;
+      }
+      return runQuery(items, this.theQuery, this._getter, first);
+    };
+
+    QueryBuilder.prototype.chain = function() {
+      return _.chain(this.all.apply(this, arguments));
+    };
+
+    QueryBuilder.prototype.clone = function() {
+      var cloned;
+      cloned = new QueryBuilder(this.items, this._getter);
+      if (this.indexes) {
+        cloned._indexQueries = {};
+        cloned.indexes = this.indexes;
+        cloned.indexKeys = this.indexKeys;
+      }
+      return cloned;
+    };
+
+    QueryBuilder.prototype.tester = function() {
+      return makeTest(this.theQuery, this._getter);
+    };
+
+    QueryBuilder.prototype.first = function(items) {
+      return this.all(items, true);
+    };
+
+    QueryBuilder.prototype.getter = function(_getter) {
+      this._getter = _getter;
+      return this;
+    };
+
+    QueryBuilder.prototype.index = function(name, fn) {
+      if (!this.items) {
+        throw new Error("Index should only be called after items have been added.");
+      }
+      if (fn == null) {
+        fn = name;
+      }
+      if (this.indexes == null) {
+        this.indexes = {};
+      }
+      if (this.indexKeys == null) {
+        this.indexKeys = [];
+      }
+      if (this._indexQueries == null) {
+        this._indexQueries = {};
+      }
+      if (__indexOf.call(this.indexKeys, name) < 0) {
+        this.indexKeys.push(name);
+      }
+      this.indexes[name] = utils.groupBy(this.items, fn);
+      return this;
+    };
+
+    return QueryBuilder;
+
+  })();
+
+  addToQuery = function(type) {
+    return function(params, qVal) {
+      var _base;
+      if (qVal) {
+        params = utils.makeObj(params, qVal);
+      }
+      if ((_base = this.theQuery)[type] == null) {
+        _base[type] = [];
+      }
+      this.theQuery[type].push(params);
+      return this;
+    };
+  };
+
+  _ref = utils.compoundKeys;
+  for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+    key = _ref[_i];
+    QueryBuilder.prototype[key.substr(1)] = addToQuery(key);
+  }
+
+  QueryBuilder.prototype.find = QueryBuilder.prototype.query = QueryBuilder.prototype.run = QueryBuilder.prototype.all;
+
+  buildQuery = function(items, getter) {
+    return new QueryBuilder(items, getter);
+  };
+
+  makeTest = function(query, getter) {
+    return single(parseQuery(query), parseGetter(getter));
+  };
+
+  findOne = function(items, query, getter) {
+    return runQuery(items, query, getter, true);
+  };
+
+  runQuery = function(items, query, getter, first) {
+    var fn;
+    if (arguments.length < 2) {
+      return buildQuery.apply(this, arguments);
+    }
+    if (getter) {
+      getter = parseGetter(getter);
+    }
+    if (!(utils.getType(query) === "Function")) {
+      query = single(parseQuery(query), getter);
+    }
+    fn = first ? utils.detect : utils.filter;
+    return fn(items, query);
+  };
+
+  runQuery.build = buildQuery;
+
+  runQuery.parse = parseQuery;
+
+  runQuery.findOne = runQuery.first = findOne;
+
+  runQuery.tester = runQuery.testWith = makeTest;
+
+  runQuery.getter = runQuery.pluckWith = utils.makeGetter;
+
+  expose = function(_, mixin) {
+    if (mixin == null) {
+      mixin = true;
+    }
+    createUtils(_);
+    if (mixin) {
+      _.mixin({
+        query: runQuery,
+        q: runQuery
+      });
+    }
+    return runQuery;
+  };
+
+  if (root._) {
+    return expose(root._);
+  }
+
+  if (exports && (typeof module !== "undefined" && module !== null ? module.exports : void 0)) {
+    return module.exports = expose;
+  }
+
+  return expose;
+
+}).call(this);
+
+define("underscore-query", ["lodash"], function(){});
+
 require([
  		'lodash',
-		'angular'
+		'angular',
+		'underscore-query'
 	],
 	function (_, angular){
 
@@ -22047,6 +22944,7 @@ require.config({
 			'angular-animate': '../vendor/angular-animate/angular-animate.min',
 			'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min',
 		'lodash': '../vendor/lodash/dist/lodash.underscore.min',
+		'underscore-query': '../vendor/underscore-query/underscore-query',
 
 		'epochdb': 'app',
 			'epochdb-routes': 'routes',
@@ -22060,6 +22958,7 @@ require.config({
 				'epochdb-directives-site': 'directives/site',
 				'epochdb-directives-foundation': 'directives/foundation',
 				'epochdb-directives-wintersmith': 'directives/wintersmith',
+				'epochdb-directives-scrollspy': 'directives/scrollspy',
 
 			'epochdb-controllers': 'controllers',
 				'epochdb-controllers-app': 'controllers/app',
@@ -22078,6 +22977,8 @@ require.config({
 	},
 
 	shim : {
+		'lodash': { exports: '_' },
+		'underscore-query': { deps: [ 'lodash'] },
 		'angular': { exports: 'angular' },
 		'angular-animate': { deps: ['angular'] },
 		'angular-route': { deps: ['angular'] },
@@ -22130,5 +23031,5 @@ require.config({
 	deps: ['epochdb', ]
 
   });
-define("main", function(){});
+define("boot", function(){});
 }());
