@@ -43,14 +43,12 @@ require(['angular'], function (angular){
 		.directive("sticky", function($window) {
 			return {
 				link: function(scope, element, attrs) {
-
 					var $win = angular.element($window);
-
 					if (scope._stickyElements === undefined) {
 						scope._stickyElements = [];
 
-						$win.bind("scroll.sticky", function(e) {
-							var pos = $win.scrollTop();
+						$win.bind("scroll", function(e) {
+							var pos = $window.pageYOffset;
 							for (var i = 0; i < scope._stickyElements.length; i++) {
 
 								var item = scope._stickyElements[i];
@@ -78,16 +76,22 @@ require(['angular'], function (angular){
 							}
 						});
 
+						var getOffset = function(element){
+							return element.getBoundingClientRect()
+						}
+
 						var recheckPositions = function() {
 							for (var i = 0; i < scope._stickyElements.length; i++) {
 								var item = scope._stickyElements[i];
 								if (!item.isStuck) {
-									item.start = item.element.offset().top;
+									item.start = getOffset(item.element[0]).top;
 								} else if (item.placeholder) {
-									item.start = item.placeholder.offset().top;
+									item.start = getOffset(item.placeholder[0]).top;
 								}
 							}
+
 						};
+
 						$win.bind("load", recheckPositions);
 						$win.bind("resize", recheckPositions);
 					}
@@ -96,14 +100,14 @@ require(['angular'], function (angular){
 						element: element,
 						isStuck: false,
 						placeholder: attrs.usePlaceholder !== undefined,
-						start: element.offset().top
+						start: getOffset(element[0]).top
 					};
 
 					scope._stickyElements.push(item);
 
 				}
 			};
-		});
+		})
 
 		.directive("scrollTo", [
 			"$window",
@@ -114,8 +118,6 @@ require(['angular'], function (angular){
 					compile: function() {
 
 						var document = $window.document;
-
-						console.log($location)
 
 						function scrollInto(idOrName, callback) { //find element with the give id of name and scroll to the first element it finds
 							if (!idOrName)
