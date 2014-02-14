@@ -19,6 +19,7 @@ require.config({
 				'epochdb-directives-site': 'directives/site',
 				'epochdb-directives-foundation': 'directives/foundation',
 				'epochdb-directives-wintersmith': 'directives/wintersmith',
+				'epochdb-directives-scrollspy': 'directives/scrollspy',
 
 			'epochdb-controllers': 'controllers',
 				'epochdb-controllers-app': 'controllers/app',

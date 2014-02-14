@@ -6,7 +6,8 @@ require([
 	'epochdb-directives-tabs',
 	'epochdb-directives-site',
 	'epochdb-directives-foundation',
-	'epochdb-directives-wintersmith'
+	'epochdb-directives-wintersmith',
+	'epochdb-directives-scrollspy'
 	], function(angular){
 		angular.module('epochdb.directives', [
 				'epochdb.directives.assets',
@@ -15,6 +16,7 @@ require([
 				'epochdb.directives.tabs',
 				'epochdb.directives.site',
 				'foundation',
-				'wintersmith'
+				'wintersmith',
+				'scrollspy'
 			])
 	})

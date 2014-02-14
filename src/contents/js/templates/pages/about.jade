@@ -5,7 +5,7 @@
 
 .row
 
-	.columns.large-6.large-centered(data-contains-toc)
+	.columns.large-6.large-centered.contains-table-of-contents(data-contains-toc)
 
 		h4(id="intro", data-toc-entry) Intro
 
@@ -64,7 +64,7 @@
 						b {{ package }} 
 						i {{ version }}
 
-
-		.table-of-contents(data-toc-menu)
-			li(data-ng-repeat="(link, label) in Table")
-				a(href="{{link}}") {{ label }}
+		ul(data-sticky).table-of-contents.side-nav
+			li(data-ng-repeat="item in Table")
+				a(data-scroll-to="{{item.id}}") {{item.label}}
+					em.icon-right-open.right
