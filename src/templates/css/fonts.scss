@@ -21,36 +21,41 @@
 
 
 
-
-$icon-erase:'\e805';
-$icon-shop:'\e814';
-$icon-home:'\e80c';
-$icon-link-outline:'\e81b';
-$icon-link:'\e81c';
-$icon-tag:'\e81a';
-$icon-pencil:'\e818';
-$icon-address:'\e80a';
-$icon-map:'\e80d';
-$icon-compass:'\e80e';
-$icon-box:'\e80b';
-$icon-wrench:'\e806';
-$icon-clock:'\e80f';
-$icon-left-open-outline:'\e816';
-$icon-videocam:'\e809';
-$icon-right-open-outline:'\e803';
-$icon-right-open:'\e804';
-$icon-up-outline:'\e800';
-$icon-leaf:'\e801';
-$icon-gift:'\e810';
-$icon-database:'\e817';
-$icon-flow-split:'\e819';
-$icon-flask:'\e811';
-$icon-beer:'\e812';
-$icon-tree:'\e808';
-$icon-cog:'\e807';
-$icon-beaker:'\e802';
-$icon-food:'\e813';
-$icon-left-open:'\e815';
+$icon-spin: '\e81f';
+$icon-shop: '\e814';
+$icon-ellipsis-vert: '\e81e';
+$icon-erase: '\e805';
+$icon-videocam: '\e809';
+$icon-plus-outline: '\e821';
+$icon-plus: '\e822';
+$icon-home: '\e80c';
+$icon-link-outline: '\e81b';
+$icon-link: '\e81c';
+$icon-tag: '\e81a';
+$icon-pencil: '\e818';
+$icon-address: '\e80a';
+$icon-map: '\e80d';
+$icon-compass: '\e80e';
+$icon-box: '\e80b';
+$icon-wrench: '\e806';
+$icon-ellipsis: '\e817';
+$icon-left-open-outline: '\e816';
+$icon-left-open: '\e815';
+$icon-right-open-outline: '\e803';
+$icon-right-open: '\e804';
+$icon-up-outline: '\e800';
+$icon-leaf: '\e801';
+$icon-gift: '\e810';
+$icon-flow-split: '\e819';
+$icon-flask: '\e811';
+$icon-beer: '\e812';
+$icon-tree: '\e808';
+$icon-spinner: '\e820';
+$icon-cog: '\e807';
+$icon-database: '\e81d';
+$icon-beaker: '\e802';
+$icon-food: '\e813';
+$icon-clock: '\e80f';
 
 
 @mixin fontello(){
@@ -98,32 +103,38 @@ $icon-left-open:'\e815';
 	font-size: 2em;
 }
 
-.icon-address{ @include icon($icon-address); }
-.icon-beaker{ @include icon($icon-beaker); }
-.icon-beer{ @include icon($icon-beer); }
-.icon-box{ @include icon($icon-box); }
-.icon-clock{ @include icon($icon-clock); }
-.icon-cog{ @include icon($icon-cog); }
-.icon-compass{ @include icon($icon-compass); }
-.icon-database{ @include icon($icon-database); }
+.icon-spin{ @include icon($icon-spin); }
+.icon-shop{ @include icon($icon-shop); }
+.icon-ellipsis-vert{ @include icon($icon-ellipsis-vert); }
 .icon-erase{ @include icon($icon-erase); }
-.icon-flask{ @include icon($icon-flask); }
-.icon-food{ @include icon($icon-food); }
-.icon-gift{ @include icon($icon-gift); }
+.icon-videocam{ @include icon($icon-videocam); }
+.icon-plus-outline{ @include icon($icon-plus-outline); }
+.icon-plus{ @include icon($icon-plus); }
 .icon-home{ @include icon($icon-home); }
-.icon-leaf{ @include icon($icon-leaf); }
-.icon-left-open-outline{ @include icon($icon-left-open-outline); }
-.icon-left-open{ @include icon($icon-left-open); }
 .icon-link-outline{ @include icon($icon-link-outline); }
 .icon-link{ @include icon($icon-link); }
-.icon-map{ @include icon($icon-map); }
+.icon-tag{ @include icon($icon-tag); }
 .icon-pencil{ @include icon($icon-pencil); }
+.icon-address{ @include icon($icon-address); }
+.icon-map{ @include icon($icon-map); }
+.icon-compass{ @include icon($icon-compass); }
+.icon-box{ @include icon($icon-box); }
+.icon-wrench{ @include icon($icon-wrench); }
+.icon-ellipsis{ @include icon($icon-ellipsis); }
+.icon-left-open-outline{ @include icon($icon-left-open-outline); }
+.icon-left-open{ @include icon($icon-left-open); }
 .icon-right-open-outline{ @include icon($icon-right-open-outline); }
 .icon-right-open{ @include icon($icon-right-open); }
-.icon-shop{ @include icon($icon-shop); }
-.icon-tag{ @include icon($icon-tag); }
-.icon-tree{ @include icon($icon-tree); }
 .icon-up-outline{ @include icon($icon-up-outline); }
-.icon-videocam{ @include icon($icon-videocam); }
-.icon-wrench{ @include icon($icon-wrench); }
+.icon-leaf{ @include icon($icon-leaf); }
+.icon-gift{ @include icon($icon-gift); }
 .icon-flow-split{ @include icon($icon-flow-split); }
+.icon-flask{ @include icon($icon-flask); }
+.icon-beer{ @include icon($icon-beer); }
+.icon-tree{ @include icon($icon-tree); }
+.icon-spinner{ @include icon($icon-spinner); }
+.icon-cog{ @include icon($icon-cog); }
+.icon-database{ @include icon($icon-database); }
+.icon-beaker{ @include icon($icon-beaker); }
+.icon-food{ @include icon($icon-food); }
+.icon-clock{ @include icon($icon-clock); }

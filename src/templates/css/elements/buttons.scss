@@ -75,6 +75,13 @@
 			}
 		}
 	}
+	&.horizontal{
+		width: auto;
+		li{
+			width: auto;
+			display: inline-block;
+		}
+	}
 }
 
 ul.button-group {

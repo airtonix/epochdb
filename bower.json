@@ -23,6 +23,7 @@
     "angular-route": "~1.2.10",
     "lodash": "~2.4.1",
     "modernizr": "~2.7.1",
-    "requirejs": "~2.1.10"
+    "requirejs": "~2.1.10",
+    "angular-touch": "~1.2.13"
   }
 }

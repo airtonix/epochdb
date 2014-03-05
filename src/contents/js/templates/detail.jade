@@ -1,6 +1,6 @@
 .hero.half-height.text-left.item-header
 	.cell
-		.large-6.columns.large-centered.item-title
+		swipable-panes.large-6.columns.large-centered.item-title
 			.row
 				span(data-ng-class="['type-icon','icon-'+DetailedItem.typeSlug()]", title="Type: {{ DetailedItem.type }}")
 				h4 {{ DetailedItem.name }}
@@ -14,9 +14,8 @@
 		.epoch-item-description {{ DetailedItem.description }}
 
 	.row(data-ng-if="DetailedItem.depends")
-		h4 Requires
 		.epoch-requirements(data-ng-repeat="(key, data) in DetailedItem.depends")
 			h5.group-label(data-ng-class="['icon-'+key]") {{ key }}
 			ul.item-list.button-group.simple-outline.vertical
-				recipe(data-ng-repeat="(ref, count) in data", data-item-ref="ref", data-item-count="count")
+				item(data-ng-repeat="(ref, count) in data", data-item-ref="ref", data-item-count="count")
 

@@ -29,7 +29,8 @@
     "grunt-bump": "0.0.13",
     "grunt-html2js": "~0.2.4",
     "marked": "~0.3.1",
-    "underscore-query": "~0.4.0"
+    "underscore-query": "~0.4.0",
+    "wintersmith-coffee": "~0.2.1"
   },
   "dependencies": {},
   "description": "This is the development branch of [EpochDB](http://airtonix.github.io/epochdb/), a web-application that provides no nonsense item reference for Dayz Epoch players.",
@@ -39,7 +40,7 @@
   "homepage": "https://github.com/airtonix/epochdb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "keywords": [
     "static",

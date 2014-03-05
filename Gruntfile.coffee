@@ -221,8 +221,8 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask "deploy", [
-    'build',
     'bump:minor'
+    'build',
     'gh-pages',
     'clean'
   ]

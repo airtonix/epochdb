@@ -1,152 +1,19 @@
 [{
-		"id": 1,
-		"name": "Crowbar",
-		"slug": "ItemCrowbar",
-		"type": "Tool",
-		"tags": ["Tool"],
-		"description": "",
-		"requiredFor": [
-			"api/recipe/100",
-			"api/recipe/101",
-			"api/recipe/102",
-			"api/recipe/103",
-			"api/recipe/104",
-			"api/recipe/105",
-			"api/recipe/106",
-			"api/recipe/107",
-			"api/recipe/108",
-			"api/recipe/109",
-			"api/recipe/110",
-			"api/recipe/111",
-			"api/recipe/112",
-			"api/recipe/113",
-			"api/recipe/114",
-			"api/recipe/115",
-			"api/recipe/116",
-			"api/recipe/117",
-			"api/recipe/118",
-			"api/recipe/119",
-			"api/recipe/120",
-			"api/recipe/121"
-		]
-	}, {
-		"id": 2,
-		"name": "Toolbox",
-		"slug": "ItemToolbox",
-		"type": "Tool",
-		"tags": ["Tool"],
-		"description": "",
-		"requiredFor": [
-			"api/recipe/100",
-			"api/recipe/101",
-			"api/recipe/102",
-			"api/recipe/103",
-			"api/recipe/104",
-			"api/recipe/105",
-			"api/recipe/106",
-			"api/recipe/107",
-			"api/recipe/108",
-			"api/recipe/109",
-			"api/recipe/110",
-			"api/recipe/111",
-			"api/recipe/112",
-			"api/recipe/113",
-			"api/recipe/114",
-			"api/recipe/115",
-			"api/recipe/116",
-			"api/recipe/117",
-			"api/recipe/118",
-			"api/recipe/119",
-			"api/recipe/120",
-			"api/recipe/121"
-		]
-	}, {
-		"id": 3,
-		"name": "Sledgehammer",
-		"slug": "ItemSledgehammer",
-		"type": "Tool",
-		"source": ["Crafting"],
-		"tags": ["Tool", "Weapon"],
-		"description": "Mainly used for breaking into bases, smashes a wall down",
-		"requiredFor": [
-			"api/recipe/119"
-		]
-	}, {
-		"id": 4,
+		"id": "recipe/4",
 		"name": "Workbench",
-		"slug": "ItemWorkbench",
+		"slug": "RecipeWorkbench",
 		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Tool", "Area"],
 		"description": "One of the three optional crafting stations required for most recipes.",
 		"depends": {
 			"components": {
-				"api/recipe/505": 1,
-				"api/recipe/504": 2
+				"recipe/505": 1,
+				"recipe/503": 2
 			}
 		},
-		"requiredFor": [
-			"api/recipe/100",
-			"api/recipe/101",
-			"api/recipe/102",
-			"api/recipe/103",
-			"api/recipe/104",
-			"api/recipe/105",
-			"api/recipe/106",
-			"api/recipe/107",
-			"api/recipe/108",
-			"api/recipe/109",
-			"api/recipe/110",
-			"api/recipe/111",
-			"api/recipe/112",
-			"api/recipe/113",
-			"api/recipe/114",
-			"api/recipe/115",
-			"api/recipe/116",
-			"api/recipe/117",
-			"api/recipe/118",
-			"api/recipe/119",
-			"api/recipe/120",
-			"api/recipe/121"
-		]
+		"recipe": "recipe/workbench"
 	}, {
-		"id": 5,
-		"name": "ETool",
-		"slug": "ItemETool",
-		"type": "Tool",
-		"source": ["Looted", "Purchased"],
-		"tags": ["Tool"],
-		"requiredFor": [],
-		"description": "Used to place 30m Plot Poles, build sand bags"
-	}, {
-		"id": 6,
-		"name": "Matches",
-		"slug": "ItemMatches",
-		"type": "Tool",
-		"source": ["Looted", "Purchased"],
-		"tags": ["Tool"],
-		"requiredFor": {
-			"api/recipe/8": 1
-		},
-		"description": "Used to create a fireplace"
-	}, {
-		"id": 7,
-		"name": "Knife",
-		"slug": "ItemKnife",
-		"type": "Tool",
-		"source": ["Looted", "Purchased"],
-		"tags": ["Tool"],
-		"description": "Used for Gutting animals, cutting fabric and turning woodpile into lumber."
-	}, {
-		"id": 8,
-		"name": "Fireplace",
-		"slug": "Fire",
-		"type": "Area",
-		"source": ["Crafting"],
-		"tags": ["Tool", "Area"],
-		"description": ""
-	}, {
-		"id": 9,
 		"name": "Sand",
 		"slug": "PartSand",
 		"type": "Area",
@@ -154,15 +21,7 @@
 		"tags": ["Area", "Component"],
 		"description": "Not sure yet, by the beach or near any body of water perhaps?"
 	}, {
-		"id": 10,
-		"name": "Hatchet",
-		"slug": "ItemHatchet",
-		"type": "Tool",
-		"source": ["Looted", "Purchased"],
-		"tags": ["Weapon"],
-		"description": "Cut down trees and silently kill zombies or players"
-	}, {
-		"id": 100,
+		"id": "recipe/100",
 		"name": "Small Wooden Wall (1/3 height)",
 		"slug": "ItemWoodWallThird",
 		"type": "Kit",
@@ -171,19 +30,19 @@
 		"description": "",
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"area/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/505": 3,
-				"api/recipe/504": 3
+				"recipe/505": 3,
+				"recipe/503": 3
 			}
 		}
 	}, {
-		"id": 101,
+		"id": "recipe/101",
 		"name": "Small Wooden Wall",
 		"description": "",
 		"slug": "ItemWoodWall",
@@ -191,18 +50,18 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/100": 3
+				"recipe/100": 3
 			}
 		}
 	}, {
-		"id": 102,
+		"id": "recipe/102",
 		"name": "Large Wooden Wall",
 		"slug": "ItemWoodWallLg",
 		"description": "",
@@ -210,20 +69,20 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/101": 1,
-				"api/recipe/505": 1,
-				"api/recipe/504": 1
+				"recipe/101": 1,
+				"recipe/505": 1,
+				"recipe/503": 1
 			}
 		}
 	}, {
-		"id": 103,
+		"id": "recipe/103",
 		"name": "Small Wooden Wall with Door",
 		"slug": "ItemWoodWallDoor",
 		"description": "A small wall with a door",
@@ -231,18 +90,18 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/101": 1
+				"recipe/101": 1
 			}
 		}
 	}, {
-		"id": 104,
+		"id": "recipe/104",
 		"name": "Large Wooden Doorway",
 		"slug": "ItemWoodWallDoorLg",
 		"description": "",
@@ -251,18 +110,18 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/102": 1
+				"recipe/102": 1
 			}
 		}
 	}, {
-		"id": 105,
+		"id": "recipe/105",
 		"name": "Small Wooden Doorway Locked",
 		"slug": "ItemWoodWallWithDoorLocked",
 		"description": "",
@@ -271,19 +130,19 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/103": 1,
-				"api/recipe/306": 1
+				"recipe/103": 1,
+				"recipe/306": 1
 			}
 		}
 	}, {
-		"id": 106,
+		"id": "recipe/106",
 		"name": "Large Wooden Doorway Locked",
 		"slug": "ItemWoodWallWithDoorLgLocked",
 		"description": "",
@@ -292,19 +151,19 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/104": 1,
-				"api/recipe/306": 1
+				"recipe/104": 1,
+				"recipe/306": 1
 			}
 		}
 	}, {
-		"id": 107,
+		"id": "recipe/107",
 		"name": "Window in Small Wooden Wall",
 		"slug": "ItemWoodWallWindow",
 		"description": "",
@@ -313,19 +172,19 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/101": 1,
-				"api/recipe/307": 1
+				"recipe/101": 1,
+				"recipe/307": 1
 			}
 		}
 	}, {
-		"id": 108,
+		"id": "recipe/108",
 		"name": "Window in Large Wooden Wall",
 		"slug": "ItemWoodWallWindowLg",
 		"description": "",
@@ -334,19 +193,19 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/102": 1,
-				"api/recipe/307": 1
+				"recipe/102": 1,
+				"recipe/307": 1
 			}
 		}
 	}, {
-		"id": 109,
+		"id": "recipe/109",
 		"name": "Small Wooden Garage Doorway",
 		"slug": "ItemWoodWallGarageDoor",
 		"description": "",
@@ -355,18 +214,18 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/102": 1
+				"recipe/102": 1
 			}
 		}
 	}, {
-		"id": 110,
+		"id": "recipe/110",
 		"name": "Small Wooden Garage Door (locked)",
 		"slug": "ItemWoodWallGarageDoorLocked",
 		"description": "",
@@ -375,19 +234,19 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/109": 1,
-				"api/recipe/306": 1
+				"recipe/109": 1,
+				"recipe/306": 1
 			}
 		}
 	}, {
-		"id": 111,
+		"id": "recipe/111",
 		"name": "1/4 Wooden Floor",
 		"slug": "ItemWoodFloorQuarter",
 		"description": "",
@@ -396,19 +255,19 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/505": 3,
-				"api/recipe/504": 3
+				"recipe/505": 3,
+				"recipe/503": 3
 			}
 		}
 	}, {
-		"id": 112,
+		"id": "recipe/112",
 		"name": "1/2 Wooden Floor",
 		"slug": "ItemWoodFloorHalf",
 		"description": "",
@@ -417,18 +276,18 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/111": 2
+				"recipe/111": 2
 			}
 		}
 	}, {
-		"id": 113,
+		"id": "recipe/113",
 		"name": "Full Wooden Floor",
 		"slug": "ItemWoodFloor",
 		"description": "",
@@ -437,18 +296,18 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/112": 2
+				"recipe/112": 2
 			}
 		}
 	}, {
-		"id": 114,
+		"id": "recipe/114",
 		"name": "Metal Floor",
 		"slug": "MetalFloor",
 		"description": "",
@@ -457,24 +316,21 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/300": 1,
-				"api/recipe/503": 2,
-				"api/recipe/500": 4,
-				"api/recipe/301": 2
+				"recipe/525": 4
 			}
 		}
 	},
 
 
 	{
-		"id": 115,
+		"id": "recipe/115",
 		"name": "1/2 Cinder Wall",
 		"slug": "CinderWallHalf",
 		"description": "",
@@ -483,41 +339,38 @@
 		"tags": ["Building", "Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/308": 3,
-				"api/recipe/309": 1
+				"recipe/308": 3,
+				"recipe/309": 1
 			}
 		}
 	}, {
-		"id": 116,
+		"id": "recipe/116",
 		"name": "Cinder Wall",
 		"slug": "CinderWall",
-		"description": "",
+		"description": "Upgrades an existing one-half cinder wall to a full height cinder wall. \n note that a full height cinder wall is taller than any of the wood walls.",
 		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
 		"depends": {
-			"areas": {
-				"api/recipe/4": "3m"
-			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/115": 1,
-				"api/recipe/308": 4,
-				"api/recipe/309": 1
+				"recipe/115": 1,
+				"recipe/308": 4,
+				"recipe/309": 1
 			}
 		}
 	}, {
-		"id": 117,
+		"id": "recipe/117",
 		"name": "Cinder Garage Doorway",
 		"slug": "CinderWallGarageDoorway",
 		"description": "",
@@ -526,20 +379,20 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/308": 3,
-				"api/recipe/309": 1,
-				"api/recipe/301": 1
+				"recipe/308": 3,
+				"recipe/309": 1,
+				"recipe/301": 1
 			}
 		}
 	}, {
-		"id": 118,
+		"id": "recipe/118",
 		"name": "Cinder Garage Door (Locked)",
 		"slug": "CinderWallGarageDoorLocked",
 		"description": "",
@@ -548,20 +401,20 @@
 		"tags": ["Building", "Upgrade"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/117": 1,
-				"api/recipe/301": 3,
-				"api/recipe/306": 3
+				"recipe/117": 1,
+				"recipe/301": 3,
+				"recipe/306": 3
 			}
 		}
 	}, {
-		"id": 119,
+		"id": "recipe/119",
 		"name": "Wooden Ladder",
 		"slug": "ItemWoodLadder",
 		"description": "",
@@ -570,19 +423,19 @@
 		"tags": ["Building"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1,
-				"api/recipe/3": 1
+				"item/2": 1,
+				"item/1": 1,
+				"item/3": 1
 			},
 			"components": {
-				"api/recipe/504": 8
+				"recipe/503": 8
 			}
 		}
 	}, {
-		"id": 120,
+		"id": "recipe/120",
 		"name": "Wooden Stairs",
 		"slug": "ItemWoodStairs",
 		"description": "",
@@ -591,18 +444,18 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/504": 8
+				"recipe/503": 8
 			}
 		}
 	}, {
-		"id": 121,
+		"id": "recipe/121",
 		"name": "Wooden Stairs (Supported)",
 		"slug": "ItemWoodStairsSupport",
 		"description": "",
@@ -611,19 +464,19 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/120": 1,
-				"api/recipe/504": 2
+				"recipe/120": 1,
+				"recipe/503": 2
 			}
 		}
 	}, {
-		"id": 500,
+		"id": "recipe/499",
 		"name": "Metal Pole",
 		"slug": "ItemPole",
 		"description": "",
@@ -632,88 +485,88 @@
 		"source": ["Looted", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/8": "3m"
+				"area/2": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/300": 3
+				"recipe/300": 3
 			}
 		}
 	}, {
-		"id": 300,
+		"id": "recipe/300",
 		"slug": "PartScrapMetal",
 		"name": "Scrap Metal",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["Looted", "Purchased"]
 	}, {
-		"id": 301,
+		"id": "recipe/301",
 		"name": "Tank Trap",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["looted", "purchased"],
 		"slug": "PartTankTrap"
 	}, {
-		"id": 302,
+		"id": "recipe/302",
 		"slug": "PartWire",
 		"name": "Wire",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["looted", "purchased"]
 	}, {
-		"id": 303,
+		"id": "recipe/303",
 		"name": "Wood Pile",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["Harvested"],
 		"slug": "PartWoodPile"
 	}, {
-		"id": 304,
+		"id": "recipe/304",
 		"name": "Toilet paper",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["Looted"],
 		"slug": "ItemTrashToiletpaper"
 	}, {
-		"id": 305,
+		"id": "recipe/305",
 		"name": "Light Bulb",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["looted"],
 		"slug": "ItemLightBulb"
 	}, {
-		"id": 306,
+		"id": "recipe/306",
 		"name": "Combination Lock",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["Looted"],
 		"slug": "ItemComboLock"
 	}, {
-		"id": 307,
+		"id": "recipe/307",
 		"slug": "PartGlass",
 		"name": "Car Glass Pane",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["looted"]
 	}, {
-		"id": 308,
+		"id": "recipe/308",
 		"slug": "CinderBlocks",
 		"name": "Cinder Blocks",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["looted", "purchased"]
 	}, {
-		"id": 309,
+		"id": "recipe/309",
 		"slug": "MortarBucket",
 		"name": "Mortar Bucket",
 		"type": "Raw",
 		"tags": ["Component"],
 		"source": ["looted", "purchased"]
 	}, {
-		"id": 501,
+		"id": "recipe/500",
 		"name": "Burlap",
 		"slug": "ItemBurlap",
 		"description": "",
@@ -722,18 +575,18 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/7": 1
+				"item/2": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/502": 2
+				"recipe/501": 2
 			}
 		}
 	}, {
-		"id": 502,
+		"id": "recipe/501",
 		"name": "Canvas",
 		"slug": "ItemCanvas",
 		"description": "",
@@ -742,18 +595,18 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/7": 1
+				"item/2": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/502": 2
+				"recipe/501": 2
 			}
 		}
 	}, {
-		"id": 503,
+		"id": "recipe/502",
 		"name": "Corrugated Fence",
 		"slug": "ItemCorrugated",
 		"description": "",
@@ -762,20 +615,20 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/8": "3m"
+				"area/2": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/500": 2,
-				"api/recipe/301": 2,
-				"api/recipe/504": 2
+				"recipe/499": 2,
+				"recipe/301": 2,
+				"recipe/503": 2
 			}
 		}
 	}, {
-		"id": 504,
+		"id": "recipe/503",
 		"name": "Wood Lumber",
 		"slug": "PartWoodLumber",
 		"description": "",
@@ -784,18 +637,18 @@
 		"source": ["Crafting", "Looted"],
 		"depends": {
 			"areas": {
-				"api/recipe/8": "3m"
+				"area/2": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/7": 1
+				"item/2": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/303": 2
+				"recipe/303": 2
 			}
 		}
 	}, {
-		"id": 505,
+		"id": "recipe/504",
 		"name": "Wood Lumber Pack",
 		"slug": "PartWoodLumberPack",
 		"description": "three pieces of wood lumber. Used to save inventory space.",
@@ -805,15 +658,15 @@
 		"depends": {
 			"areas": null,
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/7": 1
+				"item/2": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/303": 2
+				"recipe/303": 2
 			}
 		}
 	}, {
-		"id": 505,
+		"id": "recipe/505",
 		"name": "Plywood",
 		"slug": "PartWoodPlywood",
 		"description": "",
@@ -822,17 +675,17 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/8": "3m"
+				"area/2": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1
+				"item/2": 1
 			},
 			"components": {
-				"api/recipe/504": 2
+				"recipe/503": 2
 			}
 		}
 	}, {
-		"id": 506,
+		"id": "recipe/506",
 		"name": "Sandbag",
 		"slug": "ItemSandbag",
 		"description": "",
@@ -841,18 +694,18 @@
 		"source": ["Crafting", "Looted"],
 		"depends": {
 			"areas": {
-				"api/recipe/9": "3m"
+				"resources/8": "3m"
 			},
 			"tools": {
-				"api/recipe/5": 1,
-				"api/recipe/2": 1
+				"item/5": 1,
+				"item/2": 1
 			},
 			"components": {
-				"api/recipe/501": 2
+				"recipe/500": 2
 			}
 		}
 	}, {
-		"id": 507,
+		"id": "recipe/507",
 		"name": "Large Sandbag",
 		"slug": "ItemSandbagLarge",
 		"description": "",
@@ -861,20 +714,20 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/5": 1,
-				"api/recipe/2": 1
+				"item/5": 1,
+				"item/2": 1
 			},
 			"components": {
-				"api/recipe/506": 3,
-				"api/recipe/302": 1,
-				"api/recipe/301": 1
+				"recipe/506": 3,
+				"recipe/302": 1,
+				"recipe/301": 1
 			}
 		}
 	}, {
-		"id": 508,
+		"id": "recipe/508",
 		"name": "Tent",
 		"slug": "ItemTent",
 		"description": "",
@@ -883,19 +736,19 @@
 		"source": ["Purchased", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/5": 1,
-				"api/recipe/7": 1
+				"item/5": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/502": 2,
-				"api/recipe/500": 2
+				"recipe/501": 2,
+				"recipe/499": 2
 			}
 		}
 	}, {
-		"id": 509,
+		"id": "recipe/509",
 		"name": "Domed Tent Green",
 		"slug": "ItemTentDomed",
 		"description": "",
@@ -904,19 +757,19 @@
 		"source": ["Purchased", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/5": 1,
-				"api/recipe/7": 1
+				"item/5": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/502": 3,
-				"api/recipe/500": 3
+				"recipe/501": 3,
+				"recipe/499": 3
 			}
 		}
 	}, {
-		"id": 510,
+		"id": "recipe/510",
 		"name": "Domed Tent Digital",
 		"slug": "ItemTentDomed2",
 		"description": "",
@@ -925,19 +778,19 @@
 		"source": ["Purchased", "Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/5": 1,
-				"api/recipe/7": 1
+				"item/5": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/502": 3,
-				"api/recipe/500": 3
+				"recipe/501": 3,
+				"recipe/499": 3
 			}
 		}
 	}, {
-		"id": 511,
+		"id": "recipe/511",
 		"name": "Storage Crate",
 		"slug": "bulk_empty",
 		"description": "",
@@ -946,18 +799,18 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1
+				"item/2": 1
 			},
 			"components": {
-				"api/recipe/504": 4,
-				"api/recipe/300": 1
+				"recipe/503": 4,
+				"recipe/300": 1
 			}
 		}
 	}, {
-		"id": 512,
+		"id": "recipe/512",
 		"name": "Wooden Shed",
 		"slug": "WoodenShed",
 		"description": "",
@@ -966,21 +819,21 @@
 		"tags": ["Kit", "Building", "Area", "Storage"],
 		"requires": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/503": 2,
-				"api/recipe/505": 4,
-				"api/recipe/504": 4
+				"recipe/511": 1,
+				"recipe/502": 2,
+				"recipe/505": 4,
+				"recipe/503": 4
 			}
 		}
 	}, {
-		"id": 513,
+		"id": "recipe/513",
 		"name": "Wooden Shack",
 		"slug": "WoodenShack",
 		"description": "",
@@ -989,19 +842,19 @@
 		"tags": ["Kit", "Building", "Area", "Storage"],
 		"depends": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1
+				"item/2": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/505": 4,
-				"api/recipe/504": 4
+				"recipe/511": 1,
+				"recipe/505": 4,
+				"recipe/503": 4
 			}
 		}
 	}, {
-		"id": 514,
+		"id": "recipe/514",
 		"name": "Stick Fence",
 		"slug": "StickFence",
 		"description": "",
@@ -1010,19 +863,19 @@
 		"source": ["Crafting"],
 		"requires": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/7": 1
+				"item/2": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/303": 6
+				"recipe/511": 1,
+				"recipe/303": 6
 			}
 		}
 	}, {
-		"id": 515,
+		"id": "recipe/515",
 		"name": "Sandbag Nest",
 		"slug": "SandbagNest",
 		"description": "",
@@ -1031,21 +884,21 @@
 		"source": ["Crafting"],
 		"requires": {
 			"areas": {
-				"api/recipe/4": "3m"
+				"item/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/5": 1
+				"item/2": 1,
+				"item/5": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/506": 4,
-				"api/recipe/505": 2,
-				"api/recipe/504": 4
+				"recipe/511": 1,
+				"recipe/506": 4,
+				"recipe/505": 2,
+				"recipe/503": 4
 			}
 		}
 	}, {
-		"id": 516,
+		"id": "recipe/516",
 		"name": "Sun Shade",
 		"slug": "SunShade",
 		"description": "",
@@ -1054,20 +907,20 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/7": 1
+				"item/2": 1,
+				"item/7": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/502": 1,
-				"api/recipe/504": 4
+				"recipe/511": 1,
+				"recipe/501": 1,
+				"recipe/503": 4
 			}
 		}
 	}, {
-		"id": 517,
+		"id": "recipe/517",
 		"name": "Rusty Gate",
 		"slug": "RustyGate",
 		"description": "",
@@ -1076,20 +929,20 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/500": 3,
-				"api/recipe/301": 1
+				"recipe/511": 1,
+				"recipe/499": 3,
+				"recipe/301": 1
 			}
 		}
 	}, {
-		"id": 518,
+		"id": "recipe/518",
 		"name": "Out House",
 		"slug": "OutHouse",
 		"description": "",
@@ -1098,22 +951,22 @@
 		"source": ["Crafting"],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/503": 1,
-				"api/recipe/505": 1,
-				"api/recipe/504": 1,
-				"api/recipe/304": 1
+				"recipe/511": 1,
+				"recipe/502": 1,
+				"recipe/505": 1,
+				"recipe/503": 1,
+				"recipe/304": 1
 			}
 		}
 	}, {
-		"id": 519,
+		"id": "recipe/519",
 		"name": "Storage Shed",
 		"slug": "StorageShed",
 		"description": "",
@@ -1122,21 +975,21 @@
 		"tags": ["Storage"],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/503": 4,
-				"api/recipe/505": 2,
-				"api/recipe/504": 2
+				"recipe/511": 1,
+				"recipe/502": 4,
+				"recipe/505": 2,
+				"recipe/503": 2
 			}
 		}
 	}, {
-		"id": 520,
+		"id": "recipe/520",
 		"name": "Light Pole",
 		"slug": "LightPole",
 		"description": "",
@@ -1145,21 +998,21 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/305": 1,
-				"api/recipe/300": 1,
-				"api/recipe/504": 6
+				"recipe/511": 1,
+				"recipe/305": 1,
+				"recipe/300": 1,
+				"recipe/503": 6
 			}
 		}
 	}, {
-		"id": 521,
+		"id": "recipe/521",
 		"name": "Forest Netting",
 		"slug": "ForestNetting",
 		"description": "",
@@ -1168,20 +1021,20 @@
 		"tags": ["Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/5": 1
+				"item/2": 1,
+				"item/5": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/508": 4,
-				"api/recipe/500": 4
+				"recipe/511": 1,
+				"recipe/508": 4,
+				"recipe/499": 4
 			}
 		}
 	}, {
-		"id": 522,
+		"id": "recipe/522",
 		"name": "Large Desert Netting",
 		"slug": "LargeDesertNetting",
 		"description": "",
@@ -1190,18 +1043,18 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/5": 1
+				"item/2": 1,
+				"item/5": 1
 			},
 			"components": {
-				"api/recipe/521": 3
+				"recipe/521": 3
 			}
 		}
 	}, {
-		"id": 523,
+		"id": "recipe/523",
 		"name": "Large Forest Netting",
 		"slug": "LargeForestNetting",
 		"description": "",
@@ -1210,18 +1063,18 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/5": 1
+				"item/2": 1,
+				"item/5": 1
 			},
 			"components": {
-				"api/recipe/521": 3
+				"recipe/521": 3
 			}
 		}
 	}, {
-		"id": 524,
+		"id": "recipe/524",
 		"name": "Deer Stand",
 		"slug": "DeerStand",
 		"description": "",
@@ -1230,20 +1083,20 @@
 		"tags": [],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/512": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/5": 1
+				"item/2": 1,
+				"item/5": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/504": 8,
-				"api/recipe/303": 2
+				"recipe/511": 1,
+				"recipe/503": 8,
+				"recipe/303": 2
 			}
 		}
 	}, {
-		"id": 525,
+		"id": "recipe/525",
 		"name": "Metal Panel",
 		"slug": "MetalPanel",
 		"description": "",
@@ -1252,16 +1105,15 @@
 		"tags": ["Component"],
 		"depends": {
 			"areas": {
-				"api/recipe/512": "3m"
+				"recipe/4": "3m"
 			},
 			"tools": {
-				"api/recipe/2": 1,
-				"api/recipe/1": 1
+				"item/2": 1,
+				"item/1": 1
 			},
 			"components": {
-				"api/recipe/511": 1,
-				"api/recipe/500": 4,
-				"api/recipe/301": 4
+				"recipe/499": 4,
+				"recipe/301": 4
 			}
 		}
 	}

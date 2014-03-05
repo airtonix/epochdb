@@ -1,8 +1,10 @@
 li.epoch-item-summary(data-ng-class="['type-'+ItemSummary.type.toLowerCase()]")
 
-	a.button.text-left(title="{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}", data-ng-href="#/item/{{ ItemSummary.id }}")
+	a.button.text-left(title="{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}", data-ng-href="#/item/{{ItemSummary.id}}")
 		span.label.radius.epoch-type-icon
 			em(data-ng-class="'icon-' + ItemSummary.type.toLowerCase()")
-		span(data-ng-if="ItemCount").epoch-item-count.label.left {{ ItemCount }}
+		span(data-ng-if="ItemCount").epoch-item-count.label {{ ItemCount }}
 		span.epoch-item-name(data-ng-bind="ItemSummary.name")
-		span(data-ng-if="!ItemCount").icon-right-open-outline.icon-2x.right
+		ul.button-group.horizontal.simple-outline.right
+			li: span(data-add-to-calculator, data-item-id="ItemSummary.id").button.icon-plus-outline.icon-2x.right
+			li: span(data-ng-if="!ItemCount").button.icon-right-open-outline.icon-2x.right

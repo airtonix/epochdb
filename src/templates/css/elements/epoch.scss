@@ -1,12 +1,23 @@
+@mixin epoch-list-item-color($color){
+	.epoch-item-name, .epoch-type-icon, .epoch-item-count{
+		color: $color;
+	}
+}
+
 .epoch-item-summary{
 	position: relative;
  	margin-left: 0;
  	width: 100%;
 
-	.button{
-	 	padding:1.5em;
+	> .button {
+		display: table;
+	 	padding:0;
 		.label{
 			margin-right: 0.3em;
+		}
+		> * {
+			display: table-cell;
+			vertical-align: middle;
 		}
 	}
 
@@ -15,7 +26,7 @@
 		font-size: 0.75rem;
 		font-weight: bold;
 		line-height: 1;
-		vertical-align: super;
+		width: 17em;
 	}
 	.epoch-item-description{
 		color: $epoch-item-description-color;
@@ -24,10 +35,13 @@
 
 	}
 	.epoch-item-count{
-		background:  $epoch-type-bg-color;
+		width: 4em;
+		height: 1em;
+		background:  none; //$epoch-type-bg-color;
 		@include border-radius(3px);
 	}
 	.epoch-type-icon{
+		width: 4em;
 		@include border-left-radius(0);
 		max-width: 2em;
 		overflow: hidden;
@@ -74,21 +88,35 @@
 		}
 	}
 
+	.button-group{
+		.button{
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+			border: none;
+			background: none;
+			margin: 0;
+			color: tint($button-bg-hover-color, 10%);
+			&:hover{
+				background: tint($button-bg-hover-color, 10%);
+			}
+		}
+	}
+
 
 	&.type-kit{
-		.epoch-item-name, .epoch-type-icon{ color: $shade1; }
+		@include epoch-list-item-color($shade1);
 	}
 	&.type-component{
-		.epoch-item-name, .epoch-type-icon{ color: $shade2; }
+		@include epoch-list-item-color($shade2);
 	}
 	&.type-tool{
-		.epoch-item-name, .epoch-type-icon{ color: $shade3; }
+		@include epoch-list-item-color($shade3);
 	}
 	&.type-area{
-		.epoch-item-name, .epoch-type-icon{ color: $shade4; }
+		@include epoch-list-item-color($shade6);
 	}
 	&.type-raw{
-		// .epoch-item-name, .epoch-type-icon{ color: $shade5; }
+		@include epoch-list-item-color($body-font-color);
 	}
 
 }
@@ -100,16 +128,26 @@
 			padding-bottom: 1em;
 			border-bottom: 1px solid $button-border-color;
 			.item-title{
+				> .row{
+					display: table;
+					width: 100%;
+					> *{
+						display: table-cell;
+						vertical-align: top;
+					}
 
-				.type-icon{
-					float: left;
-					font-size: 2em;
-					padding: 0.2em 0.2em 0 0;
-				}
-				h4{
-					float: left;
-					small{
-						line-height: 1.4;
+					.type-icon{
+						width: 1em;
+						text-align: center;
+						font-size: 2em;
+						padding: 0.2em 0.2em 0 0;
+					}
+					h4{
+						width: 100%;
+						float: left;
+						small{
+							line-height: 1.4;
+						}
 					}
 				}
 

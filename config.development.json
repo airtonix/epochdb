@@ -23,6 +23,7 @@
 
   "plugins": [
     "./src/plugins/package.coffee",
+    "wintersmith-coffee",
     "wintersmith-jade",
     "wintersmith-node-sass",
     "wintersmith-data-json"

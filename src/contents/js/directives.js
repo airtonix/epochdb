@@ -2,6 +2,7 @@ require([
 	'angular',
 	'epochdb-directives-assets',
 	'epochdb-directives-search',
+	'epochdb-directives-calculator',
 	'epochdb-directives-lists',
 	'epochdb-directives-tabs',
 	'epochdb-directives-site',
@@ -11,6 +12,7 @@ require([
 	], function(angular){
 		angular.module('epochdb.directives', [
 				'epochdb.directives.assets',
+				'epochdb.directives.calculator',
 				'epochdb.directives.search',
 				'epochdb.directives.lists',
 				'epochdb.directives.tabs',
