@@ -1,28 +1,30 @@
 define ['lodash'], (_) ->
 
     class Base
-        @prefix = null
-        @suffix = null
+        @source = null
         @objects = null
         @$http = null
 
         constructor: (data) ->
-            if @$http and @prefix and @suffix
-                @objects = @$http.get(@prefix + @suffix).then (response) -> response.data
-
             if data
                 _.extend @, data
 
-
+            else if @$http and @source
+                @objects = @$http.get(@source).then (response) -> response.data
 
         all: (query) ->
+            self = @
             @objects.then (data) ->
                 if not query or _.isString query
-                    return data
+                    output = data
                 else if _.isObject query
-                    return _.query data, query
+                    output = _.query data, query
                 else
-                    return data
+                    output = data
+
+                _.map output, (item) ->
+                    item.type = self.type
+                    item
 
         one: (ref) ->
             @all {id: ref }
@@ -30,7 +32,7 @@ define ['lodash'], (_) ->
                     data[0]
 
         values: (key) ->
-            @objects.then (data) ->
+            @all().then (data) ->
                 plucked = _.pluck(data, key)
                 flattened = _.flatten plucked
                 compacted = _.compact flattened
