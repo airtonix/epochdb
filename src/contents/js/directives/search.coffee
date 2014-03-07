@@ -19,8 +19,8 @@ require ['angular', 'lodash'], (angular, _) ->
 
 				$scope.Filters = []
 				_.map Models.models, (item) ->
-					item.values('type').then (data) ->
-						$scope.Filters = _.uniq $scope.Filters.concat data
+					item.values(['tags', "type"]).then (data) ->
+						$scope.Filters = _.flatten _.uniq $scope.Filters.concat data
 
 				$scope.$watch 'Query', (value) ->
 					if behaviour is "autocomplete"

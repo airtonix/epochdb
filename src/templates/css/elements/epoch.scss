@@ -103,17 +103,17 @@
 	}
 
 
-	&.type-kit{
+	&.type-recipe{
 		@include epoch-list-item-color($shade1);
 	}
-	&.type-component{
-		@include epoch-list-item-color($shade2);
-	}
-	&.type-tool{
+	&.type-item{
 		@include epoch-list-item-color($shade3);
 	}
 	&.type-area{
 		@include epoch-list-item-color($shade6);
+	}
+	&.type-component{
+		@include epoch-list-item-color($shade2);
 	}
 	&.type-raw{
 		@include epoch-list-item-color($body-font-color);
@@ -194,9 +194,10 @@
 }
 
 .icon-area, .icon-areas				{ @include icon($icon-address); }
-.icon-tool, .icon-tools				{ @include icon($icon-wrench); }
-.icon-component, .icon-components	{ @include icon($icon-beaker); }
-.icon-kit							{ @include icon($icon-gift);}
+.icon-item, .icon-items				{ @include icon($icon-gift); }
+// .icon-component, .icon-components	{ @include icon($icon-beaker); }
+.icon-recipe						{ @include icon($icon-beaker);}
+
 .icon-raw							{ @include icon($icon-leaf);}
 .icon-drink							{ @include icon($icon-beer);}
 .icon-food							{ @include icon($icon-food);}

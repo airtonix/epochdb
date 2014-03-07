@@ -115,7 +115,8 @@ module.exports = (grunt) ->
           cwd: '<%= paths.dist %>'
           dest: '<%= paths.dist %>'
           src: [
-            'js/application.js'
+            'js/application.js',
+            'js/**/*.html',
             'img/**/*.{jpg,jpeg,gif,png,webp}',
             'css/**/*.css',
             'fonts/**/*.{ttf,eot,otf,woff,svg}',
@@ -128,13 +129,14 @@ module.exports = (grunt) ->
         hash: /([a-f0-9]{8})\.[a-z]+$/
 
       application:
-        src: '<%= paths.dist %>/js/*.js',
+        src: '<%= paths.dist %>/js/*.js'
         options:
           patterns:
             'Data': /(api\/.*\/[\w\d-]*\.json)/
+            'Img': /(img\/[\w\d-]*\.(png|jpg|jpeg|gif))/
 
       styles:
-        src: '<%= paths.dist %>/css/*.css',
+        src: '<%= paths.dist %>/css/*.css'
         options:
           patterns:
             'Img': /(img\/[\w\d-]*\.(png|jpg|jpeg|gif))/
@@ -146,7 +148,6 @@ module.exports = (grunt) ->
           patterns:
             'Css': /(css\/[\w\d-]*\.css)/
             'Js': /(js\/[\w\d-]*\.js)/
-
 
     clean:
       all:
@@ -215,7 +216,6 @@ module.exports = (grunt) ->
     'html2js:dist'
     'requirejs:test'
     'filerev'
-    # 'filerev_assets'
     'userev'
     'clean:build'
   ]

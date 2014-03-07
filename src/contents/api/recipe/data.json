@@ -1,329 +1,324 @@
 [{
-		"id": "recipe/4",
+		"id": "recipe/1",
 		"name": "Workbench",
-		"slug": "RecipeWorkbench",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Tool", "Area"],
 		"description": "One of the three optional crafting stations required for most recipes.",
+		"creates": "item/4",
 		"depends": {
 			"components": {
-				"recipe/505": 1,
-				"recipe/503": 2
+				"item/505": 1,
+				"item/503": 2
 			}
-		},
-		"recipe": "recipe/workbench"
+		}
 	}, {
-		"name": "Sand",
-		"slug": "PartSand",
-		"type": "Area",
-		"source": ["Beach", "Pond", "Lake", "Desert"],
-		"tags": ["Area", "Component"],
-		"description": "Not sure yet, by the beach or near any body of water perhaps?"
+		"id": "recipe/2",
+		"name": "Sledgehammer",
+		"source": ["Crafting"],
+		"tags": ["Tool"],
+		"description": "Produces a tool required for crafting some metal items.",
+		"creates": "item/3",
+		"depends": {
+			"components": {
+				"item/10": 1,
+				"item/11": 1
+			}
+		}
+	}, {
+		"id": "recipe/3",
+		"name": "Fireplace",
+		"source": ["Crafting"],
+		"tags": ["Tool", "Area"],
+		"description": "Allows the player to create a fireplace. Dissapears on server restart, until then it can be refuled by putting wood piles in its inventory.",
+		"creates": "area/2",
+		"depends": {
+			"components": {
+				"item/303": 1
+			}
+		}
 	}, {
 		"id": "recipe/100",
 		"name": "Small Wooden Wall (1/3 height)",
-		"slug": "ItemWoodWallThird",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building", "Component"],
 		"description": "",
+		"creates": "item/100",
 		"depends": {
 			"areas": {
-				"area/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/505": 3,
-				"recipe/503": 3
+				"item/505": 3,
+				"item/503": 3
 			}
 		}
 	}, {
 		"id": "recipe/101",
 		"name": "Small Wooden Wall",
 		"description": "",
-		"slug": "ItemWoodWall",
-		"type": "Kit",
 		"tags": ["Building", "Component"],
+		"creates": "item/101",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/100": 3
+				"item/100": 3
 			}
 		}
 	}, {
 		"id": "recipe/102",
 		"name": "Large Wooden Wall",
-		"slug": "ItemWoodWallLg",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Building", "Component"],
+		"creates": "item/102",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/101": 1,
-				"recipe/505": 1,
-				"recipe/503": 1
+				"item/101": 1,
+				"item/505": 1,
+				"item/503": 1
 			}
 		}
 	}, {
 		"id": "recipe/103",
 		"name": "Small Wooden Wall with Door",
-		"slug": "ItemWoodWallDoor",
 		"description": "A small wall with a door",
-		"type": "Kit",
 		"tags": ["Building"],
+		"creates": "item/103",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/101": 1
+				"item/101": 1
 			}
 		}
 	}, {
 		"id": "recipe/104",
 		"name": "Large Wooden Doorway",
-		"slug": "ItemWoodWallDoorLg",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building", "Component"],
+		"creates": "item/104",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/102": 1
+				"item/102": 1
 			}
 		}
 	}, {
 		"id": "recipe/105",
 		"name": "Small Wooden Doorway Locked",
-		"slug": "ItemWoodWallWithDoorLocked",
 		"description": "",
-		"type": "Upgrade",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/105",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/103": 1,
-				"recipe/306": 1
+				"item/103": 1,
+				"item/306": 1
 			}
 		}
 	}, {
 		"id": "recipe/106",
 		"name": "Large Wooden Doorway Locked",
-		"slug": "ItemWoodWallWithDoorLgLocked",
 		"description": "",
-		"type": "Upgrade",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/106",
 		"depends": {
-			"areas": {
-				"item/4": "3m"
-			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/104": 1,
-				"recipe/306": 1
+				"item/104": 1,
+				"item/306": 1
 			}
 		}
 	}, {
 		"id": "recipe/107",
 		"name": "Window in Small Wooden Wall",
-		"slug": "ItemWoodWallWindow",
-		"description": "",
-		"type": "Upgrade",
+		"description": "Upgrades an existing wall with a glass window.",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/107",
 		"depends": {
-			"areas": {
-				"item/4": "3m"
-			},
 			"tools": {
-				"item/2": 1,
-				"item/1": 1
+				"item/2": 1
 			},
 			"components": {
-				"recipe/101": 1,
-				"recipe/307": 1
+				"item/101": 1,
+				"item/307": 1
 			}
 		}
 	}, {
 		"id": "recipe/108",
 		"name": "Window in Large Wooden Wall",
-		"slug": "ItemWoodWallWindowLg",
 		"description": "",
-		"type": "Upgrade",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "recipe/108",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/102": 1,
-				"recipe/307": 1
+				"item/102": 1,
+				"item/307": 1
 			}
 		}
 	}, {
 		"id": "recipe/109",
 		"name": "Small Wooden Garage Doorway",
-		"slug": "ItemWoodWallGarageDoor",
 		"description": "",
-		"type": "Upgrade",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/109",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/102": 1
+				"item/102": 1
 			}
 		}
 	}, {
 		"id": "recipe/110",
 		"name": "Small Wooden Garage Door (locked)",
-		"slug": "ItemWoodWallGarageDoorLocked",
 		"description": "",
-		"type": "Upgrade",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/110",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/109": 1,
-				"recipe/306": 1
+				"item/109": 1,
+				"item/306": 1
 			}
 		}
 	}, {
 		"id": "recipe/111",
 		"name": "1/4 Wooden Floor",
-		"slug": "ItemWoodFloorQuarter",
 		"description": "",
 		"source": ["Crafting"],
-		"type": "Kit",
 		"tags": ["Building", "Component"],
+		"creates": "item/111",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/505": 3,
-				"recipe/503": 3
+				"item/505": 3,
+				"item/503": 3
 			}
 		}
 	}, {
 		"id": "recipe/112",
 		"name": "1/2 Wooden Floor",
-		"slug": "ItemWoodFloorHalf",
 		"description": "",
 		"source": ["Crafting"],
-		"type": "Kit",
 		"tags": ["Building", "Component"],
+		"creates": "item/112",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/111": 2
+				"item/111": 2
 			}
 		}
 	}, {
 		"id": "recipe/113",
 		"name": "Full Wooden Floor",
-		"slug": "ItemWoodFloor",
 		"description": "",
 		"source": ["Crafting"],
-		"type": "Kit",
 		"tags": ["Building"],
+		"creates": "item/113",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/112": 2
+				"item/112": 2
 			}
 		}
 	}, {
 		"id": "recipe/114",
 		"name": "Metal Floor",
-		"slug": "MetalFloor",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building"],
+		"creates": "item/114",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m",
+				"area/2": "3m"
 			},
 			"tools": {
 				"item/2": 1,
-				"item/1": 1
+				"item/3": 1
 			},
 			"components": {
-				"recipe/525": 4
+				"item/525": 4
 			}
 		}
 	},
@@ -332,98 +327,93 @@
 	{
 		"id": "recipe/115",
 		"name": "1/2 Cinder Wall",
-		"slug": "CinderWallHalf",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building", "Component"],
+		"creates": "item/115",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/308": 3,
-				"recipe/309": 1
+				"item/308": 3,
+				"item/309": 1
 			}
 		}
 	}, {
 		"id": "recipe/116",
 		"name": "Cinder Wall",
-		"slug": "CinderWall",
 		"description": "Upgrades an existing one-half cinder wall to a full height cinder wall. \n note that a full height cinder wall is taller than any of the wood walls.",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/116",
 		"depends": {
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/115": 1,
-				"recipe/308": 4,
-				"recipe/309": 1
+				"item/115": 1,
+				"item/308": 4,
+				"item/309": 1
 			}
 		}
 	}, {
 		"id": "recipe/117",
 		"name": "Cinder Garage Doorway",
-		"slug": "CinderWallGarageDoorway",
 		"description": "",
 		"source": ["Crafting"],
-		"type": "Kit",
 		"tags": ["Building"],
+		"creates": "item/117",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/308": 3,
-				"recipe/309": 1,
-				"recipe/301": 1
+				"item/308": 3,
+				"item/309": 1,
+				"item/301": 1
 			}
 		}
 	}, {
 		"id": "recipe/118",
 		"name": "Cinder Garage Door (Locked)",
-		"slug": "CinderWallGarageDoorLocked",
 		"description": "",
-		"type": "Upgrade",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
+		"creates": "item/118",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/117": 1,
-				"recipe/301": 3,
-				"recipe/306": 3
+				"item/117": 1,
+				"item/301": 3,
+				"item/306": 3
 			}
 		}
 	}, {
 		"id": "recipe/119",
 		"name": "Wooden Ladder",
-		"slug": "ItemWoodLadder",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Building"],
+		"creates": "item/119",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
@@ -431,58 +421,55 @@
 				"item/3": 1
 			},
 			"components": {
-				"recipe/503": 8
+				"item/503": 8
 			}
 		}
 	}, {
 		"id": "recipe/120",
 		"name": "Wooden Stairs",
-		"slug": "ItemWoodStairs",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Building"],
 		"source": ["Crafting"],
+		"creates": "item/120",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/503": 8
+				"item/503": 8
 			}
 		}
 	}, {
 		"id": "recipe/121",
 		"name": "Wooden Stairs (Supported)",
-		"slug": "ItemWoodStairsSupport",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Building"],
 		"source": ["Crafting"],
+		"creates": "item/121",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/120": 1,
-				"recipe/503": 2
+				"item/120": 1,
+				"item/503": 2
 			}
 		}
 	}, {
 		"id": "recipe/499",
 		"name": "Metal Pole",
-		"slug": "ItemPole",
 		"description": "",
-		"type": "Component",
 		"tags": ["Component"],
 		"source": ["Looted", "Crafting"],
+		"creates": "item/499",
 		"depends": {
 			"areas": {
 				"area/2": "3m"
@@ -492,127 +479,54 @@
 				"item/1": 1
 			},
 			"components": {
-				"recipe/300": 3
+				"item/300": 2
 			}
 		}
 	}, {
-		"id": "recipe/300",
-		"slug": "PartScrapMetal",
-		"name": "Scrap Metal",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["Looted", "Purchased"]
-	}, {
-		"id": "recipe/301",
-		"name": "Tank Trap",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["looted", "purchased"],
-		"slug": "PartTankTrap"
-	}, {
-		"id": "recipe/302",
-		"slug": "PartWire",
-		"name": "Wire",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["looted", "purchased"]
-	}, {
-		"id": "recipe/303",
-		"name": "Wood Pile",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["Harvested"],
-		"slug": "PartWoodPile"
-	}, {
-		"id": "recipe/304",
-		"name": "Toilet paper",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["Looted"],
-		"slug": "ItemTrashToiletpaper"
-	}, {
-		"id": "recipe/305",
-		"name": "Light Bulb",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["looted"],
-		"slug": "ItemLightBulb"
-	}, {
-		"id": "recipe/306",
-		"name": "Combination Lock",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["Looted"],
-		"slug": "ItemComboLock"
-	}, {
-		"id": "recipe/307",
-		"slug": "PartGlass",
-		"name": "Car Glass Pane",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["looted"]
-	}, {
-		"id": "recipe/308",
-		"slug": "CinderBlocks",
-		"name": "Cinder Blocks",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["looted", "purchased"]
-	}, {
-		"id": "recipe/309",
-		"slug": "MortarBucket",
-		"name": "Mortar Bucket",
-		"type": "Raw",
-		"tags": ["Component"],
-		"source": ["looted", "purchased"]
-	}, {
 		"id": "recipe/500",
 		"name": "Burlap",
-		"slug": "ItemBurlap",
 		"description": "",
-		"type": "Component",
 		"tags": ["Component"],
 		"source": ["Crafting"],
+		"creates": "item/500",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/501": 2
+				"item/501": 2
 			}
 		}
 	}, {
 		"id": "recipe/501",
 		"name": "Canvas",
-		"slug": "ItemCanvas",
 		"description": "",
-		"type": "Component",
 		"tags": ["Component"],
 		"source": ["Crafting"],
+		"creates": "item/501",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/501": 2
+				"item/501": 2
 			}
 		}
 	}, {
 		"id": "recipe/502",
 		"name": "Corrugated Fence",
-		"slug": "ItemCorrugated",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Component"],
 		"source": ["Crafting"],
+		"creates": "item/502",
 		"depends": {
 			"areas": {
 				"area/2": "3m"
@@ -622,39 +536,34 @@
 				"item/1": 1
 			},
 			"components": {
-				"recipe/499": 2,
-				"recipe/301": 2,
-				"recipe/503": 2
+				"item/499": 2,
+				"item/301": 2,
+				"item/503": 2
 			}
 		}
 	}, {
 		"id": "recipe/503",
 		"name": "Wood Lumber",
-		"slug": "PartWoodLumber",
 		"description": "",
-		"type": "Component",
 		"tags": ["Component"],
 		"source": ["Crafting", "Looted"],
+		"creates": "item/503",
 		"depends": {
-			"areas": {
-				"area/2": "3m"
-			},
 			"tools": {
 				"item/2": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/303": 2
+				"item/303": 2
 			}
 		}
 	}, {
 		"id": "recipe/504",
 		"name": "Wood Lumber Pack",
-		"slug": "PartWoodLumberPack",
 		"description": "three pieces of wood lumber. Used to save inventory space.",
-		"type": "Kit",
 		"tags": [],
 		"source": ["Looted", "Crafting", "Purchased"],
+		"creates": "item/504",
 		"depends": {
 			"areas": null,
 			"tools": {
@@ -662,36 +571,34 @@
 				"item/7": 1
 			},
 			"components": {
-				"recipe/303": 2
+				"item/303": 2
 			}
 		}
 	}, {
 		"id": "recipe/505",
 		"name": "Plywood",
-		"slug": "PartWoodPlywood",
 		"description": "",
-		"type": "Component",
 		"tags": ["Component"],
 		"source": ["Crafting"],
+		"creates": "item/505",
 		"depends": {
 			"areas": {
-				"area/2": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1
 			},
 			"components": {
-				"recipe/503": 2
+				"item/503": 2
 			}
 		}
 	}, {
 		"id": "recipe/506",
 		"name": "Sandbag",
-		"slug": "ItemSandbag",
 		"description": "",
 		"tags": [],
-		"type": "Component",
 		"source": ["Crafting", "Looted"],
+		"creates": "item/506",
 		"depends": {
 			"areas": {
 				"resources/8": "3m"
@@ -701,419 +608,418 @@
 				"item/2": 1
 			},
 			"components": {
-				"recipe/500": 2
+				"item/500": 2
 			}
 		}
 	}, {
 		"id": "recipe/507",
 		"name": "Large Sandbag",
-		"slug": "ItemSandbagLarge",
 		"description": "",
-		"type": "Component",
 		"tags": [],
 		"source": ["Crafting"],
+		"creates": "item/507",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/5": 1,
 				"item/2": 1
 			},
 			"components": {
-				"recipe/506": 3,
-				"recipe/302": 1,
-				"recipe/301": 1
+				"item/506": 3,
+				"item/302": 1,
+				"item/301": 1
 			}
 		}
 	}, {
 		"id": "recipe/508",
 		"name": "Tent",
-		"slug": "ItemTent",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Component", "Storage"],
 		"source": ["Purchased", "Crafting"],
+		"creates": "item/508",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/5": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/501": 2,
-				"recipe/499": 2
+				"item/501": 2,
+				"item/499": 2
 			}
 		}
 	}, {
 		"id": "recipe/509",
 		"name": "Domed Tent Green",
-		"slug": "ItemTentDomed",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Component", "Storage"],
 		"source": ["Purchased", "Crafting"],
+		"creates": "item/509",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/5": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/501": 3,
-				"recipe/499": 3
+				"item/501": 3,
+				"item/499": 3
 			}
 		}
 	}, {
 		"id": "recipe/510",
 		"name": "Domed Tent Digital",
-		"slug": "ItemTentDomed2",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Component", "Storage"],
 		"source": ["Purchased", "Crafting"],
+		"creates": "item/510",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/5": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/501": 3,
-				"recipe/499": 3
+				"item/501": 3,
+				"item/499": 3
 			}
 		}
 	}, {
 		"id": "recipe/511",
 		"name": "Storage Crate",
-		"slug": "bulk_empty",
 		"description": "",
-		"type": "Kit",
 		"tags": ["Component", "Storage"],
 		"source": ["Crafting"],
+		"creates": "item/511",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1
 			},
 			"components": {
-				"recipe/503": 4,
-				"recipe/300": 1
+				"item/503": 4,
+				"item/300": 1
 			}
 		}
 	}, {
 		"id": "recipe/512",
 		"name": "Wooden Shed",
-		"slug": "WoodenShed",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting", "Looted"],
 		"tags": ["Kit", "Building", "Area", "Storage"],
+		"creates": "item/512",
 		"requires": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/502": 2,
-				"recipe/505": 4,
-				"recipe/503": 4
+				"item/511": 1,
+				"item/502": 2,
+				"item/505": 4,
+				"item/503": 4
 			}
 		}
 	}, {
 		"id": "recipe/513",
 		"name": "Wooden Shack",
-		"slug": "WoodenShack",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting", "Looted"],
 		"tags": ["Kit", "Building", "Area", "Storage"],
+		"creates": "item/513",
 		"depends": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/505": 4,
-				"recipe/503": 4
+				"item/511": 1,
+				"item/505": 4,
+				"item/503": 4
 			}
 		}
 	}, {
 		"id": "recipe/514",
 		"name": "Stick Fence",
-		"slug": "StickFence",
 		"description": "",
 		"tags": [],
-		"type": "Kit",
 		"source": ["Crafting"],
+		"creates": "item/514",
 		"requires": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/303": 6
+				"item/511": 1,
+				"item/303": 6
 			}
 		}
 	}, {
 		"id": "recipe/515",
 		"name": "Sandbag Nest",
-		"slug": "SandbagNest",
 		"description": "",
-		"type": "Kit",
 		"tags": [],
 		"source": ["Crafting"],
+		"creates": "item/515",
 		"requires": {
 			"areas": {
-				"item/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/5": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/506": 4,
-				"recipe/505": 2,
-				"recipe/503": 4
+				"item/511": 1,
+				"item/506": 4,
+				"item/505": 2,
+				"item/503": 4
 			}
 		}
 	}, {
 		"id": "recipe/516",
 		"name": "Sun Shade",
-		"slug": "SunShade",
 		"description": "",
-		"type": "Kit",
 		"tags": [],
 		"source": ["Crafting"],
+		"creates": "item/516",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/7": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/501": 1,
-				"recipe/503": 4
+				"item/511": 1,
+				"item/501": 1,
+				"item/503": 4
 			}
 		}
 	}, {
 		"id": "recipe/517",
 		"name": "Rusty Gate",
-		"slug": "RustyGate",
 		"description": "",
-		"type": "Kit",
 		"tags": [],
 		"source": ["Crafting"],
+		"creates": "item/517",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/499": 3,
-				"recipe/301": 1
+				"item/511": 1,
+				"item/499": 3,
+				"item/301": 1
 			}
 		}
 	}, {
 		"id": "recipe/518",
 		"name": "Out House",
-		"slug": "OutHouse",
 		"description": "",
-		"type": "Kit",
 		"tags": [],
 		"source": ["Crafting"],
+		"creates": "item/518",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/502": 1,
-				"recipe/505": 1,
-				"recipe/503": 1,
-				"recipe/304": 1
+				"item/511": 1,
+				"item/502": 1,
+				"item/505": 1,
+				"item/503": 1,
+				"item/304": 1
 			}
 		}
 	}, {
 		"id": "recipe/519",
 		"name": "Storage Shed",
-		"slug": "StorageShed",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Storage"],
+		"creates": "item/519",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/502": 4,
-				"recipe/505": 2,
-				"recipe/503": 2
+				"item/511": 1,
+				"item/502": 4,
+				"item/505": 2,
+				"item/503": 2
 			}
 		}
 	}, {
 		"id": "recipe/520",
 		"name": "Light Pole",
-		"slug": "LightPole",
 		"description": "",
-		"type": "Kit",
-		"source": ["Crafting"],
 		"tags": [],
+		"source": ["Crafting"],
+		"creates": "item/520",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/305": 1,
-				"recipe/300": 1,
-				"recipe/503": 6
+				"item/511": 1,
+				"item/305": 1,
+				"item/300": 1,
+				"item/503": 6
 			}
 		}
 	}, {
 		"id": "recipe/521",
 		"name": "Forest Netting",
-		"slug": "ForestNetting",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Component"],
+		"creates": "item/521",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/5": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/508": 4,
-				"recipe/499": 4
+				"item/511": 1,
+				"item/508": 4,
+				"item/499": 4
 			}
 		}
 	}, {
 		"id": "recipe/522",
 		"name": "Large Desert Netting",
-		"slug": "LargeDesertNetting",
 		"description": "",
-		"type": "Kit",
-		"source": ["Crafting"],
 		"tags": [],
+		"source": ["Crafting"],
+		"creates": "item/522",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/5": 1
 			},
 			"components": {
-				"recipe/521": 3
+				"item/521": 3
 			}
 		}
 	}, {
 		"id": "recipe/523",
 		"name": "Large Forest Netting",
-		"slug": "LargeForestNetting",
 		"description": "",
-		"type": "Kit",
-		"source": ["Crafting"],
 		"tags": [],
+		"source": ["Crafting"],
+		"creates": "item/523",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/5": 1
 			},
 			"components": {
-				"recipe/521": 3
+				"item/521": 3
 			}
 		}
 	}, {
 		"id": "recipe/524",
 		"name": "Deer Stand",
-		"slug": "DeerStand",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": [],
+		"creates": "item/524",
 		"depends": {
 			"areas": {
-				"recipe/512": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/5": 1
 			},
 			"components": {
-				"recipe/511": 1,
-				"recipe/503": 8,
-				"recipe/303": 2
+				"item/511": 1,
+				"item/503": 8,
+				"item/303": 2
 			}
 		}
 	}, {
 		"id": "recipe/525",
 		"name": "Metal Panel",
-		"slug": "MetalPanel",
 		"description": "",
-		"type": "Kit",
 		"source": ["Crafting"],
 		"tags": ["Component"],
+		"creates": "item/525",
 		"depends": {
 			"areas": {
-				"recipe/4": "3m"
+				"area/1": "3m"
 			},
 			"tools": {
 				"item/2": 1,
 				"item/1": 1
 			},
 			"components": {
-				"recipe/499": 4,
-				"recipe/301": 4
+				"item/499": 4,
+				"item/301": 4
+			}
+		}
+	}, {
+		"id": "recipe/526",
+		"name": "Gun Rack",
+		"description": "Stores more guns/tools than items or bags",
+		"source": ["Crafting"],
+		"tags": ["Component"],
+		"creates": "item/526",
+		"depends": {
+			"areas": {
+				"area/1": "3m"
+			},
+			"tools": {
+				"item/2": 1
+			},
+			"components": {
+				"item/503": 6
 			}
 		}
 	}

@@ -1,7 +1,6 @@
 require ['angular'], (angular) ->
 
 		angular.module 'epochdb.routes', ['ngRoute',
-										  'ngAnimate',
 										  'route-segment',
 										  'view-segment',
 										  'epochdb.config'
@@ -22,7 +21,7 @@ require ['angular'], (angular) ->
 							.when '/', 'home'
 							.when '/items', 'item-list'
 							.when '/items/:query', 'item-list'
-							.when '/item/:klass/:id', 'item-detail'
+							.when '/:klass/:id', 'item-detail'
 							.when '/:slug', 'page', reloadOnSearch: false
 
 							.segment 'home', templateUrl: templateHome

@@ -31,6 +31,7 @@ require [
 						deferred = $q.defer()
 						promises = []
 						output = []
+
 						_.forEach @models, (model) ->
 							promises.push model.all()
 

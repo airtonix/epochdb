@@ -1,6 +1,6 @@
 .hero.half-height.text-left.item-header
 	.cell
-		swipable-panes.large-6.columns.large-centered.item-title
+		.large-6.columns.large-centered.item-title
 			.row
 				span(data-ng-class="['type-icon','icon-'+DetailedItem.typeSlug()]", title="Type: {{ DetailedItem.type }}")
 				h4 {{ DetailedItem.name }}
@@ -11,11 +11,35 @@
 
 .large-6.large-centered.columns
 	.row
-		.epoch-item-description {{ DetailedItem.description }}
+		.epoch-item-description(data-marked="DetailedItem.description")
+
+
+	.row(data-ng-if="DetailedItem.storage")
+		h4 Storage
+		ul.button-group.simple-outline
+			li(data-ng-repeat="(key, value) in DetailedItem.storage")
+				a.button {{ value }}
+					small {{ key }}
+
+	.row(data-ng-if="DetailedItem.recipe")
+		h4 Created by
+		ul.item-list.button-group.simple-outline.vertical
+			item(data-item-ref="DetailedItem.recipe")
+
+	.row(data-ng-if="DetailedItem.creates")
+		h4 Creates
+		ul.item-list.button-group.simple-outline.vertical
+			item(data-item-ref="DetailedItem.creates")
 
 	.row(data-ng-if="DetailedItem.depends")
+		h4 Depends On
 		.epoch-requirements(data-ng-repeat="(key, data) in DetailedItem.depends")
 			h5.group-label(data-ng-class="['icon-'+key]") {{ key }}
 			ul.item-list.button-group.simple-outline.vertical
 				item(data-ng-repeat="(ref, count) in data", data-item-ref="ref", data-item-count="count")
+
+	.row(data-ng-if="DetailedItem.requiredFor")
+		h4 Required For
+			ul.item-list.button-group.simple-outline.vertical
+				item(data-ng-repeat="(index, ref) in DetailedItem.requiredFor", data-item-ref="ref")
 

@@ -5,8 +5,9 @@ require.config
 		'angular-animate': '../vendor/angular-animate/angular-animate.min'
 		'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min'
 		'angular-touch': '../vendor/angular-touch/angular-touch.min'
-		'restangular': '../vendor/restangular/dist/restangular'
+		'angular-sanitize': '../vendor/angular-sanitize/angular-sanitize'
 		'lodash': '../vendor/lodash/dist/lodash.underscore.min'
+		'marked': '../vendor/marked/lib/marked'
 		'underscore-query': '../vendor/underscore-query/underscore-query'
 		'epochdb': 'app'
 		'epochdb-routes': 'routes'
@@ -42,10 +43,10 @@ require.config
 	shim :
 		'lodash': exports: '_'
 		'underscore-query':  deps: [ 'lodash']
-		'restangular':  deps: ['angular']
 		'angular':  exports: 'angular'
 		'angular-animate':  deps: ['angular']
 		'angular-touch':  deps: ['angular']
+		'angular-sanitize':  deps: ['angular']
 		'angular-route':  deps: ['angular']
 		'angular-route-segment':  deps: [
 				'angular'
@@ -56,9 +57,9 @@ require.config
 				'angular'
 				'angular-route'
 				'angular-touch'
+				'angular-sanitize'
 				'angular-route-segment'
 				'angular-animate'
-				'restangular'
 
 				'epochdb-templates'
 				'epochdb-config'
@@ -83,17 +84,18 @@ require.config
 				'epochdb-controllers-detail'
 			]
 		'epochdb-directives':  deps: [
-				'epochdb-directives-search'
-				'epochdb-directives-lists'
-				'epochdb-directives-calculator'
-				'epochdb-directives-tabs'
-				'epochdb-directives-assets'
-				'epochdb-directives-site'
-				'epochdb-directives-foundation'
+				'epochdb-directives-search',
+				'epochdb-directives-lists',
+				'epochdb-directives-calculator',
+				'epochdb-directives-tabs',
+				'epochdb-directives-assets',
+				'epochdb-directives-site',
+				'epochdb-directives-foundation',
 				'epochdb-directives-wintersmith'
 			]
 		'epochdb-filters':  deps: [
-				'epochdb-filters-string'
+				'epochdb-filters-string',
+				'marked'
 			]
 
 
