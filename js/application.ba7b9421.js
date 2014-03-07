@@ -21344,18 +21344,18 @@ define("angular", (function (global) {
 }(this)));
 
 /*
- AngularJS v1.2.12-build.2223+sha.95522cc
+ AngularJS v1.2.15-build.2365+sha.d07101d
  (c) 2010-2014 Google, Inc. http://angularjs.org
  License: MIT
 */
-(function(h,e,A){function u(w,q,k){return{restrict:"ECA",terminal:!0,priority:400,transclude:"element",link:function(a,c,b,f,n){function y(){l&&(l.$destroy(),l=null);g&&(k.leave(g),g=null)}function v(){var b=w.current&&w.current.locals;if(e.isDefined(b&&b.$template)){var b=a.$new(),f=w.current;g=n(b,function(d){k.enter(d,null,g||c,function(){!e.isDefined(t)||t&&!a.$eval(t)||q()});y()});l=f.scope=b;l.$emit("$viewContentLoaded");l.$eval(h)}else y()}var l,g,t=b.autoscroll,h=b.onload||"";
-a.$on("$routeChangeSuccess",v);v()}}}function z(e,h,k){return{restrict:"ECA",priority:-400,link:function(a,c){var b=k.current,f=b.locals;c.html(f.$template);var n=e(c.contents());b.controller&&(f.$scope=a,f=h(b.controller,f),b.controllerAs&&(a[b.controllerAs]=f),c.data("$ngControllerController",f),c.children().data("$ngControllerController",f));n(a)}}}h=e.module("ngRoute",["ng"]).provider("$route",function(){function h(a,c){return e.extend(new (e.extend(function(){},{prototype:a})),c)}function q(a,
-e){var b=e.caseInsensitiveMatch,f={originalPath:a,regexp:a},h=f.keys=[];a=a.replace(/([().])/g,"\\$1").replace(/(\/)?:(\w+)([\?\*])?/g,function(a,e,b,c){a="?"===c?c:null;c="*"===c?c:null;h.push({name:b,optional:!!a});e=e||"";return""+(a?"":e)+"(?:"+(a?e:"")+(c&&"(.+?)"||"([^/]+)")+(a||"")+")"+(a||"")}).replace(/([\/$\*])/g,"\\$1");f.regexp=RegExp("^"+a+"$",b?"i":"");return f}var k={};this.when=function(a,c){k[a]=e.extend({reloadOnSearch:!0},c,a&&q(a,c));if(a){var b="/"==a[a.length-1]?a.substr(0,a.length-
-1):a+"/";k[b]=e.extend({redirectTo:a},q(b,c))}return this};this.otherwise=function(a){this.when(null,a);return this};this.$get=["$rootScope","$location","$routeParams","$q","$injector","$http","$templateCache","$sce",function(a,c,b,f,n,q,v,l){function g(){var d=t(),m=r.current;if(d&&m&&d.$$route===m.$$route&&e.equals(d.pathParams,m.pathParams)&&!d.reloadOnSearch&&!x)m.params=d.params,e.copy(m.params,b),a.$broadcast("$routeUpdate",m);else if(d||m)x=!1,a.$broadcast("$routeChangeStart",d,m),(r.current=
-d)&&d.redirectTo&&(e.isString(d.redirectTo)?c.path(u(d.redirectTo,d.params)).search(d.params).replace():c.url(d.redirectTo(d.pathParams,c.path(),c.search())).replace()),f.when(d).then(function(){if(d){var a=e.extend({},d.resolve),c,b;e.forEach(a,function(d,c){a[c]=e.isString(d)?n.get(d):n.invoke(d)});e.isDefined(c=d.template)?e.isFunction(c)&&(c=c(d.params)):e.isDefined(b=d.templateUrl)&&(e.isFunction(b)&&(b=b(d.params)),b=l.getTrustedResourceUrl(b),e.isDefined(b)&&(d.loadedTemplateUrl=b,c=q.get(b,
-{cache:v}).then(function(a){return a.data})));e.isDefined(c)&&(a.$template=c);return f.all(a)}}).then(function(c){d==r.current&&(d&&(d.locals=c,e.copy(d.params,b)),a.$broadcast("$routeChangeSuccess",d,m))},function(c){d==r.current&&a.$broadcast("$routeChangeError",d,m,c)})}function t(){var a,b;e.forEach(k,function(f,k){var p;if(p=!b){var s=c.path();p=f.keys;var l={};if(f.regexp)if(s=f.regexp.exec(s)){for(var g=1,q=s.length;g<q;++g){var n=p[g-1],r="string"==typeof s[g]?decodeURIComponent(s[g]):s[g];
-n&&r&&(l[n.name]=r)}p=l}else p=null;else p=null;p=a=p}p&&(b=h(f,{params:e.extend({},c.search(),a),pathParams:a}),b.$$route=f)});return b||k[null]&&h(k[null],{params:{},pathParams:{}})}function u(a,c){var b=[];e.forEach((a||"").split(":"),function(a,d){if(0===d)b.push(a);else{var e=a.match(/(\w+)(.*)/),f=e[1];b.push(c[f]);b.push(e[2]||"");delete c[f]}});return b.join("")}var x=!1,r={routes:k,reload:function(){x=!0;a.$evalAsync(g)}};a.$on("$locationChangeSuccess",g);return r}]});h.provider("$routeParams",
-function(){this.$get=function(){return{}}});h.directive("ngView",u);h.directive("ngView",z);u.$inject=["$route","$anchorScroll","$animate"];z.$inject=["$compile","$controller","$route"]})(window,window.angular);
+(function(n,e,A){function x(s,g,k){return{restrict:"ECA",terminal:!0,priority:400,transclude:"element",link:function(a,c,b,f,w){function y(){p&&(p.remove(),p=null);h&&(h.$destroy(),h=null);l&&(k.leave(l,function(){p=null}),p=l,l=null)}function v(){var b=s.current&&s.current.locals;if(e.isDefined(b&&b.$template)){var b=a.$new(),d=s.current;l=w(b,function(d){k.enter(d,null,l||c,function(){!e.isDefined(t)||t&&!a.$eval(t)||g()});y()});h=d.scope=b;h.$emit("$viewContentLoaded");h.$eval(u)}else y()}
+var h,l,p,t=b.autoscroll,u=b.onload||"";a.$on("$routeChangeSuccess",v);v()}}}function z(e,g,k){return{restrict:"ECA",priority:-400,link:function(a,c){var b=k.current,f=b.locals;c.html(f.$template);var w=e(c.contents());b.controller&&(f.$scope=a,f=g(b.controller,f),b.controllerAs&&(a[b.controllerAs]=f),c.data("$ngControllerController",f),c.children().data("$ngControllerController",f));w(a)}}}n=e.module("ngRoute",["ng"]).provider("$route",function(){function s(a,c){return e.extend(new (e.extend(function(){},
+{prototype:a})),c)}function g(a,e){var b=e.caseInsensitiveMatch,f={originalPath:a,regexp:a},k=f.keys=[];a=a.replace(/([().])/g,"\\$1").replace(/(\/)?:(\w+)([\?\*])?/g,function(a,e,b,c){a="?"===c?c:null;c="*"===c?c:null;k.push({name:b,optional:!!a});e=e||"";return""+(a?"":e)+"(?:"+(a?e:"")+(c&&"(.+?)"||"([^/]+)")+(a||"")+")"+(a||"")}).replace(/([\/$\*])/g,"\\$1");f.regexp=RegExp("^"+a+"$",b?"i":"");return f}var k={};this.when=function(a,c){k[a]=e.extend({reloadOnSearch:!0},c,a&&g(a,c));if(a){var b=
+"/"==a[a.length-1]?a.substr(0,a.length-1):a+"/";k[b]=e.extend({redirectTo:a},g(b,c))}return this};this.otherwise=function(a){this.when(null,a);return this};this.$get=["$rootScope","$location","$routeParams","$q","$injector","$http","$templateCache","$sce",function(a,c,b,f,g,n,v,h){function l(){var d=p(),m=r.current;if(d&&m&&d.$$route===m.$$route&&e.equals(d.pathParams,m.pathParams)&&!d.reloadOnSearch&&!u)m.params=d.params,e.copy(m.params,b),a.$broadcast("$routeUpdate",m);else if(d||m)u=!1,a.$broadcast("$routeChangeStart",
+d,m),(r.current=d)&&d.redirectTo&&(e.isString(d.redirectTo)?c.path(t(d.redirectTo,d.params)).search(d.params).replace():c.url(d.redirectTo(d.pathParams,c.path(),c.search())).replace()),f.when(d).then(function(){if(d){var a=e.extend({},d.resolve),c,b;e.forEach(a,function(d,c){a[c]=e.isString(d)?g.get(d):g.invoke(d)});e.isDefined(c=d.template)?e.isFunction(c)&&(c=c(d.params)):e.isDefined(b=d.templateUrl)&&(e.isFunction(b)&&(b=b(d.params)),b=h.getTrustedResourceUrl(b),e.isDefined(b)&&(d.loadedTemplateUrl=
+b,c=n.get(b,{cache:v}).then(function(a){return a.data})));e.isDefined(c)&&(a.$template=c);return f.all(a)}}).then(function(c){d==r.current&&(d&&(d.locals=c,e.copy(d.params,b)),a.$broadcast("$routeChangeSuccess",d,m))},function(c){d==r.current&&a.$broadcast("$routeChangeError",d,m,c)})}function p(){var a,b;e.forEach(k,function(f,k){var q;if(q=!b){var g=c.path();q=f.keys;var l={};if(f.regexp)if(g=f.regexp.exec(g)){for(var h=1,p=g.length;h<p;++h){var n=q[h-1],r="string"==typeof g[h]?decodeURIComponent(g[h]):
+g[h];n&&r&&(l[n.name]=r)}q=l}else q=null;else q=null;q=a=q}q&&(b=s(f,{params:e.extend({},c.search(),a),pathParams:a}),b.$$route=f)});return b||k[null]&&s(k[null],{params:{},pathParams:{}})}function t(a,c){var b=[];e.forEach((a||"").split(":"),function(a,d){if(0===d)b.push(a);else{var e=a.match(/(\w+)(.*)/),f=e[1];b.push(c[f]);b.push(e[2]||"");delete c[f]}});return b.join("")}var u=!1,r={routes:k,reload:function(){u=!0;a.$evalAsync(l)}};a.$on("$locationChangeSuccess",l);return r}]});n.provider("$routeParams",
+function(){this.$get=function(){return{}}});n.directive("ngView",x);n.directive("ngView",z);x.$inject=["$route","$anchorScroll","$animate"];z.$inject=["$compile","$controller","$route"]})(window,window.angular);
 //# sourceMappingURL=angular-route.min.js.map
 ;
 define("angular-route", ["angular"], function(){});
@@ -21375,6 +21375,634 @@ window.angular);
 //# sourceMappingURL=angular-touch.min.js.map
 ;
 define("angular-touch", ["angular"], function(){});
+
+/**
+ * @license AngularJS v1.2.13
+ * (c) 2010-2014 Google, Inc. http://angularjs.org
+ * License: MIT
+ */
+(function(window, angular, undefined) {
+
+var $sanitizeMinErr = angular.$$minErr('$sanitize');
+
+/**
+ * @ngdoc overview
+ * @name ngSanitize
+ * @description
+ *
+ * # ngSanitize
+ *
+ * The `ngSanitize` module provides functionality to sanitize HTML.
+ *
+ * {@installModule sanitize}
+ *
+ * <div doc-module-components="ngSanitize"></div>
+ *
+ * See {@link ngSanitize.$sanitize `$sanitize`} for usage.
+ */
+
+/*
+ * HTML Parser By Misko Hevery (misko@hevery.com)
+ * based on:  HTML Parser By John Resig (ejohn.org)
+ * Original code by Erik Arvidsson, Mozilla Public License
+ * http://erik.eae.net/simplehtmlparser/simplehtmlparser.js
+ *
+ * // Use like so:
+ * htmlParser(htmlString, {
+ *     start: function(tag, attrs, unary) {},
+ *     end: function(tag) {},
+ *     chars: function(text) {},
+ *     comment: function(text) {}
+ * });
+ *
+ */
+
+
+/**
+ * @ngdoc service
+ * @name ngSanitize.$sanitize
+ * @function
+ *
+ * @description
+ *   The input is sanitized by parsing the html into tokens. All safe tokens (from a whitelist) are
+ *   then serialized back to properly escaped html string. This means that no unsafe input can make
+ *   it into the returned string, however, since our parser is more strict than a typical browser
+ *   parser, it's possible that some obscure input, which would be recognized as valid HTML by a
+ *   browser, won't make it through the sanitizer.
+ *   The whitelist is configured using the functions `aHrefSanitizationWhitelist` and
+ *   `imgSrcSanitizationWhitelist` of {@link ng.$compileProvider `$compileProvider`}.
+ *
+ * @param {string} html Html input.
+ * @returns {string} Sanitized html.
+ *
+ * @example
+   <doc:example module="ngSanitize">
+   <doc:source>
+     <script>
+       function Ctrl($scope, $sce) {
+         $scope.snippet =
+           '<p style="color:blue">an html\n' +
+           '<em onmouseover="this.textContent=\'PWN3D!\'">click here</em>\n' +
+           'snippet</p>';
+         $scope.deliberatelyTrustDangerousSnippet = function() {
+           return $sce.trustAsHtml($scope.snippet);
+         };
+       }
+     </script>
+     <div ng-controller="Ctrl">
+        Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
+       <table>
+         <tr>
+           <td>Directive</td>
+           <td>How</td>
+           <td>Source</td>
+           <td>Rendered</td>
+         </tr>
+         <tr id="bind-html-with-sanitize">
+           <td>ng-bind-html</td>
+           <td>Automatically uses $sanitize</td>
+           <td><pre>&lt;div ng-bind-html="snippet"&gt;<br/>&lt;/div&gt;</pre></td>
+           <td><div ng-bind-html="snippet"></div></td>
+         </tr>
+         <tr id="bind-html-with-trust">
+           <td>ng-bind-html</td>
+           <td>Bypass $sanitize by explicitly trusting the dangerous value</td>
+           <td>
+           <pre>&lt;div ng-bind-html="deliberatelyTrustDangerousSnippet()"&gt;
+&lt;/div&gt;</pre>
+           </td>
+           <td><div ng-bind-html="deliberatelyTrustDangerousSnippet()"></div></td>
+         </tr>
+         <tr id="bind-default">
+           <td>ng-bind</td>
+           <td>Automatically escapes</td>
+           <td><pre>&lt;div ng-bind="snippet"&gt;<br/>&lt;/div&gt;</pre></td>
+           <td><div ng-bind="snippet"></div></td>
+         </tr>
+       </table>
+       </div>
+   </doc:source>
+   <doc:protractor>
+     it('should sanitize the html snippet by default', function() {
+       expect(element(by.css('#bind-html-with-sanitize div')).getInnerHtml()).
+         toBe('<p>an html\n<em>click here</em>\nsnippet</p>');
+     });
+
+     it('should inline raw snippet if bound to a trusted value', function() {
+       expect(element(by.css('#bind-html-with-trust div')).getInnerHtml()).
+         toBe("<p style=\"color:blue\">an html\n" +
+              "<em onmouseover=\"this.textContent='PWN3D!'\">click here</em>\n" +
+              "snippet</p>");
+     });
+
+     it('should escape snippet without any filter', function() {
+       expect(element(by.css('#bind-default div')).getInnerHtml()).
+         toBe("&lt;p style=\"color:blue\"&gt;an html\n" +
+              "&lt;em onmouseover=\"this.textContent='PWN3D!'\"&gt;click here&lt;/em&gt;\n" +
+              "snippet&lt;/p&gt;");
+     });
+
+     it('should update', function() {
+       element(by.model('snippet')).clear();
+       element(by.model('snippet')).sendKeys('new <b onclick="alert(1)">text</b>');
+       expect(element(by.css('#bind-html-with-sanitize div')).getInnerHtml()).
+         toBe('new <b>text</b>');
+       expect(element(by.css('#bind-html-with-trust div')).getInnerHtml()).toBe(
+         'new <b onclick="alert(1)">text</b>');
+       expect(element(by.css('#bind-default div')).getInnerHtml()).toBe(
+         "new &lt;b onclick=\"alert(1)\"&gt;text&lt;/b&gt;");
+     });
+   </doc:protractor>
+   </doc:example>
+ */
+function $SanitizeProvider() {
+  this.$get = ['$$sanitizeUri', function($$sanitizeUri) {
+    return function(html) {
+      var buf = [];
+      htmlParser(html, htmlSanitizeWriter(buf, function(uri, isImage) {
+        return !/^unsafe/.test($$sanitizeUri(uri, isImage));
+      }));
+      return buf.join('');
+    };
+  }];
+}
+
+function sanitizeText(chars) {
+  var buf = [];
+  var writer = htmlSanitizeWriter(buf, angular.noop);
+  writer.chars(chars);
+  return buf.join('');
+}
+
+
+// Regular Expressions for parsing tags and attributes
+var START_TAG_REGEXP =
+       /^<\s*([\w:-]+)((?:\s+[\w:-]+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)\s*>/,
+  END_TAG_REGEXP = /^<\s*\/\s*([\w:-]+)[^>]*>/,
+  ATTR_REGEXP = /([\w:-]+)(?:\s*=\s*(?:(?:"((?:[^"])*)")|(?:'((?:[^'])*)')|([^>\s]+)))?/g,
+  BEGIN_TAG_REGEXP = /^</,
+  BEGING_END_TAGE_REGEXP = /^<\s*\//,
+  COMMENT_REGEXP = /<!--(.*?)-->/g,
+  DOCTYPE_REGEXP = /<!DOCTYPE([^>]*?)>/i,
+  CDATA_REGEXP = /<!\[CDATA\[(.*?)]]>/g,
+  // Match everything outside of normal chars and " (quote character)
+  NON_ALPHANUMERIC_REGEXP = /([^\#-~| |!])/g;
+
+
+// Good source of info about elements and attributes
+// http://dev.w3.org/html5/spec/Overview.html#semantics
+// http://simon.html5.org/html-elements
+
+// Safe Void Elements - HTML5
+// http://dev.w3.org/html5/spec/Overview.html#void-elements
+var voidElements = makeMap("area,br,col,hr,img,wbr");
+
+// Elements that you can, intentionally, leave open (and which close themselves)
+// http://dev.w3.org/html5/spec/Overview.html#optional-tags
+var optionalEndTagBlockElements = makeMap("colgroup,dd,dt,li,p,tbody,td,tfoot,th,thead,tr"),
+    optionalEndTagInlineElements = makeMap("rp,rt"),
+    optionalEndTagElements = angular.extend({},
+                                            optionalEndTagInlineElements,
+                                            optionalEndTagBlockElements);
+
+// Safe Block Elements - HTML5
+var blockElements = angular.extend({}, optionalEndTagBlockElements, makeMap("address,article," +
+        "aside,blockquote,caption,center,del,dir,div,dl,figure,figcaption,footer,h1,h2,h3,h4,h5," +
+        "h6,header,hgroup,hr,ins,map,menu,nav,ol,pre,script,section,table,ul"));
+
+// Inline Elements - HTML5
+var inlineElements = angular.extend({}, optionalEndTagInlineElements, makeMap("a,abbr,acronym,b," +
+        "bdi,bdo,big,br,cite,code,del,dfn,em,font,i,img,ins,kbd,label,map,mark,q,ruby,rp,rt,s," +
+        "samp,small,span,strike,strong,sub,sup,time,tt,u,var"));
+
+
+// Special Elements (can contain anything)
+var specialElements = makeMap("script,style");
+
+var validElements = angular.extend({},
+                                   voidElements,
+                                   blockElements,
+                                   inlineElements,
+                                   optionalEndTagElements);
+
+//Attributes that have href and hence need to be sanitized
+var uriAttrs = makeMap("background,cite,href,longdesc,src,usemap");
+var validAttrs = angular.extend({}, uriAttrs, makeMap(
+    'abbr,align,alt,axis,bgcolor,border,cellpadding,cellspacing,class,clear,'+
+    'color,cols,colspan,compact,coords,dir,face,headers,height,hreflang,hspace,'+
+    'ismap,lang,language,nohref,nowrap,rel,rev,rows,rowspan,rules,'+
+    'scope,scrolling,shape,size,span,start,summary,target,title,type,'+
+    'valign,value,vspace,width'));
+
+function makeMap(str) {
+  var obj = {}, items = str.split(','), i;
+  for (i = 0; i < items.length; i++) obj[items[i]] = true;
+  return obj;
+}
+
+
+/**
+ * @example
+ * htmlParser(htmlString, {
+ *     start: function(tag, attrs, unary) {},
+ *     end: function(tag) {},
+ *     chars: function(text) {},
+ *     comment: function(text) {}
+ * });
+ *
+ * @param {string} html string
+ * @param {object} handler
+ */
+function htmlParser( html, handler ) {
+  var index, chars, match, stack = [], last = html;
+  stack.last = function() { return stack[ stack.length - 1 ]; };
+
+  while ( html ) {
+    chars = true;
+
+    // Make sure we're not in a script or style element
+    if ( !stack.last() || !specialElements[ stack.last() ] ) {
+
+      // Comment
+      if ( html.indexOf("<!--") === 0 ) {
+        // comments containing -- are not allowed unless they terminate the comment
+        index = html.indexOf("--", 4);
+
+        if ( index >= 0 && html.lastIndexOf("-->", index) === index) {
+          if (handler.comment) handler.comment( html.substring( 4, index ) );
+          html = html.substring( index + 3 );
+          chars = false;
+        }
+      // DOCTYPE
+      } else if ( DOCTYPE_REGEXP.test(html) ) {
+        match = html.match( DOCTYPE_REGEXP );
+
+        if ( match ) {
+          html = html.replace( match[0] , '');
+          chars = false;
+        }
+      // end tag
+      } else if ( BEGING_END_TAGE_REGEXP.test(html) ) {
+        match = html.match( END_TAG_REGEXP );
+
+        if ( match ) {
+          html = html.substring( match[0].length );
+          match[0].replace( END_TAG_REGEXP, parseEndTag );
+          chars = false;
+        }
+
+      // start tag
+      } else if ( BEGIN_TAG_REGEXP.test(html) ) {
+        match = html.match( START_TAG_REGEXP );
+
+        if ( match ) {
+          html = html.substring( match[0].length );
+          match[0].replace( START_TAG_REGEXP, parseStartTag );
+          chars = false;
+        }
+      }
+
+      if ( chars ) {
+        index = html.indexOf("<");
+
+        var text = index < 0 ? html : html.substring( 0, index );
+        html = index < 0 ? "" : html.substring( index );
+
+        if (handler.chars) handler.chars( decodeEntities(text) );
+      }
+
+    } else {
+      html = html.replace(new RegExp("(.*)<\\s*\\/\\s*" + stack.last() + "[^>]*>", 'i'),
+        function(all, text){
+          text = text.replace(COMMENT_REGEXP, "$1").replace(CDATA_REGEXP, "$1");
+
+          if (handler.chars) handler.chars( decodeEntities(text) );
+
+          return "";
+      });
+
+      parseEndTag( "", stack.last() );
+    }
+
+    if ( html == last ) {
+      throw $sanitizeMinErr('badparse', "The sanitizer was unable to parse the following block " +
+                                        "of html: {0}", html);
+    }
+    last = html;
+  }
+
+  // Clean up any remaining tags
+  parseEndTag();
+
+  function parseStartTag( tag, tagName, rest, unary ) {
+    tagName = angular.lowercase(tagName);
+    if ( blockElements[ tagName ] ) {
+      while ( stack.last() && inlineElements[ stack.last() ] ) {
+        parseEndTag( "", stack.last() );
+      }
+    }
+
+    if ( optionalEndTagElements[ tagName ] && stack.last() == tagName ) {
+      parseEndTag( "", tagName );
+    }
+
+    unary = voidElements[ tagName ] || !!unary;
+
+    if ( !unary )
+      stack.push( tagName );
+
+    var attrs = {};
+
+    rest.replace(ATTR_REGEXP,
+      function(match, name, doubleQuotedValue, singleQuotedValue, unquotedValue) {
+        var value = doubleQuotedValue
+          || singleQuotedValue
+          || unquotedValue
+          || '';
+
+        attrs[name] = decodeEntities(value);
+    });
+    if (handler.start) handler.start( tagName, attrs, unary );
+  }
+
+  function parseEndTag( tag, tagName ) {
+    var pos = 0, i;
+    tagName = angular.lowercase(tagName);
+    if ( tagName )
+      // Find the closest opened tag of the same type
+      for ( pos = stack.length - 1; pos >= 0; pos-- )
+        if ( stack[ pos ] == tagName )
+          break;
+
+    if ( pos >= 0 ) {
+      // Close all the open elements, up the stack
+      for ( i = stack.length - 1; i >= pos; i-- )
+        if (handler.end) handler.end( stack[ i ] );
+
+      // Remove the open elements from the stack
+      stack.length = pos;
+    }
+  }
+}
+
+var hiddenPre=document.createElement("pre");
+var spaceRe = /^(\s*)([\s\S]*?)(\s*)$/;
+/**
+ * decodes all entities into regular string
+ * @param value
+ * @returns {string} A string with decoded entities.
+ */
+function decodeEntities(value) {
+  if (!value) { return ''; }
+
+  // Note: IE8 does not preserve spaces at the start/end of innerHTML
+  // so we must capture them and reattach them afterward
+  var parts = spaceRe.exec(value);
+  var spaceBefore = parts[1];
+  var spaceAfter = parts[3];
+  var content = parts[2];
+  if (content) {
+    hiddenPre.innerHTML=content.replace(/</g,"&lt;");
+    // innerText depends on styling as it doesn't display hidden elements.
+    // Therefore, it's better to use textContent not to cause unnecessary
+    // reflows. However, IE<9 don't support textContent so the innerText
+    // fallback is necessary.
+    content = 'textContent' in hiddenPre ?
+      hiddenPre.textContent : hiddenPre.innerText;
+  }
+  return spaceBefore + content + spaceAfter;
+}
+
+/**
+ * Escapes all potentially dangerous characters, so that the
+ * resulting string can be safely inserted into attribute or
+ * element text.
+ * @param value
+ * @returns escaped text
+ */
+function encodeEntities(value) {
+  return value.
+    replace(/&/g, '&amp;').
+    replace(NON_ALPHANUMERIC_REGEXP, function(value){
+      return '&#' + value.charCodeAt(0) + ';';
+    }).
+    replace(/</g, '&lt;').
+    replace(/>/g, '&gt;');
+}
+
+/**
+ * create an HTML/XML writer which writes to buffer
+ * @param {Array} buf use buf.jain('') to get out sanitized html string
+ * @returns {object} in the form of {
+ *     start: function(tag, attrs, unary) {},
+ *     end: function(tag) {},
+ *     chars: function(text) {},
+ *     comment: function(text) {}
+ * }
+ */
+function htmlSanitizeWriter(buf, uriValidator){
+  var ignore = false;
+  var out = angular.bind(buf, buf.push);
+  return {
+    start: function(tag, attrs, unary){
+      tag = angular.lowercase(tag);
+      if (!ignore && specialElements[tag]) {
+        ignore = tag;
+      }
+      if (!ignore && validElements[tag] === true) {
+        out('<');
+        out(tag);
+        angular.forEach(attrs, function(value, key){
+          var lkey=angular.lowercase(key);
+          var isImage = (tag === 'img' && lkey === 'src') || (lkey === 'background');
+          if (validAttrs[lkey] === true &&
+            (uriAttrs[lkey] !== true || uriValidator(value, isImage))) {
+            out(' ');
+            out(key);
+            out('="');
+            out(encodeEntities(value));
+            out('"');
+          }
+        });
+        out(unary ? '/>' : '>');
+      }
+    },
+    end: function(tag){
+        tag = angular.lowercase(tag);
+        if (!ignore && validElements[tag] === true) {
+          out('</');
+          out(tag);
+          out('>');
+        }
+        if (tag == ignore) {
+          ignore = false;
+        }
+      },
+    chars: function(chars){
+        if (!ignore) {
+          out(encodeEntities(chars));
+        }
+      }
+  };
+}
+
+
+// define ngSanitize module and register $sanitize service
+angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
+
+/* global sanitizeText: false */
+
+/**
+ * @ngdoc filter
+ * @name ngSanitize.filter:linky
+ * @function
+ *
+ * @description
+ * Finds links in text input and turns them into html links. Supports http/https/ftp/mailto and
+ * plain email address links.
+ *
+ * Requires the {@link ngSanitize `ngSanitize`} module to be installed.
+ *
+ * @param {string} text Input text.
+ * @param {string} target Window (_blank|_self|_parent|_top) or named frame to open links in.
+ * @returns {string} Html-linkified text.
+ *
+ * @usage
+   <span ng-bind-html="linky_expression | linky"></span>
+ *
+ * @example
+   <doc:example module="ngSanitize">
+     <doc:source>
+       <script>
+         function Ctrl($scope) {
+           $scope.snippet =
+             'Pretty text with some links:\n'+
+             'http://angularjs.org/,\n'+
+             'mailto:us@somewhere.org,\n'+
+             'another@somewhere.org,\n'+
+             'and one more: ftp://127.0.0.1/.';
+           $scope.snippetWithTarget = 'http://angularjs.org/';
+         }
+       </script>
+       <div ng-controller="Ctrl">
+       Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
+       <table>
+         <tr>
+           <td>Filter</td>
+           <td>Source</td>
+           <td>Rendered</td>
+         </tr>
+         <tr id="linky-filter">
+           <td>linky filter</td>
+           <td>
+             <pre>&lt;div ng-bind-html="snippet | linky"&gt;<br>&lt;/div&gt;</pre>
+           </td>
+           <td>
+             <div ng-bind-html="snippet | linky"></div>
+           </td>
+         </tr>
+         <tr id="linky-target">
+          <td>linky target</td>
+          <td>
+            <pre>&lt;div ng-bind-html="snippetWithTarget | linky:'_blank'"&gt;<br>&lt;/div&gt;</pre>
+          </td>
+          <td>
+            <div ng-bind-html="snippetWithTarget | linky:'_blank'"></div>
+          </td>
+         </tr>
+         <tr id="escaped-html">
+           <td>no filter</td>
+           <td><pre>&lt;div ng-bind="snippet"&gt;<br>&lt;/div&gt;</pre></td>
+           <td><div ng-bind="snippet"></div></td>
+         </tr>
+       </table>
+     </doc:source>
+     <doc:protractor>
+       it('should linkify the snippet with urls', function() {
+         expect(element(by.id('linky-filter')).element(by.binding('snippet | linky')).getText()).
+             toBe('Pretty text with some links: http://angularjs.org/, us@somewhere.org, ' +
+                  'another@somewhere.org, and one more: ftp://127.0.0.1/.');
+         expect(element.all(by.css('#linky-filter a')).count()).toEqual(4);
+       });
+
+       it('should not linkify snippet without the linky filter', function() {
+         expect(element(by.id('escaped-html')).element(by.binding('snippet')).getText()).
+             toBe('Pretty text with some links: http://angularjs.org/, mailto:us@somewhere.org, ' +
+                  'another@somewhere.org, and one more: ftp://127.0.0.1/.');
+         expect(element.all(by.css('#escaped-html a')).count()).toEqual(0);
+       });
+
+       it('should update', function() {
+         element(by.model('snippet')).clear();
+         element(by.model('snippet')).sendKeys('new http://link.');
+         expect(element(by.id('linky-filter')).element(by.binding('snippet | linky')).getText()).
+             toBe('new http://link.');
+         expect(element.all(by.css('#linky-filter a')).count()).toEqual(1);
+         expect(element(by.id('escaped-html')).element(by.binding('snippet')).getText())
+             .toBe('new http://link.');
+       });
+
+       it('should work with the target property', function() {
+        expect(element(by.id('linky-target')).
+            element(by.binding("snippetWithTarget | linky:'_blank'")).getText()).
+            toBe('http://angularjs.org/');
+        expect(element(by.css('#linky-target a')).getAttribute('target')).toEqual('_blank');
+       });
+     </doc:protractor>
+   </doc:example>
+ */
+angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
+  var LINKY_URL_REGEXP =
+        /((ftp|https?):\/\/|(mailto:)?[A-Za-z0-9._%+-]+@)\S*[^\s.;,(){}<>]/,
+      MAILTO_REGEXP = /^mailto:/;
+
+  return function(text, target) {
+    if (!text) return text;
+    var match;
+    var raw = text;
+    var html = [];
+    var url;
+    var i;
+    while ((match = raw.match(LINKY_URL_REGEXP))) {
+      // We can not end in these as they are sometimes found at the end of the sentence
+      url = match[0];
+      // if we did not match ftp/http/mailto then assume mailto
+      if (match[2] == match[3]) url = 'mailto:' + url;
+      i = match.index;
+      addText(raw.substr(0, i));
+      addLink(url, match[0].replace(MAILTO_REGEXP, ''));
+      raw = raw.substring(i + match[0].length);
+    }
+    addText(raw);
+    return $sanitize(html.join(''));
+
+    function addText(text) {
+      if (!text) {
+        return;
+      }
+      html.push(sanitizeText(text));
+    }
+
+    function addLink(url, text) {
+      html.push('<a ');
+      if (angular.isDefined(target)) {
+        html.push('target="');
+        html.push(target);
+        html.push('" ');
+      }
+      html.push('href="');
+      html.push(url);
+      html.push('">');
+      addText(text);
+      html.push('</a>');
+    }
+  };
+}]);
+
+
+})(window, window.angular);
+
+define("angular-sanitize", ["angular"], function(){});
 
 /**
  * angular-route-segment v1.2.0
@@ -21415,1285 +22043,11 @@ b,k(c,"-remove"),function(a){var d=b.attr("class");b.removeClass(c);a=a();b.attr
 ;
 define("angular-animate", ["angular"], function(){});
 
-/**
- * Restful Resources service for AngularJS apps
- * @version v1.3.1 - 2014-01-29 * @link https://github.com/mgonto/restangular
- * @author Martin Gontovnikas <martin@gon.to>
- * @license MIT License, http://www.opensource.org/licenses/MIT
- */(function() {
-
-var module = angular.module('restangular', []);
-
-module.provider('Restangular', function() {
-        // Configuration
-        var Configurer = {};
-        Configurer.init = function(object, config) {
-            /**
-             * Those are HTTP safe methods for which there is no need to pass any data with the request.
-             */
-
-            object.configuration = config;
-
-            var safeMethods= ["get", "head", "options", "trace", "getlist"];
-            config.isSafe = function(operation) {
-              return _.contains(safeMethods, operation.toLowerCase());
-            };
-
-            var absolutePattern = /^https?:\/\//i;
-            config.isAbsoluteUrl = function(string) {
-              return _.isUndefined(config.absoluteUrl) || _.isNull(config.absoluteUrl) ? 
-                      string && absolutePattern.test(string) :
-                      config.absoluteUrl;
-            };
-            
-            config.absoluteUrl = _.isUndefined(config.absoluteUrl) ? false : true;
-            object.setSelfLinkAbsoluteUrl = function(value) {
-                config.absoluteUrl = value;
-            };
-            /**
-             * This is the BaseURL to be used with Restangular
-             */
-            config.baseUrl = _.isUndefined(config.baseUrl) ? "" : config.baseUrl;
-            object.setBaseUrl = function(newBaseUrl) {
-                config.baseUrl = /\/$/.test(newBaseUrl)
-                  ? newBaseUrl.substring(0, newBaseUrl.length-1)
-                  : newBaseUrl;
-                return this;
-            };
-
-            /**
-             * Sets the extra fields to keep from the parents
-             */
-            config.extraFields = config.extraFields || [];
-            object.setExtraFields = function(newExtraFields) {
-              config.extraFields = newExtraFields;
-              return this;
-            };
-
-            /**
-             * Some default $http parameter to be used in EVERY call
-            **/
-            config.defaultHttpFields = config.defaultHttpFields || {};
-            object.setDefaultHttpFields = function(values) {
-              config.defaultHttpFields = values;
-              return this;
-            };
-
-            config.withHttpValues = function(httpLocalConfig, obj) {
-              return _.defaults(obj, httpLocalConfig, config.defaultHttpFields);
-            };
-
-            config.encodeIds = _.isUndefined(config.encodeIds) ? true : config.encodeIds;
-            object.setEncodeIds = function(encode) {
-                config.encodeIds = encode;
-            };
-
-            config.defaultRequestParams = config.defaultRequestParams || {
-                get: {},
-                post: {},
-                put: {},
-                remove: {},
-                common: {}
-            };
-
-            object.setDefaultRequestParams = function(param1, param2) {
-              var methods = [],
-                  params = param2 || param1;
-              if (!_.isUndefined(param2)) {
-                if (_.isArray(param1)) {
-                  methods = param1;
-                } else {
-                  methods.push(param1);
-                }
-              } else {
-                methods.push('common');
-              }
-
-              _.each(methods, function (method) {
-                config.defaultRequestParams[method] = params;
-              });
-              return this;
-            };
-
-            object.requestParams = config.defaultRequestParams;
-
-
-            config.defaultHeaders = config.defaultHeaders || {};
-            object.setDefaultHeaders = function(headers) {
-              config.defaultHeaders = headers;
-              object.defaultHeaders = config.defaultHeaders;
-              return this;
-            };
-
-            object.defaultHeaders = config.defaultHeaders;
-
-            /**
-             * Method overriders will set which methods are sent via POST with an X-HTTP-Method-Override
-             **/
-            config.methodOverriders = config.methodOverriders || [];
-            object.setMethodOverriders = function(values) {
-              var overriders = _.extend([], values);
-              if (config.isOverridenMethod('delete', overriders)) {
-                overriders.push("remove");
-              }
-              config.methodOverriders = overriders;
-              return this;
-            };
-
-            config.jsonp = _.isUndefined(config.jsonp) ? false : config.jsonp;
-            object.setJsonp = function(active) {
-              config.jsonp = active;
-            };
-
-            config.isOverridenMethod = function(method, values) {
-              var search = values || config.methodOverriders;
-              return !_.isUndefined(_.find(search, function(one) {
-                return one.toLowerCase() === method.toLowerCase();
-              }));
-            };
-
-            /**
-             * Sets the URL creator type. For now, only Path is created. In the future we'll have queryParams
-            **/
-            config.urlCreator = config.urlCreator || "path";
-            object.setUrlCreator = function(name) {
-              if (!_.has(config.urlCreatorFactory, name)) {
-                  throw new Error("URL Path selected isn't valid");
-              }
-
-              config.urlCreator = name;
-              return this;
-            };
-
-            /**
-             * You can set the restangular fields here. The 3 required fields for Restangular are:
-             *
-             * id: Id of the element
-             * route: name of the route of this element
-             * parentResource: the reference to the parent resource
-             *
-             *  All of this fields except for id, are handled (and created) by Restangular. By default,
-             *  the field values will be id, route and parentResource respectively
-             */
-            config.restangularFields = config.restangularFields || {
-                id: "id",
-                route: "route",
-                parentResource: "parentResource",
-                restangularCollection: "restangularCollection",
-                cannonicalId: "__cannonicalId",
-                etag: "restangularEtag",
-                selfLink: "href",
-                get: "get",
-                getList: "getList",
-                put: "put",
-                post: "post",
-                remove: "remove",
-                head: "head",
-                trace: "trace",
-                options: "options",
-                patch: "patch",
-                getRestangularUrl: "getRestangularUrl",
-                getRequestedUrl: "getRequestedUrl",
-                putElement: "putElement",
-                addRestangularMethod: "addRestangularMethod",
-                getParentList: "getParentList",
-                clone: "clone",
-                ids: "ids",
-                httpConfig: '_$httpConfig',
-                reqParams: 'reqParams',
-                one: 'one',
-                all: 'all',
-                several: 'several',
-                oneUrl: 'oneUrl',
-                allUrl: 'allUrl',
-                customPUT: 'customPUT',
-                customPOST: 'customPOST',
-                customDELETE: 'customDELETE',
-                customGET: 'customGET',
-                customGETLIST: 'customGETLIST',
-                customOperation: 'customOperation',
-                doPUT: 'doPUT',
-                doPOST: 'doPOST',
-                doDELETE: 'doDELETE',
-                doGET: 'doGET',
-                doGETLIST: 'doGETLIST',
-                fromServer: '$fromServer',
-                withConfig: 'withConfig',
-                withHttpConfig: 'withHttpConfig'
-            };
-            object.setRestangularFields = function(resFields) {
-                config.restangularFields =
-                  _.extend(config.restangularFields, resFields);
-                return this;
-            };
-
-            config.isRestangularized = function(obj) {
-              return !!obj[config.restangularFields.one] || !!obj[config.restangularFields.all];
-            };
-
-            config.setFieldToElem = function(field, elem, value) {
-              var properties = field.split('.');
-              var idValue = elem;
-              _.each(_.initial(properties), function(prop) {
-                idValue[prop] = {};
-                idValue = idValue[prop];
-              });
-              idValue[_.last(properties)] = value;
-              return this;
-            };
-
-            config.getFieldFromElem = function(field, elem) {
-              var properties = field.split('.');
-              var idValue = elem;
-              _.each(properties, function(prop) {
-                if (idValue) {
-                  idValue = idValue[prop];
-                }
-              });
-              return angular.copy(idValue);
-            };
-
-            config.setIdToElem = function(elem, id) {
-              config.setFieldToElem(config.restangularFields.id, elem, id);
-              return this;
-            };
-
-            config.getIdFromElem = function(elem) {
-              return config.getFieldFromElem(config.restangularFields.id, elem);
-            };
-
-            config.isValidId = function(elemId) {
-                return "" !== elemId && !_.isUndefined(elemId) && !_.isNull(elemId);
-            };
-
-            config.setUrlToElem = function(elem, url) {
-              config.setFieldToElem(config.restangularFields.selfLink, elem, url);
-              return this;
-            };
-
-            config.getUrlFromElem = function(elem) {
-              return config.getFieldFromElem(config.restangularFields.selfLink, elem);
-            };
-
-            config.useCannonicalId = _.isUndefined(config.useCannonicalId) ? false : config.useCannonicalId;
-            object.setUseCannonicalId = function(value) {
-                config.useCannonicalId = value;
-                return this;
-            };
-
-            config.getCannonicalIdFromElem = function(elem) {
-              var cannonicalId = elem[config.restangularFields.cannonicalId];
-              var actualId = config.isValidId(cannonicalId) ?
-                  cannonicalId : config.getIdFromElem(elem);
-              return actualId;
-            };
-
-            /**
-             * Sets the Response parser. This is used in case your response isn't directly the data.
-             * For example if you have a response like {meta: {'meta'}, data: {name: 'Gonto'}}
-             * you can extract this data which is the one that needs wrapping
-             *
-             * The ResponseExtractor is a function that receives the response and the method executed.
-             */
-
-            config.responseInterceptors = config.responseInterceptors || [];
-
-            config.defaultResponseInterceptor = function(data, operation,
-                    what, url, response, deferred) {
-                return data;
-            };
-
-            config.responseExtractor = function(data, operation,
-                    what, url, response, deferred) {
-                var interceptors = angular.copy(config.responseInterceptors);
-                interceptors.push(config.defaultResponseInterceptor);
-                var theData = data;
-                _.each(interceptors, function(interceptor) {
-                  theData = interceptor(theData, operation,
-                    what, url, response, deferred);
-                });
-                return theData;
-            };
-
-            object.addResponseInterceptor = function(extractor) {
-              config.responseInterceptors.push(extractor);
-              return this;
-            };
-
-            object.setResponseInterceptor = object.addResponseInterceptor;
-            object.setResponseExtractor = object.addResponseInterceptor;
-
-            /**
-             * Response interceptor is called just before resolving promises.
-             */
-
-
-            /**
-             * Request interceptor is called before sending an object to the server.
-             */
-             config.requestInterceptors = config.requestInterceptors || [];
-
-             config.defaultInterceptor = function(element, operation,
-              path, url, headers, params, httpConfig) {
-                return {
-                  element: element,
-                  headers: headers,
-                  params: params,
-                  httpConfig: httpConfig
-                };
-              };
-
-            config.fullRequestInterceptor = function(element, operation,
-              path, url, headers, params, httpConfig) {
-                var interceptors = angular.copy(config.requestInterceptors);
-                interceptors.push(config.defaultInterceptor);
-                return _.reduce(interceptors, function(request, interceptor) {
-                  return _.defaults(request, interceptor(element, operation,
-                    path, url, headers, params, httpConfig));
-                }, {});
-            };
-
-            object.addRequestInterceptor = function(interceptor) {
-              config.requestInterceptors.push(function(elem, operation, path, url, headers, params, httpConfig) {
-                return {
-                  headers: headers,
-                  params: params,
-                  element: interceptor(elem, operation, path, url),
-                  httpConfig: httpConfig
-                };
-              });
-              return this;
-            };
-
-            object.setRequestInterceptor = object.addRequestInterceptor;
-
-            object.addFullRequestInterceptor = function(interceptor) {
-              config.requestInterceptors.push(interceptor);
-              return this;
-            };
-
-            object.setFullRequestInterceptor = object.addFullRequestInterceptor;
-
-            config.errorInterceptor = config.errorInterceptor || function() {};
-
-            object.setErrorInterceptor = function(interceptor) {
-              config.errorInterceptor = interceptor;
-              return this;
-            };
-
-            config.onBeforeElemRestangularized = config.onBeforeElemRestangularized || function(elem) {
-              return elem;
-            };
-            object.setOnBeforeElemRestangularized = function(post) {
-              config.onBeforeElemRestangularized = post;
-              return this;
-            };
-
-            /**
-             * This method is called after an element has been "Restangularized".
-             *
-             * It receives the element, a boolean indicating if it's an element or a collection
-             * and the name of the model
-             *
-             */
-            config.onElemRestangularized = config.onElemRestangularized || function(elem) {
-              return elem;
-            };
-            object.setOnElemRestangularized = function(post) {
-              config.onElemRestangularized = post;
-              return this;
-            };
-
-            config.shouldSaveParent = config.shouldSaveParent || function() {
-                return true;
-            };
-            object.setParentless = function(values) {
-                if (_.isArray(values)) {
-                    config.shouldSaveParent = function(route) {
-                        return !_.contains(values, route);
-                    };
-                } else if (_.isBoolean(values)) {
-                    config.shouldSaveParent = function() {
-                        return !values;
-                    };
-                }
-                return this;
-            };
-
-            /**
-             * This lets you set a suffix to every request.
-             *
-             * For example, if your api requires that for JSon requests you do /users/123.json, you can set that
-             * in here.
-             *
-             *
-             * By default, the suffix is null
-             */
-            config.suffix = _.isUndefined(config.suffix) ? null : config.suffix;
-            object.setRequestSuffix = function(newSuffix) {
-                config.suffix = newSuffix;
-                return this;
-            };
-
-            /**
-             * Add element transformers for certain routes.
-             */
-            config.transformers = config.transformers || {};
-            object.addElementTransformer = function(type, secondArg, thirdArg) {
-                var isCollection = null;
-                var transformer = null;
-                if (arguments.length === 2) {
-                    transformer = secondArg;
-                } else {
-                    transformer = thirdArg;
-                    isCollection = secondArg;
-                }
-
-                var typeTransformers = config.transformers[type];
-                if (!typeTransformers) {
-                    typeTransformers = config.transformers[type] = [];
-                }
-
-                typeTransformers.push(function(coll, elem) {
-                    if (_.isNull(isCollection) || (coll == isCollection)) {
-                        return transformer(elem);
-                    }
-                    return elem;
-                });
-            };
-
-            object.extendCollection = function(route, fn) {
-              return object.addElementTransformer(route, true, fn);
-            };
-
-            object.extendModel = function(route, fn) {
-              return object.addElementTransformer(route, false, fn);
-            };
-
-            config.transformElem = function(elem, isCollection, route, Restangular) {
-                if (!config.transformLocalElements && !elem[config.restangularFields.fromServer]) {
-                  return elem;
-                }
-                var typeTransformers = config.transformers[route];
-                var changedElem = elem;
-                if (typeTransformers) {
-                    _.each(typeTransformers, function(transformer) {
-                       changedElem = transformer(isCollection, changedElem);
-                    });
-                }
-                return config.onElemRestangularized(changedElem,
-                  isCollection, route, Restangular);
-            };
-
-            config.transformLocalElements = _.isUndefined(config.transformLocalElements) ? true : config.transformLocalElements;
-            object.setTransformOnlyServerElements = function(active) {
-              config.transformLocalElements = !active;
-            }
-
-            config.fullResponse = _.isUndefined(config.fullResponse) ? false : config.fullResponse;
-            object.setFullResponse = function(full) {
-                config.fullResponse = full;
-                return this;
-            };
-
-            
-
-
-
-            //Internal values and functions
-            config.urlCreatorFactory = {};
-
-            /**
-             * Base URL Creator. Base prototype for everything related to it
-             **/
-
-             var BaseCreator = function() {
-             };
-
-             BaseCreator.prototype.setConfig = function(config) {
-                 this.config = config;
-                 return this;
-             };
-
-             BaseCreator.prototype.parentsArray = function(current) {
-                var parents = [];
-                while(current) {
-                    parents.push(current);
-                    current = current[this.config.restangularFields.parentResource];
-                }
-                return parents.reverse();
-            };
-
-            function RestangularResource(config, $http, url, configurer) {
-              var resource = {};
-              _.each(_.keys(configurer), function(key) {
-                  var value = configurer[key];
-
-                  // Add default parameters
-                  value.params = _.extend({}, value.params,
-                          config.defaultRequestParams[value.method.toLowerCase()]);
-                  // We don't want the ? if no params are there
-                  if (_.isEmpty(value.params)) {
-                    delete value.params;
-                  }
-
-                  if (config.isSafe(value.method)) {
-
-                      resource[key] = function() {
-                          return $http(_.extend(value, {
-                              url: url
-                          }));
-                      };
-
-                  } else {
-
-                      resource[key] = function(data) {
-                          return $http(_.extend(value, {
-                              url: url,
-                              data: data
-                          }));
-                      };
-
-                  }
-              });
-
-              return resource;
-            }
-
-            BaseCreator.prototype.resource = function(current, $http, localHttpConfig, callHeaders, callParams, what, etag, operation) {
-
-                var params = _.defaults(callParams || {}, this.config.defaultRequestParams.common);
-                var headers = _.defaults(callHeaders || {}, this.config.defaultHeaders);
-
-                if (etag) {
-                    if (!config.isSafe(operation)) {
-                      headers['If-Match'] = etag;
-                    } else {
-                      headers['If-None-Match'] = etag;
-                    }
-                }
-
-                var url = this.base(current);
-
-                if (what) {
-                  var add = '';
-                  if (!/\/$/.test(url)) {
-                    add += '/';
-                  }
-                  add += what;
-                  url += add;
-                }
-
-                if (this.config.suffix
-                  && url.indexOf(this.config.suffix, url.length - this.config.suffix.length) === -1
-                  && !this.config.getUrlFromElem(current)) {
-                    url += this.config.suffix;
-                }
-
-                current[this.config.restangularFields.httpConfig] = undefined;
-
-
-                return RestangularResource(this.config, $http, url, {
-                    getList: this.config.withHttpValues(localHttpConfig,
-                      {method: 'GET',
-                      params: params,
-                      headers: headers}),
-
-                    get: this.config.withHttpValues(localHttpConfig,
-                      {method: 'GET',
-                      params: params,
-                      headers: headers}),
-
-                    jsonp: this.config.withHttpValues(localHttpConfig,
-                      {method: 'jsonp',
-                      params: params,
-                      headers: headers}),
-
-                    put: this.config.withHttpValues(localHttpConfig,
-                      {method: 'PUT',
-                      params: params,
-                      headers: headers}),
-
-                    post: this.config.withHttpValues(localHttpConfig,
-                      {method: 'POST',
-                      params: params,
-                      headers: headers}),
-
-                    remove: this.config.withHttpValues(localHttpConfig,
-                      {method: 'DELETE',
-                      params: params,
-                      headers: headers}),
-
-                    head: this.config.withHttpValues(localHttpConfig,
-                      {method: 'HEAD',
-                      params: params,
-                      headers: headers}),
-
-                    trace: this.config.withHttpValues(localHttpConfig,
-                      {method: 'TRACE',
-                      params: params,
-                      headers: headers}),
-
-                    options: this.config.withHttpValues(localHttpConfig,
-                      {method: 'OPTIONS',
-                      params: params,
-                      headers: headers}),
-
-                    patch: this.config.withHttpValues(localHttpConfig,
-                      {method: 'PATCH',
-                      params: params,
-                      headers: headers})
-                });
-            };
-
-            /**
-             * This is the Path URL creator. It uses Path to show Hierarchy in the Rest API.
-             * This means that if you have an Account that then has a set of Buildings, a URL to a building
-             * would be /accounts/123/buildings/456
-            **/
-            var Path = function() {
-            };
-
-            Path.prototype = new BaseCreator();
-
-            Path.prototype.base = function(current) {
-                var __this = this;
-                return  _.reduce(this.parentsArray(current), function(acum, elem) {
-                    var elemUrl;
-                    var elemSelfLink = __this.config.getUrlFromElem(elem);
-                    if (elemSelfLink) {
-                      if (__this.config.isAbsoluteUrl(elemSelfLink)) {
-                        return elemSelfLink;
-                      } else {
-                        elemUrl = elemSelfLink;
-                      }
-                    } else {
-                      elemUrl = elem[__this.config.restangularFields.route];
-
-                      if (elem[__this.config.restangularFields.restangularCollection]) {
-                        var ids = elem[__this.config.restangularFields.ids];
-                        if (ids) {
-                          elemUrl += "/" + ids.join(",");
-                        }
-                      } else {
-                          var elemId;
-                          if (__this.config.useCannonicalId) {
-                              elemId = __this.config.getCannonicalIdFromElem(elem);
-                          } else {
-                              elemId = __this.config.getIdFromElem(elem);
-                          }
-
-                          if (config.isValidId(elemId)) {
-                              elemUrl += "/" + (__this.config.encodeIds ? encodeURIComponent(elemId) : elemId);
-                          }
-                      }
-                    }
-
-                    return acum.replace(/\/$/, "") + "/" + elemUrl;
-
-                }, this.config.baseUrl);
-            };
-
-
-
-            Path.prototype.fetchUrl = function(current, what) {
-                var baseUrl = this.base(current);
-                if (what) {
-                    baseUrl += "/" + what;
-                }
-                return baseUrl;
-            };
-
-            Path.prototype.fetchRequestedUrl = function(current, what) {
-                var url = this.fetchUrl(current, what);
-                var params = current[config.restangularFields.reqParams];
-
-                // From here on and until the end of fetchRequestedUrl,
-                // the code has been kindly borrowed from angular.js
-                // The reason for such code bloating is coherence:
-                //   If the user were to use this for cache management, the
-                //   serialization of parameters would need to be identical
-                //   to the one done by angular for cache keys to match.
-                function sortedKeys(obj) {
-                  var keys = [];
-                  for (var key in obj) {
-                    if (obj.hasOwnProperty(key)) {
-                      keys.push(key);
-                    }
-                  }
-                  return keys.sort();
-                }
-
-                function forEachSorted(obj, iterator, context) {
-                  var keys = sortedKeys(obj);
-                  for ( var i = 0; i < keys.length; i++) {
-                    iterator.call(context, obj[keys[i]], keys[i]);
-                  }
-                  return keys;
-                }
-
-                function encodeUriQuery(val, pctEncodeSpaces) {
-                  return encodeURIComponent(val).
-                             replace(/%40/gi, '@').
-                             replace(/%3A/gi, ':').
-                             replace(/%24/g, '$').
-                             replace(/%2C/gi, ',').
-                             replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
-                }
-
-                if (!params) return url;
-                var parts = [];
-                forEachSorted(params, function(value, key) {
-                  if (value == null || value == undefined) return;
-                  if (!angular.isArray(value)) value = [value];
-
-                  angular.forEach(value, function(v) {
-                    if (angular.isObject(v)) {
-                      v = angular.toJson(v);
-                    }
-                    parts.push(encodeUriQuery(key) + '=' +
-                               encodeUriQuery(v));
-                  });
-                });
-                return url + (this.config.suffix || '') + ((url.indexOf('?') === -1) ? '?' : '&') + parts.join('&');
-            };
-
-
-
-            config.urlCreatorFactory.path = Path;
-
-        };
-
-        var globalConfiguration = {};
-
-        Configurer.init(this, globalConfiguration);
-
-
-
-
-       this.$get = ['$http', '$q', function($http, $q) {
-
-          function createServiceForConfiguration(config) {
-              var service = {};
-
-              var urlHandler = new config.urlCreatorFactory[config.urlCreator]();
-              urlHandler.setConfig(config);
-
-              function restangularizeBase(parent, elem, route, reqParams, fromServer) {
-                  elem[config.restangularFields.route] = route;
-                  elem[config.restangularFields.getRestangularUrl] = _.bind(urlHandler.fetchUrl, urlHandler, elem);
-                  elem[config.restangularFields.getRequestedUrl] = _.bind(urlHandler.fetchRequestedUrl, urlHandler, elem);
-                  elem[config.restangularFields.addRestangularMethod] = _.bind(addRestangularMethodFunction, elem);
-                  elem[config.restangularFields.clone] = _.bind(copyRestangularizedElement, elem, elem);
-                  elem[config.restangularFields.reqParams] = _.isEmpty(reqParams) ? null : reqParams;
-                  elem[config.restangularFields.withHttpConfig] = _.bind(withHttpConfig, elem);
-
-                  // RequestLess connection
-                  elem[config.restangularFields.one] = _.bind(one, elem, elem);
-                  elem[config.restangularFields.all] = _.bind(all, elem, elem);
-                  elem[config.restangularFields.several] = _.bind(several, elem, elem);
-                  elem[config.restangularFields.oneUrl] = _.bind(oneUrl, elem, elem);
-                  elem[config.restangularFields.allUrl] = _.bind(allUrl, elem, elem);
-
-                  elem[config.restangularFields.fromServer] = !!fromServer;
-
-                  if (parent && config.shouldSaveParent(route)) {
-                      var parentId = config.getIdFromElem(parent);
-                      var parentUrl = config.getUrlFromElem(parent);
-
-                      var restangularFieldsForParent = _.union(
-                        _.values( _.pick(config.restangularFields, ['route', 'parentResource']) ),
-                        config.extraFields
-                      );
-                      var parentResource = _.pick(parent, restangularFieldsForParent);
-
-                      if (config.isValidId(parentId)) {
-                          config.setIdToElem(parentResource, parentId);
-                      }
-                      if (config.isValidId(parentUrl)) {
-                          config.setUrlToElem(parentResource, parentUrl);
-                      }
-
-                      elem[config.restangularFields.parentResource] = parentResource;
-                  } else {
-                    elem[config.restangularFields.parentResource] = null;
-                  }
-                  return elem;
-              }
-
-
-
-              function one(parent, route, id) {
-                  if (_.isNumber(route) || _.isNumber(parent)) {
-                    var error = "You're creating a Restangular entity with the number "
-                    error += "instead of the route or the parent. You can't call .one(12)";
-                    throw new Error(error);
-                  }
-                  var elem = {};
-                  config.setIdToElem(elem, id);
-                  return restangularizeElem(parent, elem , route, false);
-              }
-
-
-              function all(parent, route) {
-                  return restangularizeCollection(parent, [] , route, false);
-              }
-
-              function several(parent, route, ids) {
-                var collection = [];
-                collection[config.restangularFields.ids] =
-                  Array.prototype.splice.call(arguments, 2);
-                return restangularizeCollection(parent, collection , route, false);
-              }
-
-              function oneUrl(parent, route, url) {
-                  if (!route) {
-                    throw new Error("Route is mandatory when creating new Restangular objects.");
-                  }
-                  var elem = {};
-                  config.setUrlToElem(elem, url);
-                  return restangularizeElem(parent, elem , route, false);
-              }
-
-
-              function allUrl(parent, route, url) {
-                  if (!route) {
-                    throw new Error("Route is mandatory when creating new Restangular objects.");
-                  }
-                  var elem = {};
-                  config.setUrlToElem(elem, url);
-                  return restangularizeCollection(parent, elem , route, false);
-              }
-              // Promises
-              function restangularizePromise(promise, isCollection, valueToFill) {
-                  promise.call = _.bind(promiseCall, promise);
-                  promise.get = _.bind(promiseGet, promise);
-                  promise[config.restangularFields.restangularCollection] = isCollection;
-                  if (isCollection) {
-                      promise.push = _.bind(promiseCall, promise, "push");
-                  }
-                  promise.$object = valueToFill;
-                  return promise;
-              }
-
-              function promiseCall(method) {
-                  var deferred = $q.defer();
-                  var callArgs = arguments;
-                  var filledValue = {};
-                  this.then(function(val) {
-                      var params = Array.prototype.slice.call(callArgs, 1);
-                      var func = val[method];
-                      func.apply(val, params);
-                      filledValue = val;
-                      deferred.resolve(val);
-                  });
-                  return restangularizePromise(deferred.promise, this[config.restangularFields.restangularCollection], filledValue);
-              }
-
-              function promiseGet(what) {
-                  var deferred = $q.defer();
-                  var filledValue = {};
-                  this.then(function(val) {
-                      filledValue = val[what];
-                      deferred.resolve(filledValue);
-                  });
-                  return restangularizePromise(deferred.promise, this[config.restangularFields.restangularCollection], filledValue);
-              }
-
-              function resolvePromise(deferred, response, data, filledValue) {
-
-                _.extend(filledValue, data);
-                
-                // Trigger the full response interceptor.
-                if (config.fullResponse) {
-                  return deferred.resolve(_.extend(response, {
-                    data: data
-                  }));
-                } else {
-                  deferred.resolve(data);
-                }
-              }
-
-
-              // Elements
-
-              function stripRestangular(elem) {
-                if (_.isArray(elem)) {
-                    var array = [];
-                    _.each(elem, function(value) {
-                        array.push(stripRestangular(value));
-                    });
-                    return array;
-                } else {
-                    return _.omit(elem, _.values(_.omit(config.restangularFields, 'id')));
-                }
-                        
-                        
-              }
-
-              function addCustomOperation(elem) {
-                  elem[config.restangularFields.customOperation] = _.bind(customFunction, elem);
-                  _.each(["put", "post", "get", "delete"], function(oper) {
-                      _.each(["do", "custom"], function(alias) {
-                          var callOperation = oper === 'delete' ? 'remove' : oper;
-                          var name = alias + oper.toUpperCase();
-                          var callFunction;
-
-                          if (callOperation !== 'put' && callOperation !== 'post') {
-                              callFunction = customFunction;
-                          } else {
-                              callFunction = function(operation, elem, path, params, headers) {
-                                return _.bind(customFunction, this)(operation, path, params, headers, elem);
-                              };
-                          }
-                          elem[name] = _.bind(callFunction, elem, callOperation);
-                      });
-                  });
-                  elem[config.restangularFields.customGETLIST] = _.bind(fetchFunction, elem);
-                  elem[config.restangularFields.doGETLIST] = elem[config.restangularFields.customGETLIST];
-              }
-
-              function copyRestangularizedElement(fromElement) {
-                  var copiedElement = angular.copy(fromElement);
-                  return restangularizeElem(copiedElement[config.restangularFields.parentResource],
-                          copiedElement, copiedElement[config.restangularFields.route], true);
-              }
-
-              function restangularizeElem(parent, element, route, fromServer, collection, reqParams) {
-                  var elem = config.onBeforeElemRestangularized(element, false, route);
-
-                  var localElem = restangularizeBase(parent, elem, route, reqParams, fromServer);
-
-                  if (config.useCannonicalId) {
-                      localElem[config.restangularFields.cannonicalId] = config.getIdFromElem(localElem);
-                  }
-
-                  if (collection) {
-                      localElem[config.restangularFields.getParentList] = function() {
-                          return collection;
-                      };
-                  }
-
-                  localElem[config.restangularFields.restangularCollection] = false;
-                  localElem[config.restangularFields.get] = _.bind(getFunction, localElem);
-                  localElem[config.restangularFields.getList] = _.bind(fetchFunction, localElem);
-                  localElem[config.restangularFields.put] = _.bind(putFunction, localElem);
-                  localElem[config.restangularFields.post] = _.bind(postFunction, localElem);
-                  localElem[config.restangularFields.remove] = _.bind(deleteFunction, localElem);
-                  localElem[config.restangularFields.head] = _.bind(headFunction, localElem);
-                  localElem[config.restangularFields.trace] = _.bind(traceFunction, localElem);
-                  localElem[config.restangularFields.options] = _.bind(optionsFunction, localElem);
-                  localElem[config.restangularFields.patch] = _.bind(patchFunction, localElem);
-
-                  addCustomOperation(localElem);
-                  return config.transformElem(localElem, false, route, service);
-              }
-
-              function restangularizeCollection(parent, element, route, fromServer, reqParams) {
-                  var elem = config.onBeforeElemRestangularized(element, true, route);
-
-                  var localElem = restangularizeBase(parent, elem, route, reqParams, fromServer);
-                  localElem[config.restangularFields.restangularCollection] = true;
-                  localElem[config.restangularFields.post] = _.bind(postFunction, localElem, null);
-                  localElem[config.restangularFields.remove] = _.bind(deleteFunction, localElem);
-                  localElem[config.restangularFields.head] = _.bind(headFunction, localElem);
-                  localElem[config.restangularFields.trace] = _.bind(traceFunction, localElem);
-                  localElem[config.restangularFields.putElement] = _.bind(putElementFunction, localElem);
-                  localElem[config.restangularFields.options] = _.bind(optionsFunction, localElem);
-                  localElem[config.restangularFields.patch] = _.bind(patchFunction, localElem);
-                  localElem[config.restangularFields.get] = _.bind(getById, localElem);
-                  localElem[config.restangularFields.getList] = _.bind(fetchFunction, localElem, null);
-
-                  addCustomOperation(localElem);
-                  return config.transformElem(localElem, true, route, service);
-              }
-
-              function restangularizeCollectionAndElements(parent, element, route) {
-                var collection = restangularizeCollection(parent, element, route, false);
-                _.each(collection, function(elem) {
-                  restangularizeElem(parent, elem, route, false);
-                });
-                return collection;
-              }
-
-              function getById(id, reqParams, headers){
-                  return this.customGET(id.toString(), reqParams, headers);
-              }
-
-              function putElementFunction(idx, params, headers) {
-                  var __this = this;
-                  var elemToPut = this[idx];
-                  var deferred = $q.defer();
-                  var filledArray = [];
-                  filledArray = config.transformElem(filledArray, true, whatFetched, service)
-                  elemToPut.put(params, headers).then(function(serverElem) {
-                      var newArray = copyRestangularizedElement(__this);
-                      newArray[idx] = serverElem;
-                      filledArray = newArray;
-                      deferred.resolve(newArray);
-                  }, function(response) {
-                      deferred.reject(response);
-                  });
-
-                  return restangularizePromise(deferred.promise, true, filledArray);
-              }
-
-              function parseResponse(resData, operation, route, fetchUrl, response, deferred) {
-                  var data = config.responseExtractor(resData, operation, route, fetchUrl, response, deferred);
-                  var etag = response.headers("ETag");
-                  if (data && etag) {
-                      data[config.restangularFields.etag] = etag;
-                  }
-                  return data;
-              }
-
-
-              function fetchFunction(what, reqParams, headers) {
-                  var __this = this;
-                  var deferred = $q.defer();
-                  var operation = 'getList';
-                  var url = urlHandler.fetchUrl(this, what);
-                  var whatFetched = what || __this[config.restangularFields.route];
-
-                  var request = config.fullRequestInterceptor(null, operation,
-                      whatFetched, url, headers || {}, reqParams || {}, this[config.restangularFields.httpConfig] || {});
-
-                  var filledArray = [];
-                  filledArray = config.transformElem(filledArray, true, whatFetched, service)
-
-                  var method = "getList";
-
-                  if (config.jsonp) {
-                    method = "jsonp";
-                  }
-
-                  urlHandler.resource(this, $http, request.httpConfig, request.headers, request.params, what,
-                          this[config.restangularFields.etag], operation)[method]().then(function(response) {
-                      var resData = response.data;
-                      var fullParams = response.config.params;
-                      var data = parseResponse(resData, operation, whatFetched, url, response, deferred);
-                      if (!_.isArray(data)) {
-                        throw new Error("Response for getList SHOULD be an array and not an object or something else");
-                      }
-                      var processedData = _.map(data, function(elem) {
-                          if (!__this[config.restangularFields.restangularCollection]) {
-                              return restangularizeElem(__this, elem, what, true, data);
-                          } else {
-                              return restangularizeElem(__this[config.restangularFields.parentResource],
-                                elem, __this[config.restangularFields.route], true, data);
-                          }
-
-                      });
-
-                      processedData = _.extend(data, processedData);
-
-                      if (!__this[config.restangularFields.restangularCollection]) {
-                          resolvePromise(deferred, response, restangularizeCollection(__this, processedData, what, true, fullParams), filledArray);
-                      } else {
-                          resolvePromise(deferred, response, restangularizeCollection(__this[config.restangularFields.parentResource], processedData, __this[config.restangularFields.route], true, fullParams), filledArray);
-                      }
-                  }, function error(response) {
-                      if (response.status === 304 && __this[config.restangularFields.restangularCollection]) {
-                        resolvePromise(deferred, response, __this, filledArray);
-                      } else if ( config.errorInterceptor(response, deferred) !== false ) {
-                          deferred.reject(response);
-                      }
-                  });
-
-                  return restangularizePromise(deferred.promise, true, filledArray);
-              }
-
-              function withHttpConfig(httpConfig) {
-                 this[config.restangularFields.httpConfig] = httpConfig;
-                 return this;
-              }
-
-              function elemFunction(operation, what, params, obj, headers) {
-                  var __this = this;
-                  var deferred = $q.defer();
-                  var resParams = params || {};
-                  var route = what || this[config.restangularFields.route];
-                  var fetchUrl = urlHandler.fetchUrl(this, what);
-
-                  var callObj = obj || this;
-                  // fallback to etag on restangular object (since for custom methods we probably don't explicitly specify the etag field)
-                  var etag = callObj[config.restangularFields.etag] || (operation != "post" ? this[config.restangularFields.etag] : null);
-
-                  if (_.isObject(callObj) && config.isRestangularized(callObj)) {
-                      callObj = stripRestangular(callObj);
-                  }
-                  var request = config.fullRequestInterceptor(callObj, operation, route, fetchUrl,
-                    headers || {}, resParams || {}, this[config.restangularFields.httpConfig] || {});
-
-                  var filledObject = {};
-                  filledObject = config.transformElem(filledObject, false, route, service);
-
-                  var okCallback = function(response) {
-                      var resData = response.data;
-                      var fullParams = response.config.params;
-                      var elem = parseResponse(resData, operation, route, fetchUrl, response, deferred);
-                      if (elem) {
-
-                        if (operation === "post" && !__this[config.restangularFields.restangularCollection]) {
-                          resolvePromise(deferred, response, restangularizeElem(__this, elem, what, true, null, fullParams), filledObject);
-                        } else {
-                          resolvePromise(deferred, response, restangularizeElem(__this[config.restangularFields.parentResource], elem, __this[config.restangularFields.route], true, null, fullParams), filledObject);
-                        }
-
-                      } else {
-                        resolvePromise(deferred, response, undefined, filledObject);
-                      }
-                  };
-
-                  var errorCallback = function(response) {
-                      if (response.status === 304 && config.isSafe(operation)) {
-                        resolvePromise(deferred, response, __this, filledObject);
-                      } else if ( config.errorInterceptor(response, deferred) !== false ) {
-                          deferred.reject(response);
-                      }
-                  };
-                  // Overring HTTP Method
-                  var callOperation = operation;
-                  var callHeaders = _.extend({}, request.headers);
-                  var isOverrideOperation = config.isOverridenMethod(operation);
-                  if (isOverrideOperation) {
-                    callOperation = 'post';
-                    callHeaders = _.extend(callHeaders, {'X-HTTP-Method-Override': operation === 'remove' ? 'DELETE' : operation});
-                  } else if (config.jsonp && callOperation === 'get') {
-                    callOperation = 'jsonp';
-                  }
-
-                  if (config.isSafe(operation)) {
-                    if (isOverrideOperation) {
-                      urlHandler.resource(this, $http, request.httpConfig, callHeaders, request.params,
-                        what, etag, callOperation)[callOperation]({}).then(okCallback, errorCallback);
-                    } else {
-                      urlHandler.resource(this, $http, request.httpConfig, callHeaders, request.params,
-                        what, etag, callOperation)[callOperation]().then(okCallback, errorCallback);
-                    }
-                  } else {
-                      urlHandler.resource(this, $http, request.httpConfig, callHeaders, request.params,
-                        what, etag, callOperation)[callOperation](request.element).then(okCallback, errorCallback);
-                  }
-
-                  return restangularizePromise(deferred.promise, false, filledObject);
-              }
-
-              function getFunction(params, headers) {
-                  return _.bind(elemFunction, this)("get", undefined, params, undefined, headers);
-              }
-
-              function deleteFunction(params, headers) {
-                  return _.bind(elemFunction, this)("remove", undefined, params, undefined, headers);
-              }
-
-              function putFunction(params, headers) {
-                  return _.bind(elemFunction, this)("put", undefined, params, undefined, headers);
-              }
-
-              function postFunction(what, elem, params, headers) {
-                  return _.bind(elemFunction, this)("post", what, params, elem, headers);
-              }
-
-             function headFunction(params, headers) {
-               return _.bind(elemFunction, this)("head", undefined, params, undefined, headers);
-             }
-
-             function traceFunction(params, headers) {
-               return _.bind(elemFunction, this)("trace", undefined, params, undefined, headers);
-             }
-
-             function optionsFunction(params, headers) {
-               return _.bind(elemFunction, this)("options", undefined, params, undefined, headers);
-             }
-
-             function patchFunction(elem, params, headers) {
-               return _.bind(elemFunction, this)("patch", undefined, params, elem, headers);
-             }
-
-             function customFunction(operation, path, params, headers, elem) {
-                 return _.bind(elemFunction, this)(operation, path, params, elem, headers);
-             }
-
-             function addRestangularMethodFunction(name, operation, path, defaultParams, defaultHeaders, defaultElem) {
-                 var bindedFunction;
-                 if (operation === 'getList') {
-                     bindedFunction = _.bind(fetchFunction, this, path);
-                 } else {
-                     bindedFunction = _.bind(customFunction, this, operation, path);
-                 }
-
-                 var createdFunction = function(params, headers, elem) {
-                     var callParams = _.defaults({
-                         params: params,
-                         headers: headers,
-                         elem: elem
-                     }, {
-                         params: defaultParams,
-                         headers: defaultHeaders,
-                         elem: defaultElem
-                     });
-                     return bindedFunction(callParams.params, callParams.headers, callParams.elem);
-                 };
-
-                 if (config.isSafe(operation)) {
-                     this[name] = createdFunction;
-                 } else {
-                     this[name] = function(elem, params, headers) {
-                         return createdFunction(params, headers, elem);
-                     };
-                 }
-
-             }
-
-             function withConfigurationFunction(configurer) {
-                 var newConfig = angular.copy(_.omit(config, 'configuration'));
-                 Configurer.init(newConfig, newConfig);
-                 configurer(newConfig);
-                 return createServiceForConfiguration(newConfig);
-             }
-
-
-              Configurer.init(service, config);
-
-              service.copy = _.bind(copyRestangularizedElement, service);
-
-              service.withConfig = _.bind(withConfigurationFunction, service);
-
-              service.one = _.bind(one, service, null);
-
-              service.all = _.bind(all, service, null);
-
-              service.several = _.bind(several, service, null);
-
-              service.oneUrl = _.bind(oneUrl, service, null);
-
-              service.allUrl = _.bind(allUrl, service, null);
-
-              service.stripRestangular = _.bind(stripRestangular, service);
-
-              service.restangularizeElement = _.bind(restangularizeElem, service);
-
-              service.restangularizeCollection = _.bind(restangularizeCollectionAndElements, service);
-
-              return service;
-          }
-
-          return createServiceForConfiguration(globalConfiguration);
-
-        }];
-    }
-);
-
-})();
-
-define("restangular", ["angular"], function(){});
-
 angular.module('epochdb.templates', ['/epochdb/js/templates/detail.html', '/epochdb/js/templates/home.html', '/epochdb/js/templates/list.html', '/epochdb/js/templates/page.html', '/epochdb/js/templates/pages/about.html', '/epochdb/js/templates/pages/contribute.html', '/epochdb/js/templates/pages/credit.html', '/epochdb/js/templates/partial/icon-bubble.html', '/epochdb/js/templates/partial/item-tabs.html', '/epochdb/js/templates/partial/list-item.html', '/epochdb/js/templates/partial/list.html', '/epochdb/js/templates/partial/loading.html', '/epochdb/js/templates/partial/search.html', '/epochdb/js/templates/partial/site-header.html', '/epochdb/js/templates/partial/swipable-pane-container.html', '/epochdb/js/templates/partial/table-of-contents.html']);
 
 angular.module("/epochdb/js/templates/detail.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/detail.html",
-"<div class=\"hero half-height text-left item-header\"><div class=\"cell\"><swipable-panes class=\"large-6 columns large-centered item-title\"><div class=\"row\"><span data-ng-class=\"['type-icon','icon-'+DetailedItem.typeSlug()]\" title=\"Type: {{ DetailedItem.type }}\"></span><h4>{{ DetailedItem.name }}<small class=\"block\"><span class=\"item-type\">{{ DetailedItem.type }}</span></small><small data-ng-if=\"DetailedItem.tags.length\" class=\"block tags\"><span data-ng-repeat=\"tag in DetailedItem.tags\" class=\"item-tag icon-tag\">{{ tag }}</span></small></h4></div></swipable-panes></div></div><div class=\"large-6 large-centered columns\"><div class=\"row\"><div class=\"epoch-item-description\">{{ DetailedItem.description }}</div></div><div data-ng-if=\"DetailedItem.depends\" class=\"row\"><div data-ng-repeat=\"(key, data) in DetailedItem.depends\" class=\"epoch-requirements\"><h5 data-ng-class=\"['icon-'+key]\" class=\"group-label\">{{ key }}</h5><ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(ref, count) in data\" data-item-ref=\"ref\" data-item-count=\"count\"></item></ul></div></div></div>");
+"<div class=\"hero half-height text-left item-header\"><div class=\"cell\"><div class=\"large-6 columns large-centered item-title\"><div class=\"row\"><span data-ng-class=\"['type-icon','icon-'+DetailedItem.typeSlug()]\" title=\"Type: {{ DetailedItem.type }}\"></span><h4>{{ DetailedItem.name }}<small class=\"block\"><span class=\"item-type\">{{ DetailedItem.type }}</span></small><small data-ng-if=\"DetailedItem.tags.length\" class=\"block tags\"><span data-ng-repeat=\"tag in DetailedItem.tags\" class=\"item-tag icon-tag\">{{ tag }}</span></small></h4></div></div></div></div><div class=\"large-6 large-centered columns\"><div class=\"row\"><div data-marked=\"DetailedItem.description\" class=\"epoch-item-description\"></div></div><div data-ng-if=\"DetailedItem.storage\" class=\"row\"><h4>Storage</h4><ul class=\"button-group simple-outline\"><li data-ng-repeat=\"(key, value) in DetailedItem.storage\"><a class=\"button\">{{ value }}<small>{{ key }}</small></a></li></ul></div><div data-ng-if=\"DetailedItem.recipe\" class=\"row\"><h4>Created by</h4><ul class=\"item-list button-group simple-outline vertical\"><item data-item-ref=\"DetailedItem.recipe\"></item></ul></div><div data-ng-if=\"DetailedItem.creates\" class=\"row\"><h4>Creates</h4><ul class=\"item-list button-group simple-outline vertical\"><item data-item-ref=\"DetailedItem.creates\"></item></ul></div><div data-ng-if=\"DetailedItem.depends\" class=\"row\"><h4>Depends On</h4><div data-ng-repeat=\"(key, data) in DetailedItem.depends\" class=\"epoch-requirements\"><h5 data-ng-class=\"['icon-'+key]\" class=\"group-label\">{{ key }}</h5><ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(ref, count) in data\" data-item-ref=\"ref\" data-item-count=\"count\"></item></ul></div></div><div data-ng-if=\"DetailedItem.requiredFor\" class=\"row\"><h4>Required For<ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(index, ref) in DetailedItem.requiredFor\" data-item-ref=\"ref\"></item></ul></h4></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/home.html", []).run(["$templateCache", function($templateCache) {
@@ -22723,7 +22077,7 @@ $templateCache.put("/epochdb/js/templates/pages/contribute.html",
 
 angular.module("/epochdb/js/templates/pages/credit.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/pages/credit.html",
-"<div class=\"row\"><div class=\"columns large-6 large-centered\"><img src=\"{{Assets.static('img/dayz-logo.png')}}\"><p><a href=\"dayzepoch.com/\">DAYZ</a> is a registered trademark of <a href=\"http://www.bistudio.com/\">Bohemia Interactive a.s</a>. This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.</p><img src=\"{{Assets.static('img/epoch-logo.png')}}\"><p><a href=\"http://dayzepoch.com/\">DayZ Epoch</a> is licensed under <a href=\"http://www.bistudio.com/licenses/dayz-mod-license-share-alike/\">DayZ Mod License Share Alike</a>.</p></div></div>");
+"<div class=\"row\"><div class=\"columns large-6 large-centered\"><img src=\"{{Assets.static('img/dayz-logo.b9e326e4.png')}}\"><p><a href=\"dayzepoch.com/\">DAYZ</a> is a registered trademark of <a href=\"http://www.bistudio.com/\">Bohemia Interactive a.s</a>. This is an unofficial modification that is not affiliated or authorized by Bohemia Interactive a.s.</p><img src=\"{{Assets.static('img/epoch-logo.c5e3262e.png')}}\"><p><a href=\"http://dayzepoch.com/\">DayZ Epoch</a> is licensed under <a href=\"http://www.bistudio.com/licenses/dayz-mod-license-share-alike/\">DayZ Mod License Share Alike</a>.</p></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/icon-bubble.html", []).run(["$templateCache", function($templateCache) {
@@ -22738,7 +22092,7 @@ $templateCache.put("/epochdb/js/templates/partial/item-tabs.html",
 
 angular.module("/epochdb/js/templates/partial/list-item.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/list-item.html",
-"<li data-ng-class=\"['type-'+ItemSummary.type.toLowerCase()]\" class=\"epoch-item-summary\"><a title=\"{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}\" data-ng-href=\"#/item/{{ItemSummary.id}}\" class=\"button text-left\"><span class=\"label radius epoch-type-icon\"><em data-ng-class=\"'icon-' + ItemSummary.type.toLowerCase()\"></em></span><span data-ng-if=\"ItemCount\" class=\"epoch-item-count label\">{{ ItemCount }}</span><span data-ng-bind=\"ItemSummary.name\" class=\"epoch-item-name\"></span><ul class=\"button-group horizontal simple-outline right\"><li><span data-add-to-calculator=\"data-add-to-calculator\" data-item-id=\"ItemSummary.id\" class=\"button icon-plus-outline icon-2x right\"></span></li><li><span data-ng-if=\"!ItemCount\" class=\"button icon-right-open-outline icon-2x right\"></span></li></ul></a></li>");
+"<li data-ng-class=\"['type-'+ItemSummary.type.toLowerCase()]\" class=\"epoch-item-summary\"><a title=\"{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}\" data-ng-href=\"#/{{ItemSummary.id}}\" class=\"button text-left\"><span class=\"label radius epoch-type-icon\"><em data-ng-class=\"'icon-' + ItemSummary.type.toLowerCase()\"></em></span><span data-ng-if=\"ItemCount\" class=\"epoch-item-count label\">{{ ItemCount }}</span><span data-ng-bind=\"ItemSummary.name\" class=\"epoch-item-name\"></span><ul class=\"button-group horizontal simple-outline right\"><li><span data-add-to-calculator=\"data-add-to-calculator\" data-item-id=\"ItemSummary.id\" class=\"button icon-plus-outline icon-2x right\"></span></li><li><span data-ng-if=\"!ItemCount\" class=\"button icon-right-open-outline icon-2x right\"></span></li></ul></a></li>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/list.html", []).run(["$templateCache", function($templateCache) {
@@ -22775,21 +22129,7 @@ define("epochdb-templates", function(){});
 
 require(['angular'], function(angular){
 
-		angular.module('epochdb.config', [])
-			// .config(function(RestangularProvider){
-			// 		RestangularProvider.setBaseUrl('/api/');
-			// 		RestangularProvider.setRequestSuffix('/data.json');
-			// 	    RestangularProvider.setDefaultHttpFields({cache: true});
-			// 		RestangularProvider.addFullRequestInterceptor(
-			// 			function(element, operation, path, url, headers, params) {
-			// 				if(operation == "get"){
-			// 					console.log(element, operation, path, url, headers, params)
-			// 				}
-			// 				return false
-			// 			});
-
-
-			// 	})
+		angular.module('epochdb.config', ['ngAnimate','ngSanitize', ])
 
 			.constant('Assets', (function ($window){
 					var service = {
@@ -22810,7 +22150,7 @@ define("epochdb-config", function(){});
 
 (function() {
   require(['angular'], function(angular) {
-    return angular.module('epochdb.routes', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment', 'epochdb.config']).config([
+    return angular.module('epochdb.routes', ['ngRoute', 'route-segment', 'view-segment', 'epochdb.config']).config([
       '$routeSegmentProvider', '$routeProvider', 'AssetsProvider', function($routeSegmentProvider, $routeProvider, AssetsProvider) {
         var templateDetail, templateHome, templateList, templateLoading;
         templateHome = AssetsProvider.template('home.html');
@@ -22819,7 +22159,7 @@ define("epochdb-config", function(){});
         templateLoading = AssetsProvider.template('partial/loading.html');
         $routeSegmentProvider.options.autoLoadTemplates = true;
         $routeSegmentProvider.options.strictMode = true;
-        $routeSegmentProvider.when('/', 'home').when('/items', 'item-list').when('/items/:query', 'item-list').when('/item/:klass/:id', 'item-detail').when('/:slug', 'page', {
+        $routeSegmentProvider.when('/', 'home').when('/items', 'item-list').when('/items/:query', 'item-list').when('/:klass/:id', 'item-detail').when('/:slug', 'page', {
           reloadOnSearch: false
         }).segment('home', {
           templateUrl: templateHome
@@ -22865,25 +22205,31 @@ define("epochdb-routes", function(){});
       Base.$http = null;
 
       function Base(data) {
-        if (this.$http && this.source) {
+        if (data) {
+          _.extend(this, data);
+        } else if (this.$http && this.source) {
           this.objects = this.$http.get(this.source).then(function(response) {
             return response.data;
           });
         }
-        if (data) {
-          _.extend(this, data);
-        }
       }
 
       Base.prototype.all = function(query) {
+        var self;
+        self = this;
         return this.objects.then(function(data) {
+          var output;
           if (!query || _.isString(query)) {
-            return data;
+            output = data;
           } else if (_.isObject(query)) {
-            return _.query(data, query);
+            output = _.query(data, query);
           } else {
-            return data;
+            output = data;
           }
+          return _.map(output, function(item) {
+            item.type = self.type;
+            return item;
+          });
         });
       };
 
@@ -22895,13 +22241,31 @@ define("epochdb-routes", function(){});
         });
       };
 
-      Base.prototype.values = function(key) {
-        return this.objects.then(function(data) {
-          var compacted, flattened, plucked;
-          plucked = _.pluck(data, key);
-          flattened = _.flatten(plucked);
-          compacted = _.compact(flattened);
-          return _.unique(compacted);
+      Base.prototype.values = function(keys) {
+        return this.all().then(function(data) {
+          var values;
+          values = _.flatten(_.map(keys, function(key) {
+            return _.pluck(data, key);
+          }));
+          return _.unique(_.map(_.compact(values), function(word) {
+            return word.toLowerCase();
+          }));
+        });
+      };
+
+      Base.prototype.usedIn = function(ref) {
+        return this.all().then(function(data) {
+          var result;
+          result = _.map(data, function(item) {
+            var deps;
+            deps = _.flatten(_.map(_.values(item.depends), function(keys) {
+              return _.keys(keys);
+            }));
+            if (_.contains(deps, ref)) {
+              return item.id;
+            }
+          });
+          return _.compact(_.uniq(result));
         });
       };
 
@@ -22924,7 +22288,8 @@ define("epochdb-routes", function(){});
           __extends(Area, _super);
 
           function Area(data) {
-            this.source = "api/area/data.15a479b6.json";
+            this.type = 'area';
+            this.source = "api/area/data.788baf2d.json";
             this.$http = $http;
             Area.__super__.constructor.call(this, data);
           }
@@ -22936,13 +22301,6 @@ define("epochdb-routes", function(){});
               }
               return this.depends[type];
             }
-          };
-
-          Area.prototype.usedby = function() {
-            if (_.has(this, "usedBy")) {
-              _.keys(this.usedby).length > 0;
-            }
-            return false;
           };
 
           return Area;
@@ -22969,7 +22327,8 @@ define("epochdb-resources-areas", function(){});
           __extends(Item, _super);
 
           function Item(data) {
-            this.source = "api/item/data.64a85438.json";
+            this.type = 'item';
+            this.source = "api/item/data.7ff7d35f.json";
             this.$http = $http;
             Item.__super__.constructor.call(this, data);
           }
@@ -22981,13 +22340,6 @@ define("epochdb-resources-areas", function(){});
               }
               return this.depends[type];
             }
-          };
-
-          Item.prototype.usedby = function() {
-            if (_.has(this, "usedBy")) {
-              _.keys(this.usedby).length > 0;
-            }
-            return false;
           };
 
           return Item;
@@ -23014,7 +22366,8 @@ define("epochdb-resources-items", function(){});
           __extends(Recipe, _super);
 
           function Recipe(data) {
-            this.source = "api/recipe/data.5d2deeab.json";
+            this.type = 'recipe';
+            this.source = "api/recipe/data.c4593983.json";
             this.$http = $http;
             Recipe.__super__.constructor.call(this, data);
           }
@@ -23026,13 +22379,6 @@ define("epochdb-resources-items", function(){});
               }
               return this.depends[type];
             }
-          };
-
-          Recipe.prototype.usedby = function() {
-            if (_.has(this, "usedBy")) {
-              _.keys(this.usedby).length > 0;
-            }
-            return false;
           };
 
           return Recipe;
@@ -23179,11 +22525,28 @@ define("epochdb-controllers-list", function(){});
 (function() {
   require(['angular', 'lodash'], function(angular, _) {
     return angular.module('epochdb.controllers.detail', ['epochdb.resources']).controller('ItemDetailController', [
-      '$scope', '$routeParams', 'Models', function($scope, $routeParams, Models) {
-        var klass;
+      '$q', '$scope', '$routeParams', 'Models', function($q, $scope, $routeParams, Models) {
+        var itemClass, klass, recipeClass;
         klass = Models.getModel($routeParams.klass);
+        recipeClass = Models.getModel('recipe');
+        itemClass = Models.getModel('item');
         return klass.one($routeParams.klass + "/" + $routeParams.id).then(function(data) {
-          return $scope.DetailedItem = data;
+          var deferred, failure, generic, intermediate, specific, success;
+          $scope.DetailedItem = data;
+          deferred = $q.defer();
+          intermediate = $q.defer();
+          generic = recipeClass.usedIn(data.id);
+          specific = itemClass.usedIn(data.id);
+          success = function(data) {
+            return intermediate.resolve(data);
+          };
+          failure = function(data) {
+            return intermediate.resolve({});
+          };
+          specific.then(success, failure);
+          return $q.all([generic, intermediate.promise]).then(function(results) {
+            return $scope.DetailedItem.requiredFor = _.flatten(results);
+          });
         });
       }
     ]);
@@ -23227,8 +22590,8 @@ define("epochdb-controllers", ["epochdb-controllers-app","epochdb-controllers-ho
             }
             $scope.Filters = [];
             _.map(Models.models, function(item) {
-              return item.values('type').then(function(data) {
-                return $scope.Filters = _.uniq($scope.Filters.concat(data));
+              return item.values(['tags', "type"]).then(function(data) {
+                return $scope.Filters = _.flatten(_.uniq($scope.Filters.concat(data)));
               });
             });
             $scope.$watch('Query', function(value) {
@@ -23803,7 +23166,1259 @@ require([
 	});
 define("epochdb-directives", ["epochdb-directives-search","epochdb-directives-lists","epochdb-directives-calculator","epochdb-directives-tabs","epochdb-directives-assets","epochdb-directives-site","epochdb-directives-foundation","epochdb-directives-wintersmith"], function(){});
 
-require(['angular' ], function (angular){
+/**
+ * marked - a markdown parser
+ * Copyright (c) 2011-2013, Christopher Jeffrey. (MIT Licensed)
+ * https://github.com/chjj/marked
+ */
+
+;(function() {
+
+/**
+ * Block-Level Grammar
+ */
+
+var block = {
+  newline: /^\n+/,
+  code: /^( {4}[^\n]+\n*)+/,
+  fences: noop,
+  hr: /^( *[-*_]){3,} *(?:\n+|$)/,
+  heading: /^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/,
+  nptable: noop,
+  lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
+  blockquote: /^( *>[^\n]+(\n[^\n]+)*\n*)+/,
+  list: /^( *)(bull) [\s\S]+?(?:hr|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
+  html: /^ *(?:comment|closed|closing) *(?:\n{2,}|\s*$)/,
+  def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,
+  table: noop,
+  paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
+  text: /^[^\n]+/
+};
+
+block.bullet = /(?:[*+-]|\d+\.)/;
+block.item = /^( *)(bull) [^\n]*(?:\n(?!\1bull )[^\n]*)*/;
+block.item = replace(block.item, 'gm')
+  (/bull/g, block.bullet)
+  ();
+
+block.list = replace(block.list)
+  (/bull/g, block.bullet)
+  ('hr', /\n+(?=(?: *[-*_]){3,} *(?:\n+|$))/)
+  ();
+
+block._tag = '(?!(?:'
+  + 'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code'
+  + '|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo'
+  + '|span|br|wbr|ins|del|img)\\b)\\w+(?!:/|[^\\w\\s@]*@)\\b';
+
+block.html = replace(block.html)
+  ('comment', /<!--[\s\S]*?-->/)
+  ('closed', /<(tag)[\s\S]+?<\/\1>/)
+  ('closing', /<tag(?:"[^"]*"|'[^']*'|[^'">])*?>/)
+  (/tag/g, block._tag)
+  ();
+
+block.paragraph = replace(block.paragraph)
+  ('hr', block.hr)
+  ('heading', block.heading)
+  ('lheading', block.lheading)
+  ('blockquote', block.blockquote)
+  ('tag', '<' + block._tag)
+  ('def', block.def)
+  ();
+
+/**
+ * Normal Block Grammar
+ */
+
+block.normal = merge({}, block);
+
+/**
+ * GFM Block Grammar
+ */
+
+block.gfm = merge({}, block.normal, {
+  fences: /^ *(`{3,}|~{3,}) *(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)/,
+  paragraph: /^/
+});
+
+block.gfm.paragraph = replace(block.paragraph)
+  ('(?!', '(?!'
+    + block.gfm.fences.source.replace('\\1', '\\2') + '|'
+    + block.list.source.replace('\\1', '\\3') + '|')
+  ();
+
+/**
+ * GFM + Tables Block Grammar
+ */
+
+block.tables = merge({}, block.gfm, {
+  nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)\n*/,
+  table: /^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)\n*/
+});
+
+/**
+ * Block Lexer
+ */
+
+function Lexer(options) {
+  this.tokens = [];
+  this.tokens.links = {};
+  this.options = options || marked.defaults;
+  this.rules = block.normal;
+
+  if (this.options.gfm) {
+    if (this.options.tables) {
+      this.rules = block.tables;
+    } else {
+      this.rules = block.gfm;
+    }
+  }
+}
+
+/**
+ * Expose Block Rules
+ */
+
+Lexer.rules = block;
+
+/**
+ * Static Lex Method
+ */
+
+Lexer.lex = function(src, options) {
+  var lexer = new Lexer(options);
+  return lexer.lex(src);
+};
+
+/**
+ * Preprocessing
+ */
+
+Lexer.prototype.lex = function(src) {
+  src = src
+    .replace(/\r\n|\r/g, '\n')
+    .replace(/\t/g, '    ')
+    .replace(/\u00a0/g, ' ')
+    .replace(/\u2424/g, '\n');
+
+  return this.token(src, true);
+};
+
+/**
+ * Lexing
+ */
+
+Lexer.prototype.token = function(src, top) {
+  var src = src.replace(/^ +$/gm, '')
+    , next
+    , loose
+    , cap
+    , bull
+    , b
+    , item
+    , space
+    , i
+    , l;
+
+  while (src) {
+    // newline
+    if (cap = this.rules.newline.exec(src)) {
+      src = src.substring(cap[0].length);
+      if (cap[0].length > 1) {
+        this.tokens.push({
+          type: 'space'
+        });
+      }
+    }
+
+    // code
+    if (cap = this.rules.code.exec(src)) {
+      src = src.substring(cap[0].length);
+      cap = cap[0].replace(/^ {4}/gm, '');
+      this.tokens.push({
+        type: 'code',
+        text: !this.options.pedantic
+          ? cap.replace(/\n+$/, '')
+          : cap
+      });
+      continue;
+    }
+
+    // fences (gfm)
+    if (cap = this.rules.fences.exec(src)) {
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: 'code',
+        lang: cap[2],
+        text: cap[3]
+      });
+      continue;
+    }
+
+    // heading
+    if (cap = this.rules.heading.exec(src)) {
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: 'heading',
+        depth: cap[1].length,
+        text: cap[2]
+      });
+      continue;
+    }
+
+    // table no leading pipe (gfm)
+    if (top && (cap = this.rules.nptable.exec(src))) {
+      src = src.substring(cap[0].length);
+
+      item = {
+        type: 'table',
+        header: cap[1].replace(/^ *| *\| *$/g, '').split(/ *\| */),
+        align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
+        cells: cap[3].replace(/\n$/, '').split('\n')
+      };
+
+      for (i = 0; i < item.align.length; i++) {
+        if (/^ *-+: *$/.test(item.align[i])) {
+          item.align[i] = 'right';
+        } else if (/^ *:-+: *$/.test(item.align[i])) {
+          item.align[i] = 'center';
+        } else if (/^ *:-+ *$/.test(item.align[i])) {
+          item.align[i] = 'left';
+        } else {
+          item.align[i] = null;
+        }
+      }
+
+      for (i = 0; i < item.cells.length; i++) {
+        item.cells[i] = item.cells[i].split(/ *\| */);
+      }
+
+      this.tokens.push(item);
+
+      continue;
+    }
+
+    // lheading
+    if (cap = this.rules.lheading.exec(src)) {
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: 'heading',
+        depth: cap[2] === '=' ? 1 : 2,
+        text: cap[1]
+      });
+      continue;
+    }
+
+    // hr
+    if (cap = this.rules.hr.exec(src)) {
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: 'hr'
+      });
+      continue;
+    }
+
+    // blockquote
+    if (cap = this.rules.blockquote.exec(src)) {
+      src = src.substring(cap[0].length);
+
+      this.tokens.push({
+        type: 'blockquote_start'
+      });
+
+      cap = cap[0].replace(/^ *> ?/gm, '');
+
+      // Pass `top` to keep the current
+      // "toplevel" state. This is exactly
+      // how markdown.pl works.
+      this.token(cap, top);
+
+      this.tokens.push({
+        type: 'blockquote_end'
+      });
+
+      continue;
+    }
+
+    // list
+    if (cap = this.rules.list.exec(src)) {
+      src = src.substring(cap[0].length);
+      bull = cap[2];
+
+      this.tokens.push({
+        type: 'list_start',
+        ordered: bull.length > 1
+      });
+
+      // Get each top-level item.
+      cap = cap[0].match(this.rules.item);
+
+      next = false;
+      l = cap.length;
+      i = 0;
+
+      for (; i < l; i++) {
+        item = cap[i];
+
+        // Remove the list item's bullet
+        // so it is seen as the next token.
+        space = item.length;
+        item = item.replace(/^ *([*+-]|\d+\.) +/, '');
+
+        // Outdent whatever the
+        // list item contains. Hacky.
+        if (~item.indexOf('\n ')) {
+          space -= item.length;
+          item = !this.options.pedantic
+            ? item.replace(new RegExp('^ {1,' + space + '}', 'gm'), '')
+            : item.replace(/^ {1,4}/gm, '');
+        }
+
+        // Determine whether the next list item belongs here.
+        // Backpedal if it does not belong in this list.
+        if (this.options.smartLists && i !== l - 1) {
+          b = block.bullet.exec(cap[i + 1])[0];
+          if (bull !== b && !(bull.length > 1 && b.length > 1)) {
+            src = cap.slice(i + 1).join('\n') + src;
+            i = l - 1;
+          }
+        }
+
+        // Determine whether item is loose or not.
+        // Use: /(^|\n)(?! )[^\n]+\n\n(?!\s*$)/
+        // for discount behavior.
+        loose = next || /\n\n(?!\s*$)/.test(item);
+        if (i !== l - 1) {
+          next = item.charAt(item.length - 1) === '\n';
+          if (!loose) loose = next;
+        }
+
+        this.tokens.push({
+          type: loose
+            ? 'loose_item_start'
+            : 'list_item_start'
+        });
+
+        // Recurse.
+        this.token(item, false);
+
+        this.tokens.push({
+          type: 'list_item_end'
+        });
+      }
+
+      this.tokens.push({
+        type: 'list_end'
+      });
+
+      continue;
+    }
+
+    // html
+    if (cap = this.rules.html.exec(src)) {
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: this.options.sanitize
+          ? 'paragraph'
+          : 'html',
+        pre: cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style',
+        text: cap[0]
+      });
+      continue;
+    }
+
+    // def
+    if (top && (cap = this.rules.def.exec(src))) {
+      src = src.substring(cap[0].length);
+      this.tokens.links[cap[1].toLowerCase()] = {
+        href: cap[2],
+        title: cap[3]
+      };
+      continue;
+    }
+
+    // table (gfm)
+    if (top && (cap = this.rules.table.exec(src))) {
+      src = src.substring(cap[0].length);
+
+      item = {
+        type: 'table',
+        header: cap[1].replace(/^ *| *\| *$/g, '').split(/ *\| */),
+        align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
+        cells: cap[3].replace(/(?: *\| *)?\n$/, '').split('\n')
+      };
+
+      for (i = 0; i < item.align.length; i++) {
+        if (/^ *-+: *$/.test(item.align[i])) {
+          item.align[i] = 'right';
+        } else if (/^ *:-+: *$/.test(item.align[i])) {
+          item.align[i] = 'center';
+        } else if (/^ *:-+ *$/.test(item.align[i])) {
+          item.align[i] = 'left';
+        } else {
+          item.align[i] = null;
+        }
+      }
+
+      for (i = 0; i < item.cells.length; i++) {
+        item.cells[i] = item.cells[i]
+          .replace(/^ *\| *| *\| *$/g, '')
+          .split(/ *\| */);
+      }
+
+      this.tokens.push(item);
+
+      continue;
+    }
+
+    // top-level paragraph
+    if (top && (cap = this.rules.paragraph.exec(src))) {
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: 'paragraph',
+        text: cap[1].charAt(cap[1].length - 1) === '\n'
+          ? cap[1].slice(0, -1)
+          : cap[1]
+      });
+      continue;
+    }
+
+    // text
+    if (cap = this.rules.text.exec(src)) {
+      // Top-level should never reach here.
+      src = src.substring(cap[0].length);
+      this.tokens.push({
+        type: 'text',
+        text: cap[0]
+      });
+      continue;
+    }
+
+    if (src) {
+      throw new
+        Error('Infinite loop on byte: ' + src.charCodeAt(0));
+    }
+  }
+
+  return this.tokens;
+};
+
+/**
+ * Inline-Level Grammar
+ */
+
+var inline = {
+  escape: /^\\([\\`*{}\[\]()#+\-.!_>])/,
+  autolink: /^<([^ >]+(@|:\/)[^ >]+)>/,
+  url: noop,
+  tag: /^<!--[\s\S]*?-->|^<\/?\w+(?:"[^"]*"|'[^']*'|[^'">])*?>/,
+  link: /^!?\[(inside)\]\(href\)/,
+  reflink: /^!?\[(inside)\]\s*\[([^\]]*)\]/,
+  nolink: /^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,
+  strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
+  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+  code: /^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,
+  br: /^ {2,}\n(?!\s*$)/,
+  del: noop,
+  text: /^[\s\S]+?(?=[\\<!\[_*`]| {2,}\n|$)/
+};
+
+inline._inside = /(?:\[[^\]]*\]|[^\[\]]|\](?=[^\[]*\]))*/;
+inline._href = /\s*<?([\s\S]*?)>?(?:\s+['"]([\s\S]*?)['"])?\s*/;
+
+inline.link = replace(inline.link)
+  ('inside', inline._inside)
+  ('href', inline._href)
+  ();
+
+inline.reflink = replace(inline.reflink)
+  ('inside', inline._inside)
+  ();
+
+/**
+ * Normal Inline Grammar
+ */
+
+inline.normal = merge({}, inline);
+
+/**
+ * Pedantic Inline Grammar
+ */
+
+inline.pedantic = merge({}, inline.normal, {
+  strong: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
+  em: /^_(?=\S)([\s\S]*?\S)_(?!_)|^\*(?=\S)([\s\S]*?\S)\*(?!\*)/
+});
+
+/**
+ * GFM Inline Grammar
+ */
+
+inline.gfm = merge({}, inline.normal, {
+  escape: replace(inline.escape)('])', '~|])')(),
+  url: /^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,
+  del: /^~~(?=\S)([\s\S]*?\S)~~/,
+  text: replace(inline.text)
+    (']|', '~]|')
+    ('|', '|https?://|')
+    ()
+});
+
+/**
+ * GFM + Line Breaks Inline Grammar
+ */
+
+inline.breaks = merge({}, inline.gfm, {
+  br: replace(inline.br)('{2,}', '*')(),
+  text: replace(inline.gfm.text)('{2,}', '*')()
+});
+
+/**
+ * Inline Lexer & Compiler
+ */
+
+function InlineLexer(links, options) {
+  this.options = options || marked.defaults;
+  this.links = links;
+  this.rules = inline.normal;
+  this.renderer = this.options.renderer || new Renderer;
+  this.renderer.options = this.options;
+
+  if (!this.links) {
+    throw new
+      Error('Tokens array requires a `links` property.');
+  }
+
+  if (this.options.gfm) {
+    if (this.options.breaks) {
+      this.rules = inline.breaks;
+    } else {
+      this.rules = inline.gfm;
+    }
+  } else if (this.options.pedantic) {
+    this.rules = inline.pedantic;
+  }
+}
+
+/**
+ * Expose Inline Rules
+ */
+
+InlineLexer.rules = inline;
+
+/**
+ * Static Lexing/Compiling Method
+ */
+
+InlineLexer.output = function(src, links, options) {
+  var inline = new InlineLexer(links, options);
+  return inline.output(src);
+};
+
+/**
+ * Lexing/Compiling
+ */
+
+InlineLexer.prototype.output = function(src) {
+  var out = ''
+    , link
+    , text
+    , href
+    , cap;
+
+  while (src) {
+    // escape
+    if (cap = this.rules.escape.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += cap[1];
+      continue;
+    }
+
+    // autolink
+    if (cap = this.rules.autolink.exec(src)) {
+      src = src.substring(cap[0].length);
+      if (cap[2] === '@') {
+        text = cap[1].charAt(6) === ':'
+          ? this.mangle(cap[1].substring(7))
+          : this.mangle(cap[1]);
+        href = this.mangle('mailto:') + text;
+      } else {
+        text = escape(cap[1]);
+        href = text;
+      }
+      out += this.renderer.link(href, null, text);
+      continue;
+    }
+
+    // url (gfm)
+    if (cap = this.rules.url.exec(src)) {
+      src = src.substring(cap[0].length);
+      text = escape(cap[1]);
+      href = text;
+      out += this.renderer.link(href, null, text);
+      continue;
+    }
+
+    // tag
+    if (cap = this.rules.tag.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.options.sanitize
+        ? escape(cap[0])
+        : cap[0];
+      continue;
+    }
+
+    // link
+    if (cap = this.rules.link.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.outputLink(cap, {
+        href: cap[2],
+        title: cap[3]
+      });
+      continue;
+    }
+
+    // reflink, nolink
+    if ((cap = this.rules.reflink.exec(src))
+        || (cap = this.rules.nolink.exec(src))) {
+      src = src.substring(cap[0].length);
+      link = (cap[2] || cap[1]).replace(/\s+/g, ' ');
+      link = this.links[link.toLowerCase()];
+      if (!link || !link.href) {
+        out += cap[0].charAt(0);
+        src = cap[0].substring(1) + src;
+        continue;
+      }
+      out += this.outputLink(cap, link);
+      continue;
+    }
+
+    // strong
+    if (cap = this.rules.strong.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.renderer.strong(this.output(cap[2] || cap[1]));
+      continue;
+    }
+
+    // em
+    if (cap = this.rules.em.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.renderer.em(this.output(cap[2] || cap[1]));
+      continue;
+    }
+
+    // code
+    if (cap = this.rules.code.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.renderer.codespan(escape(cap[2], true));
+      continue;
+    }
+
+    // br
+    if (cap = this.rules.br.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.renderer.br();
+      continue;
+    }
+
+    // del (gfm)
+    if (cap = this.rules.del.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += this.renderer.del(this.output(cap[1]));
+      continue;
+    }
+
+    // text
+    if (cap = this.rules.text.exec(src)) {
+      src = src.substring(cap[0].length);
+      out += escape(this.smartypants(cap[0]));
+      continue;
+    }
+
+    if (src) {
+      throw new
+        Error('Infinite loop on byte: ' + src.charCodeAt(0));
+    }
+  }
+
+  return out;
+};
+
+/**
+ * Compile Link
+ */
+
+InlineLexer.prototype.outputLink = function(cap, link) {
+  var href = escape(link.href)
+    , title = link.title ? escape(link.title) : null;
+
+  return cap[0].charAt(0) !== '!'
+    ? this.renderer.link(href, title, this.output(cap[1]))
+    : this.renderer.image(href, title, escape(cap[1]));
+};
+
+/**
+ * Smartypants Transformations
+ */
+
+InlineLexer.prototype.smartypants = function(text) {
+  if (!this.options.smartypants) return text;
+  return text
+    // em-dashes
+    .replace(/--/g, '\u2014')
+    // opening singles
+    .replace(/(^|[-\u2014/(\[{"\s])'/g, '$1\u2018')
+    // closing singles & apostrophes
+    .replace(/'/g, '\u2019')
+    // opening doubles
+    .replace(/(^|[-\u2014/(\[{\u2018\s])"/g, '$1\u201c')
+    // closing doubles
+    .replace(/"/g, '\u201d')
+    // ellipses
+    .replace(/\.{3}/g, '\u2026');
+};
+
+/**
+ * Mangle Links
+ */
+
+InlineLexer.prototype.mangle = function(text) {
+  var out = ''
+    , l = text.length
+    , i = 0
+    , ch;
+
+  for (; i < l; i++) {
+    ch = text.charCodeAt(i);
+    if (Math.random() > 0.5) {
+      ch = 'x' + ch.toString(16);
+    }
+    out += '&#' + ch + ';';
+  }
+
+  return out;
+};
+
+/**
+ * Renderer
+ */
+
+function Renderer(options) {
+  this.options = options || {};
+}
+
+Renderer.prototype.code = function(code, lang, escaped) {
+  if (this.options.highlight) {
+    var out = this.options.highlight(code, lang);
+    if (out != null && out !== code) {
+      escaped = true;
+      code = out;
+    }
+  }
+
+  if (!lang) {
+    return '<pre><code>'
+      + (escaped ? code : escape(code, true))
+      + '\n</code></pre>';
+  }
+
+  return '<pre><code class="'
+    + this.options.langPrefix
+    + escape(lang, true)
+    + '">'
+    + (escaped ? code : escape(code, true))
+    + '\n</code></pre>\n';
+};
+
+Renderer.prototype.blockquote = function(quote) {
+  return '<blockquote>\n' + quote + '</blockquote>\n';
+};
+
+Renderer.prototype.html = function(html) {
+  return html;
+};
+
+Renderer.prototype.heading = function(text, level, raw) {
+  return '<h'
+    + level
+    + ' id="'
+    + this.options.headerPrefix
+    + raw.toLowerCase().replace(/[^\w]+/g, '-')
+    + '">'
+    + text
+    + '</h'
+    + level
+    + '>\n';
+};
+
+Renderer.prototype.hr = function() {
+  return '<hr>\n';
+};
+
+Renderer.prototype.list = function(body, ordered) {
+  var type = ordered ? 'ol' : 'ul';
+  return '<' + type + '>\n' + body + '</' + type + '>\n';
+};
+
+Renderer.prototype.listitem = function(text) {
+  return '<li>' + text + '</li>\n';
+};
+
+Renderer.prototype.paragraph = function(text) {
+  return '<p>' + text + '</p>\n';
+};
+
+Renderer.prototype.table = function(header, body) {
+  return '<table>\n'
+    + '<thead>\n'
+    + header
+    + '</thead>\n'
+    + '<tbody>\n'
+    + body
+    + '</tbody>\n'
+    + '</table>\n';
+};
+
+Renderer.prototype.tablerow = function(content) {
+  return '<tr>\n' + content + '</tr>\n';
+};
+
+Renderer.prototype.tablecell = function(content, flags) {
+  var type = flags.header ? 'th' : 'td';
+  var tag = flags.align
+    ? '<' + type + ' style="text-align:' + flags.align + '">'
+    : '<' + type + '>';
+  return tag + content + '</' + type + '>\n';
+};
+
+// span level renderer
+Renderer.prototype.strong = function(text) {
+  return '<strong>' + text + '</strong>';
+};
+
+Renderer.prototype.em = function(text) {
+  return '<em>' + text + '</em>';
+};
+
+Renderer.prototype.codespan = function(text) {
+  return '<code>' + text + '</code>';
+};
+
+Renderer.prototype.br = function() {
+  return '<br>';
+};
+
+Renderer.prototype.del = function(text) {
+  return '<del>' + text + '</del>';
+};
+
+Renderer.prototype.link = function(href, title, text) {
+  if (this.options.sanitize) {
+    try {
+      var prot = decodeURIComponent(unescape(href))
+        .replace(/[^\w:]/g, '')
+        .toLowerCase();
+    } catch (e) {
+      return '';
+    }
+    if (prot.indexOf('javascript:') === 0) {
+      return '';
+    }
+  }
+  var out = '<a href="' + href + '"';
+  if (title) {
+    out += ' title="' + title + '"';
+  }
+  out += '>' + text + '</a>';
+  return out;
+};
+
+Renderer.prototype.image = function(href, title, text) {
+  var out = '<img src="' + href + '" alt="' + text + '"';
+  if (title) {
+    out += ' title="' + title + '"';
+  }
+  out += '>';
+  return out;
+};
+
+/**
+ * Parsing & Compiling
+ */
+
+function Parser(options) {
+  this.tokens = [];
+  this.token = null;
+  this.options = options || marked.defaults;
+  this.options.renderer = this.options.renderer || new Renderer;
+  this.renderer = this.options.renderer;
+  this.renderer.options = this.options;
+}
+
+/**
+ * Static Parse Method
+ */
+
+Parser.parse = function(src, options, renderer) {
+  var parser = new Parser(options, renderer);
+  return parser.parse(src);
+};
+
+/**
+ * Parse Loop
+ */
+
+Parser.prototype.parse = function(src) {
+  this.inline = new InlineLexer(src.links, this.options, this.renderer);
+  this.tokens = src.reverse();
+
+  var out = '';
+  while (this.next()) {
+    out += this.tok();
+  }
+
+  return out;
+};
+
+/**
+ * Next Token
+ */
+
+Parser.prototype.next = function() {
+  return this.token = this.tokens.pop();
+};
+
+/**
+ * Preview Next Token
+ */
+
+Parser.prototype.peek = function() {
+  return this.tokens[this.tokens.length - 1] || 0;
+};
+
+/**
+ * Parse Text Tokens
+ */
+
+Parser.prototype.parseText = function() {
+  var body = this.token.text;
+
+  while (this.peek().type === 'text') {
+    body += '\n' + this.next().text;
+  }
+
+  return this.inline.output(body);
+};
+
+/**
+ * Parse Current Token
+ */
+
+Parser.prototype.tok = function() {
+  switch (this.token.type) {
+    case 'space': {
+      return '';
+    }
+    case 'hr': {
+      return this.renderer.hr();
+    }
+    case 'heading': {
+      return this.renderer.heading(
+        this.inline.output(this.token.text),
+        this.token.depth,
+        this.token.text);
+    }
+    case 'code': {
+      return this.renderer.code(this.token.text,
+        this.token.lang,
+        this.token.escaped);
+    }
+    case 'table': {
+      var header = ''
+        , body = ''
+        , i
+        , row
+        , cell
+        , flags
+        , j;
+
+      // header
+      cell = '';
+      for (i = 0; i < this.token.header.length; i++) {
+        flags = { header: true, align: this.token.align[i] };
+        cell += this.renderer.tablecell(
+          this.inline.output(this.token.header[i]),
+          { header: true, align: this.token.align[i] }
+        );
+      }
+      header += this.renderer.tablerow(cell);
+
+      for (i = 0; i < this.token.cells.length; i++) {
+        row = this.token.cells[i];
+
+        cell = '';
+        for (j = 0; j < row.length; j++) {
+          cell += this.renderer.tablecell(
+            this.inline.output(row[j]),
+            { header: false, align: this.token.align[j] }
+          );
+        }
+
+        body += this.renderer.tablerow(cell);
+      }
+      return this.renderer.table(header, body);
+    }
+    case 'blockquote_start': {
+      var body = '';
+
+      while (this.next().type !== 'blockquote_end') {
+        body += this.tok();
+      }
+
+      return this.renderer.blockquote(body);
+    }
+    case 'list_start': {
+      var body = ''
+        , ordered = this.token.ordered;
+
+      while (this.next().type !== 'list_end') {
+        body += this.tok();
+      }
+
+      return this.renderer.list(body, ordered);
+    }
+    case 'list_item_start': {
+      var body = '';
+
+      while (this.next().type !== 'list_item_end') {
+        body += this.token.type === 'text'
+          ? this.parseText()
+          : this.tok();
+      }
+
+      return this.renderer.listitem(body);
+    }
+    case 'loose_item_start': {
+      var body = '';
+
+      while (this.next().type !== 'list_item_end') {
+        body += this.tok();
+      }
+
+      return this.renderer.listitem(body);
+    }
+    case 'html': {
+      var html = !this.token.pre && !this.options.pedantic
+        ? this.inline.output(this.token.text)
+        : this.token.text;
+      return this.renderer.html(html);
+    }
+    case 'paragraph': {
+      return this.renderer.paragraph(this.inline.output(this.token.text));
+    }
+    case 'text': {
+      return this.renderer.paragraph(this.parseText());
+    }
+  }
+};
+
+/**
+ * Helpers
+ */
+
+function escape(html, encode) {
+  return html
+    .replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function unescape(html) {
+  return html.replace(/&([#\w]+);/g, function(_, n) {
+    n = n.toLowerCase();
+    if (n === 'colon') return ':';
+    if (n.charAt(0) === '#') {
+      return n.charAt(1) === 'x'
+        ? String.fromCharCode(parseInt(n.substring(2), 16))
+        : String.fromCharCode(+n.substring(1));
+    }
+    return '';
+  });
+}
+
+function replace(regex, opt) {
+  regex = regex.source;
+  opt = opt || '';
+  return function self(name, val) {
+    if (!name) return new RegExp(regex, opt);
+    val = val.source || val;
+    val = val.replace(/(^|[^\[])\^/g, '$1');
+    regex = regex.replace(name, val);
+    return self;
+  };
+}
+
+function noop() {}
+noop.exec = noop;
+
+function merge(obj) {
+  var i = 1
+    , target
+    , key;
+
+  for (; i < arguments.length; i++) {
+    target = arguments[i];
+    for (key in target) {
+      if (Object.prototype.hasOwnProperty.call(target, key)) {
+        obj[key] = target[key];
+      }
+    }
+  }
+
+  return obj;
+}
+
+
+/**
+ * Marked
+ */
+
+function marked(src, opt, callback) {
+  if (callback || typeof opt === 'function') {
+    if (!callback) {
+      callback = opt;
+      opt = null;
+    }
+
+    opt = merge({}, marked.defaults, opt || {});
+
+    var highlight = opt.highlight
+      , tokens
+      , pending
+      , i = 0;
+
+    try {
+      tokens = Lexer.lex(src, opt)
+    } catch (e) {
+      return callback(e);
+    }
+
+    pending = tokens.length;
+
+    var done = function() {
+      var out, err;
+
+      try {
+        out = Parser.parse(tokens, opt);
+      } catch (e) {
+        err = e;
+      }
+
+      opt.highlight = highlight;
+
+      return err
+        ? callback(err)
+        : callback(null, out);
+    };
+
+    if (!highlight || highlight.length < 3) {
+      return done();
+    }
+
+    delete opt.highlight;
+
+    if (!pending) return done();
+
+    for (; i < tokens.length; i++) {
+      (function(token) {
+        if (token.type !== 'code') {
+          return --pending || done();
+        }
+        return highlight(token.text, token.lang, function(err, code) {
+          if (code == null || code === token.text) {
+            return --pending || done();
+          }
+          token.text = code;
+          token.escaped = true;
+          --pending || done();
+        });
+      })(tokens[i]);
+    }
+
+    return;
+  }
+  try {
+    if (opt) opt = merge({}, marked.defaults, opt);
+    return Parser.parse(Lexer.lex(src, opt), opt);
+  } catch (e) {
+    e.message += '\nPlease report this to https://github.com/chjj/marked.';
+    if ((opt || marked.defaults).silent) {
+      return '<p>An error occured:</p><pre>'
+        + escape(e.message + '', true)
+        + '</pre>';
+    }
+    throw e;
+  }
+}
+
+/**
+ * Options
+ */
+
+marked.options =
+marked.setOptions = function(opt) {
+  merge(marked.defaults, opt);
+  return marked;
+};
+
+marked.defaults = {
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: false,
+  silent: false,
+  highlight: null,
+  langPrefix: 'lang-',
+  smartypants: false,
+  headerPrefix: '',
+  renderer: new Renderer
+};
+
+/**
+ * Expose
+ */
+
+marked.Parser = Parser;
+marked.parser = Parser.parse;
+
+marked.Renderer = Renderer;
+
+marked.Lexer = Lexer;
+marked.lexer = Lexer.lex;
+
+marked.InlineLexer = InlineLexer;
+marked.inlineLexer = InlineLexer.output;
+
+marked.parse = marked;
+
+if (typeof exports === 'object') {
+  module.exports = marked;
+} else if (typeof define === 'function' && define.amd) {
+  define('marked',[],function() { return marked; });
+} else {
+  this.marked = marked;
+}
+
+}).call(function() {
+  return this || (typeof window !== 'undefined' ? window : global);
+}());
+
+require(['angular', 'marked' ], function (angular, marked){
 
 	angular.module('epochdb.filters.string', [])
 
@@ -23812,7 +24427,6 @@ require(['angular' ], function (angular){
 				return value.lower();
 			}
 		})
-		
 		.filter("length", function (){
 			return function (value){
 				if(value) return value.length;
@@ -23824,6 +24438,28 @@ require(['angular' ], function (angular){
 				return value?value.replace(".", "-"):""
 			}
 		})
+
+		.directive('marked', [function () {
+				return {
+					restrict: 'AE',
+					replace: true,
+					scope: {
+						opts: '=',
+						marked: '='
+					},
+					link: function (scope, element, attrs) {
+						function render(value) {
+							output = marked(value || '', scope.opts || null);
+							element.html(output);
+						}
+						render(scope.marked || element.text() || '');
+						if (attrs.marked) {
+							scope.$watch('marked', render);
+						}
+
+					}
+				};
+			}])
 });
 define("epochdb-filters-string", function(){});
 
@@ -23835,7 +24471,7 @@ require([
 				'epochdb.filters.string',
 			])
 	});
-define("epochdb-filters", ["epochdb-filters-string"], function(){});
+define("epochdb-filters", ["epochdb-filters-string","marked"], function(){});
 
 /*
 Underscore Query - A lightweight query API for JavaScript collections
@@ -24463,7 +25099,7 @@ require([
 		angular.bootstrap(document, ['epochdb']);
 })
 ;
-define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-route-segment","angular-animate","restangular","epochdb-templates","epochdb-config","epochdb-routes","epochdb-resources","epochdb-controllers","epochdb-directives","epochdb-filters"], function(){});
+define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-sanitize","angular-route-segment","angular-animate","epochdb-templates","epochdb-config","epochdb-routes","epochdb-resources","epochdb-controllers","epochdb-directives","epochdb-filters"], function(){});
 
 (function() {
   require.config({
@@ -24473,8 +25109,9 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-r
       'angular-animate': '../vendor/angular-animate/angular-animate.min',
       'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min',
       'angular-touch': '../vendor/angular-touch/angular-touch.min',
-      'restangular': '../vendor/restangular/dist/restangular',
+      'angular-sanitize': '../vendor/angular-sanitize/angular-sanitize',
       'lodash': '../vendor/lodash/dist/lodash.underscore.min',
+      'marked': '../vendor/marked/lib/marked',
       'underscore-query': '../vendor/underscore-query/underscore-query',
       'epochdb': 'app',
       'epochdb-routes': 'routes',
@@ -24511,9 +25148,6 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-r
       'underscore-query': {
         deps: ['lodash']
       },
-      'restangular': {
-        deps: ['angular']
-      },
       'angular': {
         exports: 'angular'
       },
@@ -24523,6 +25157,9 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-r
       'angular-touch': {
         deps: ['angular']
       },
+      'angular-sanitize': {
+        deps: ['angular']
+      },
       'angular-route': {
         deps: ['angular']
       },
@@ -24530,7 +25167,7 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-r
         deps: ['angular', 'angular-route']
       },
       'epochdb': {
-        deps: ['lodash', 'angular', 'angular-route', 'angular-touch', 'angular-route-segment', 'angular-animate', 'restangular', 'epochdb-templates', 'epochdb-config', 'epochdb-routes', 'epochdb-resources', 'epochdb-controllers', 'epochdb-directives', 'epochdb-filters']
+        deps: ['lodash', 'angular', 'angular-route', 'angular-touch', 'angular-sanitize', 'angular-route-segment', 'angular-animate', 'epochdb-templates', 'epochdb-config', 'epochdb-routes', 'epochdb-resources', 'epochdb-controllers', 'epochdb-directives', 'epochdb-filters']
       },
       'epochdb-resources': {
         deps: ['epochdb-resources-base', 'epochdb-resources-areas', 'epochdb-resources-items', 'epochdb-resources-recipes']
@@ -24542,7 +25179,7 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-r
         deps: ['epochdb-directives-search', 'epochdb-directives-lists', 'epochdb-directives-calculator', 'epochdb-directives-tabs', 'epochdb-directives-assets', 'epochdb-directives-site', 'epochdb-directives-foundation', 'epochdb-directives-wintersmith']
       },
       'epochdb-filters': {
-        deps: ['epochdb-filters-string']
+        deps: ['epochdb-filters-string', 'marked']
       }
     },
     urlArgs: "bust=" + (new Date()).getTime(),
