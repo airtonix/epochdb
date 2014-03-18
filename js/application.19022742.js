@@ -22648,7 +22648,7 @@ define("epochdb-routes", function(){});
 
           function Area(data) {
             this.type = 'area';
-            this.source = "api/area/data.788baf2d.json";
+            this.source = "api/area/data.f0455d71.json";
             this.$http = $http;
             Area.__super__.constructor.call(this, data);
           }
@@ -22687,7 +22687,7 @@ define("epochdb-resources-areas", function(){});
 
           function Item(data) {
             this.type = 'item';
-            this.source = "api/item/data.7ff7d35f.json";
+            this.source = "api/item/data.cb511096.json";
             this.$http = $http;
             Item.__super__.constructor.call(this, data);
           }
@@ -22966,14 +22966,7 @@ define("epochdb-controllers", ["epochdb-controllers-app","epochdb-controllers-ho
               return $location.path("/items/" + value.toLowerCase());
             };
             return $scope.$on('item-query', function(event, data) {
-              var delayedQueryFunc, timeoutCode;
-              clearTimeout(timeoutCode);
-              delayedQueryFunc = function() {
-                if (behaviour === "submit") {
-                  return $scope.search(data);
-                }
-              };
-              return timeoutCode = setTimeout(delayedQueryFunc, delayInMs);
+              return $scope.search(data);
             });
           }
         };
