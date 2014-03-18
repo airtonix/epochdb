@@ -18,7 +18,14 @@ html(lang='en')
 		block head
 			meta(charset='utf-8')
 			meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-			meta(name='viewport', content='width=device-width')
+			meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
+			meta(name="mobile-web-app-capable", content="yes")
+			meta(name="apple-mobile-web-app-capable", content="yes")
+			meta(name="apple-mobile-web-app-status-bar-style", content="black")
+			link(rel="apple-touch-icon", href="/img/touch-icon-iphone.png")
+			link(rel="apple-touch-icon", sizes="76x76" href="/img/touch-icon-ipad.png")
+			link(rel="apple-touch-icon", sizes="120x120" href="/img/touch-icon-iphone-retina.png")
+			link(rel="apple-touch-icon", sizes="152x152", href="/img/touch-icon-ipad-retina.png")
 			meta(rel="description", content="#{locals.description}", data-meta-description)
 			meta(rel="x-wintersmith", data-wintersmith-context=localsJSON)
 			title= locals.name
@@ -46,9 +53,9 @@ html(lang='en')
 							This app is licensed under the [BSD 3 Clause](https://github.com/airtonix/epochdb/blob/gh-pages/LICENSE), [Source code is on github](http://github.com/airtonix/epochdb/)
 
 						ul.button-group.simple-outline
-							li: a.button.small(ng-href="#/about") About
-							li: a.button.small(ng-href="#/credit") Credits
-							li: a.button.small(ng-href="#{locals.pkg.npm.homepage}") Source
-							li: a.button.small(ng-href="#{locals.pkg.npm.bugs.url}") Bugs
+							li: a.button.tiny(ng-href="#/about") About
+							li: a.button.tiny(ng-href="#/credit") Credits
+							li: a.button.tiny(ng-href="#{locals.pkg.npm.homepage}") Source
+							li: a.button.tiny(ng-href="#{locals.pkg.npm.bugs.url}") Bugs
 
 		script(data-main="./js/boot", src='./vendor/requirejs/require.js')

@@ -33,6 +33,10 @@ require ['angular', 'lodash'], (angular, _) ->
 					$location.path "/items/"+value.toLowerCase()
 
 				$scope.$on 'item-query', (event, data) ->
-					if behaviour is "submit"
-						$scope.search data
+					clearTimeout timeoutCode
+					delayedQueryFunc = () ->
+						if behaviour is "submit"
+							$scope.search data
+
+					timeoutCode = setTimeout delayedQueryFunc, delayInMs
 	]

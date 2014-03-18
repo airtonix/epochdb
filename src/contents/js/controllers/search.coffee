@@ -8,7 +8,6 @@ require ['angular'], (angular) ->
         '$scope',
         'Models',
         ($scope, Models) ->
-
             $scope.$watch 'Query', (value) ->
                 $scope.$emit 'item-query', value
 

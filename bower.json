@@ -1,6 +1,6 @@
 {
   "name": "epochdb",
-  "version": "1.6.0-0",
+  "version": "1.8.0-0",
   "homepage": "https://github.com/airtonix/epochdb",
   "authors": [
     "Zenobius Jiricek <airtonix@gmail.com>"
@@ -19,12 +19,13 @@
   "dependencies": {
     "almond": "~0.2.9",
     "angular": "1.2.13",
-    "angular-marked": "0.0.5",
-    "angular-touch": "~1.2.13",
-    "angular-route": "~1.2.13",
+    "angular-marked": "git://github.com/Hypercubed/angular-marked.git#0.0.5",
+    "angular-touch": "1.2.13",
+    "angular-route": "1.2.13",
     "angular-animate": "1.2.13",
     "angular-sanitize": "1.2.13",
     "angular-route-segment": "~1.2.0",
+    "angular-google-analytics": "git://github.com/revolunet/angular-google-analytics.git#0.0.1",
     "lodash": "~2.4.1",
     "modernizr": "~2.7.1",
     "requirejs": "~2.1.10"

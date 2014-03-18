@@ -6,6 +6,8 @@ require.config
 		'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min'
 		'angular-touch': '../vendor/angular-touch/angular-touch.min'
 		'angular-sanitize': '../vendor/angular-sanitize/angular-sanitize'
+		'angular-google-analytics': '../vendor/angular-google-analytics/src/angular-google-analytics'
+
 		'lodash': '../vendor/lodash/dist/lodash.underscore.min'
 		'marked': '../vendor/marked/lib/marked'
 		'underscore-query': '../vendor/underscore-query/underscore-query'
@@ -47,6 +49,7 @@ require.config
 		'angular-animate':  deps: ['angular']
 		'angular-touch':  deps: ['angular']
 		'angular-sanitize':  deps: ['angular']
+		'angular-google-analytics':  deps: ['angular']
 		'angular-route':  deps: ['angular']
 		'angular-route-segment':  deps: [
 				'angular'
@@ -60,6 +63,7 @@ require.config
 				'angular-sanitize'
 				'angular-route-segment'
 				'angular-animate'
+				'angular-google-analytics'
 
 				'epochdb-templates'
 				'epochdb-config'
