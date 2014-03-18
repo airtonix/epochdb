@@ -21344,18 +21344,18 @@ define("angular", (function (global) {
 }(this)));
 
 /*
- AngularJS v1.2.15-build.2365+sha.d07101d
+ AngularJS v1.2.13
  (c) 2010-2014 Google, Inc. http://angularjs.org
  License: MIT
 */
-(function(n,e,A){function x(s,g,k){return{restrict:"ECA",terminal:!0,priority:400,transclude:"element",link:function(a,c,b,f,w){function y(){p&&(p.remove(),p=null);h&&(h.$destroy(),h=null);l&&(k.leave(l,function(){p=null}),p=l,l=null)}function v(){var b=s.current&&s.current.locals;if(e.isDefined(b&&b.$template)){var b=a.$new(),d=s.current;l=w(b,function(d){k.enter(d,null,l||c,function(){!e.isDefined(t)||t&&!a.$eval(t)||g()});y()});h=d.scope=b;h.$emit("$viewContentLoaded");h.$eval(u)}else y()}
-var h,l,p,t=b.autoscroll,u=b.onload||"";a.$on("$routeChangeSuccess",v);v()}}}function z(e,g,k){return{restrict:"ECA",priority:-400,link:function(a,c){var b=k.current,f=b.locals;c.html(f.$template);var w=e(c.contents());b.controller&&(f.$scope=a,f=g(b.controller,f),b.controllerAs&&(a[b.controllerAs]=f),c.data("$ngControllerController",f),c.children().data("$ngControllerController",f));w(a)}}}n=e.module("ngRoute",["ng"]).provider("$route",function(){function s(a,c){return e.extend(new (e.extend(function(){},
-{prototype:a})),c)}function g(a,e){var b=e.caseInsensitiveMatch,f={originalPath:a,regexp:a},k=f.keys=[];a=a.replace(/([().])/g,"\\$1").replace(/(\/)?:(\w+)([\?\*])?/g,function(a,e,b,c){a="?"===c?c:null;c="*"===c?c:null;k.push({name:b,optional:!!a});e=e||"";return""+(a?"":e)+"(?:"+(a?e:"")+(c&&"(.+?)"||"([^/]+)")+(a||"")+")"+(a||"")}).replace(/([\/$\*])/g,"\\$1");f.regexp=RegExp("^"+a+"$",b?"i":"");return f}var k={};this.when=function(a,c){k[a]=e.extend({reloadOnSearch:!0},c,a&&g(a,c));if(a){var b=
-"/"==a[a.length-1]?a.substr(0,a.length-1):a+"/";k[b]=e.extend({redirectTo:a},g(b,c))}return this};this.otherwise=function(a){this.when(null,a);return this};this.$get=["$rootScope","$location","$routeParams","$q","$injector","$http","$templateCache","$sce",function(a,c,b,f,g,n,v,h){function l(){var d=p(),m=r.current;if(d&&m&&d.$$route===m.$$route&&e.equals(d.pathParams,m.pathParams)&&!d.reloadOnSearch&&!u)m.params=d.params,e.copy(m.params,b),a.$broadcast("$routeUpdate",m);else if(d||m)u=!1,a.$broadcast("$routeChangeStart",
-d,m),(r.current=d)&&d.redirectTo&&(e.isString(d.redirectTo)?c.path(t(d.redirectTo,d.params)).search(d.params).replace():c.url(d.redirectTo(d.pathParams,c.path(),c.search())).replace()),f.when(d).then(function(){if(d){var a=e.extend({},d.resolve),c,b;e.forEach(a,function(d,c){a[c]=e.isString(d)?g.get(d):g.invoke(d)});e.isDefined(c=d.template)?e.isFunction(c)&&(c=c(d.params)):e.isDefined(b=d.templateUrl)&&(e.isFunction(b)&&(b=b(d.params)),b=h.getTrustedResourceUrl(b),e.isDefined(b)&&(d.loadedTemplateUrl=
-b,c=n.get(b,{cache:v}).then(function(a){return a.data})));e.isDefined(c)&&(a.$template=c);return f.all(a)}}).then(function(c){d==r.current&&(d&&(d.locals=c,e.copy(d.params,b)),a.$broadcast("$routeChangeSuccess",d,m))},function(c){d==r.current&&a.$broadcast("$routeChangeError",d,m,c)})}function p(){var a,b;e.forEach(k,function(f,k){var q;if(q=!b){var g=c.path();q=f.keys;var l={};if(f.regexp)if(g=f.regexp.exec(g)){for(var h=1,p=g.length;h<p;++h){var n=q[h-1],r="string"==typeof g[h]?decodeURIComponent(g[h]):
-g[h];n&&r&&(l[n.name]=r)}q=l}else q=null;else q=null;q=a=q}q&&(b=s(f,{params:e.extend({},c.search(),a),pathParams:a}),b.$$route=f)});return b||k[null]&&s(k[null],{params:{},pathParams:{}})}function t(a,c){var b=[];e.forEach((a||"").split(":"),function(a,d){if(0===d)b.push(a);else{var e=a.match(/(\w+)(.*)/),f=e[1];b.push(c[f]);b.push(e[2]||"");delete c[f]}});return b.join("")}var u=!1,r={routes:k,reload:function(){u=!0;a.$evalAsync(l)}};a.$on("$locationChangeSuccess",l);return r}]});n.provider("$routeParams",
-function(){this.$get=function(){return{}}});n.directive("ngView",x);n.directive("ngView",z);x.$inject=["$route","$anchorScroll","$animate"];z.$inject=["$compile","$controller","$route"]})(window,window.angular);
+(function(h,e,A){function u(w,q,k){return{restrict:"ECA",terminal:!0,priority:400,transclude:"element",link:function(a,c,b,f,n){function y(){l&&(l.$destroy(),l=null);g&&(k.leave(g),g=null)}function v(){var b=w.current&&w.current.locals;if(e.isDefined(b&&b.$template)){var b=a.$new(),f=w.current;g=n(b,function(d){k.enter(d,null,g||c,function(){!e.isDefined(t)||t&&!a.$eval(t)||q()});y()});l=f.scope=b;l.$emit("$viewContentLoaded");l.$eval(h)}else y()}var l,g,t=b.autoscroll,h=b.onload||"";
+a.$on("$routeChangeSuccess",v);v()}}}function z(e,h,k){return{restrict:"ECA",priority:-400,link:function(a,c){var b=k.current,f=b.locals;c.html(f.$template);var n=e(c.contents());b.controller&&(f.$scope=a,f=h(b.controller,f),b.controllerAs&&(a[b.controllerAs]=f),c.data("$ngControllerController",f),c.children().data("$ngControllerController",f));n(a)}}}h=e.module("ngRoute",["ng"]).provider("$route",function(){function h(a,c){return e.extend(new (e.extend(function(){},{prototype:a})),c)}function q(a,
+e){var b=e.caseInsensitiveMatch,f={originalPath:a,regexp:a},h=f.keys=[];a=a.replace(/([().])/g,"\\$1").replace(/(\/)?:(\w+)([\?\*])?/g,function(a,e,b,c){a="?"===c?c:null;c="*"===c?c:null;h.push({name:b,optional:!!a});e=e||"";return""+(a?"":e)+"(?:"+(a?e:"")+(c&&"(.+?)"||"([^/]+)")+(a||"")+")"+(a||"")}).replace(/([\/$\*])/g,"\\$1");f.regexp=RegExp("^"+a+"$",b?"i":"");return f}var k={};this.when=function(a,c){k[a]=e.extend({reloadOnSearch:!0},c,a&&q(a,c));if(a){var b="/"==a[a.length-1]?a.substr(0,a.length-
+1):a+"/";k[b]=e.extend({redirectTo:a},q(b,c))}return this};this.otherwise=function(a){this.when(null,a);return this};this.$get=["$rootScope","$location","$routeParams","$q","$injector","$http","$templateCache","$sce",function(a,c,b,f,n,q,v,l){function g(){var d=t(),m=r.current;if(d&&m&&d.$$route===m.$$route&&e.equals(d.pathParams,m.pathParams)&&!d.reloadOnSearch&&!x)m.params=d.params,e.copy(m.params,b),a.$broadcast("$routeUpdate",m);else if(d||m)x=!1,a.$broadcast("$routeChangeStart",d,m),(r.current=
+d)&&d.redirectTo&&(e.isString(d.redirectTo)?c.path(u(d.redirectTo,d.params)).search(d.params).replace():c.url(d.redirectTo(d.pathParams,c.path(),c.search())).replace()),f.when(d).then(function(){if(d){var a=e.extend({},d.resolve),c,b;e.forEach(a,function(d,c){a[c]=e.isString(d)?n.get(d):n.invoke(d)});e.isDefined(c=d.template)?e.isFunction(c)&&(c=c(d.params)):e.isDefined(b=d.templateUrl)&&(e.isFunction(b)&&(b=b(d.params)),b=l.getTrustedResourceUrl(b),e.isDefined(b)&&(d.loadedTemplateUrl=b,c=q.get(b,
+{cache:v}).then(function(a){return a.data})));e.isDefined(c)&&(a.$template=c);return f.all(a)}}).then(function(c){d==r.current&&(d&&(d.locals=c,e.copy(d.params,b)),a.$broadcast("$routeChangeSuccess",d,m))},function(c){d==r.current&&a.$broadcast("$routeChangeError",d,m,c)})}function t(){var a,b;e.forEach(k,function(f,k){var p;if(p=!b){var s=c.path();p=f.keys;var l={};if(f.regexp)if(s=f.regexp.exec(s)){for(var g=1,q=s.length;g<q;++g){var n=p[g-1],r="string"==typeof s[g]?decodeURIComponent(s[g]):s[g];
+n&&r&&(l[n.name]=r)}p=l}else p=null;else p=null;p=a=p}p&&(b=h(f,{params:e.extend({},c.search(),a),pathParams:a}),b.$$route=f)});return b||k[null]&&h(k[null],{params:{},pathParams:{}})}function u(a,c){var b=[];e.forEach((a||"").split(":"),function(a,d){if(0===d)b.push(a);else{var e=a.match(/(\w+)(.*)/),f=e[1];b.push(c[f]);b.push(e[2]||"");delete c[f]}});return b.join("")}var x=!1,r={routes:k,reload:function(){x=!0;a.$evalAsync(g)}};a.$on("$locationChangeSuccess",g);return r}]});h.provider("$routeParams",
+function(){this.$get=function(){return{}}});h.directive("ngView",u);h.directive("ngView",z);u.$inject=["$route","$anchorScroll","$animate"];z.$inject=["$compile","$controller","$route"]})(window,window.angular);
 //# sourceMappingURL=angular-route.min.js.map
 ;
 define("angular-route", ["angular"], function(){});
@@ -22043,6 +22043,349 @@ b,k(c,"-remove"),function(a){var d=b.attr("class");b.removeClass(c);a=a();b.attr
 ;
 define("angular-animate", ["angular"], function(){});
 
+/* global angular, console */
+
+
+
+angular.module('angular-google-analytics', [])
+    .provider('Analytics', function() {
+        var created = false,
+            trackRoutes = true,
+            accountId,
+            trackPrefix = '',
+            domainName,
+            analyticsJS = false,
+            pageEvent = '$routeChangeSuccess',
+            cookieConfig = 'auto',
+            ecommerce = false,
+            enhancedLinkAttribution = false,
+            removeRegExp,
+            experimentId,
+            ignoreFirstPageLoad = false;
+
+          this._logs = [];
+
+          // config methods
+          this.setAccount = function(id) {
+              accountId = id;
+              return true;
+          };
+          this.trackPages = function(doTrack) {
+              trackRoutes = doTrack;
+              return true;
+          };
+
+          this.trackPrefix = function(prefix) {
+              trackPrefix = prefix;
+              return true;
+          };
+
+          this.setDomainName = function(domain) {
+            domainName = domain;
+            return true;
+          };
+
+          this.useAnalytics = function(val) {
+            analyticsJS = !!val;
+            return true;
+          };
+
+          this.useEnhancedLinkAttribution = function (val) {
+            enhancedLinkAttribution = !!val;
+            return true;
+          };
+
+          this.setPageEvent = function(name) {
+            pageEvent = name;
+            return true;
+          };
+
+          this.setCookieConfig = function (config) {
+            cookieConfig = config;
+            return true;
+          };
+
+          this.useECommerce = function (val) {
+            ecommerce = !!val;
+            return true;
+          };
+
+          this.setRemoveRegExp = function (regex) {
+            if (regex instanceof RegExp) {
+              removeRegExp = regex;
+              return true;
+            }
+            return false;
+          };
+
+          this.setExperimentId = function (id) {
+            experimentId = id;
+            return true;
+          };
+
+          this.ignoreFirstPageLoad = function (val) {
+            ignoreFirstPageLoad = !!val;
+          };
+
+        // public service
+        this.$get = ['$document', '$rootScope', '$location', '$window', function($document, $rootScope, $location, $window) {
+          var getUrl = function () {
+            var url = $location.path();
+            if (removeRegExp) {
+              return url.replace(removeRegExp, '');
+            }
+            return url;
+          };
+
+          // private methods
+          function _createScriptTag() //noinspection JSValidateTypes
+          {
+            // inject the google analytics tag
+            if (!accountId) return;
+            $window._gaq = [];
+            $window._gaq.push(['_setAccount', accountId]);
+            if (enhancedLinkAttribution) {
+              $window._gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
+            }
+            if (trackRoutes && !ignoreFirstPageLoad) {
+              if (removeRegExp) {
+                $window._gaq.push(['_trackPageview', getUrl()]);
+              } else {
+                $window._gaq.push(['_trackPageview']);
+              }
+            }
+            if(domainName) $window._gaq.push(['_setDomainName', domainName]);
+            (function() {
+              var document = $document[0];
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            created = true;
+          }
+          function _createAnalyticsScriptTag() {
+            if (!accountId) {
+              return console.warn('No account id set for Analytics.js');
+            }
+
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            $window.ga('create', accountId, cookieConfig);
+
+            if (trackRoutes && !ignoreFirstPageLoad) {
+              $window.ga('send', 'pageview', getUrl());
+            }
+
+            if ($window.ga) {
+              if (ecommerce) {
+                $window.ga('require', 'ecommerce', 'ecommerce.js');
+              }
+              if (enhancedLinkAttribution) {
+                $window.ga('require', 'linkid', 'linkid.js');
+              }
+              if (experimentId) {
+                var expScript = document.createElement('script'),
+                  s = document.getElementsByTagName('script')[0];
+                expScript.src = "//www.google-analytics.com/cx/api.js?experiment=" + experimentId;
+                s.parentNode.insertBefore(expScript, s);
+              }
+
+            }
+
+          }
+          this._log = function() {
+            // for testing
+            //console.info('analytics log:', arguments);
+            this._logs.push(arguments);
+          };
+          this._trackPage = function(url) {
+            if (trackRoutes && !analyticsJS && $window._gaq) {
+              $window._gaq.push(['_trackPageview', trackPrefix + url]);
+              this._log('_trackPageview', arguments);
+            } else if (trackRoutes && analyticsJS && $window.ga) {
+              $window.ga('send', 'pageview', trackPrefix + url);
+              this._log('pageview', arguments);
+            }
+          };
+          this._trackEvent = function(category, action, label, value) {
+            if (!analyticsJS && $window._gaq) {
+              $window._gaq.push(['_trackEvent', category, action, label, value]);
+              this._log('trackEvent', arguments);
+            } else if ($window.ga) {
+              $window.ga('send', 'event', category, action, label, value);
+              this._log('event', arguments);
+            }
+
+          };
+
+          /**
+           * Add transaction
+           * https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiEcommerce#_gat.GA_Tracker_._addTrans
+           * https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce#addTrans
+           * @param transactionId
+           * @param affiliation
+           * @param total
+           * @param tax
+           * @param shipping
+           * @param city
+           * @param state
+           * @param country
+           * @private
+           */
+          this._addTrans = function (transactionId, affiliation, total, tax, shipping, city, state, country, currency) {
+            if (!analyticsJS && $window._gaq) {
+              $window._gaq.push(['_addTrans', transactionId, affiliation, total, tax, shipping, city, state, country]);
+              this._log('_addTrans', arguments);
+            } else if ($window.ga) {
+              if (!ecommerce) {
+                console.warn('ecommerce no set. Use AnalyticsProvider.setECommerce(true);');
+              } else {
+                $window.ga('ecommerce:addTransaction', {
+                  id: transactionId,
+                  affiliation: affiliation,
+                  revenue: total,
+                  tax: tax,
+                  shipping: shipping,
+                  currency: currency || 'USD'
+                });
+                this._log('ecommerce:addTransaction', arguments);
+              }
+
+            }
+          };
+
+          /**
+           * Add item to transaction
+           * https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiEcommerce#_gat.GA_Tracker_._addItem
+           * https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce#addItem
+           * @param transactionId
+           * @param sku
+           * @param name
+           * @param category
+           * @param price
+           * @param quantity
+           * @private
+           */
+          this._addItem = function (transactionId, sku, name, category, price, quantity) {
+            if (!analyticsJS && $window._gaq) {
+              $window._gaq.push(['_addItem', transactionId, sku, name, category, price, quantity]);
+              this._log('_addItem', arguments);
+            } else if ($window.ga) {
+              $window.ga('ecommerce:addItem', {
+                id: transactionId,
+                name: name,
+                sku: sku,
+                category: category,
+                price: price,
+                quantity: quantity
+              });
+              this._log('ecommerce:addItem', arguments);
+            }
+          };
+
+          /**
+           * Track transaction
+           * https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiEcommerce#_gat.GA_Tracker_._trackTrans
+           * https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce#sendingData
+           * @private
+           */
+          this._trackTrans = function () {
+            if (!analyticsJS && $window._gaq) {
+              $window._gaq.push(['_trackTrans']);
+              this._log('_trackTrans', arguments);
+            } else if ($window.ga) {
+              $window.ga('ecommerce:send');
+              this._log('ecommerce:send', arguments);
+            }
+
+          };
+
+          /**
+           * Clear transaction
+           * https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce#clearingData
+           *
+           * @private
+           */
+          this._clearTrans = function () {
+            if ($window.ga) {
+              $window.ga('ecommerce:clear');
+              this._log('ecommerce:clear', arguments);
+            }
+          };
+
+          /**
+           * Send custom events
+           * https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings#implementation
+           * https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions#implementation
+           *
+           * @param obj
+           * @private
+           */
+          this._send = function (obj) {
+            if ($window.ga) {
+              $window.ga('send', obj);
+              this._log('send', obj);
+            }
+          };
+
+
+
+            // creates the ganalytics tracker
+          if (analyticsJS) {
+            _createAnalyticsScriptTag();
+          } else {
+            _createScriptTag();
+          }
+
+
+            var me = this;
+
+            // activates page tracking
+            if (trackRoutes) $rootScope.$on(pageEvent, function() {
+              me._trackPage(getUrl());
+            });
+
+            return {
+                _logs: me._logs,
+                cookieConfig: cookieConfig,
+                ecommerce: ecommerce,
+                enhancedLinkAttribution: enhancedLinkAttribution,
+                getUrl: getUrl,
+                experimentId: experimentId,
+                ignoreFirstPageLoad: ignoreFirstPageLoad,
+                trackPage: function(url) {
+                    // add a page event
+                    me._trackPage(url);
+                },
+                trackEvent: function(category, action, label, value) {
+                    // add an action event
+                    me._trackEvent(category, action, label, value);
+                },
+                addTrans: function (transactionId, affiliation, total, tax, shipping, city, state, country) {
+                    me._addTrans(transactionId, affiliation, total, tax, shipping, city, state, country);
+                },
+                addItem: function (transactionId, sku, name, category, price, quantity) {
+                    me._addItem(transactionId, sku, name, category, price, quantity);
+                },
+                trackTrans: function () {
+                    me._trackTrans();
+                },
+                clearTrans: function () {
+                  me._clearTrans();
+                },
+                send: function (obj) {
+                  me._send(obj);
+                }
+            };
+        }];
+
+    });
+
+define("angular-google-analytics", ["angular"], function(){});
+
 angular.module('epochdb.templates', ['/epochdb/js/templates/detail.html', '/epochdb/js/templates/home.html', '/epochdb/js/templates/list.html', '/epochdb/js/templates/page.html', '/epochdb/js/templates/pages/about.html', '/epochdb/js/templates/pages/contribute.html', '/epochdb/js/templates/pages/credit.html', '/epochdb/js/templates/partial/icon-bubble.html', '/epochdb/js/templates/partial/item-tabs.html', '/epochdb/js/templates/partial/list-item.html', '/epochdb/js/templates/partial/list.html', '/epochdb/js/templates/partial/loading.html', '/epochdb/js/templates/partial/search.html', '/epochdb/js/templates/partial/site-header.html', '/epochdb/js/templates/partial/swipable-pane-container.html', '/epochdb/js/templates/partial/table-of-contents.html']);
 
 angular.module("/epochdb/js/templates/detail.html", []).run(["$templateCache", function($templateCache) {
@@ -22129,21 +22472,37 @@ define("epochdb-templates", function(){});
 
 require(['angular'], function(angular){
 
-		angular.module('epochdb.config', ['ngAnimate','ngSanitize', ])
+        angular.module('epochdb.config', [
+                'ngAnimate',
+                'ngSanitize',
+                'angular-google-analytics'
+            ])
 
-			.constant('Assets', (function ($window){
-					var service = {
-						paths: _.extend({
-								template: null,
-								static: null,
-								api: null
-							}, $window.assetUrls),
-						template: function (path){ return service.paths.template+path },
-						static: function (path){ return service.paths.static+path },
-						api: function (path){ return service.paths.api+path }
-					}
-					return service;
-				})(window))
+            .constant('Assets', (function ($window){
+                    var service = {
+                        paths: _.extend({
+                                template: null,
+                                static: null,
+                                api: null
+                            }, $window.assetUrls),
+                        template: function (path){ return service.paths.template+path },
+                        static: function (path){ return service.paths.static+path },
+                        api: function (path){ return service.paths.api+path }
+                    }
+                    return service;
+                })(window))
+
+            .config(['AnalyticsProvider', function(AnalyticsProvider){
+                                AnalyticsProvider.setAccount('UA-49114426-1');
+                                AnalyticsProvider.trackPages(true);
+                                AnalyticsProvider.setDomainName('airtonix.github.io');
+                                AnalyticsProvider.trackPrefix('epochdb');
+                                AnalyticsProvider.useAnalytics(true);
+                                AnalyticsProvider.ignoreFirstPageLoad(false);
+                                AnalyticsProvider.useECommerce(false);
+                                AnalyticsProvider.useEnhancedLinkAttribution(true);
+                                AnalyticsProvider.setPageEvent('$stateChangeSuccess');
+                            }])
 
 });
 define("epochdb-config", function(){});
@@ -25099,7 +25458,7 @@ require([
 		angular.bootstrap(document, ['epochdb']);
 })
 ;
-define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-sanitize","angular-route-segment","angular-animate","epochdb-templates","epochdb-config","epochdb-routes","epochdb-resources","epochdb-controllers","epochdb-directives","epochdb-filters"], function(){});
+define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-sanitize","angular-route-segment","angular-animate","angular-google-analytics","epochdb-templates","epochdb-config","epochdb-routes","epochdb-resources","epochdb-controllers","epochdb-directives","epochdb-filters"], function(){});
 
 (function() {
   require.config({
@@ -25110,6 +25469,7 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-s
       'angular-route-segment': '../vendor/angular-route-segment/build/angular-route-segment.min',
       'angular-touch': '../vendor/angular-touch/angular-touch.min',
       'angular-sanitize': '../vendor/angular-sanitize/angular-sanitize',
+      'angular-google-analytics': '../vendor/angular-google-analytics/src/angular-google-analytics',
       'lodash': '../vendor/lodash/dist/lodash.underscore.min',
       'marked': '../vendor/marked/lib/marked',
       'underscore-query': '../vendor/underscore-query/underscore-query',
@@ -25160,6 +25520,9 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-s
       'angular-sanitize': {
         deps: ['angular']
       },
+      'angular-google-analytics': {
+        deps: ['angular']
+      },
       'angular-route': {
         deps: ['angular']
       },
@@ -25167,7 +25530,7 @@ define("epochdb", ["lodash","angular","angular-route","angular-touch","angular-s
         deps: ['angular', 'angular-route']
       },
       'epochdb': {
-        deps: ['lodash', 'angular', 'angular-route', 'angular-touch', 'angular-sanitize', 'angular-route-segment', 'angular-animate', 'epochdb-templates', 'epochdb-config', 'epochdb-routes', 'epochdb-resources', 'epochdb-controllers', 'epochdb-directives', 'epochdb-filters']
+        deps: ['lodash', 'angular', 'angular-route', 'angular-touch', 'angular-sanitize', 'angular-route-segment', 'angular-animate', 'angular-google-analytics', 'epochdb-templates', 'epochdb-config', 'epochdb-routes', 'epochdb-resources', 'epochdb-controllers', 'epochdb-directives', 'epochdb-filters']
       },
       'epochdb-resources': {
         deps: ['epochdb-resources-base', 'epochdb-resources-areas', 'epochdb-resources-items', 'epochdb-resources-recipes']
