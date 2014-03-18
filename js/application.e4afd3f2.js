@@ -22500,8 +22500,8 @@ require(['angular'], function(angular){
                                 AnalyticsProvider.useAnalytics(true);
                                 AnalyticsProvider.ignoreFirstPageLoad(false);
                                 AnalyticsProvider.useECommerce(false);
-                                AnalyticsProvider.useEnhancedLinkAttribution(true);
-                                AnalyticsProvider.setPageEvent('$stateChangeSuccess');
+                                AnalyticsProvider.useEnhancedLinkAttribution(false);
+                                AnalyticsProvider.setPageEvent('$routeChangeSuccess');
                             }])
 
 });
@@ -22966,9 +22966,14 @@ define("epochdb-controllers", ["epochdb-controllers-app","epochdb-controllers-ho
               return $location.path("/items/" + value.toLowerCase());
             };
             return $scope.$on('item-query', function(event, data) {
-              if (behaviour === "submit") {
-                return $scope.search(data);
-              }
+              var delayedQueryFunc, timeoutCode;
+              clearTimeout(timeoutCode);
+              delayedQueryFunc = function() {
+                if (behaviour === "submit") {
+                  return $scope.search(data);
+                }
+              };
+              return timeoutCode = setTimeout(delayedQueryFunc, delayInMs);
             });
           }
         };
