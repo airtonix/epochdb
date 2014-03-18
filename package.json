@@ -1,6 +1,6 @@
 {
   "name": "EpochDB",
-  "version": "1.8.0-0",
+  "version": "1.9.0-0",
   "repository": {
     "type": "git",
     "url": "http://github.com/airtonix/epochdb.git"
