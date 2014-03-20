@@ -29,13 +29,24 @@ require ['angular', 'lodash'], (angular, _) ->
 						if value and value.length > 0
 							$scope.$emit 'item-query', value
 
-				$scope.search = (value) ->
+				this.search = (value) ->
 					$location.path "/items/"+value.toLowerCase()
+				$scope.search = this.search
 
 				$scope.$on 'item-query', (event, data) ->
-					# clearTimeout timeoutCode
-					# delayedQueryFunc = () ->
-						# if behaviour is "submit"
-					$scope.search data
-					# timeoutCode = setTimeout delayedQueryFunc, delayInMs
-	]
+					if behaviour is "submit"
+						$scope.search data
+		]
+
+	.directive 'searchField', [ () ->
+			restrict: "EA"
+			require: "^searchForm"
+			link: (scope, element, attrs, controller) ->
+				element.bind 'keyup', (Event) ->
+					delayInMs = 2000
+					clearTimeout timeoutCode
+					delayedQueryFunc = () ->
+						controller.search(scope.Query)
+					timeoutCode = setTimeout delayedQueryFunc, delayInMs
+
+		]

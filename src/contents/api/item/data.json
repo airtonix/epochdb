@@ -111,9 +111,9 @@
 	}
 }, {
 	"id": "item/103",
-	"name": "Small Wooden Wall with Door",
-	"description": "A small wall with a door",
-	"tags": ["Building", "Upgrade"],
+	"name": "Small Wooden Doorway",
+	"description": "A small wooden wall with a doorway.",
+	"tags": ["Building", "Component"],
 	"recipe": "recipe/103",
 	"depends": {
 		"areas": {
@@ -140,7 +140,7 @@
 	}
 }, {
 	"id": "item/105",
-	"name": "Small Wooden Doorway Locked",
+	"name": "Small Wooden Door [Lockable]",
 	"description": "Upgrades an existing small wooden doorway (with door) so that it becomes lockable with a three digit combination lock.",
 	"source": ["Crafting"],
 	"tags": ["Building", "Upgrade"],
@@ -155,7 +155,7 @@
 	}
 }, {
 	"id": "item/106",
-	"name": "Large Wooden Doorway Locked",
+	"name": "Large Wooden Door [Lockable]",
 	"description": "",
 	"source": ["Crafting"],
 	"tags": ["Building", "Upgrade"],
@@ -382,11 +382,6 @@
 		"tools": {
 			"item/2": 1,
 			"item/1": 1
-		},
-		"components": {
-			"recipe/499": 2,
-			"recipe/301": 2,
-			"recipe/503": 2
 		}
 	}
 }, {
@@ -407,9 +402,6 @@
 		"tools": {
 			"item/2": 1,
 			"item/7": 1
-		},
-		"components": {
-			"recipe/303": 2
 		}
 	}
 }, {
@@ -424,9 +416,6 @@
 		},
 		"tools": {
 			"item/2": 1
-		},
-		"components": {
-			"recipe/503": 2
 		}
 	}
 }, {
@@ -442,9 +431,6 @@
 		"tools": {
 			"item/5": 1,
 			"item/2": 1
-		},
-		"components": {
-			"recipe/500": 2
 		}
 	}
 }, {
@@ -460,11 +446,6 @@
 		"tools": {
 			"item/5": 1,
 			"item/2": 1
-		},
-		"components": {
-			"recipe/506": 3,
-			"recipe/302": 1,
-			"recipe/301": 1
 		}
 	}
 }, {
@@ -480,10 +461,6 @@
 		"tools": {
 			"item/5": 1,
 			"item/7": 1
-		},
-		"components": {
-			"recipe/501": 2,
-			"recipe/499": 2
 		}
 	}
 }, {
@@ -499,10 +476,6 @@
 		"tools": {
 			"item/5": 1,
 			"item/7": 1
-		},
-		"components": {
-			"recipe/501": 3,
-			"recipe/499": 3
 		}
 	}
 }, {
@@ -520,16 +493,12 @@
 		"tools": {
 			"item/5": 1,
 			"item/7": 1
-		},
-		"components": {
-			"recipe/501": 3,
-			"recipe/499": 3
 		}
 	}
 }, {
 	"id": "item/511",
 	"name": "Storage Crate",
-	"description": "",
+	"description": "Used to compress storage space for certain items.",
 	"recipe": "recipe/511",
 	"storage": {
 		"weapons": 5,
@@ -729,9 +698,6 @@
 		"tools": {
 			"item/2": 1,
 			"item/5": 1
-		},
-		"components": {
-			"recipe/521": 3
 		}
 	}
 }, {

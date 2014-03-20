@@ -1,13 +1,12 @@
 header{
 	position: absolute;
 	width: 100%;
-	
+
 	nav.top-bar{
 		width: 100%;
-		z-index: 100;
+		z-index: 1000;
 		margin-bottom: 0em;
 		border-bottom: 2px solid $topbar-menu-border-color;
-		// @include box-shadow(0 5px 5px rgba(black, 0.2));
 
 
 		.top-bar-section ul{

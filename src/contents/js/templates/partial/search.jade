@@ -2,7 +2,7 @@
 	form.simple(data-ng-submit="search()")
 		.row.rounded
 			.small-12.columns
-				input(class="search", type="text", data-ng-model="Query", placeholder="Search Recipes and Items", data-result-count="{{ Collection | filter:Query | length }}")
+				input(class="search", type="text", data-search-field, data-ng-model="Query", placeholder="Search Recipes and Items", data-result-count="{{ Collection | filter:Query | length }}")
 				button(type="submit") go
 				button(type="reset").simple-outline.button.postfix.clear(data-ng-if="Query.length", data-ng-click="$parent.Query=''")
 					i.icon-erase.icon-2x

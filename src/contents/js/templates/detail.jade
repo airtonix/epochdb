@@ -16,7 +16,7 @@
 
 	.row(data-ng-if="DetailedItem.storage")
 		h4 Storage
-		ul.button-group.simple-outline
+		ul.button-group.simple-outline.guages
 			li(data-ng-repeat="(key, value) in DetailedItem.storage")
 				a.button {{ value }}
 					small {{ key }}

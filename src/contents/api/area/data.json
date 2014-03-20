@@ -10,10 +10,10 @@
 	"name": "Fireplace",
 	"source": ["Crafting"],
 	"tags": ["Tool", "Area"],
-	"recipe": "recipe/",
+	"recipe": "recipe/3",
 	"description": "A circular arrangement of rocks that you place in the game world to provide light and warmth. Used by some recipes that require heat."
 }, {
-	"id": "area/3",
+	"id": "area/512",
 	"name": "Woodshed",
 	"source": ["Crafting"],
 	"tags": ["Tool", "Area"],
@@ -26,7 +26,7 @@
 		},
 		"maxCount": 10
 	},
-	"recipe": "recipe/workbench"
+	"recipe": "recipe/1"
 }, {
 	"id": "area/4",
 	"name": "30m Plot Pole"

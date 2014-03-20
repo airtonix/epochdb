@@ -75,29 +75,9 @@
 			}
 		}
 	}, {
-		"id": "recipe/102",
-		"name": "Large Wooden Wall",
-		"description": "",
-		"tags": ["Building", "Component"],
-		"creates": "item/102",
-		"depends": {
-			"areas": {
-				"area/1": "3m"
-			},
-			"tools": {
-				"item/2": 1,
-				"item/1": 1
-			},
-			"components": {
-				"item/101": 1,
-				"item/505": 1,
-				"item/503": 1
-			}
-		}
-	}, {
 		"id": "recipe/103",
-		"name": "Small Wooden Wall with Door",
-		"description": "A small wall with a door",
+		"name": "Small Wooden Doorway",
+		"description": "A small wall with a doorway but no door.",
 		"tags": ["Building"],
 		"creates": "item/103",
 		"depends": {
@@ -113,12 +93,11 @@
 			}
 		}
 	}, {
-		"id": "recipe/104",
-		"name": "Large Wooden Doorway",
-		"description": "",
-		"source": ["Crafting"],
-		"tags": ["Building", "Component"],
-		"creates": "item/104",
+		"id": "recipe/122",
+		"name": "Small Wooden Doorway with Door",
+		"description": "Upgrades an existing small wall doorway with a door.",
+		"tags": ["Building"],
+		"creates": "item/103",
 		"depends": {
 			"areas": {
 				"area/1": "3m"
@@ -128,13 +107,13 @@
 				"item/1": 1
 			},
 			"components": {
-				"item/102": 1
+				"item/101": 1
 			}
 		}
 	}, {
 		"id": "recipe/105",
-		"name": "Small Wooden Doorway Locked",
-		"description": "",
+		"name": "Small Wooden Doorway with Locked Door",
+		"description": "Places a combination lock onto a [Small Wooden Doorway with Door]. Placing the lock generates a three digit code. To generate a new one, remove the combination lock and place it again. Only the plot pole owner and friendly tagged players who have unlocked the door can remove it.",
 		"source": ["Crafting"],
 		"tags": ["Building", "Upgrade"],
 		"creates": "item/105",
@@ -152,23 +131,6 @@
 			}
 		}
 	}, {
-		"id": "recipe/106",
-		"name": "Large Wooden Doorway Locked",
-		"description": "",
-		"source": ["Crafting"],
-		"tags": ["Building", "Upgrade"],
-		"creates": "item/106",
-		"depends": {
-			"tools": {
-				"item/2": 1,
-				"item/1": 1
-			},
-			"components": {
-				"item/104": 1,
-				"item/306": 1
-			}
-		}
-	}, {
 		"id": "recipe/107",
 		"name": "Window in Small Wooden Wall",
 		"description": "Upgrades an existing wall with a glass window.",
@@ -181,26 +143,6 @@
 			},
 			"components": {
 				"item/101": 1,
-				"item/307": 1
-			}
-		}
-	}, {
-		"id": "recipe/108",
-		"name": "Window in Large Wooden Wall",
-		"description": "",
-		"source": ["Crafting"],
-		"tags": ["Building", "Upgrade"],
-		"creates": "recipe/108",
-		"depends": {
-			"areas": {
-				"area/1": "3m"
-			},
-			"tools": {
-				"item/2": 1,
-				"item/1": 1
-			},
-			"components": {
-				"item/102": 1,
 				"item/307": 1
 			}
 		}
@@ -241,6 +183,84 @@
 			"components": {
 				"item/109": 1,
 				"item/306": 1
+			}
+		}
+	},
+
+	{
+		"id": "recipe/102",
+		"name": "Large Wooden Wall",
+		"description": "",
+		"tags": ["Building", "Component"],
+		"creates": "item/102",
+		"depends": {
+			"areas": {
+				"area/1": "3m"
+			},
+			"tools": {
+				"item/2": 1,
+				"item/1": 1
+			},
+			"components": {
+				"item/101": 1,
+				"item/505": 1,
+				"item/503": 1
+			}
+		}
+	}, {
+		"id": "recipe/104",
+		"name": "Large Wooden Doorway",
+		"description": "",
+		"source": ["Crafting"],
+		"tags": ["Building", "Component"],
+		"creates": "item/104",
+		"depends": {
+			"areas": {
+				"area/1": "3m"
+			},
+			"tools": {
+				"item/2": 1,
+				"item/1": 1
+			},
+			"components": {
+				"item/102": 1
+			}
+		}
+	}, {
+		"id": "recipe/106",
+		"name": "Large Wooden Doorway Locked",
+		"description": "",
+		"source": ["Crafting"],
+		"tags": ["Building", "Upgrade"],
+		"creates": "item/106",
+		"depends": {
+			"tools": {
+				"item/2": 1,
+				"item/1": 1
+			},
+			"components": {
+				"item/104": 1,
+				"item/306": 1
+			}
+		}
+	}, {
+		"id": "recipe/108",
+		"name": "Window in Large Wooden Wall",
+		"description": "",
+		"source": ["Crafting"],
+		"tags": ["Building", "Upgrade"],
+		"creates": "recipe/108",
+		"depends": {
+			"areas": {
+				"area/1": "3m"
+			},
+			"tools": {
+				"item/2": 1,
+				"item/1": 1
+			},
+			"components": {
+				"item/102": 1,
+				"item/307": 1
 			}
 		}
 	}, {

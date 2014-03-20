@@ -63,48 +63,6 @@ body {
 		}
 	}
 
-	.avgrund-overlay{
-		background: #fff;
-	}
-
-	.avgrund-popin{
-		overflow: visible;
-		background: #0cf;
-		min-height: 25em;
-		@include headings {
-			color: #fff;
-		}
-		form.contact {
-			// position: relative;
-
-			input, textarea{
-				color: #333;
-				background: #fff;
-				border: none;
-
-				@include placeholder {
-					color: #333;
-				}
-			}
-			textarea{
-				min-height: 15em;
-				max-height: 15em;
-			}
-			button[type='submit']{
-				position: absolute;
-				bottom: -1.5em;
-				left: 5%;
-				width: 90%;
-				border: none;
-				background: #fff;
-				// @include box-shadow(0 0 2px #0cf);
-				border: 2px solid $button-border-color;
-				color: #333;
-				margin: 0 auto;
-			}
-		}
-	}
-
 }
 
 body#splash,
