@@ -1,11 +1,29 @@
 require(['angular', 'lodash'], function (angular, _){
 
 	angular.module('foundation', [])
-		.directive('topbar', [function (){
+		.directive('topBar', [function (){
 				return {
-					restrict: 'A',
+					replace: true,
+					transclude: true,
+					restrict: 'ACE',
+					scope: {},
+					template: '<nav data-ng-class="{expanded: open}" data-ng-transclude></nav>',
 					controller: function ($scope, $element, $attrs, $transclude) {
 						$scope.open = false;
+						set = function(value){
+							$scope.open = value
+							$scope.$apply();
+							console.log("top-bar.expanded", $scope.open)
+						}
+						this.toggle = function() {
+							set(!$scope.open)
+						}
+						this.open = function() {
+							set(true)
+						}
+						this.close = function() {
+							set(false)
+						}
 					}
 				};
 			}])
@@ -13,7 +31,7 @@ require(['angular', 'lodash'], function (angular, _){
 		.directive('topbarLink', ["$route", "$routeSegment",
 			function ($route, $routeSegment){
 				return {
-					requires: '^topbar',
+					require: '^topBar',
 					restrict: 'A',
 					replace: true,
 					scope: {
@@ -21,22 +39,24 @@ require(['angular', 'lodash'], function (angular, _){
 						"label": "=label"
 					},
 					template: "<li class='{{ active }}'><a href='#/{{ url }}'>{{ label }}</a></li>",
-					link: function (scope, element, attrs) {
-						// scope.active = $routeSegment.startsWith(scope.route);
+					link: function (scope, element, attrs, controller) {
+						scope.active = $routeSegment.startsWith(scope.route);
 						scope.url = attrs.route || attrs.url;
 						scope.label = attrs.label;
-						element.bind('click', function(){ scope.open = false; });
+						element.bind('click', function(){
+							controller.close();
+						});
 					}
 				};
 			}])
 
-		.directive('topbarToggle', [function (){
+		.directive('toggleTopbar', [function (){
 				return {
-					require: '^topbar',
-					restrict: 'A',
+					require: '^topBar',
+					restrict: 'ACE',
 					link: function ($scope, iElm, iAttrs, controller) {
 						iElm.bind("mouseup touchend", function (event){
-							$scope.open = !$scope.open;
+							controller.toggle();
 						});
 					}
 				};
