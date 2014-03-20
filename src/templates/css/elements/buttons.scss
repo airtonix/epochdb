@@ -18,6 +18,8 @@
 		background: $bg-hover;
 		color: $text-hover;
 	}
+
+
 }
 
 @mixin simple-button-group(){
@@ -43,6 +45,16 @@
 			&:last-child a.button{
 				@include border-bottom-radius(3px)
 			}
+		}
+	}
+
+	&.guages li a{
+		font-size: 1.4em;
+		small {
+			color: shade($button-text-color, 30%);
+			font-size: 0.8rem;
+			font-weight: 700;
+			display: block;
 		}
 	}
 }
