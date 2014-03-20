@@ -22390,7 +22390,7 @@ angular.module('epochdb.templates', ['/epochdb/js/templates/detail.html', '/epoc
 
 angular.module("/epochdb/js/templates/detail.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/detail.html",
-"<div class=\"hero half-height text-left item-header\"><div class=\"cell\"><div class=\"large-6 columns large-centered item-title\"><div class=\"row\"><span data-ng-class=\"['type-icon','icon-'+DetailedItem.typeSlug()]\" title=\"Type: {{ DetailedItem.type }}\"></span><h4>{{ DetailedItem.name }}<small class=\"block\"><span class=\"item-type\">{{ DetailedItem.type }}</span></small><small data-ng-if=\"DetailedItem.tags.length\" class=\"block tags\"><span data-ng-repeat=\"tag in DetailedItem.tags\" class=\"item-tag icon-tag\">{{ tag }}</span></small></h4></div></div></div></div><div class=\"large-6 large-centered columns\"><div class=\"row\"><div data-marked=\"DetailedItem.description\" class=\"epoch-item-description\"></div></div><div data-ng-if=\"DetailedItem.storage\" class=\"row\"><h4>Storage</h4><ul class=\"button-group simple-outline\"><li data-ng-repeat=\"(key, value) in DetailedItem.storage\"><a class=\"button\">{{ value }}<small>{{ key }}</small></a></li></ul></div><div data-ng-if=\"DetailedItem.recipe\" class=\"row\"><h4>Created by</h4><ul class=\"item-list button-group simple-outline vertical\"><item data-item-ref=\"DetailedItem.recipe\"></item></ul></div><div data-ng-if=\"DetailedItem.creates\" class=\"row\"><h4>Creates</h4><ul class=\"item-list button-group simple-outline vertical\"><item data-item-ref=\"DetailedItem.creates\"></item></ul></div><div data-ng-if=\"DetailedItem.depends\" class=\"row\"><h4>Depends On</h4><div data-ng-repeat=\"(key, data) in DetailedItem.depends\" class=\"epoch-requirements\"><h5 data-ng-class=\"['icon-'+key]\" class=\"group-label\">{{ key }}</h5><ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(ref, count) in data\" data-item-ref=\"ref\" data-item-count=\"count\"></item></ul></div></div><div data-ng-if=\"DetailedItem.requiredFor\" class=\"row\"><h4>Required For<ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(index, ref) in DetailedItem.requiredFor\" data-item-ref=\"ref\"></item></ul></h4></div></div>");
+"<div class=\"hero half-height text-left item-header\"><div class=\"cell\"><div class=\"large-6 columns large-centered item-title\"><div class=\"row\"><span data-ng-class=\"['type-icon','icon-'+DetailedItem.typeSlug()]\" title=\"Type: {{ DetailedItem.type }}\"></span><h4>{{ DetailedItem.name }}<small class=\"block\"><span class=\"item-type\">{{ DetailedItem.type }}</span></small><small data-ng-if=\"DetailedItem.tags.length\" class=\"block tags\"><span data-ng-repeat=\"tag in DetailedItem.tags\" class=\"item-tag icon-tag\">{{ tag }}</span></small></h4></div></div></div></div><div class=\"large-6 large-centered columns\"><div class=\"row\"><div data-marked=\"DetailedItem.description\" class=\"epoch-item-description\"></div></div><div data-ng-if=\"DetailedItem.storage\" class=\"row\"><h4>Storage</h4><ul class=\"button-group simple-outline guages\"><li data-ng-repeat=\"(key, value) in DetailedItem.storage\"><a class=\"button\">{{ value }}<small>{{ key }}</small></a></li></ul></div><div data-ng-if=\"DetailedItem.recipe\" class=\"row\"><h4>Created by</h4><ul class=\"item-list button-group simple-outline vertical\"><item data-item-ref=\"DetailedItem.recipe\"></item></ul></div><div data-ng-if=\"DetailedItem.creates\" class=\"row\"><h4>Creates</h4><ul class=\"item-list button-group simple-outline vertical\"><item data-item-ref=\"DetailedItem.creates\"></item></ul></div><div data-ng-if=\"DetailedItem.depends\" class=\"row\"><h4>Depends On</h4><div data-ng-repeat=\"(key, data) in DetailedItem.depends\" class=\"epoch-requirements\"><h5 data-ng-class=\"['icon-'+key]\" class=\"group-label\">{{ key }}</h5><ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(ref, count) in data\" data-item-ref=\"ref\" data-item-count=\"count\"></item></ul></div></div><div data-ng-if=\"DetailedItem.requiredFor\" class=\"row\"><h4>Required For<ul class=\"item-list button-group simple-outline vertical\"><item data-ng-repeat=\"(index, ref) in DetailedItem.requiredFor\" data-item-ref=\"ref\"></item></ul></h4></div></div>");
 }]);
 
 angular.module("/epochdb/js/templates/home.html", []).run(["$templateCache", function($templateCache) {
@@ -22435,7 +22435,7 @@ $templateCache.put("/epochdb/js/templates/partial/item-tabs.html",
 
 angular.module("/epochdb/js/templates/partial/list-item.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/list-item.html",
-"<li data-ng-class=\"['type-'+ItemSummary.type.toLowerCase()]\" class=\"epoch-item-summary\"><a title=\"{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}\" data-ng-href=\"#/{{ItemSummary.id}}\" class=\"button text-left\"><span class=\"label radius epoch-type-icon\"><em data-ng-class=\"'icon-' + ItemSummary.type.toLowerCase()\"></em></span><span data-ng-if=\"ItemCount\" class=\"epoch-item-count label\">{{ ItemCount }}</span><span data-ng-bind=\"ItemSummary.name\" class=\"epoch-item-name\"></span><ul class=\"button-group horizontal simple-outline right\"><li><span data-add-to-calculator=\"data-add-to-calculator\" data-item-id=\"ItemSummary.id\" class=\"button icon-plus-outline icon-2x right\"></span></li><li><span data-ng-if=\"!ItemCount\" class=\"button icon-right-open-outline icon-2x right\"></span></li></ul></a></li>");
+"<li data-ng-class=\"['type-'+ItemSummary.type.toLowerCase()]\" class=\"epoch-item-summary\"><a title=\"{{ ItemSummary.type }}: [{{ ItemSummary.id }}] {{ ItemSummary.name }}\" data-ng-href=\"#/{{ItemSummary.id}}\" class=\"button text-left\"><span class=\"label radius epoch-type-icon\"><em data-ng-class=\"'icon-' + ItemSummary.type.toLowerCase()\"></em></span><span data-ng-if=\"ItemCount\" class=\"epoch-item-count label\">{{ ItemCount }}</span><span data-ng-bind=\"ItemSummary.name\" class=\"epoch-item-name\"></span><ul class=\"button-group horizontal simple-outline right\"><!--li: span(data-add-to-calculator, data-item-id=\"ItemSummary.id\").button.icon-plus-outline.icon-2x.right--><li><span class=\"button icon-right-open-outline icon-2x right\"></span></li></ul></a></li>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/list.html", []).run(["$templateCache", function($templateCache) {
@@ -22450,12 +22450,12 @@ $templateCache.put("/epochdb/js/templates/partial/loading.html",
 
 angular.module("/epochdb/js/templates/partial/search.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/search.html",
-"<div id=\"item-filter\" class=\"large-6 columns large-centered\"><form data-ng-submit=\"search()\" class=\"simple\"><div class=\"row rounded\"><div class=\"small-12 columns\"><input type=\"text\" data-ng-model=\"Query\" placeholder=\"Search Recipes and Items\" data-result-count=\"{{ Collection | filter:Query | length }}\" class=\"search\"><button type=\"submit\">go</button> <button type=\"reset\" data-ng-if=\"Query.length\" data-ng-click=\"$parent.Query=''\" class=\"simple-outline button postfix clear\"><i class=\"icon-erase icon-2x\"></i></button></div><div class=\"small-12 columns\"><dl class=\"sub-nav right\"><dt>filter by</dt><dd data-ng-repeat=\"filter in Filters\" data-ng-class=\"'type-'+filter.toString().toLowerCase()\"><a data-ng-click=\"$parent.Query=filter\"><em data-ng-class=\"'icon-'+filter.toLowerCase()\"></em><span>{{ filter }}</span></a></dd></dl></div></div></form></div>");
+"<div id=\"item-filter\" class=\"large-6 columns large-centered\"><form data-ng-submit=\"search()\" class=\"simple\"><div class=\"row rounded\"><div class=\"small-12 columns\"><input type=\"text\" data-search-field=\"data-search-field\" data-ng-model=\"Query\" placeholder=\"Search Recipes and Items\" data-result-count=\"{{ Collection | filter:Query | length }}\" class=\"search\"><button type=\"submit\">go</button> <button type=\"reset\" data-ng-if=\"Query.length\" data-ng-click=\"$parent.Query=''\" class=\"simple-outline button postfix clear\"><i class=\"icon-erase icon-2x\"></i></button></div><div class=\"small-12 columns\"><dl class=\"sub-nav right\"><dt>filter by</dt><dd data-ng-repeat=\"filter in Filters\" data-ng-class=\"'type-'+filter.toString().toLowerCase()\"><a data-ng-click=\"$parent.Query=filter\"><em data-ng-class=\"'icon-'+filter.toLowerCase()\"></em><span>{{ filter }}</span></a></dd></dl></div></div></form></div>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/site-header.html", []).run(["$templateCache", function($templateCache) {
 $templateCache.put("/epochdb/js/templates/partial/site-header.html",
-"<header><nav data-topbar=\"data-topbar\" data-ng-class=\"{'expanded': open}\" class=\"top-bar hide-for-print\"><ul class=\"title-area\"><li class=\"name\"><h1><a href=\"{{ WinterSmith.url }}\" title=\"{{ WinterSmith.description }}\">{{ WinterSmith.name }}</a></h1></li><li data-ng-click=\"open=!open\" class=\"toggle-topbar menu-icon\"><a>Menu</a></li></ul><section class=\"top-bar-section\"><ul class=\"right\"><li data-topbar-link=\"data-topbar-link\" data-url=\"items\" data-label=\"Items\"></li><li class=\"divider\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"about\" data-label=\"About\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"contribute\" data-label=\"Contribute\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"credit\" data-label=\"Credit\"></li></ul></section></nav></header>");
+"<header><nav class=\"top-bar hide-for-print\"><ul class=\"title-area\"><li class=\"name\"><h1><a href=\"{{ WinterSmith.url }}\" title=\"{{ WinterSmith.description }}\">{{ WinterSmith.name }}</a></h1></li><li class=\"toggle-topbar menu-icon\"><a>Menu</a></li></ul><section class=\"top-bar-section\"><ul class=\"right\"><li data-topbar-link=\"data-topbar-link\" data-url=\"items\" data-label=\"Items\"></li><li class=\"divider\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"about\" data-label=\"About\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"contribute\" data-label=\"Contribute\"></li><li data-topbar-link=\"data-topbar-link\" data-url=\"credit\" data-label=\"Credit\"></li></ul></section></nav></header>");
 }]);
 
 angular.module("/epochdb/js/templates/partial/swipable-pane-container.html", []).run(["$templateCache", function($templateCache) {
@@ -22687,7 +22687,7 @@ define("epochdb-resources-areas", function(){});
 
           function Item(data) {
             this.type = 'item';
-            this.source = "api/item/data.cb511096.json";
+            this.source = "api/item/data.f9f99915.json";
             this.$http = $http;
             Item.__super__.constructor.call(this, data);
           }
@@ -22726,7 +22726,7 @@ define("epochdb-resources-items", function(){});
 
           function Recipe(data) {
             this.type = 'recipe';
-            this.source = "api/recipe/data.c4593983.json";
+            this.source = "api/recipe/data.15e98bc1.json";
             this.$http = $http;
             Recipe.__super__.constructor.call(this, data);
           }
@@ -22810,7 +22810,7 @@ define("epochdb-resources", ["epochdb-resources-base","epochdb-resources-areas",
     return angular.module('epochdb.controllers.app', ['ngRoute', 'route-segment']).value('Loader', {
       show: false
     }).controller('AppController', [
-      '$scope', 'Assets', 'Loader', function($scope, Assets, Loader) {
+      '$rootScope', '$scope', '$location', 'Assets', 'Loader', 'Analytics', function($rootScope, $scope, $location, Assets, Loader, Analytics) {
         $scope.Assets = Assets;
         $scope.$on('$routeChangeSuccess', function(event, $toRoute, $fromRoute) {
           var route;
@@ -22820,7 +22820,8 @@ define("epochdb-resources", ["epochdb-resources-base","epochdb-resources-areas",
           }
         });
         $scope.Loader = Loader;
-        return $scope.$on('routeSegmentChange', function(event) {
+        return $rootScope.$on('routeSegmentChange', function(Event, RouteSegment) {
+          Analytics.trackPage("" + $location.$$host + $location.$$url);
           return Loader.show = false;
         });
       }
@@ -22962,11 +22963,32 @@ define("epochdb-controllers", ["epochdb-controllers-app","epochdb-controllers-ho
                 }
               }
             });
-            $scope.search = function(value) {
+            this.search = function(value) {
               return $location.path("/items/" + value.toLowerCase());
             };
+            $scope.search = this.search;
             return $scope.$on('item-query', function(event, data) {
-              return $scope.search(data);
+              if (behaviour === "submit") {
+                return $scope.search(data);
+              }
+            });
+          }
+        };
+      }
+    ]).directive('searchField', [
+      function() {
+        return {
+          restrict: "EA",
+          require: "^searchForm",
+          link: function(scope, element, attrs, controller) {
+            return element.bind('keyup', function(Event) {
+              var delayInMs, delayedQueryFunc, timeoutCode;
+              delayInMs = 2000;
+              clearTimeout(timeoutCode);
+              delayedQueryFunc = function() {
+                return controller.search(scope.Query);
+              };
+              return timeoutCode = setTimeout(delayedQueryFunc, delayInMs);
             });
           }
         };
@@ -23348,11 +23370,29 @@ define("epochdb-directives-site", function(){});
 require(['angular', 'lodash'], function (angular, _){
 
 	angular.module('foundation', [])
-		.directive('topbar', [function (){
+		.directive('topBar', [function (){
 				return {
-					restrict: 'A',
+					replace: true,
+					transclude: true,
+					restrict: 'ACE',
+					scope: {},
+					template: '<nav data-ng-class="{expanded: open}" data-ng-transclude></nav>',
 					controller: function ($scope, $element, $attrs, $transclude) {
 						$scope.open = false;
+						set = function(value){
+							$scope.open = value
+							$scope.$apply();
+							console.log("top-bar.expanded", $scope.open)
+						}
+						this.toggle = function() {
+							set(!$scope.open)
+						}
+						this.open = function() {
+							set(true)
+						}
+						this.close = function() {
+							set(false)
+						}
 					}
 				};
 			}])
@@ -23360,7 +23400,7 @@ require(['angular', 'lodash'], function (angular, _){
 		.directive('topbarLink', ["$route", "$routeSegment",
 			function ($route, $routeSegment){
 				return {
-					requires: '^topbar',
+					require: '^topBar',
 					restrict: 'A',
 					replace: true,
 					scope: {
@@ -23368,22 +23408,24 @@ require(['angular', 'lodash'], function (angular, _){
 						"label": "=label"
 					},
 					template: "<li class='{{ active }}'><a href='#/{{ url }}'>{{ label }}</a></li>",
-					link: function (scope, element, attrs) {
-						// scope.active = $routeSegment.startsWith(scope.route);
+					link: function (scope, element, attrs, controller) {
+						scope.active = $routeSegment.startsWith(scope.route);
 						scope.url = attrs.route || attrs.url;
 						scope.label = attrs.label;
-						element.bind('click', function(){ scope.open = false; });
+						element.bind('click', function(){
+							controller.close();
+						});
 					}
 				};
 			}])
 
-		.directive('topbarToggle', [function (){
+		.directive('toggleTopbar', [function (){
 				return {
-					require: '^topbar',
-					restrict: 'A',
+					require: '^topBar',
+					restrict: 'ACE',
 					link: function ($scope, iElm, iAttrs, controller) {
 						iElm.bind("mouseup touchend", function (event){
-							$scope.open = !$scope.open;
+							controller.toggle();
 						});
 					}
 				};
